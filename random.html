@@ -30,26 +30,13 @@
   <h1>1nan</h1>
 </header>
 
-<h3>Recent articles</h3>
-<ul>
-  
-  <li>2023-06-18
-    <a href="hello-world.html">Hello Wolrd</a></li>
-  
-</ul>
+<h3>Go to an article randomly</h3>
 
-<h3>Archives</h3>
-<p>
-  <div id="archives">
-    <a href="title-index.html">TitleIndex</a>
-    <a href="years.html">Years</a>
-    <a href="random.html">Random</a>
-  </div>
-</p>
+<p>访问本页会随机访问一篇文章（自动跳转）</p>
 
 </main>
     
-<div id="footer" class="index-footer">
+<div id="footer">
   <p id="footer-body">
     Author: Yinan
     | LICENSE <a href="LICENSE.txt">CC0-1.0</a>
@@ -60,4 +47,16 @@
   </body>
 
   
+<script>
+const files = ['hello-world.html']
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+function randomlyGo() {
+  const i = getRandomInt(0, files.length);
+  location.href = files[i];
+}
+randomlyGo()
+</script>
+
 </html>
