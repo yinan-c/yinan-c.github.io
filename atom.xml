@@ -12,6 +12,24 @@
 
   
   <entry>
+    <title>My Open-Source Projects</title>
+    <link ref="alternate" href="yinan-c.github.io/my-open-source.html" />
+    <id>my-open-source</id>
+    <published>2023-06-19 17:35:38+01:00</published>
+    <updated>2023-06-19 18:03:08+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="text"># My Open-Source Projects
+
+## [Alfred](https://www.alfredapp.com/) Workflows
+
+### [Easy Homebrew](https://github.com/yinan-c/alfred-homebrew)
+
+- An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.
+
+### [GitHu...</content>
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link ref="alternate" href="yinan-c.github.io/hello-world.html" />
     <id>hello-world</id>
@@ -41,24 +59,6 @@
 - Email: [yinan.email@gmail.com](mailto:yinan.email@gmail.com)
 - GitHub: [yinan-c](https://github.com/yinan-c)
 </content>
-  </entry>
-  
-  <entry>
-    <title>My Open-Source Projects</title>
-    <link ref="alternate" href="yinan-c.github.io/my-open-source.html" />
-    <id>my-open-source</id>
-    <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2023-06-19 17:43:27+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="text"># My Open-Source Projects
-
-## [Alfred](https://www.alfredapp.com/) Workflows
-
-### [Easy Homebrew](https://github.com/yinan-c/alfred-homebrew)
-
-- An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.
-
-### [GitHu...</content>
   </entry>
   
 
