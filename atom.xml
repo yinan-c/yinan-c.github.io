@@ -12,6 +12,20 @@
 
   
   <entry>
+    <title>Setting up Globus endpoint for your servers</title>
+    <link ref="alternate" href="yinan-c.github.io/globus-endpoint.html" />
+    <id>globus-endpoint</id>
+    <published>2023-06-16 16:12:43+01:00</published>
+    <updated>2023-06-21 13:08:21+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="text"># Setting up Globus endpoint for your servers
+
+Yinan, June 2023
+
+This instruction is for setting up a [Globus](https://app.globus.org/) endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on you...</content>
+  </entry>
+  
+  <entry>
     <title>My Open-Source Projects</title>
     <link ref="alternate" href="yinan-c.github.io/my-open-source.html" />
     <id>my-open-source</id>
