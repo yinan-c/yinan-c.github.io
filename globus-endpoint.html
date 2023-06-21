@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>Setting up Globus endpoint for your servers - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+    <main>
+
+<h1>Setting up Globus endpoint for your servers</h1>
+<p>Yinan, June 2023</p>
+<p>This instruction is for setting up a <a href="https://app.globus.org/">Globus</a> endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.</p>
+<blockquote>
+<p>With Globus, you can easily, reliably and securely move, share, &amp; discover data no matter where it lives – from a supercomputer, lab cluster, tape archive, public cloud or laptop. Access and manage all your data, even protected data, from anywhere, using your existing identities, with just a web browser. <a href="https://www.globus.org/what-we-do">from Globus</a></p>
+</blockquote>
+<h2>1. Login to the cluster with trusted X11 forwarding enabled:</h2>
+<p><code>ssh -YC username@hostname</code></p>
+<h2>2. Install Globus connect on the cluster.</h2>
+<p>On servers that do not run GridFTP , you have to install the Globus Connect client software in your user space as:</p>
+<pre><code>wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
+tar xzf globusconnectpersonal-latest.tgz
+cd globusconnectpersonal-3.2.2/ 
+</code></pre>
+<h2>3. Execute the globus client on cli mode as:</h2>
+<p><code>./globusconnectpersonal -setup --no-gui</code></p>
+<h2>4. A login url will be displayed on terminal</h2>
+<p>Copy and paste it in your browser. Assuming that you already have a Globus account, login to your globus using the displayed url.</p>
+<h2>5. Provide a label for future reference</h2>
+<p>An authorization code will be displayed in your browser. Copy it and paste it on the cluster next to the prompt <code>Enter the auth code:</code>. Then provide a name for this collection as &quot;Input a value for the Endpoint Name:&quot;</p>
+<p><em>If everything went well then you should get a message &quot;setup completed successfully&quot;</em></p>
+<h2>6. Access $SCRATCH etc. (<a href="https://github.com/Supercomputing/DailyTasks/wiki/Using-Globus-Online-from-the-command-line">source</a>)</h2>
+<p>Now you only have access to files in $home, in order to access files in other places like SCRATCH, add the following lines in  <code>~/.globusonline/lta/config-paths</code></p>
+<pre><code>~/,0,1
+/path/to/directory,0,1 
+</code></pre>
+<p>where <code>1</code> means read/write permitted.
+From now on you can use the cluster to transfer data via Globus. Everytime you use Globus, you need to start the client on the cluster in order to activate it as an endpoint:
+<code>./globusconnectpersonal -start</code></p>
+<p>Then you should be able to use your cluster account from the Globus web interface in your browser and browse the data from the collection name you provided in step 5.</p>
+<p>Extra tip: If you want the program to run in the background without the session on, you can try using the <code>nohup ./globusconnectpersonal -start &amp;</code> command.</p>
+<p>Your endpoint will be online on Globus as long as the process is running in the background without ssh-ing your server.</p>
+<p>To kill the process, find the PID of your process:</p>
+<p><code>ps aux | grep globusconnectpersonal</code></p>
+<p><code>kill -9 PID</code></p>
+<h2>Thanks</h2>
+<p>A collarborator of mine, IT support for Oxford clusters - Glamdring and Globus.</p>
+
+
+<div id="updated-at">
+  <span>Updated at 2023-06-21 13:08:21</span>
+</div>
+</main>
+    
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt;&lt; Home</a>
+    
+    <a href="title-index.html#i53">&lt;&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;&gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    Author: Yinan
+    
+    | LICENSE <a href="LICENSE.txt">CC0-1.0</a>
+    | RSS <a href="atom.xml">atom.xml</a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
