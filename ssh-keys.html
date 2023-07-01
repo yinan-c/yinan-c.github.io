@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>How to setup SSH keys for GitHub and Remote servers? - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+    <main>
+
+<h1>How to setup SSH keys for GitHub and Remote servers?</h1>
+<h2>Why using SSH keys?</h2>
+<ul>
+<li>When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.</li>
+<li>SSH keys make it possible to securely connect to servers without having to type password every time.</li>
+</ul>
+<h2>Method 1: Using ssh-keygen</h2>
+<h3>Generate the SSH keys on your local machine</h3>
+<p>On your local machine terminal, run:</p>
+<p><code>ssh-keygen -t rsa -b 2048</code></p>
+<p>You will be prompted to choose a passphrase for the keys as following. Please be sure to enter a passphrase. This is the password that will protect your keys. It can be a sentence with spaces between the words. Be sure to use a combination of lower and upper case letters, numbers and punctuation marks.</p>
+<pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/localuser/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter your passphrase here
+</code></pre>
+<h3>Copy the public key to the remote server or GitHub</h3>
+<ul>
+<li>On your local machine, run following command to transfer the generated public key to remote server:</li>
+</ul>
+<p><code>scp ~/.ssh/id_rsa.pub username@remote.server:~/.ssh/temp.pub</code></p>
+<ul>
+<li>SSH to your remote server,</li>
+</ul>
+<p><code>ssh username@remote.server</code></p>
+<ul>
+<li>On your remote server, append the public key to <code>~/.ssh/authorized_keys</code>:</li>
+</ul>
+<pre><code>cat ~/.ssh/temp.pub &gt;&gt; .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys &amp;&amp; rm .ssh/temp.pub
+</code></pre>
+<ul>
+<li>For adding SSH keys to GitHub, login to <a href="https://github.com/settings/keys">GitHub SSH keys</a>.</li>
+</ul>
+<p>Copy and Paste your public key to both Authentication Keys and Signing keys. (So that all your commits will be verified)</p>
+<ul>
+<li>Now connecting with SSH from your local machine to remote server will now ask for a passphrase instead of a password.</li>
+</ul>
+<h3>Activate the SSH agent on your local machine</h3>
+<p>You will now need to set up the SSH agent on your local computer. The SSH agent will remember your passphrase and forward your key on, securely, to your remote server.</p>
+<p>Use <code>ssh-add</code> to add your passphrase to the SSH agent for the current login session. 
+On your local machine: run <code>ssh-add</code> and you will be prompted to enter your passphrase you just set up.</p>
+<p>Within the same login session, you can now ssh to your remote server without entering the passphrase or password.</p>
+<h2>Method 2: using 1Password SSH agent</h2>
+<p><a href="https://1password.com/">1Password</a> is a powerful password manager with easy-to-use auto-fill functionalities. I use it to store any sensitive documents and login credentials, to generate random passwords for all my online accounts.  (no affiliation or sponsorship, just a happy user)</p>
+<blockquote>
+<p>For students, you can get 1-year 1Password subscription via the <a href="https://education.github.com/pack">GitHub Student Developer Pack - GitHub Education</a>.</p>
+</blockquote>
+<p>As an alternative method, you can generate SSH keys using 1Password or import your SSH keys from your local file (e.g. ~/.ssh/id_rsa).</p>
+<p>1Password will generate a public key automatically and store the public and private key-pair in your 1Password vault.</p>
+<p>Then what you need to do is quite similar with a few more steps:
+As tested in 1Password 8 in July 2023, these instructions will be automatically prompted in the 1Password client after you generate or import SSH keys, setting up SSH keys with 1Password is quite straightforward.</p>
+<ul>
+<li>Append the public key to ~/.ssh/authorized_keys or to upload your public key to GitHub.</li>
+<li>Turn on the 1Password SSH agent.</li>
+<li>Configure your SSH or Git client.</li>
+<li>Run any <code>ssh</code> or <code>git</code> and authorize the SSH request prompted by 1Password.</li>
+</ul>
+<p>Please refer to <a href="https://developer.1password.com/docs/ssh/get-started">official document</a> for a detailed step-by-step documentation.</p>
+<h2>References and further reading</h2>
+<p>[1] https://www.msi.umn.edu/support/faq/how-do-i-setup-ssh-keys</p>
+<p>[2] https://developer.1password.com/docs/ssh</p>
+
+
+<div id="updated-at">
+  <span>Updated at 2023-07-01 20:12:11</span>
+</div>
+</main>
+    
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt;&lt; Home</a>
+    
+    <a href="title-index.html#i48">&lt;&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;&gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    Author: Yinan
+    
+    | LICENSE <a href="LICENSE.txt">CC0-1.0</a>
+    | RSS <a href="atom.xml">atom.xml</a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
