@@ -12,6 +12,21 @@
 
   
   <entry>
+    <title>How to setup SSH keys for remote authentication?</title>
+    <link ref="alternate" href="yinan-c.github.io/ssh-keys.html" />
+    <id>ssh-keys</id>
+    <published>2023-07-01 19:55:37+01:00</published>
+    <updated>2023-07-01 19:59:50+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="text"># How to setup SSH keys for remote authentication?
+
+## Why using SSH keys?
+
+- When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.
+- SSH keys make it possible to securely connect t...</content>
+  </entry>
+  
+  <entry>
     <title>Setting up Globus endpoint for your servers</title>
     <link ref="alternate" href="yinan-c.github.io/globus-endpoint.html" />
     <id>globus-endpoint</id>
