@@ -12,13 +12,13 @@
 
   
   <entry>
-    <title>How to setup SSH keys for GitHub and Remote servers?</title>
+    <title>How to setup SSH keys for GitHub and remote servers?</title>
     <link ref="alternate" href="yinan-c.github.io/ssh-keys.html" />
     <id>ssh-keys</id>
     <published>2023-07-01 19:55:37+01:00</published>
-    <updated>2023-07-01 20:12:11+01:00</updated>
+    <updated>2023-07-04 18:43:16+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="text"># How to setup SSH keys for GitHub and Remote servers?
+    <content type="text"># How to setup SSH keys for GitHub and remote servers?
 
 ## Why using SSH keys?
 

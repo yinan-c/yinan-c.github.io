@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
 
     
-  <title>How to setup SSH keys for GitHub and Remote servers? - 1nan</title>
+  <title>How to setup SSH keys for GitHub and remote servers? - 1nan</title>
 
 
     
@@ -30,7 +30,7 @@
 
     <main>
 
-<h1>How to setup SSH keys for GitHub and Remote servers?</h1>
+<h1>How to setup SSH keys for GitHub and remote servers?</h1>
 <h2>Why using SSH keys?</h2>
 <ul>
 <li>When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.</li>
@@ -62,10 +62,6 @@ Enter your passphrase here
 chmod 600 .ssh/authorized_keys &amp;&amp; rm .ssh/temp.pub
 </code></pre>
 <ul>
-<li>For adding SSH keys to GitHub, login to <a href="https://github.com/settings/keys">GitHub SSH keys</a>.</li>
-</ul>
-<p>Copy and Paste your public key to both Authentication Keys and Signing keys. (So that all your commits will be verified)</p>
-<ul>
 <li>Now connecting with SSH from your local machine to remote server will now ask for a passphrase instead of a password.</li>
 </ul>
 <h3>Activate the SSH agent on your local machine</h3>
@@ -73,6 +69,25 @@ chmod 600 .ssh/authorized_keys &amp;&amp; rm .ssh/temp.pub
 <p>Use <code>ssh-add</code> to add your passphrase to the SSH agent for the current login session. 
 On your local machine: run <code>ssh-add</code> and you will be prompted to enter your passphrase you just set up.</p>
 <p>Within the same login session, you can now ssh to your remote server without entering the passphrase or password.</p>
+<h3>Sign your commits with SSH keys on GitHub</h3>
+<h4>Configure Git</h4>
+<p>We need to configure Git to let it know who we are by setting up our name and email address.</p>
+<pre><code>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;Your Email&quot;
+</code></pre>
+<p>Then we need to eanble GPG signing for Git commits and the format of the signature will be SSH keys.</p>
+<pre><code>git config --global commit.gpgsign true
+git config --global gpg.format ssh
+</code></pre>
+<p>Then we want to tell Git to use the key we just generated locally and uploaded to GitHub.</p>
+<p>List your public SSH keys with <code>ssh-add -L</code> and copy the key you just generated.</p>
+<p>Then set our signing key in Git to the key we just copied.</p>
+<pre><code>git config --global user.signingkey &lt;paste your key here&gt;
+</code></pre>
+<p>Your commits will now be signed with your SSH key. you can test it by making a commit and checking the signature with <code>git log --show-signature</code>.</p>
+<h4>Add SSH key to GitHub</h4>
+<p>To sign your pushed commits on GitHub so that your commits will be marked as verified, you need to add your public SSH key to GitHub.</p>
+<p>Login to <a href="https://github.com/settings/keys">GitHub SSH keys</a>, copy and Paste your public key to both Authentication Keys and Signing keys.</p>
 <h2>Method 2: using 1Password SSH agent</h2>
 <p><a href="https://1password.com/">1Password</a> is a powerful password manager with easy-to-use auto-fill functionalities. I use it to store any sensitive documents and login credentials, to generate random passwords for all my online accounts.  (no affiliation or sponsorship, just a happy user)</p>
 <blockquote>
@@ -85,17 +100,18 @@ As tested in 1Password 8 in July 2023, these instructions will be automatically 
 <ul>
 <li>Append the public key to ~/.ssh/authorized_keys or to upload your public key to GitHub.</li>
 <li>Turn on the 1Password SSH agent.</li>
-<li>Configure your SSH or Git client.</li>
+<li>Configure your SSH or Git client, similar to Method 1, but 1Password will automatically modify the configuration for you. (Be sure to backup your <code>~/.ssh/config</code> and <code>~/gitconfig</code> file before you let 1Password overwrite them.)</li>
 <li>Run any <code>ssh</code> or <code>git</code> and authorize the SSH request prompted by 1Password.</li>
 </ul>
 <p>Please refer to <a href="https://developer.1password.com/docs/ssh/get-started">official document</a> for a detailed step-by-step documentation.</p>
 <h2>References and further reading</h2>
-<p>[1] https://www.msi.umn.edu/support/faq/how-do-i-setup-ssh-keys</p>
-<p>[2] https://developer.1password.com/docs/ssh</p>
+<p>[1] <a href="https://www.msi.umn.edu/support/faq/how-do-i-setup-ssh-keys">How do I setup SSH keys? - Minnesota Supercomputing Institute</a></p>
+<p>[2] <a href="https://developer.1password.com/docs/ssh">1Password document</a></p>
+<p>[3] <a href="https://thenewstack.io/how-to-sign-git-commits-with-an-ssh-key/">How to Sign git Commits with an SSH key - Jack Wallen</a></p>
 
 
 <div id="updated-at">
-  <span>Updated at 2023-07-01 20:12:11</span>
+  <span>Updated at 2023-07-04 18:43:16</span>
 </div>
 </main>
     
