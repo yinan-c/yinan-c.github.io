@@ -48,15 +48,14 @@ Enter your passphrase here
 </code></pre>
 <h3>Copy the public key to the remote server or GitHub</h3>
 <ul>
-<li>On your local machine, run following command to transfer the generated public key to remote server:</li>
-</ul>
-<p><code>scp ~/.ssh/id_rsa.pub username@remote.server:~/.ssh/temp.pub</code></p>
-<ul>
-<li>SSH to your remote server,</li>
-</ul>
-<p><code>ssh username@remote.server</code></p>
-<ul>
-<li>On your remote server, append the public key to <code>~/.ssh/authorized_keys</code>:</li>
+<li><p>On your local machine, run following command to transfer the generated public key to remote server:
+<code>scp ~/.ssh/id_rsa.pub username@remote.server:~/.ssh/temp.pub</code></p>
+</li>
+<li><p>SSH to your remote server,
+<code>ssh username@remote.server</code></p>
+</li>
+<li><p>On your remote server, append the public key to <code>~/.ssh/authorized_keys</code>:</p>
+</li>
 </ul>
 <pre><code>cat ~/.ssh/temp.pub &gt;&gt; .ssh/authorized_keys
 chmod 600 .ssh/authorized_keys &amp;&amp; rm .ssh/temp.pub
@@ -66,7 +65,7 @@ chmod 600 .ssh/authorized_keys &amp;&amp; rm .ssh/temp.pub
 </ul>
 <h3>Activate the SSH agent on your local machine</h3>
 <p>You will now need to set up the SSH agent on your local computer. The SSH agent will remember your passphrase and forward your key on, securely, to your remote server.</p>
-<p>Use <code>ssh-add</code> to add your passphrase to the SSH agent for the current login session. 
+<p>Use <code>ssh-add</code> to add your passphrase to the SSH agent for the current login session.
 On your local machine: run <code>ssh-add</code> and you will be prompted to enter your passphrase you just set up.</p>
 <p>Within the same login session, you can now ssh to your remote server without entering the passphrase or password.</p>
 <h3>Sign your commits with SSH keys on GitHub</h3>

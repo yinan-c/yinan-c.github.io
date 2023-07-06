@@ -18,12 +18,11 @@
     <published>2023-07-01 19:55:37+01:00</published>
     <updated>2023-07-04 19:09:21+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="text"># How to setup SSH keys for GitHub and remote servers?
-
-## Why using SSH keys?
-
-- When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.
-- SSH keys make it possible to securely conne...</content>
+    <content type="text">&lt;h1&gt;How to setup SSH keys for GitHub and remote servers?&lt;/h1&gt;
+&lt;h2&gt;Why using SSH keys?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
+&lt;li&gt;SSH keys make it p...</content>
   </entry>
   
   <entry>
@@ -33,11 +32,9 @@
     <published>2023-06-16 16:12:43+01:00</published>
     <updated>2023-06-21 13:08:21+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="text"># Setting up Globus endpoint for your servers
-
-Yinan, June 2023
-
-This instruction is for setting up a [Globus](https://app.globus.org/) endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on you...</content>
+    <content type="text">&lt;h1&gt;Setting up Globus endpoint for your servers&lt;/h1&gt;
+&lt;p&gt;Yinan, June 2023&lt;/p&gt;
+&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle,...</content>
   </entry>
   
   <entry>
@@ -47,15 +44,11 @@ This instruction is for setting up a [Globus](https://app.globus.org/) endpoint 
     <published>2023-06-19 17:35:38+01:00</published>
     <updated>2023-06-19 18:03:08+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="text"># My Open-Source Projects
-
-## [Alfred](https://www.alfredapp.com/) Workflows
-
-### [Easy Homebrew](https://github.com/yinan-c/alfred-homebrew)
-
-- An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.
-
-### [GitHu...</content>
+    <content type="text">&lt;h1&gt;My Open-Source Projects&lt;/h1&gt;
+&lt;h2&gt;&lt;a href=&#34;https://www.alfredapp.com/&#34;&gt;Alfred&lt;/a&gt; Workflows&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-homebrew&#34;&gt;Easy Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;An Alfred workflow for you to easy brew on Alfred -- Search, get de...</content>
   </entry>
   
   <entry>
@@ -65,15 +58,12 @@ This instruction is for setting up a [Globus](https://app.globus.org/) endpoint 
     <published>2023-06-18 18:59:53+01:00</published>
     <updated>2023-06-19 17:57:25+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="text"># Hello World
-
-## 我是谁？
-我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。
-
-## 为什么写博客？
-回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。
-
-博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过...</content>
+    <content type="text">&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;h2&gt;我是谁？&lt;/h2&gt;
+&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
+&lt;h2&gt;为什么写博客？&lt;/h2&gt;
+&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，...</content>
   </entry>
   
   <entry>
@@ -83,11 +73,11 @@ This instruction is for setting up a [Globus](https://app.globus.org/) endpoint 
     <published>2023-06-19 17:35:38+01:00</published>
     <updated>2023-06-19 17:52:12+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="text"># About Me
-
-- Email: [yinan.email@gmail.com](mailto:yinan.email@gmail.com)
-- GitHub: [yinan-c](https://github.com/yinan-c)
-</content>
+    <content type="text">&lt;h1&gt;About Me&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;yinan.email@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/yinan-c&#34;&gt;yinan-c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
   </entry>
   
 
