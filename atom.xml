@@ -3,7 +3,7 @@
 
   <title>1nan</title>
   <link ref="self" href=""/>
-  <link ref="alternate" href="yinan-c.github.io/"/>
+  <link ref="alternate" href="yinan.me/"/>
   <updated></updated>
   <author>
     <name>Yinan</name>
@@ -13,7 +13,7 @@
   
   <entry>
     <title>How to setup SSH keys for GitHub and remote servers?</title>
-    <link ref="alternate" href="yinan-c.github.io/ssh-keys.html" />
+    <link ref="alternate" href="yinan.me/ssh-keys.html" />
     <id>ssh-keys</id>
     <published>2023-07-01 19:55:37+01:00</published>
     <updated>2023-07-04 19:09:21+01:00</updated>
@@ -27,7 +27,7 @@
   
   <entry>
     <title>Setting up Globus endpoint for your servers</title>
-    <link ref="alternate" href="yinan-c.github.io/globus-endpoint.html" />
+    <link ref="alternate" href="yinan.me/globus-endpoint.html" />
     <id>globus-endpoint</id>
     <published>2023-06-16 16:12:43+01:00</published>
     <updated>2023-06-21 13:08:21+01:00</updated>
@@ -39,7 +39,7 @@
   
   <entry>
     <title>My Open-Source Projects</title>
-    <link ref="alternate" href="yinan-c.github.io/my-open-source.html" />
+    <link ref="alternate" href="yinan.me/my-open-source.html" />
     <id>my-open-source</id>
     <published>2023-06-19 17:35:38+01:00</published>
     <updated>2023-06-19 18:03:08+01:00</updated>
@@ -53,7 +53,7 @@
   
   <entry>
     <title>Hello World</title>
-    <link ref="alternate" href="yinan-c.github.io/hello-world.html" />
+    <link ref="alternate" href="yinan.me/hello-world.html" />
     <id>hello-world</id>
     <published>2023-06-18 18:59:53+01:00</published>
     <updated>2023-06-19 17:57:25+01:00</updated>
@@ -68,7 +68,7 @@
   
   <entry>
     <title>About Me</title>
-    <link ref="alternate" href="yinan-c.github.io/about.html" />
+    <link ref="alternate" href="yinan.me/about.html" />
     <id>about</id>
     <published>2023-06-19 17:35:38+01:00</published>
     <updated>2023-06-19 17:52:12+01:00</updated>
