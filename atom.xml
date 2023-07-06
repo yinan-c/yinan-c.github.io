@@ -22,7 +22,78 @@
 &lt;h2&gt;Why using SSH keys?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
-&lt;li&gt;SSH keys make it p...</content>
+&lt;li&gt;SSH keys make it possible to securely connect to servers without having to type password every time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Method 1: Using ssh-keygen&lt;/h2&gt;
+&lt;h3&gt;Generate the SSH keys on your local machine&lt;/h3&gt;
+&lt;p&gt;On your local machine terminal, run: &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -b 2048&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will be prompted to choose a passphrase for the keys as following. Please be sure to enter a passphrase. This is the password that will protect your keys. It can be a sentence with spaces between the words. Be sure to use a combination of lower and upper case letters, numbers and punctuation marks.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Generating public/private rsa key pair.
+Enter file in which to save the key (/home/localuser/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter your passphrase here&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Copy the public key to the remote server or GitHub&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;On your local machine, run following command to transfer the generated public key to remote server:
+&lt;code&gt;scp ~/.ssh/id_rsa.pub username@remote.server:~/.ssh/temp.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SSH to your remote server,
+&lt;code&gt;ssh username@remote.server&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On your remote server, append the public key to &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;:
+&lt;code&gt;cat ~/.ssh/temp.pub &amp;gt;&amp;gt; .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys &amp;amp;&amp;amp; rm .ssh/temp.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now connecting with SSH from your local machine to remote server will now ask for a passphrase instead of a password. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Activate the SSH agent on your local machine&lt;/h3&gt;
+&lt;p&gt;You will now need to set up the SSH agent on your local computer. The SSH agent will remember your passphrase and forward your key on, securely, to your remote server.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;ssh-add&lt;/code&gt; to add your passphrase to the SSH agent for the current login session. 
+On your local machine: run &lt;code&gt;ssh-add&lt;/code&gt; and you will be prompted to enter your passphrase you just set up.&lt;/p&gt;
+&lt;p&gt;Within the same login session, you can now ssh to your remote server without entering the passphrase or password.&lt;/p&gt;
+&lt;h3&gt;Sign your commits with SSH keys on GitHub&lt;/h3&gt;
+&lt;h4&gt;Configure Git&lt;/h4&gt;
+&lt;p&gt;We need to configure Git to let it know who we are by setting up our name and email address.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --global user.name &#34;Your Name&#34;
+git config --global user.email &#34;Your Email&#34;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then we need to eanble GPG signing for Git commits and the format of the signature will be SSH keys.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --global commit.gpgsign true
+git config --global gpg.format ssh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then we want to tell Git to use the key we just generated locally and uploaded to GitHub.&lt;/p&gt;
+&lt;p&gt;List your public SSH keys with &lt;code&gt;ssh-add -L&lt;/code&gt; and copy the key you just generated. &lt;/p&gt;
+&lt;p&gt;Then set our signing key in Git to the key we just copied.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --global user.signingkey &amp;lt;paste your key here&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Your commits will now be signed with your SSH key. you can test it by making a commit and checking the signature with &lt;code&gt;git log --show-signature&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Add SSH key to GitHub&lt;/h4&gt;
+&lt;p&gt;To sign your pushed commits on GitHub so that your commits will be marked as verified, you need to add your public SSH key to GitHub.&lt;/p&gt;
+&lt;p&gt;Login to &lt;a href=&#34;https://github.com/settings/keys&#34;&gt;GitHub SSH keys&lt;/a&gt;, copy and Paste your public key to both Authentication Keys and Signing keys. &lt;/p&gt;
+&lt;h2&gt;Method 2: using 1Password SSH agent&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt; is a powerful password manager with easy-to-use auto-fill functionalities. I use it to store any sensitive documents and login credentials, to generate random passwords for all my online accounts.  (no affiliation or sponsorship, just a happy user)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For students, you can get 1-year 1Password subscription via the &lt;a href=&#34;https://education.github.com/pack&#34;&gt;GitHub Student Developer Pack - GitHub Education&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As an alternative method, you can generate SSH keys using 1Password or import your SSH keys from your local file (e.g. ~/.ssh/id_rsa). &lt;/p&gt;
+&lt;p&gt;1Password will generate a public key automatically and store the public and private key-pair in your 1Password vault.&lt;/p&gt;
+&lt;p&gt;Then what you need to do is quite similar with a few more steps:
+As tested in 1Password 8 in July 2023, these instructions will be automatically prompted in the 1Password client after you generate or import SSH keys, setting up SSH keys with 1Password is quite straightforward.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Append the public key to ~/.ssh/authorized_keys or to upload your public key to GitHub.&lt;/li&gt;
+&lt;li&gt;Turn on the 1Password SSH agent.&lt;/li&gt;
+&lt;li&gt;Configure your SSH or Git client, similar to Method 1, but 1Password will automatically modify the configuration for you. (Be sure to backup your &lt;code&gt;~/.ssh/config&lt;/code&gt; and &lt;code&gt;~/gitconfig&lt;/code&gt; file before you let 1Password overwrite them.)&lt;/li&gt;
+&lt;li&gt;Run any &lt;code&gt;ssh&lt;/code&gt; or &lt;code&gt;git&lt;/code&gt; and authorize the SSH request prompted by 1Password.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;official document&lt;/a&gt; for a detailed step-by-step documentation.&lt;/p&gt;
+&lt;h2&gt;References and further reading&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a href=&#34;https://www.msi.umn.edu/support/faq/how-do-i-setup-ssh-keys&#34;&gt;How do I setup SSH keys? - Minnesota Supercomputing Institute&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;SSH &amp;amp; Git - 1Password docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href=&#34;https://developer.1password.com/docs/ssh/git-commit-signing&#34;&gt;Sign Git commits with SSH - 1Password docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] &lt;a href=&#34;https://thenewstack.io/how-to-sign-git-commits-with-an-ssh-key/&#34;&gt;How to Sign git Commits with an SSH key - Jack Wallen&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -34,7 +105,39 @@
     <author><name>Yinan</name></author>
     <content type="text">&lt;h1&gt;Setting up Globus endpoint for your servers&lt;/h1&gt;
 &lt;p&gt;Yinan, June 2023&lt;/p&gt;
-&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle,...</content>
+&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With Globus, you can easily, reliably and securely move, share, &amp;amp; discover data no matter where it lives – from a supercomputer, lab cluster, tape archive, public cloud or laptop. Access and manage all your data, even protected data, from anywhere, using your existing identities, with just a web browser. &lt;a href=&#34;https://www.globus.org/what-we-do&#34;&gt;from Globus&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;1. Login to the cluster with trusted X11 forwarding enabled:&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ssh -YC username@hostname&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;2. Install Globus connect on the cluster.&lt;/h2&gt;
+&lt;p&gt;On servers that do not run GridFTP , you have to install the Globus Connect client software in your user space as:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
+tar xzf globusconnectpersonal-latest.tgz
+cd globusconnectpersonal-3.2.2/&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;3. Execute the globus client on cli mode as:&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;./globusconnectpersonal -setup --no-gui&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;4. A login url will be displayed on terminal&lt;/h2&gt;
+&lt;p&gt;Copy and paste it in your browser. Assuming that you already have a Globus account, login to your globus using the displayed url.&lt;/p&gt;
+&lt;h2&gt;5. Provide a label for future reference&lt;/h2&gt;
+&lt;p&gt;An authorization code will be displayed in your browser. Copy it and paste it on the cluster next to the prompt &lt;code&gt;Enter the auth code:&lt;/code&gt;. Then provide a name for this collection as &#34;Input a value for the Endpoint Name:&#34;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If everything went well then you should get a message &#34;setup completed successfully&#34;&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;6. Access $SCRATCH etc. (&lt;a href=&#34;https://github.com/Supercomputing/DailyTasks/wiki/Using-Globus-Online-from-the-command-line&#34;&gt;source&lt;/a&gt;)&lt;/h2&gt;
+&lt;p&gt;Now you only have access to files in $home, in order to access files in other places like SCRATCH, add the following lines in  &lt;code&gt;~/.globusonline/lta/config-paths&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/,0,1
+/path/to/directory,0,1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;code&gt;1&lt;/code&gt; means read/write permitted.
+From now on you can use the cluster to transfer data via Globus. Everytime you use Globus, you need to start the client on the cluster in order to activate it as an endpoint:
+&lt;code&gt;./globusconnectpersonal -start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then you should be able to use your cluster account from the Globus web interface in your browser and browse the data from the collection name you provided in step 5.&lt;/p&gt;
+&lt;p&gt;Extra tip: If you want the program to run in the background without the session on, you can try using the &lt;code&gt;nohup ./globusconnectpersonal -start &amp;amp;&lt;/code&gt; command. &lt;/p&gt;
+&lt;p&gt;Your endpoint will be online on Globus as long as the process is running in the background without ssh-ing your server.&lt;/p&gt;
+&lt;p&gt;To kill the process, find the PID of your process:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ps aux | grep globusconnectpersonal&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kill -9 PID&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Thanks&lt;/h2&gt;
+&lt;p&gt;A collarborator of mine, IT support for Oxford clusters - Glamdring and Globus.&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -48,7 +151,16 @@
 &lt;h2&gt;&lt;a href=&#34;https://www.alfredapp.com/&#34;&gt;Alfred&lt;/a&gt; Workflows&lt;/h2&gt;
 &lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-homebrew&#34;&gt;Easy Homebrew&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;An Alfred workflow for you to easy brew on Alfred -- Search, get de...</content>
+&lt;li&gt;An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-github-star&#34;&gt;GitHub Star&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This workflow allows you to search through your GitHub stared repositories. Download from the official &lt;a href=&#34;https://alfred.app/workflows/yinanc/github-star/&#34;&gt;Alfred Workflow Gallery&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-translate-it&#34;&gt;Translate It&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;An Alfred 5 workflow to translate text using OpenAI, DeepL, Google, Bing, Baidu and Youdao. This workflow also supports &lt;a href=&#34;https://www.alfredapp.com/universal-actions/&#34;&gt;Universal Actions&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content>
   </entry>
   
   <entry>
@@ -63,7 +175,14 @@
 &lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
 &lt;h2&gt;为什么写博客？&lt;/h2&gt;
 &lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，...</content>
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
+&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
+&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
+&lt;h2&gt;我会写些什么&lt;/h2&gt;
+&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
+&lt;h2&gt;博客用了什么&lt;/h2&gt;
+&lt;p&gt;本博客的文章用 Markdown 编写。
+喜欢Python，喜欢简单，所以采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;pyboke&lt;/a&gt; 生成静态网站，使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;</content>
   </entry>
   
   <entry>
