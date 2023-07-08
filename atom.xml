@@ -12,6 +12,19 @@
 
   
   <entry>
+    <title>Setup SSH keys for GitHub and remote servers</title>
+    <link ref="alternate" href="https://yinan.me/ssh-keys.html" />
+    <id>ssh-keys</id>
+    <published>2023-07-01 19:55:37+01:00</published>
+    <updated>2023-07-09 00:25:49+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;Why using SSH keys?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
+&lt;li&gt;SSH keys make it possible to securely connect to servers without having to type ...</content>
+  </entry>
+  
+  <entry>
     <title>Setting up Globus endpoint for your servers</title>
     <link ref="alternate" href="https://yinan.me/globus-endpoint.html" />
     <id>globus-endpoint</id>
@@ -45,19 +58,6 @@
 &lt;li&gt;Email: &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;yinan.email@gmail.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/yinan-c&#34;&gt;yinan-c&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>How to setup SSH keys for GitHub and remote servers?</title>
-    <link ref="alternate" href="https://yinan.me/ssh-keys.html" />
-    <id>ssh-keys</id>
-    <published>2023-07-01 19:55:37+01:00</published>
-    <updated>2023-07-04 19:09:21+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;Why using SSH keys?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
-&lt;li&gt;SSH keys make it possible to securely connect to servers without having to type ...</content>
   </entry>
   
   <entry>
