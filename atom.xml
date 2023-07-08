@@ -12,6 +12,18 @@
 
   
   <entry>
+    <title>Setting up Globus endpoint for your servers</title>
+    <link ref="alternate" href="https://yinan.me/globus-endpoint.html" />
+    <id>globus-endpoint</id>
+    <published>2023-06-16 16:12:43+01:00</published>
+    <updated>2023-07-09 00:10:04+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With Globus, you ca...</content>
+  </entry>
+  
+  <entry>
     <title>About</title>
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
@@ -46,18 +58,6 @@
 &lt;ul&gt;
 &lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
 &lt;li&gt;SSH keys make it possible to securely connect to servers without having to type ...</content>
-  </entry>
-  
-  <entry>
-    <title>Setting up Globus endpoint for your servers</title>
-    <link ref="alternate" href="https://yinan.me/globus-endpoint.html" />
-    <id>globus-endpoint</id>
-    <published>2023-06-16 16:12:43+01:00</published>
-    <updated>2023-06-21 13:08:21+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Yinan, June 2023&lt;/p&gt;
-&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.&lt;/p&gt;
-&lt;blockquote...</content>
   </entry>
   
   <entry>
