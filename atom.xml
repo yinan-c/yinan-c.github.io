@@ -12,11 +12,22 @@
 
   
   <entry>
-    <title>Contact Me</title>
+    <title>About</title>
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
     <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2023-07-07 15:37:21+01:00</updated>
+    <updated>2023-07-08 21:52:49+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
+&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsid...</content>
+  </entry>
+  
+  <entry>
+    <title>Contact Me</title>
+    <link ref="alternate" href="https://yinan.me/contact.html" />
+    <id>contact</id>
+    <published>2023-07-08 20:53:50+01:00</published>
+    <updated>2023-07-08 20:53:50+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;ul&gt;
 &lt;li&gt;Email: &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;yinan.email@gmail.com&lt;/a&gt;&lt;/li&gt;
