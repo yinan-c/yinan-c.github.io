@@ -42,6 +42,7 @@
 
     <main>
 
+
 <h1>About</h1>
 <p>Hi, I am Yinan, a PhD student in Physics.</p>
 <p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsidian</a>.</p>
@@ -66,12 +67,59 @@ for any purpose, even commercially.</li>
 </ul>
 
 
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 45%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+}
+
+#next-button {
+  float: right;
+}
+</style>
+
+
+<button class="nav-button" id="prev-button">
+  <a href="index.html"> Reached the top! Take me Home!</a>
+
+
+  <button class="nav-button" id="next-button">
+ <a href="index.html"> Reached the bottom! Take me Home!</a>
+  </button>
+
+
+<br>
+
 <div id="updated-at" style="display: flex; justify-content: space-between;">
   <span>Created on 2023-06-19</span>
   <span>Updated on 2023-07-08</span>
 </div>
-
-
 
 </main>
     
