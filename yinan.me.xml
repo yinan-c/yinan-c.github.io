@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                        <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+                        <channel>
+                        <title>1nan</title>
+                        <link>https://yinan.me/</link>
+                        
+                        <item>
+                        <title>Hello World</title>
+                        <link>https://yinan.me/hello-world.html</link>
+                        <guid>https://yinan.me/hello-world.html</guid>
+                        <content:encoded><![CDATA[
+                        <div> Summary: 这篇文章介绍了作者的个人背景和写博客的原因。作者名叫Yinan，目前在英国读博，专业是物理，本科在中科大学习物理。作者回顾自己过去的25年，虽然有记录和写笔记的爱好，但从未正式整理过自己的所见所思并发布出来。读博后，作者开始有意识地将工作记录和日常见闻记录成文档，成为自己在这个世界上存在的一点证明。作者认为博客是一个适合汇集自己见闻和想法的数字小岛。平时阅读和浏览很多信息，但很快就会忘记，而博客可以让这些信息有个记录下来的地方，积少成多。 <div>
+                        <h2>我是谁?</h2>
+<p>我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。</p>
+<h2>为什么写博客？</h2>
+<p>回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。</p>
+<p>博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们...
+                        ]]></content:encoded>
+                        <pubDate>2023-06-18 18:59:53+01:00</pubDate>
+                        </item>
+                        <item>
+                        <title>Setup SSH keys for GitHub and remote servers</title>
+                        <link>https://yinan.me/ssh-keys.html</link>
+                        <guid>https://yinan.me/ssh-keys.html</guid>
+                        <content:encoded><![CDATA[
+                        <div> Summary: 使用SSH密钥的原因:
+- 使用SSH密钥可以提供更安全的远程通信方式。
+- SSH密钥能够在连接服务器时实现安全连接，无需输入密码。
+- 相比使用密码登录，使用SSH密钥可以提供更高的安全性。
+- SSH密钥的使用可以防止密码被暴力破解和中间人攻击。
+- SSH密钥的工作原理是使用公钥和私钥的加密算法，确保只有拥有私钥的人才能进行身份认证。
+- 使用SSH密钥也可以简化远程连接过程，不需要每次输入密码进行身份验证。
+- SSH密钥可以在多个服务器之间共享，方便统一管理和维护。
+- 使用SSH密钥还可以实现双因素认证，提供更高的安全层级。 <div>
+                        <h2>Why using SSH keys?</h2>
+<ul>
+<li>When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.</li>
+<li>SSH keys make it possible to securely connect to servers without having to type ...
+                        ]]></content:encoded>
+                        <pubDate>2023-07-01 19:55:37+01:00</pubDate>
+                        </item>
+                        <item>
+                        <title>Setting up Globus endpoint for your servers</title>
+                        <link>https://yinan.me/globus-endpoint.html</link>
+                        <guid>https://yinan.me/globus-endpoint.html</guid>
+                        <content:encoded><![CDATA[
+                        
+                        <p>This instruction is for setting up a <a href="https://app.globus.org/">Globus</a> endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.</p>
+<blockquote>
+<p>With Globus, you ca...
+                        ]]></content:encoded>
+                        <pubDate>2023-06-16 16:12:43+01:00</pubDate>
+                        </item>
+                        <item>
+                        <title>About</title>
+                        <link>https://yinan.me/about.html</link>
+                        <guid>https://yinan.me/about.html</guid>
+                        <content:encoded><![CDATA[
+                        
+                        <p>Hi, I am Yinan, a PhD student in Physics.</p>
+<p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsid...
+                        ]]></content:encoded>
+                        <pubDate>2023-06-19 17:35:38+01:00</pubDate>
+                        </item>
+                        <item>
+                        <title>Contact Me</title>
+                        <link>https://yinan.me/contact.html</link>
+                        <guid>https://yinan.me/contact.html</guid>
+                        <content:encoded><![CDATA[
+                        
+                        <ul>
+<li>Email: <a href="mailto:yinan.email@gmail.com">yinan.email@gmail.com</a></li>
+<li>GitHub: <a href="https://github.com/yinan-c">yinan-c</a></li>
+</ul>
+                        ]]></content:encoded>
+                        <pubDate>2023-07-08 20:53:50+01:00</pubDate>
+                        </item>
+                        <item>
+                        <title>My Open-Source Projects</title>
+                        <link>https://yinan.me/my-open-source.html</link>
+                        <guid>https://yinan.me/my-open-source.html</guid>
+                        <content:encoded><![CDATA[
+                        
+                        <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
+<h3><a href="https://github.com/yinan-c/alfred-homebrew">Easy Homebrew</a></h3>
+<ul>
+<li>An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.<...
+                        ]]></content:encoded>
+                        <pubDate>2023-06-19 17:35:38+01:00</pubDate>
+                        </item>
+                        </channel>
+                        </rss>
