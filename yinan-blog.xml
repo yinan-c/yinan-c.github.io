@@ -7,7 +7,7 @@
                         <item>
                         <title>Hello World</title>
                         <link>https://yinan.me/hello-world.html</link>
-                        <guid>https://yinan.me/hello-world</guid>
+                        <guid>https://yinan.me/hello-world.html</guid>
                         <content:encoded><![CDATA[
                         <div> Summary: some text <div>
                         <h2>我是谁?</h2>
@@ -19,7 +19,7 @@
                         <item>
                         <title>Setup SSH keys for GitHub and remote servers</title>
                         <link>https://yinan.me/ssh-keys.html</link>
-                        <guid>https://yinan.me/ssh-keys</guid>
+                        <guid>https://yinan.me/ssh-keys.html</guid>
                         <content:encoded><![CDATA[
                         <div> Summary: some text <div>
                         <h2>Why using SSH keys?</h2>
@@ -30,7 +30,7 @@
                         <item>
                         <title>Setting up Globus endpoint for your servers</title>
                         <link>https://yinan.me/globus-endpoint.html</link>
-                        <guid>https://yinan.me/globus-endpoint</guid>
+                        <guid>https://yinan.me/globus-endpoint.html</guid>
                         <content:encoded><![CDATA[
                         
                         <p>This instruction is for setting up a <a href="https://app.globus.org/">Globus</a> endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.</p>
@@ -40,7 +40,7 @@
                         <item>
                         <title>About</title>
                         <link>https://yinan.me/about.html</link>
-                        <guid>https://yinan.me/about</guid>
+                        <guid>https://yinan.me/about.html</guid>
                         <content:encoded><![CDATA[
                         
                         <p>Hi, I am Yinan, a PhD student in Physics.</p>
@@ -49,7 +49,7 @@
                         <item>
                         <title>Contact Me</title>
                         <link>https://yinan.me/contact.html</link>
-                        <guid>https://yinan.me/contact</guid>
+                        <guid>https://yinan.me/contact.html</guid>
                         <content:encoded><![CDATA[
                         
                         <ul>
@@ -60,7 +60,7 @@
                         <item>
                         <title>My Open-Source Projects</title>
                         <link>https://yinan.me/my-open-source.html</link>
-                        <guid>https://yinan.me/my-open-source</guid>
+                        <guid>https://yinan.me/my-open-source.html</guid>
                         <content:encoded><![CDATA[
                         
                         <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
