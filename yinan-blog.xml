@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
                         <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
                         <channel>
-                        <title></title>
-                        <link></link>
+                        <title>1nan</title>
+                        <link>https://yinan.me/</link>
                         
                         <item>
                         <title>Hello World</title>
@@ -42,8 +42,7 @@
                         <link>https://yinan.me/about.html</link>
                         <guid>https://yinan.me/about.html</guid>
                         <content:encoded><![CDATA[
-                        <div> ChatGPT Summary: <p>Hi, I am Yinan, a PhD student in Physics.</p>
-<p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsid... <div>
+                        
                         <p>Hi, I am Yinan, a PhD student in Physics.</p>
 <p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsid...]]></content:encoded>
                         </item>
@@ -52,10 +51,7 @@
                         <link>https://yinan.me/contact.html</link>
                         <guid>https://yinan.me/contact.html</guid>
                         <content:encoded><![CDATA[
-                        <div> ChatGPT Summary: <ul>
-<li>Email: <a href="mailto:yinan.email@gmail.com">yinan.email@gmail.com</a></li>
-<li>GitHub: <a href="https://github.com/yinan-c">yinan-c</a></li>
-</ul> <div>
+                        
                         <ul>
 <li>Email: <a href="mailto:yinan.email@gmail.com">yinan.email@gmail.com</a></li>
 <li>GitHub: <a href="https://github.com/yinan-c">yinan-c</a></li>
@@ -66,10 +62,7 @@
                         <link>https://yinan.me/my-open-source.html</link>
                         <guid>https://yinan.me/my-open-source.html</guid>
                         <content:encoded><![CDATA[
-                        <div> ChatGPT Summary: <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
-<h3><a href="https://github.com/yinan-c/alfred-homebrew">Easy Homebrew</a></h3>
-<ul>
-<li>An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.<... <div>
+                        
                         <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
 <h3><a href="https://github.com/yinan-c/alfred-homebrew">Easy Homebrew</a></h3>
 <ul>
