@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-			<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+                        <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
                         <channel>
                         <title></title>
                         <link></link>
@@ -9,7 +9,8 @@
                         <link>https://yinan.me/hello-world.html</link>
                         <guid>https://yinan.me/hello-world.html</guid>
                         <content:encoded><![CDATA[
-                        <div> ChatGPT Summary: some text <div> <h2>我是谁?</h2>
+                        <div> ChatGPT Summary: some text <div>
+                        <h2>我是谁?</h2>
 <p>我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。</p>
 <h2>为什么写博客？</h2>
 <p>回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。</p>
@@ -20,7 +21,8 @@
                         <link>https://yinan.me/ssh-keys.html</link>
                         <guid>https://yinan.me/ssh-keys.html</guid>
                         <content:encoded><![CDATA[
-                        <div> ChatGPT Summary: some text <div> <h2>Why using SSH keys?</h2>
+                        <div> ChatGPT Summary: some text <div>
+                        <h2>Why using SSH keys?</h2>
 <ul>
 <li>When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.</li>
 <li>SSH keys make it possible to securely connect to servers without having to type ...]]></content:encoded>
@@ -30,9 +32,8 @@
                         <link>https://yinan.me/globus-endpoint.html</link>
                         <guid>https://yinan.me/globus-endpoint.html</guid>
                         <content:encoded><![CDATA[
-                        <div> ChatGPT Summary: <p>This instruction is for setting up a <a href="https://app.globus.org/">Globus</a> endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.</p>
-<blockquote>
-<p>With Globus, you ca... <div> <p>This instruction is for setting up a <a href="https://app.globus.org/">Globus</a> endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.</p>
+                        
+                        <p>This instruction is for setting up a <a href="https://app.globus.org/">Globus</a> endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.</p>
 <blockquote>
 <p>With Globus, you ca...]]></content:encoded>
                         </item>
@@ -42,7 +43,8 @@
                         <guid>https://yinan.me/about.html</guid>
                         <content:encoded><![CDATA[
                         <div> ChatGPT Summary: <p>Hi, I am Yinan, a PhD student in Physics.</p>
-<p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsid... <div> <p>Hi, I am Yinan, a PhD student in Physics.</p>
+<p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsid... <div>
+                        <p>Hi, I am Yinan, a PhD student in Physics.</p>
 <p>Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called <a href="https://obsidian.md/">Obsid...]]></content:encoded>
                         </item>
                         <item>
@@ -53,7 +55,8 @@
                         <div> ChatGPT Summary: <ul>
 <li>Email: <a href="mailto:yinan.email@gmail.com">yinan.email@gmail.com</a></li>
 <li>GitHub: <a href="https://github.com/yinan-c">yinan-c</a></li>
-</ul> <div> <ul>
+</ul> <div>
+                        <ul>
 <li>Email: <a href="mailto:yinan.email@gmail.com">yinan.email@gmail.com</a></li>
 <li>GitHub: <a href="https://github.com/yinan-c">yinan-c</a></li>
 </ul>]]></content:encoded>
@@ -66,7 +69,8 @@
                         <div> ChatGPT Summary: <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
 <h3><a href="https://github.com/yinan-c/alfred-homebrew">Easy Homebrew</a></h3>
 <ul>
-<li>An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.<... <div> <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
+<li>An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.<... <div>
+                        <h2><a href="https://www.alfredapp.com/">Alfred</a> Workflows</h2>
 <h3><a href="https://github.com/yinan-c/alfred-homebrew">Easy Homebrew</a></h3>
 <ul>
 <li>An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.<...]]></content:encoded>
