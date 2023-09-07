@@ -12,6 +12,19 @@
 
   
   <entry>
+    <title>AI 总结 RSS Feeds</title>
+    <link ref="alternate" href="https://yinan.me/rss-gpt.html" />
+    <id>rss-gpt</id>
+    <published>2023-09-07 14:21:35+01:00</published>
+    <updated>2023-09-07 18:28:45+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;项目地址&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;信息爆炸的焦虑&lt;/h2&gt;
+&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的内容聚合在一个地方集中阅读。但不加筛选，富含噪音的 RSS 在订阅中堆积也很让人疲惫不堪。每天几百几千条未读产生，如果强迫症和焦虑症患者强求 RSS inbox-zero 的话，久而久之会浪费很多的时间执着...</content>
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link ref="alternate" href="https://yinan.me/hello-world.html" />
     <id>hello-world</id>
@@ -23,19 +36,6 @@
 &lt;h2&gt;为什么写博客？&lt;/h2&gt;
 &lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
 &lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们...</content>
-  </entry>
-  
-  <entry>
-    <title>AI 总结 RSS Feeds</title>
-    <link ref="alternate" href="https://yinan.me/rss-gpt.html" />
-    <id>rss-gpt</id>
-    <published>2023-09-07 14:21:35+01:00</published>
-    <updated>2023-09-07 15:06:42+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;项目地址&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;信息爆炸的焦虑&lt;/h2&gt;
-&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的内容聚合在一个地方集中阅读。但不加筛选，富含噪音的 RSS 在订阅中堆积也很让人疲惫不堪。每天几百几千条未读产生，如果强迫症和焦虑症患者强求 RSS inbox-zero 的话，久而久之会浪费很多的时间执着...</content>
   </entry>
   
   <entry>
