@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
     <id>rss-gpt-manual-en</id>
     <published>2023-09-11 18:14:50+01:00</published>
-    <updated>2023-09-11 18:17:54+01:00</updated>
+    <updated>2023-09-11 18:43:21+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;ul&gt;
@@ -35,13 +35,13 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
     <id>rss-gpt-manual-zh</id>
     <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-09-11 18:17:54+01:00</updated>
+    <updated>2023-09-11 18:43:21+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址以及功能介绍&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yian-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT介绍&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-en.html&#34;&gt;English manual&lt;/a&gt;&lt;/li&gt;...</content>
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-en.html&#34;&gt;English manual&lt;/a&gt;&lt;/li...</content>
   </entry>
   
   <entry>
@@ -49,13 +49,19 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt.html" />
     <id>rss-gpt</id>
     <published>2023-09-07 14:21:35+01:00</published>
-    <updated>2023-09-11 18:14:50+01:00</updated>
+    <updated>2023-09-11 18:43:21+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址与配置步骤&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;RSS-GPT 使用指南&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;信息爆炸的焦虑&lt;/h2&gt;
-&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的内容聚合在一个地方集中阅读。但...</content>
+&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你...</content>
   </entry>
   
   <entry>
