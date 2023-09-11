@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>RSS-GPT Configuration - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2023-09-11 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+<h1>RSS-GPT Configuration</h1>
+<h2>Introduction</h2>
+<ul>
+<li><p><a href="https://github.com/yinan-c/RSS-GPT">yinan-c/RSS-GPT</a></p>
+</li>
+<li><p><a href="https://yinan-c.github.io/rss-gpt.html">RSS-GPT Introduction</a></p>
+</li>
+<li><p><a href="https://yinan-c.github.io/rss-gpt-manual-zh.html">中文指南</a></p>
+</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li>GitHub account</li>
+<li>OpenAI API Key (get it at <a href="https://platform.openai.com/account/api-keys">OpenAI website</a>)</li>
+</ul>
+<h2>1. GitHub Actions deployment</h2>
+<p>The main idea is to use GitHub Actions to run Python scripts periodically, the script calls OpenAI API to generate summaries and append them to original RSS entries, then generate a new xml file, and commit it to the repo.</p>
+<p>All contents in the repo folder are deployed on GitHub Pages via GitHub Actions, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.</p>
+<p>If you don't want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with raw.githubusercontent.com), e.g. the xml file URL of this repo is <a href="https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml">https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml</a>.</p>
+<h3>1.1 Fork the project</h3>
+<p>Go to the project <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a> and fork it to your own repo.</p>
+<h3>1.2 Three Repo Secrets</h3>
+<h4>U_NAME</h4>
+<p>The username used for <code>git commit</code>, usually your GitHub username. Your username is the last part of your GitHub homepage URL, e.g. https://github.com/yinan-c, the username is yinan-c.</p>
+<h4>U_EMAIL</h4>
+<p>The email used for <code>git commit</code>, it's the email you used to register GitHub, can be found in <a href="https://github.com/settings/emails">GitHub Settings page</a>.</p>
+<h4>WORK_TOKEN</h4>
+<p>Since the project involves using scripts to operate repo contents, permissions are needed for the script to modify files in the repo. Apply for a Repository Secret token:</p>
+<ul>
+<li><p>Click your avatar at top right of GitHub homepage, choose &quot;Settings&quot; to go to settings page.</p>
+</li>
+<li><p>Click &quot;Developer settings&quot; at bottom of left sidebar.</p>
+</li>
+<li><p>Click &quot;Personal access tokens&quot; under &quot;Developer settings&quot;, choose &quot;Tokens (classic)&quot;, click &quot;Generate new token (classic)&quot; at top left.</p>
+</li>
+<li><p>Configure the new token:</p>
+</li>
+</ul>
+<p><img src="pics/token-set.png" alt="" /></p>
+<ul>
+<li><p>Note: RSS-GPT</p>
+</li>
+<li><p>Select scopes: Check all options under &quot;repo&quot; and &quot;workflow&quot;</p>
+</li>
+<li><p>Expiration: Choose &quot;No expiration&quot;</p>
+</li>
+<li><p>Click &quot;Generate token&quot; at bottom.</p>
+</li>
+</ul>
+<p><img src="pics/token-copy.png" alt="" /></p>
+<p><strong>Copy the token after clicking, make sure to copy it on this page, you won't be able to see the token after leaving this page. If you miss it, you'll have to generate a new one following the steps above.</strong></p>
+<h3>1.3 Set Repository Secrets</h3>
+<p>Go to your forked repo, click &quot;Settings&quot; in top menu bar, then click &quot;Secrets and variables&quot; in left sidebar, choose &quot;Actions&quot;, then click &quot;New repository secret&quot; at top right.</p>
+<p><img src="pics/secrets.png" alt="" /></p>
+<ul>
+<li><p>Add U_NAME, U_EMAIL, WORK_TOKEN as secrets to the repo, can only add one at a time:</p>
+<ul>
+<li><p>Name: U_NAME, U_EMAIL, WORK_TOKEN</p>
+</li>
+<li><p>Value: Your username, email, and the copied token</p>
+</li>
+<li><p>Click &quot;Add secret&quot;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.4 Grant required permissions</h3>
+<p>Enable GitHub Actions access to Pages:</p>
+<p><img src="pics/pages.png" alt="" /></p>
+<ul>
+<li><p>Click &quot;Settings&quot;</p>
+</li>
+<li><p>Find &quot;Pages&quot; under &quot;Code and automation&quot; in left sidebar and click in</p>
+</li>
+<li><p>Set &quot;Source&quot; as &quot;GitHub Actions&quot;, then click &quot;Save&quot;</p>
+</li>
+</ul>
+<h2>2. Configure RSS sources to merge, filter and summarize</h2>
+<p>Go to the project, click &quot;Code&quot; in top menu bar, open the &quot;config.ini&quot; file, click the pencil icon at top right to edit code and configure your desired sources. Don't change the first two lines.</p>
+<pre><code>[cfg] 
+base = &quot;rss/&quot;
+</code></pre>
+<p>Then modify the target language, number of keywords, and summary length in the next 3 lines. The following code is feed-specific configs, format is:</p>
+<ul>
+<li><p><code>[source001]</code>: Feed ID, starts from 001 and increments, make sure IDs are unique to avoid errors.</p>
+</li>
+<li><p><code>name = &quot;brett-terpstra&quot;</code>: Name of the generated feed, only letters (a-z A-Z), numbers (0-9), (<code>-</code>,<code>_</code>,<code>.</code>,<code>~</code>) allowed.</p>
+</li>
+<li><p><code>url = &quot;https://brett.trpstra.net/brettterpstra&quot;</code>: Original RSS feed URL, can contain multiple feeds separated by comma.</p>
+</li>
+<li><p><code>max = &quot;10&quot;</code>: Number of articles to summarize between refreshes. E.g. 10 means summarizing the latest 10 articles on each refresh. 0 means no summarization, returning original entries.</p>
+</li>
+</ul>
+<p>Next are optional filter configs, note all 3 must be set together or not set:</p>
+<ul>
+<li><p><code>filter_apply = &quot;title&quot;</code>: Apply filter on &quot;title&quot;, &quot;article&quot; (content) or &quot;link&quot;.</p>
+</li>
+<li><p><code>filter_type = &quot;exclude&quot;</code>: Filter type: &quot;include&quot;, &quot;exclude&quot;, &quot;regex match&quot; or &quot;regex not match&quot;.</p>
+</li>
+<li><p><code>filter_rule = &quot;TextExpander&quot;</code>: Filter text or regex.</p>
+</li>
+</ul>
+<p>Click &quot;Commit changes&quot; at bottom to submit edits.</p>
+<h2>3. Modify README output</h2>
+<ul>
+<li><p>Click &quot;Code&quot;, open &quot;main.py&quot; file.</p>
+</li>
+<li><p>Click the pencil icon to edit code, go to line 289 and modify &quot;https://yinan-c.github.io/&quot; to your own GitHub Pages URL, change yinan-c to your username.</p>
+</li>
+<li><p>(Optional) Modify prompt at lines 113-129 based on your needs for better summaries.</p>
+</li>
+<li><p>Click &quot;Commit changes&quot; at bottom to submit edits.</p>
+</li>
+</ul>
+<h2>4. Test GitHub Actions</h2>
+<p>Go to the project, click &quot;Actions&quot; in top menu bar, click &quot;cron_job&quot; and choose &quot;Run workflow&quot;.</p>
+<p>Green check mark means successful run, red x means failure, usually due to errors in edited ini file or incorrect permissions/tokens. Double check if errors occur.</p>
+<p>If no errors, you can see your feeds on the project README page.</p>
+<p>Click &quot;View Rss-Translation&quot; to go to the feed list page, left of <code>-&gt;</code> is original URL, right is converted URL to subscribe like normal RSS feeds.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Default run frequency is every 2 hours, modify <code>.github/workflows/cron_job.yml</code> line 7 to change, e.g.</li>
+</ul>
+<pre><code>   - cron: '0 */2 * * *' # run every 2 hours
+   - cron: '0 */1 * * *' # run every 1 hours
+</code></pre>
+<ul>
+<li>My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.</li>
+</ul>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> Reached the top! Take me Home!</a>
+
+
+    <a href="rss-gpt-manual-zh.html" class="nav-button" id="next-button">RSS-GPT 使用指南 &gt;</a>
+
+
+
+<br>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2023-09-11</span>
+  <span>Updated: 2023-09-11</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i52">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    Author: <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    | Powered by <a href="https://github.com/ahui2016/pyboke"><img src="pics/github-mark.png" alt="GitHub" width="15" height="15" style="vertical-align: text-top;"> PyBoke</a>
+    <a href="atom.xml"><img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>

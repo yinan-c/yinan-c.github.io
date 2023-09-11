@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>RSS-GPT 使用指南 - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2023-09-11 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+<h1>RSS-GPT 使用指南</h1>
+<h2>项目地址以及功能介绍</h2>
+<ul>
+<li><a href="https://github.com/yinan-c/RSS-GPT">yinan-c/RSS-GPT</a></li>
+<li><a href="https://yian-c.github.io/rss-gpt.html">RSS-GPT介绍</a></li>
+<li><a href="https://yinan-c.github.io/rss-gpt-manual-en.html">English manual</a></li>
+</ul>
+<h2>需要准备的东西</h2>
+<ul>
+<li>GitHub 账号</li>
+<li>OpenAI API Key （可以在<a href="https://platform.openai.com/account/api-keys">这里</a>建立账号申请）</li>
+</ul>
+<h2>1 GitHub Actions 部署</h2>
+<p>大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 然后生成一个新的 xml 文件, 然后把文件 commit 到仓库中 rss/ 文件夹内, 文件夹内所有内容都通过 Github Actions 部署在 GitHub Pages 上, 这样就可以通过你的 GitHub pages 地址访问到这个 xml 文件, 可以在任何支持 RSS 的阅读器中订阅你自己生成的 feeds。</p>
+<p>如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 raw.githubusercontent.com 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 <a href="https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml">https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml</a>。</p>
+<h3>1.1 Fork项目</h3>
+<p>进入项目 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>, 然后 fork 项目到自己的仓库。</p>
+<h3>1.2 记录三个需要的参数</h3>
+<h4>U_NAME</h4>
+<p>就是 <code>git commit</code> 用的用户名, 一般可以用你的 GitHub 用户名, 你的 GitHub 主页地址的最后一段就是你的用户名, 比如 https://github.com/yinan-c, 用户名就是 yinan-c。</p>
+<h4>U_EMAIL</h4>
+<p>就是 <code>git commit</code> 用的邮箱, 是你注册 GitHub 时的邮箱, 可以在 <a href="https://github.com/settings/emails">GitHub 设置页面</a></p>
+<h4>WORK_TOKEN</h4>
+<p>因为项目涉及使用脚本操作仓库内容,所以需要给脚本修改仓库内文件的权限,需要申请一个 Repository Secret 令牌。</p>
+<ul>
+<li><p>点击 GitHub 主页右上角自己的头像, 点 &quot;Settings&quot; 进入设置页面</p>
+</li>
+<li><p>点击左侧菜单栏一列最下方的 “&lt; &gt; Developer settings&quot;</p>
+</li>
+<li><p>点开左侧菜单栏下方的 “ 🔑 Personal access tokens&quot;, 选择 ”Tokens (classic)“, 点开左上角的 &quot;Generate new token&quot;, 选择第二项 &quot;Generate new token (classic)&quot; 生成一个新的 token。</p>
+</li>
+<li><p>配置新建的token</p>
+</li>
+</ul>
+<p><img src="pics/token-set.png" alt="" /></p>
+<ul>
+<li><p>Note: RSS-GPT</p>
+</li>
+<li><p>Select scopes: 勾选前两栏 &quot;repo&quot; 和 &quot;workflow&quot; 内的所有选项</p>
+</li>
+<li><p>Expiration: 选 &quot;No expiration&quot; (无期限)</p>
+</li>
+<li><p>点击页面最下方的 &quot;Generate token&quot;</p>
+</li>
+</ul>
+<p><img src="pics/token-copy.png" alt="" /></p>
+<p><strong>点击完后复制token, 注意一定要在此页面复制好, 离开这个页面你就再也看不到token了。错过就只能按照上面的步骤重新生成一个了</strong></p>
+<h3>1.3 设置 Repository Secrets</h3>
+<p>进入你 fork 的 repository, 点击上方菜单栏的 &quot;Settings&quot;, 然后点开左侧菜单栏的 &quot;Secrets and variables&quot;, 选择 &quot;Actions&quot;, 然后点击右上角的 &quot;New repository secret&quot;。</p>
+<p><img src="pics/secrets.png" alt="" /></p>
+<ul>
+<li><p>给翻译仓库添加 U_NAME, U_EMAIL, WORK_TOKEN 三个 secret, 注意一次只能添加一个, 添加完一个后再添加下一个。</p>
+<ul>
+<li><p>Name: U_NAME, U_EMAIL, WORK_TOKEN</p>
+</li>
+<li><p>Value: 分别为 U_NAME 上面所说的你的用户名, U_EMAIL 是上面所说的你的邮箱, WORK_TOKEN 是你刚刚复制的 token</p>
+</li>
+<li><p>点击 “Add secret“</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.4 给需要的权限</h3>
+<p>开启 GitHub Actions 访问 Pages 的权限</p>
+<p><img src="pics/pages.png" alt="" /></p>
+<ul>
+<li><p>点击 “Settings”</p>
+</li>
+<li><p>在左侧 “Code and automation” 下找到 “Pages” 点击进入</p>
+</li>
+<li><p>将 “Source&quot; 设置成 &quot;GitHub Actions&quot;, 然后点击 “Save”</p>
+</li>
+</ul>
+<h2>2 设置需要合并, 过滤, 总结的 RSS 源</h2>
+<p>进入项目, 点击上方菜单栏的 &quot;Code&quot;, 点击进入 &quot;config.ini&quot; 文件, 点击右上角的铅笔图标, 编辑代码, 设置你需要的订阅源, 前两行的内容不要动。</p>
+<pre><code>[cfg]
+base = &quot;rss/&quot;
+</code></pre>
+<p>然后在接下来的三行更改目标语言, 关键词数量, 和总结长度。之后的代码是 feed-specific 的配置, 格式如下, 首先是3个必填项目:</p>
+<ul>
+<li><p><code>[source001]</code>: 订阅序号, 从001开始增长, 注意请确保编号不要重复, 不然代码会报错</p>
+</li>
+<li><p><code>name = &quot;brett-terpstra&quot;</code>: 生成订阅源的名称, 只允许包含英文字母(a-z A-Z)、数字(0-9)、(<code>-</code>,<code>_</code>,<code>.</code>,<code>~</code>) 4个特殊字符</p>
+</li>
+<li><p><code>url = &quot;https://brett.trpstra.net/brettterpstra&quot;</code>: 原始RSS订阅链接, 可以包含多条, 用逗号分隔</p>
+</li>
+<li><p><code>max = &quot;10&quot;</code>: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0, 则不会总结任何文章, 返回原始条目。</p>
+</li>
+</ul>
+<p>接下来是关于过滤的可选配置: 注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。</p>
+<ul>
+<li><p><code>filter_apply = &quot;title&quot;</code>: 过滤条件需要应用在 &quot;title&quot;（标题）, &quot;article&quot; （正文内容）or &quot;link&quot; （链接）</p>
+</li>
+<li><p><code>filter_type = &quot;exclude&quot;</code>: 过滤类型: ”include“（包含）,  “exclude“（不包含）, or ”regex match“（正则匹配）or ”regex not match“（正则不匹配）</p>
+</li>
+<li><p><code>filter_rule = &quot;TextExpander&quot;</code>: 过滤内容, 字符串或者正则表达式</p>
+</li>
+</ul>
+<p>点击最下边的 “Commit changes” 提交修改。</p>
+<h2>3 修改 README 输出</h2>
+<ul>
+<li><p>点击 “Code” , 点击进入 “main.py&quot; 文件</p>
+</li>
+<li><p>点击笔形图标, 编辑代码, 进入第 289 行,  修改 &quot;https://yinan-c.github.io/&quot; 至你的 GitHub Pages 地址, 也就是把 yinan-c 改成你自己的用户名。</p>
+</li>
+<li><p>（可选）根据你的需求, 可以在 113 - 129 行修改 promt, 让 GPT 生成更符合你需求的总结。</p>
+</li>
+<li><p>点击最下边的 “Commit changes” 提交修改。</p>
+</li>
+</ul>
+<h2>4 测试 GitHub Actions</h2>
+<p>进入项目, 点击上方菜单栏的 &quot;Actions&quot;, 点击 “cron_job&quot;, 选择 “Run workflow&quot;</p>
+<p>等待运行成功会显示绿色的勾, 运行失败会显示红色的叉。如果出现红叉, 一般都是你修改ini文件时, 什么地方写错了, 或者权限、token 设置错误。请仔细检查。</p>
+<p>如果前边没出现错误 (主要是actions上没出现红叉), 那么你可以在项目的介绍页看到你的订阅源</p>
+<p>点击那个 “查看Rss-Translation” 链接,就可以跳转到订阅列表页,每条项目的 <code>-&gt;</code> 左侧的是原始订阅链接, 右侧是转换后的链接, 这个链接和其他的RSS订阅链接一样处理就好了。</p>
+<p><strong>注意</strong></p>
+<ul>
+<li>默认设置是每2小时运行一次脚本, 如果需要改的更短请修改 <code>.github/workflows/cron_job.yml</code> 文件第7行,比如</li>
+</ul>
+<pre><code>   - cron: '0 */2 * * *' # run every 2 hours
+   - cron: '0 */1 * * *' # run every 1 hours
+</code></pre>
+<ul>
+<li>我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以自己需要修改 <code>main.py</code> 文件第 113 - 129 行的 prompt。</li>
+</ul>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+    <a href="rss-gpt-manual-en.html" class="nav-button" id="prev-button">&lt; RSS-GPT Configuration</a>
+
+
+    <a href="rss-gpt.html" class="nav-button" id="next-button">AI 总结 RSS Feeds &gt;</a>
+
+
+
+<br>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2023-09-11</span>
+  <span>Updated: 2023-09-11</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i52">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    Author: <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    | Powered by <a href="https://github.com/ahui2016/pyboke"><img src="pics/github-mark.png" alt="GitHub" width="15" height="15" style="vertical-align: text-top;"> PyBoke</a>
+    <a href="atom.xml"><img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>

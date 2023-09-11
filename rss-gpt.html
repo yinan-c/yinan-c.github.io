@@ -48,8 +48,9 @@
 
 
 <h1>AI 总结 RSS Feeds</h1>
-<h2>项目地址</h2>
+<h2>项目地址与配置步骤</h2>
 <p><a href="https://github.com/yinan-c/RSS-GPT">yinan-c/RSS-GPT</a></p>
+<p><a href="https://yinan-c.github.io/rss-gpt-manual-zh.html">RSS-GPT 使用指南</a></p>
 <h2>信息爆炸的焦虑</h2>
 <p>RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的内容聚合在一个地方集中阅读。但不加筛选，富含噪音的 RSS 在订阅中堆积也很让人疲惫不堪。每天几百几千条未读产生，如果强迫症和焦虑症患者强求 RSS inbox-zero 的话，久而久之会浪费很多的时间执着于清空未读上面，实属折磨。</p>
 <p><img src="pics/Inbox.png" alt="Heavy Inbox" /></p>
@@ -61,7 +62,7 @@
 <p>前段时间在看到了一个这样的项目 <a href="https://github.com/tjsky/RSS-Translation/tree/main">RSS-Translation</a>, 作者写了非常详细的教程教你如何用 GitHub Actions，来自托管翻译 RSS 订阅源。原项目应该是<a href="https://github.com/talengu/rss-translate">这个</a>。</p>
 <h2>RSS 摘要</h2>
 <p><img src="pics/RSS-GPT.png" alt="RSS-GPT" /></p>
-<p>其实对我来说，相比较翻译，对 RSS 全文的中文总结更有价值，这样我可以快速了解到这篇文章的主要内容，来决定是否进一步精读。所以我最近写了这样一个工具，可以全文总结 RSS 订阅源，提取关键词，生成摘要附在原文之前，方便阅读。除了 AI 摘要，另外还有合并 RSS 订阅源，过滤订阅源的一些功能，可以详见 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>。如果想要自己配置自己喜欢的订阅源，可以 fork 我的项目，部署十分简单，只需要更改 config.ini，给 Repo GitHub Pages 权限，以及设置 WORK-TOKEN（Github Token to access GitHub pages）, U-NAME (Git commit user name), U-EMAIL (Git commmit user email), OPENAI_API_KEY 这四个 repo_secrets 即可。我之后可能会写一篇更详细的中英文指南。</p>
+<p>其实对我来说，相比较翻译，对 RSS 全文的中文总结更有价值，这样我可以快速了解到这篇文章的主要内容，来决定是否进一步精读。所以我最近写了这样一个工具，可以全文总结 RSS 订阅源，提取关键词，生成摘要附在原文之前，方便阅读。除了 AI 摘要，另外还有合并 RSS 订阅源，过滤订阅源的一些功能，可以详见 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>。如果想要自己配置自己喜欢的订阅源，可以 fork 我的项目，部署十分简单，只需要更改 config.ini，给 Repo GitHub Pages 权限，以及设置 WORK-TOKEN（Github Token to access GitHub repo and enable workflow）, U-NAME (Git commit user name), U-EMAIL (Git commmit user email), OPENAI_API_KEY 这四个 repo_secrets 即可。我之后可能会写一篇更详细的中英文指南。</p>
 <p>这里也汇集几条我公开的 <a href="https://yinan.me/RSS-GPT/rss/">RSS 源</a>，欢迎大家订阅。</p>
 
 
@@ -114,7 +115,7 @@
 
 
 
-  <a href="index.html" class="nav-button" id="prev-button"> Reached the top! Take me Home!</a>
+    <a href="rss-gpt-manual-zh.html" class="nav-button" id="prev-button">&lt; RSS-GPT 使用指南</a>
 
 
     <a href="ssh-keys.html" class="nav-button" id="next-button">Setup SSH keys for GitHub and remote servers &gt;</a>
@@ -128,7 +129,7 @@
 
 <div id="updated-at">
   <span>Created: 2023-09-07</span>
-  <span>Updated: 2023-09-07</span>
+  <span>Updated: 2023-09-11</span>
 </div>
 
 <div id="footer">
