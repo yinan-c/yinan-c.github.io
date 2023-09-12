@@ -170,6 +170,7 @@ base = &quot;rss/&quot;
 <pre><code>   - cron: '0 */2 * * *' # run every 2 hours
    - cron: '0 */1 * * *' # run every 1 hours
 </code></pre>
+<p>For more info on cron syntax, see <a href="https://crontab.guru/">crontab docs</a> or <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule">GitHub docs</a>.</p>
 <ul>
 <li><p>My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.</p>
 </li>
@@ -178,6 +179,8 @@ base = &quot;rss/&quot;
 <li><p>Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K.</p>
 </li>
 <li><p>Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the <code>gpt_summary</code> function of lines 227-243 of main.py, e.g. <code>model=&quot;your_model&quot;</code>. Please refer to the <a href="https://openai.com/pricing/">OpenAI API Pricing</a> for different prices of different OpenAI models.</p>
+</li>
+<li><p>The script will read the xml files already existing in the rss/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed.</p>
 </li>
 </ul>
 </li>

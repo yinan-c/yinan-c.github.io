@@ -165,18 +165,20 @@ base = &quot;rss/&quot;
 <p>点击那个 “查看Rss-Translation” 链接,就可以跳转到订阅列表页,每条项目的 <code>-&gt;</code> 左侧的是原始订阅链接, 右侧是转换后的链接, 这个链接和其他的RSS订阅链接一样处理就好了。</p>
 <p><strong>一些说明</strong></p>
 <ul>
-<li>默认设置是每2小时运行一次脚本, 如果需要改的更短请修改 <code>.github/workflows/cron_job.yml</code> 文件第7行,比如</li>
+<li>默认设置是每2小时运行一次脚本, 如果需要改的更短请修改 <code>.github/workflows/cron_job.yml</code> 文件第7行, 比如：</li>
 </ul>
 <pre><code>   - cron: '0 */2 * * *' # run every 2 hours
    - cron: '0 */1 * * *' # run every 1 hours
 </code></pre>
+<p>更加具体可以查看 <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule">crontab</a> 的用法 或者<a href="https://crontab.guru/">crontab.guru</a> 的文档。</p>
 <ul>
-<li><p>我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以自己需要修改 <code>main.py</code> 文件第 113 - 129 行的 prompt。</p>
+<li><p>我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以根据自己需要修改 <code>main.py</code> 第 113 - 129 行的 prompt。</p>
 </li>
 <li><p>关于 OpenAI API 的用量，为了尽可能保证费用最低，本项目采取了以下默认措施：</p>
 <ul>
 <li>根据文本长度选取不同的模型，而如果文本长度超过了 16k，则会截取前 16k 字符使用 GPT-3.5 Turbo 16K.</li>
 <li>考虑到 GPT-4 费用大约是 GPT-3.5 Turbo 的十倍左右，默认用的是 GPT-3.5 Turbo，如果你想用不同的模型，可以在 <code>main.py</code> 文件修改第 227 - 243 行中传入 <code>gpt_summary</code> 函数的参数 <code>model=&quot;your_model&quot;</code> 。关于 OpenAI 不同模型的不同价格，请参考 <a href="https://openai.com/pricing/">OpenAI API Pricing</a>。</li>
+<li>脚本会读取 rss/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。</li>
 </ul>
 </li>
 <li><p>如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，欢迎 <a href="mailto://yinan.email@gmail.com">email</a> 交流。</p>
