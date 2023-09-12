@@ -16,18 +16,13 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
     <id>rss-gpt-manual-en</id>
     <published>2023-09-11 18:14:50+01:00</published>
-    <updated>2023-09-11 21:35:56+01:00</updated>
+    <updated>2023-09-12 03:21:37+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT Introduction&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-ma...</content>
+&lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文指南&lt;/a&gt;...</content>
   </entry>
   
   <entry>
@@ -35,7 +30,7 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
     <id>rss-gpt-manual-zh</id>
     <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-09-11 21:35:56+01:00</updated>
+    <updated>2023-09-12 03:21:37+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址以及功能介绍&lt;/h2&gt;
 &lt;ul&gt;
