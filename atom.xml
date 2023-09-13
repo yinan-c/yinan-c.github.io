@@ -16,13 +16,179 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
     <id>rss-gpt-manual-en</id>
     <published>2023-09-11 18:14:50+01:00</published>
-    <updated>2023-09-13 12:04:41+01:00</updated>
+    <updated>2023-09-13 15:19:23+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文指南&lt;/a&gt;...</content>
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub account&lt;/li&gt;
+&lt;li&gt;OpenAI API Key (get it at &lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;OpenAI website&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;1. GitHub Actions deployment&lt;/h2&gt;
+&lt;p&gt;The main idea is to use GitHub Actions to run Python scripts periodically, the script calls OpenAI API to generate summaries and append them to original RSS entries, then generate a new xml file, and commit it to the repo. &lt;/p&gt;
+&lt;p&gt;All contents in the repo folder are deployed on GitHub Pages via GitHub Actions, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.&lt;/p&gt;
+&lt;p&gt;If you don&#39;t want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with raw.githubusercontent.com), e.g. the xml file URL of this repo is &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;1.1 Fork the project&lt;/h3&gt;
+&lt;p&gt;Go to the project &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt; and fork it to your own repo.&lt;/p&gt;
+&lt;h3&gt;1.2 Three Repo Secrets&lt;/h3&gt;
+&lt;h4&gt;U_NAME&lt;/h4&gt;
+&lt;p&gt;The username used for &lt;code&gt;git commit&lt;/code&gt;, usually your GitHub username. Your username is the last part of your GitHub homepage URL, e.g. https://github.com/yinan-c, the username is yinan-c.&lt;/p&gt;
+&lt;h4&gt;U_EMAIL&lt;/h4&gt;
+&lt;p&gt;The email used for &lt;code&gt;git commit&lt;/code&gt;, it&#39;s the email you used to register GitHub, can be found in &lt;a href=&#34;https://github.com/settings/emails&#34;&gt;GitHub Settings page&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;WORK_TOKEN&lt;/h4&gt;
+&lt;p&gt;Since the project involves using scripts to operate repo contents, permissions are needed for the script to modify files in the repo. Apply for a Repository Secret token:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Click your avatar at top right of GitHub homepage, choose &#34;Settings&#34; to go to settings page.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Developer settings&#34; at bottom of left sidebar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Personal access tokens&#34; under &#34;Developer settings&#34;, choose &#34;Tokens (classic)&#34;, click &#34;Generate new token (classic)&#34; at top left. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure the new token:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/token-set.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Note: RSS-GPT&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select scopes: Check all options under &#34;repo&#34; and &#34;workflow&#34; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expiration: Choose &#34;No expiration&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Generate token&#34; at bottom.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/token-copy.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Copy the token after clicking, make sure to copy it on this page, you won&#39;t be able to see the token after leaving this page. If you miss it, you&#39;ll have to generate a new one following the steps above.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;1.3 Set Repository Secrets&lt;/h3&gt;
+&lt;p&gt;Go to your forked repo, click &#34;Settings&#34; in top menu bar, then click &#34;Secrets and variables&#34; in left sidebar, choose &#34;Actions&#34;, then click &#34;New repository secret&#34; at top right. &lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/secrets.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add &lt;code&gt;U_NAME&lt;/code&gt;, &lt;code&gt;U_EMAIL&lt;/code&gt;, &lt;code&gt;WORK_TOKEN&lt;/code&gt;, &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; as secrets to the repo, can only add one at a time:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name: U_NAME, U_EMAIL, WORK_TOKEN, OPENAI_API_KEY&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Value: Your username, email, the copied GitHub token and OpenAI API Key&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Add secret&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.4 Grant required permissions&lt;/h3&gt;
+&lt;p&gt;Enable GitHub Actions access to Pages:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/pages.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Settings&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find &#34;Pages&#34; under &#34;Code and automation&#34; in left sidebar and click in&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set &#34;Source&#34; as &#34;GitHub Actions&#34;, then click &#34;Save&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2. Configure RSS sources to merge, filter and summarize&lt;/h2&gt;
+&lt;p&gt;Go to the project, click &#34;Code&#34; in top menu bar, open the &#34;config.ini&#34; file, click the pencil icon at top right to edit code and configure your desired sources. Don&#39;t change the first two lines.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[cfg] 
+base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then modify the &lt;strong&gt;target language, number of keywords, and summary length&lt;/strong&gt; in the next 3 lines. The following code is feed-specific configs, format is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;[source001]&lt;/code&gt;: Feed ID, starts from 001 and increments, make sure IDs are unique to avoid errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: Name of the generated feed, only letters (a-z A-Z), numbers (0-9), (&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) allowed. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: Original RSS feed URL, can contain multiple feeds separated by comma. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;max = &#34;10&#34;&lt;/code&gt;: Number of articles to summarize between refreshes. E.g. 10 means summarizing the latest 10 articles on each refresh. 0 means no summarization, returning original entries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next are optional filter configs, note all 3 must be set together or not set: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: Apply filter on &#34;title&#34;, &#34;article&#34; (content) or &#34;link&#34;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: Filter type: &#34;include&#34;, &#34;exclude&#34;, &#34;regex match&#34; or &#34;regex not match&#34;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: Filter text or regex.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits. &lt;/p&gt;
+&lt;h2&gt;3. Modify README output&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Code&#34;, open &#34;main.py&#34; file. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click the pencil icon to edit code, go to line 289 and modify &#34;https://yinan-c.github.io/&#34; to your own GitHub Pages URL, change yinan-c to your username.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Optional) Modify prompt at lines 113-129 based on your needs for better summaries. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4. Test GitHub Actions&lt;/h2&gt;
+&lt;p&gt;Go to the project, click &#34;Actions&#34; in top menu bar, click &#34;cron_job&#34; and choose &#34;Run workflow&#34;.&lt;/p&gt;
+&lt;p&gt;Green check mark means successful run, red x means failure, usually due to errors in edited ini file or incorrect permissions/tokens. Double check if errors occur.&lt;/p&gt;
+&lt;p&gt;If there are no errors, you should see your feeds on the project README page. &lt;/p&gt;
+&lt;p&gt;On the left of &lt;code&gt;-&amp;gt;&lt;/code&gt; is original URL, right is converted URL to subscribe like any other RSS feeds. Make sure you have changed your username in step 3.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Default run frequency is every 2 hours, modify &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; line 7 to change, e.g. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # run every 2 hours
+   - cron: &#39;0 */1 * * *&#39; # run every 1 hours&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For more info on cron syntax, see &lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab docs&lt;/a&gt; or &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;GitHub docs&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AI summaries are based on the description of each article in the feed. If the RSS itself provides the full text article, the full text will be summarized; if the RSS only provides the article summary, the summary will be based on the summary, and the script does not currently provide the function of crawling the full text of the original article.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Regarding the usage of the OpenAI API, in order to minimize costs as much as possible, the following default measures have been adopted for this project:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The script will read the xml files already existing in the rss/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If OpenAI releases more models in the future, I will choose the most suitable default model and update the code accordingly. If you have a better way to use AI or encounter any issues, feel free to &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email me&lt;/a&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
   </entry>
   
   <entry>
@@ -30,13 +196,172 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
     <id>rss-gpt-manual-zh</id>
     <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-09-13 12:04:41+01:00</updated>
+    <updated>2023-09-13 15:19:23+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址与功能介绍&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT介绍&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-en.html&#34;&gt;English manual&lt;/a&gt;&lt;/li&gt;...</content>
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-en.html&#34;&gt;English manual&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;需要准备的东西&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub 账号&lt;/li&gt;
+&lt;li&gt;OpenAI API Key （可以在&lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;这里&lt;/a&gt;建立账号申请）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;1 GitHub Actions 部署&lt;/h2&gt;
+&lt;p&gt;大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 rss/ 文件夹内。&lt;/p&gt;
+&lt;p&gt;文件夹内所有内容都将通过 Github Actions 自动部署在 GitHub Pages 上, 这样就可以通过你的 Pages 地址访问到这个 xml 文件, 然后就可以在任何 RSS 阅读器中订阅。&lt;/p&gt;
+&lt;p&gt;如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 raw.githubusercontent.com 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&lt;/a&gt;。&lt;/p&gt;
+&lt;h3&gt;1.1 Fork项目&lt;/h3&gt;
+&lt;p&gt;进入项目 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;, 然后 fork 项目到自己的仓库。&lt;/p&gt;
+&lt;h3&gt;1.2 记录三个需要的参数&lt;/h3&gt;
+&lt;h4&gt;U_NAME&lt;/h4&gt;
+&lt;p&gt;就是 &lt;code&gt;git commit&lt;/code&gt; 用的用户名, 一般可以用你的 GitHub 用户名, 你的 GitHub 主页地址的最后一段就是你的用户名, 比如 https://github.com/yinan-c, 用户名就是 yinan-c。&lt;/p&gt;
+&lt;h4&gt;U_EMAIL&lt;/h4&gt;
+&lt;p&gt;就是 &lt;code&gt;git commit&lt;/code&gt; 用的邮箱, 是你注册 GitHub 时的邮箱, 可以在 &lt;a href=&#34;https://github.com/settings/emails&#34;&gt;GitHub 设置页面&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;WORK_TOKEN&lt;/h4&gt;
+&lt;p&gt;因为项目涉及使用脚本操作仓库内容,所以需要给脚本修改仓库内文件的权限,需要申请一个 Repository Secret 令牌。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击 GitHub 主页右上角自己的头像, 点 &#34;Settings&#34; 进入设置页面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击左侧菜单栏一列最下方的 “&amp;lt; &amp;gt; Developer settings&#34; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点开左侧菜单栏下方的 “ 🔑 Personal access tokens&#34;, 选择 ”Tokens (classic)“, 点开左上角的 &#34;Generate new token&#34;, 选择第二项 &#34;Generate new token (classic)&#34; 生成一个新的 token。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置新建的token&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/token-set.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Note: RSS-GPT&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select scopes: 勾选前两栏 &#34;repo&#34; 和 &#34;workflow&#34; 内的所有选项&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expiration: 选 &#34;No expiration&#34; (无期限)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击页面最下方的 &#34;Generate token&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/token-copy.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;点击完后复制token, 注意一定要在此页面复制好, 离开这个页面你就再也看不到token了。错过就只能按照上面的步骤重新生成一个了&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;1.3 设置 Repository Secrets&lt;/h3&gt;
+&lt;p&gt;进入你 fork 的 repository, 点击上方菜单栏的 &#34;Settings&#34;, 然后点开左侧菜单栏的 &#34;Secrets and variables&#34;, 选择 &#34;Actions&#34;, 然后点击右上角的 &#34;New repository secret&#34;。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/secrets.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;给仓库分别添加 &lt;code&gt;U_NAME&lt;/code&gt;, &lt;code&gt;U_EMAIL&lt;/code&gt;, &lt;code&gt;WORK_TOKEN&lt;/code&gt;, &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; 4个 repo secrets, 一次只能添加一个&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name: U_NAME, U_EMAIL, WORK_TOKEN, OPENAI_API_KEY&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Value: 分别为 U_NAME 上面所说的你的用户名, U_EMAIL 是上面所说的你的邮箱, WORK_TOKEN 是你刚刚复制的 token&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击 “Add secret“&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.4 给需要的权限&lt;/h3&gt;
+&lt;p&gt;开启 GitHub Actions 访问 Pages 的权限&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;../output/pics/pages.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击 “Settings” &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在左侧 “Code and automation” 下找到 “Pages” 点击进入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将 “Source&#34; 设置成 &#34;GitHub Actions&#34;, 然后点击 “Save”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2 设置需要合并, 过滤, 总结的 RSS 源&lt;/h2&gt;
+&lt;p&gt;进入项目, 点击上方菜单栏的 &#34;Code&#34;, 点击进入 &#34;config.ini&#34; 文件, 点击右上角的铅笔图标, 编辑代码, 设置你需要的订阅源, 前两行的内容不要动。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[cfg]
+base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后在接下来的三行更改&lt;strong&gt;目标语言, 关键词数量, 和总结长度&lt;/strong&gt;。之后的代码是 feed-specific 的配置, 格式如下, 首先是3个必填项目:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;[source001]&lt;/code&gt;: 订阅序号, 从001开始增长, 注意请确保编号不要重复, 不然代码会报错&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: 生成订阅源的名称, 只允许包含英文字母(a-z A-Z)、数字(0-9)、(&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) 4个特殊字符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: 原始RSS订阅链接, 可以包含多条, 用逗号分隔&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;max = &#34;10&#34;&lt;/code&gt;: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0, 则不会总结任何文章, 返回原始条目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来是关于过滤的可选配置: 注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: 过滤条件需要应用在 &#34;title&#34;（标题）, &#34;article&#34; （正文内容）or &#34;link&#34; （链接）&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: 过滤类型: ”include“（包含）,  “exclude“（不包含）, or ”regex match“（正则匹配）or ”regex not match“（正则不匹配）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: 过滤内容, 字符串或者正则表达式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
+&lt;h2&gt;3 修改 README 输出&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击 “Code” , 点击进入 “main.py&#34; 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击笔形图标, 编辑代码, 进入第 289 行,  修改 &#34;https://yinan-c.github.io/&#34; 至你的 GitHub Pages 地址, 也就是把 yinan-c 改成你自己的用户名。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;（可选）根据你的需求, 可以在 113 - 129 行修改 prompt, 让 GPT 生成更符合你需求的总结。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4 测试 GitHub Actions&lt;/h2&gt;
+&lt;p&gt;进入项目, 点击上方菜单栏的 &#34;Actions&#34;, 点击 “cron_job&#34;, 选择 “Run workflow&#34;&lt;/p&gt;
+&lt;p&gt;等待运行成功会显示绿色的勾, 运行失败会显示红色的叉。如果出现红叉, 一般都是你修改 ini 文件时, 什么地方写错了, 或者权限、Secrets 设置错误。请仔细检查。&lt;/p&gt;
+&lt;p&gt;如果前边没出现错误 (主要是运动 Actions 没出现红叉), 那么你可以在项目的介绍页看到你的订阅源。&lt;/p&gt;
+&lt;p&gt;每条项目的 &lt;code&gt;-&amp;gt;&lt;/code&gt; 左侧的是原始订阅链接, 右侧是转换后的链接。请确保你已经在第3步中设置了你自己的 GitHub Pages 地址。在任何 RSS 阅读器中订阅右侧的链接即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一些说明&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认设置是每1小时运行一次脚本, 如果有不同需要，请修改 &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; 文件第7行, 比如：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # 每2小时运行一次
+   - cron: &#39;0 */1 * * *&#39; # 每1小时运行一次
+   - cron: &#39;0 */30 * * * *&#39; # 每30分钟运行一次&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;更加具体的参数可以查看 &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;crontab&lt;/a&gt; 的用法 或者&lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt; 的文档。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以根据自己需要修改 &lt;code&gt;main.py&lt;/code&gt; 第 113 - 129 行的 prompt。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AI 总结的内容基于 feed 中每条文章的描述，如果 RSS 本身提供全文，则会全文总结；如果 RSS 仅提供文章摘要，则总结基于摘要，目前脚本没有提供抓取原文全文的功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。&lt;/li&gt;
+&lt;li&gt;根据文本长度选取不同的模型，而如果文本长度超过了 16k，则会截取前 16k 字符使用 GPT-3.5 Turbo 16K.&lt;/li&gt;
+&lt;li&gt;考虑到 GPT-4 费用大约是 GPT-3.5 Turbo 的十倍左右，默认用的是 GPT-3.5 Turbo，如果你想用不同的模型，可以在 &lt;code&gt;main.py&lt;/code&gt; 文件修改第 227 - 243 行中传入 &lt;code&gt;gpt_summary&lt;/code&gt; 函数的参数 &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt; 。关于 OpenAI 不同模型的不同价格，请参考 &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;脚本会读取 rss/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
   </entry>
   
   <entry>
@@ -44,7 +369,7 @@
     <link ref="alternate" href="https://yinan.me/rss-gpt.html" />
     <id>rss-gpt</id>
     <published>2023-09-07 14:21:35+01:00</published>
-    <updated>2023-09-12 09:35:40+01:00</updated>
+    <updated>2023-09-13 15:19:23+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址与配置教程&lt;/h2&gt;
 &lt;ul&gt;
@@ -52,7 +377,19 @@
 &lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;RSS-GPT 配置教程&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;信息爆炸的焦虑&lt;/h2&gt;
-&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的...</content>
+&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的内容聚合在一个地方集中阅读。但不加筛选，富含噪音的 RSS 在订阅中堆积也很让人疲惫不堪。每天几百几千条未读产生，如果强迫症和焦虑症患者强求 RSS inbox-zero 的话，久而久之会浪费很多的时间执着于清空未读上面，实属折磨。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Heavy Inbox&#34; src=&#34;../output/pics/Inbox.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;并且即使你全部清空了阅读，多半情况下 inbox 空空，脑袋也空空，因为这时候你已经没有精力去消化，而是像短视频一样消费 RSS 内容，你只是得到了匆匆而过的信息，没有内化沉淀成知识，而代价却是时间，注意力和精力。&lt;/p&gt;
+&lt;h2&gt;RSS 过滤&lt;/h2&gt;
+&lt;p&gt;在这种情况下，摆脱 &lt;a href=&#34;https://en.wikipedia.org/wiki/Fear_of_missing_out&#34;&gt;FOMO - Fear of missing out&lt;/a&gt; 的心态是很重要的。一个非常有效的方法就是，对 RSS 进行关键词过滤，只保留自己真正感兴趣愿意花时间阅读的内容。&lt;/p&gt;
+&lt;p&gt;我目前知道有两个小工具可以做到 RSS 过滤，&lt;a href=&#34;https://siftrss.com&#34;&gt;SiftRSS&lt;/a&gt;, 另外还有一个 &lt;a href=&#34;https://feedless.org&#34;&gt;Feedless&lt;/a&gt;。我只用过前一个，体验很不错，可以根据 description，title 等建立不同的 filter。 可以看到很多人都在用，作者也一直为爱发电。&lt;/p&gt;
+&lt;h2&gt;RSS 翻译&lt;/h2&gt;
+&lt;p&gt;前段时间在看到了一个这样的项目 &lt;a href=&#34;https://github.com/tjsky/RSS-Translation/tree/main&#34;&gt;RSS-Translation&lt;/a&gt;, 作者写了非常详细的教程教你如何用 GitHub Actions，来自托管翻译 RSS 订阅源。原项目应该是&lt;a href=&#34;https://github.com/talengu/rss-translate&#34;&gt;这个&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;RSS 摘要&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;RSS-GPT&#34; src=&#34;../output/pics/RSS-GPT.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;其实对我来说，相比较翻译，对 RSS 全文的中文总结更有价值，这样我可以快速了解到这篇文章的主要内容，来决定是否进一步精读。所以我最近写了这样一个工具，可以全文总结 RSS 订阅源，提取关键词，生成摘要附在原文之前，方便阅读。除了 AI 摘要，另外还有合并 RSS 订阅源，过滤订阅源的一些功能，可以详见 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;。如果想要自己配置自己喜欢的订阅源，可以 fork 我的项目，部署十分简单，只需要更改 config.ini，给 Repo GitHub Pages 权限，以及设置 WORK_TOKEN（Github Token to access GitHub repo and enable workflow）, U_NAME (Git commit user name), U_EMAIL (Git commmit user email), OPENAI_API_KEY 这四个 repo_secrets 即可。&lt;/p&gt;
+&lt;p&gt;我写了一篇详细的&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;指南&lt;/a&gt;，希望能帮助到大家。&lt;/p&gt;
+&lt;p&gt;这里也汇集几条我公开的 &lt;a href=&#34;https://yinan.me/RSS-GPT/rss/&#34;&gt;RSS 源&lt;/a&gt;，欢迎大家订阅。&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -66,7 +403,14 @@
 &lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
 &lt;h2&gt;为什么写博客？&lt;/h2&gt;
 &lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们...</content>
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
+&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
+&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
+&lt;h2&gt;我会写些什么&lt;/h2&gt;
+&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
+&lt;h2&gt;博客用了什么&lt;/h2&gt;
+&lt;p&gt;本博客的文章用 Markdown 编写。
+采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;pyboke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/tree/article-abstract-branch&#34;&gt;其他功能&lt;/a&gt;，例如首页显示部分内容，文章底部翻页，RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -79,7 +423,20 @@
     <content type="html">&lt;h2&gt;&lt;a href=&#34;https://www.alfredapp.com/&#34;&gt;Alfred&lt;/a&gt; Workflows&lt;/h2&gt;
 &lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-homebrew&#34;&gt;Easy Homebrew&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.&lt;...</content>
+&lt;li&gt;An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-github-star&#34;&gt;GitHub Star&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This workflow allows you to search through your GitHub stared repositories. Download from the official &lt;a href=&#34;https://alfred.app/workflows/yinanc/github-star/&#34;&gt;Alfred Workflow Gallery&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-translate-it&#34;&gt;Translate It&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;An Alfred 5 workflow to translate text using OpenAI, DeepL, Google, Bing, Baidu and Youdao. This workflow also supports &lt;a href=&#34;https://www.alfredapp.com/universal-actions/&#34;&gt;Universal Actions&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Using ChatGPT to summarize your personalized RSS feeds.&lt;/li&gt;
+&lt;/ul&gt;</content>
   </entry>
   
   <entry>
@@ -92,7 +449,78 @@
     <content type="html">&lt;h2&gt;Why using SSH keys?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
-&lt;li&gt;SSH keys make it possible to securely connect to servers without having to type ...</content>
+&lt;li&gt;SSH keys make it possible to securely connect to servers without having to type password every time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Method 1: Using ssh-keygen&lt;/h2&gt;
+&lt;h3&gt;Generate the SSH keys on your local machine&lt;/h3&gt;
+&lt;p&gt;On your local machine terminal, run: &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -b 2048&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will be prompted to choose a passphrase for the keys as following. Please be sure to enter a passphrase. This is the password that will protect your keys. It can be a sentence with spaces between the words. Be sure to use a combination of lower and upper case letters, numbers and punctuation marks.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Generating public/private rsa key pair.
+Enter file in which to save the key (/home/localuser/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter your passphrase here&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Copy the public key to the remote server or GitHub&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;On your local machine, run following command to transfer the generated public key to remote server:
+&lt;code&gt;scp ~/.ssh/id_rsa.pub username@remote.server:~/.ssh/temp.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SSH to your remote server,
+&lt;code&gt;ssh username@remote.server&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On your remote server, append the public key to &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;:
+&lt;code&gt;cat ~/.ssh/temp.pub &amp;gt;&amp;gt; .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys &amp;amp;&amp;amp; rm .ssh/temp.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now connecting with SSH from your local machine to remote server will now ask for a passphrase instead of a password. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Activate the SSH agent on your local machine&lt;/h3&gt;
+&lt;p&gt;You will now need to set up the SSH agent on your local computer. The SSH agent will remember your passphrase and forward your key on, securely, to your remote server.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;ssh-add&lt;/code&gt; to add your passphrase to the SSH agent for the current login session. 
+On your local machine: run &lt;code&gt;ssh-add&lt;/code&gt; and you will be prompted to enter your passphrase you just set up.&lt;/p&gt;
+&lt;p&gt;Within the same login session, you can now ssh to your remote server without entering the passphrase or password.&lt;/p&gt;
+&lt;h3&gt;Sign your commits with SSH keys on GitHub&lt;/h3&gt;
+&lt;h4&gt;Configure Git&lt;/h4&gt;
+&lt;p&gt;We need to configure Git to let it know who we are by setting up our name and email address.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --global user.name &#34;Your Name&#34;
+git config --global user.email &#34;Your Email&#34;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then we need to eanble GPG signing for Git commits and the format of the signature will be SSH keys.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --global commit.gpgsign true
+git config --global gpg.format ssh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then we want to tell Git to use the key we just generated locally and uploaded to GitHub.&lt;/p&gt;
+&lt;p&gt;List your public SSH keys with &lt;code&gt;ssh-add -L&lt;/code&gt; and copy the key you just generated. &lt;/p&gt;
+&lt;p&gt;Then set our signing key in Git to the key we just copied.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --global user.signingkey &amp;lt;paste your key here&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Your commits will now be signed with your SSH key. you can test it by making a commit and checking the signature with &lt;code&gt;git log --show-signature&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Add SSH key to GitHub&lt;/h4&gt;
+&lt;p&gt;To sign your pushed commits on GitHub so that your commits will be marked as verified, you need to add your public SSH key to GitHub.&lt;/p&gt;
+&lt;p&gt;Login to &lt;a href=&#34;https://github.com/settings/keys&#34;&gt;GitHub SSH keys&lt;/a&gt;, copy and Paste your public key to both Authentication Keys and Signing keys. &lt;/p&gt;
+&lt;h2&gt;Method 2: using 1Password SSH agent&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt; is a powerful password manager with easy-to-use auto-fill functionalities. I use it to store any sensitive documents and login credentials, to generate random passwords for all my online accounts.  (no affiliation or sponsorship, just a happy user)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For students, you can get 1-year 1Password subscription via the &lt;a href=&#34;https://education.github.com/pack&#34;&gt;GitHub Student Developer Pack - GitHub Education&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As an alternative method, you can generate SSH keys using 1Password or import your SSH keys from your local file (e.g. ~/.ssh/id_rsa). &lt;/p&gt;
+&lt;p&gt;1Password will generate a public key automatically and store the public and private key-pair in your 1Password vault.&lt;/p&gt;
+&lt;p&gt;Then what you need to do is quite similar with a few more steps:
+As tested in 1Password 8 in July 2023, these instructions will be automatically prompted in the 1Password client after you generate or import SSH keys, setting up SSH keys with 1Password is quite straightforward.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Append the public key to ~/.ssh/authorized_keys or to upload your public key to GitHub.&lt;/li&gt;
+&lt;li&gt;Turn on the 1Password SSH agent.&lt;/li&gt;
+&lt;li&gt;Configure your SSH or Git client, similar to Method 1, but 1Password will automatically modify the configuration for you. (Be sure to backup your &lt;code&gt;~/.ssh/config&lt;/code&gt; and &lt;code&gt;~/gitconfig&lt;/code&gt; file before you let 1Password overwrite them.)&lt;/li&gt;
+&lt;li&gt;Run any &lt;code&gt;ssh&lt;/code&gt; or &lt;code&gt;git&lt;/code&gt; and authorize the SSH request prompted by 1Password.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please refer to &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;official document&lt;/a&gt; for a detailed step-by-step documentation.&lt;/p&gt;
+&lt;h2&gt;References and further reading&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a href=&#34;https://www.msi.umn.edu/support/faq/how-do-i-setup-ssh-keys&#34;&gt;How do I setup SSH keys? - Minnesota Supercomputing Institute&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;SSH &amp;amp; Git - 1Password docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href=&#34;https://developer.1password.com/docs/ssh/git-commit-signing&#34;&gt;Sign Git commits with SSH - 1Password docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] &lt;a href=&#34;https://thenewstack.io/how-to-sign-git-commits-with-an-ssh-key/&#34;&gt;How to Sign git Commits with an SSH key - Jack Wallen&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -104,7 +532,37 @@
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;With Globus, you ca...</content>
+&lt;p&gt;With Globus, you can easily, reliably and securely move, share, &amp;amp; discover data no matter where it lives – from a supercomputer, lab cluster, tape archive, public cloud or laptop. Access and manage all your data, even protected data, from anywhere, using your existing identities, with just a web browser. &lt;a href=&#34;https://www.globus.org/what-we-do&#34;&gt;from Globus&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;1. Login to the cluster with trusted X11 forwarding enabled:&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ssh -YC username@hostname&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;2. Install Globus connect on the cluster.&lt;/h2&gt;
+&lt;p&gt;On servers that do not run GridFTP , you have to install the Globus Connect client software in your user space as:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
+tar xzf globusconnectpersonal-latest.tgz
+cd globusconnectpersonal-3.2.2/&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;3. Execute the globus client on cli mode as:&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;./globusconnectpersonal -setup --no-gui&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;4. A login url will be displayed on terminal&lt;/h2&gt;
+&lt;p&gt;Copy and paste it in your browser. Assuming that you already have a Globus account, login to your globus using the displayed url.&lt;/p&gt;
+&lt;h2&gt;5. Provide a label for future reference&lt;/h2&gt;
+&lt;p&gt;An authorization code will be displayed in your browser. Copy it and paste it on the cluster next to the prompt &lt;code&gt;Enter the auth code:&lt;/code&gt;. Then provide a name for this collection as &#34;Input a value for the Endpoint Name:&#34;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If everything went well then you should get a message &#34;setup completed successfully&#34;&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;6. Access $SCRATCH etc. (&lt;a href=&#34;https://github.com/Supercomputing/DailyTasks/wiki/Using-Globus-Online-from-the-command-line&#34;&gt;source&lt;/a&gt;)&lt;/h2&gt;
+&lt;p&gt;Now you only have access to files in $home, in order to access files in other places like SCRATCH, add the following lines in  &lt;code&gt;~/.globusonline/lta/config-paths&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/,0,1
+/path/to/directory,0,1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;code&gt;1&lt;/code&gt; means read/write permitted.
+From now on you can use the cluster to transfer data via Globus. Everytime you use Globus, you need to start the client on the cluster in order to activate it as an endpoint:
+&lt;code&gt;./globusconnectpersonal -start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then you should be able to use your cluster account from the Globus web interface in your browser and browse the data from the collection name you provided in step 5.&lt;/p&gt;
+&lt;p&gt;Extra tip: If you want the program to run in the background without the session on, you can try using the &lt;code&gt;nohup ./globusconnectpersonal -start &amp;amp;&lt;/code&gt; command. &lt;/p&gt;
+&lt;p&gt;Your endpoint will be online on Globus as long as the process is running in the background without ssh-ing your server.&lt;/p&gt;
+&lt;p&gt;To kill the process, find the PID of your process:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ps aux | grep globusconnectpersonal&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kill -9 PID&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Thanks&lt;/h2&gt;
+&lt;p&gt;A collarborator of mine, IT support for Oxford clusters - Glamdring and Globus.&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -115,7 +573,24 @@
     <updated>2023-07-08 21:52:49+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
-&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsid...</content>
+&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
+&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
+&lt;h2&gt;About this blog&lt;/h2&gt;
+&lt;p&gt;This blog is created by a modified version of &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;PyBoke&lt;/a&gt;. The original version is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;I write the articles in Markdown files, the templates and Markdown files I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+for any purpose, even commercially.&lt;/p&gt;
+&lt;h2&gt;What will I write here?&lt;/h2&gt;
+&lt;p&gt;I am interested in many things, including but not limited to: RSS, macOS softwares, Python ... As I browse the internet (mostly via RSS), interesting things will pop up and I am happy to share online here.&lt;/p&gt;
+&lt;h2&gt;Thanks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
   </entry>
   
   <entry>
