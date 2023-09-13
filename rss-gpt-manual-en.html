@@ -174,8 +174,12 @@ base = &quot;rss/&quot;
 <ul>
 <li><p>My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.</p>
 </li>
+<li><p>AI summaries are based on the description of each article in the feed. If the RSS itself provides the full text article, the full text will be summarized; if the RSS only provides the article summary, the summary will be based on the summary, and the script does not currently provide the function of crawling the full text of the original article.</p>
+</li>
 <li><p>Regarding the usage of the OpenAI API, in order to minimize costs as much as possible, the following default measures have been adopted for this project:</p>
 <ul>
+<li><p>All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.</p>
+</li>
 <li><p>Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K.</p>
 </li>
 <li><p>Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the <code>gpt_summary</code> function of lines 227-243 of main.py, e.g. <code>model=&quot;your_model&quot;</code>. Please refer to the <a href="https://openai.com/pricing/">OpenAI API Pricing</a> for different prices of different OpenAI models.</p>
@@ -252,7 +256,7 @@ base = &quot;rss/&quot;
 
 <div id="updated-at">
   <span>Created: 2023-09-11</span>
-  <span>Updated: 2023-09-12</span>
+  <span>Updated: 2023-09-13</span>
 </div>
 
 <div id="footer">
