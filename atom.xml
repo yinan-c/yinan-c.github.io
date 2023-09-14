@@ -9,6 +9,28 @@
     <name>Yinan</name>
   </author>
   <id>ba15f2bcfa5336d8d2f005c8f0aa7951c3b52e50</id>
+
+  
+  <entry>
+    <title>Hello World</title>
+    <link ref="alternate" href="https://yinan.me/hello-world.html" />
+    <id>hello-world</id>
+    <published>2023-06-18 18:59:53+01:00</published>
+    <updated>2023-09-14 02:15:52+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
+&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
+&lt;h2&gt;为什么写博客？&lt;/h2&gt;
+&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
+&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
+&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
+&lt;h2&gt;我会写些什么&lt;/h2&gt;
+&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
+&lt;h2&gt;博客用了什么&lt;/h2&gt;
+&lt;p&gt;本博客的文章用 Markdown 编写。
+采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <title>RSS-GPT Configuration</title>
@@ -389,27 +411,6 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;其实对我来说，相比较翻译，对 RSS 全文的中文总结更有价值，这样我可以快速了解到这篇文章的主要内容，来决定是否进一步精读。所以我最近写了这样一个工具，可以全文总结 RSS 订阅源，提取关键词，生成摘要附在原文之前，方便阅读。除了 AI 摘要，另外还有合并 RSS 订阅源，过滤订阅源的一些功能，可以详见 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;。如果想要自己配置自己喜欢的订阅源，可以 fork 我的项目，部署十分简单，只需要更改 config.ini，给 Repo GitHub Pages 权限，以及设置 WORK_TOKEN（Github Token to access GitHub repo and enable workflow）, U_NAME (Git commit user name), U_EMAIL (Git commmit user email), OPENAI_API_KEY 这四个 repo_secrets 即可。&lt;/p&gt;
 &lt;p&gt;我写了一篇详细的&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;指南&lt;/a&gt;，希望能帮助到大家。&lt;/p&gt;
 &lt;p&gt;这里也汇集几条我公开的 &lt;a href=&#34;https://yinan.me/RSS-GPT/rss/&#34;&gt;RSS 源&lt;/a&gt;，欢迎大家订阅。&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link ref="alternate" href="https://yinan.me/hello-world.html" />
-    <id>hello-world</id>
-    <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2023-09-07 18:19:58+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
-&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
-&lt;h2&gt;为什么写博客？&lt;/h2&gt;
-&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
-&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
-&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
-&lt;h2&gt;我会写些什么&lt;/h2&gt;
-&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
-&lt;h2&gt;博客用了什么&lt;/h2&gt;
-&lt;p&gt;本博客的文章用 Markdown 编写。
-采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;pyboke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/tree/article-abstract-branch&#34;&gt;其他功能&lt;/a&gt;，例如首页显示部分内容，文章底部翻页，RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;</content>
   </entry>
   
   <entry>
