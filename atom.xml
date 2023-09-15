@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
     <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2023-09-15 22:30:58+01:00</updated>
+    <updated>2023-09-15 22:39:28+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
 &lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
@@ -27,19 +27,19 @@
 The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blog is fully open source. All the articles in Markdown format, together with the templates I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;License&lt;/h1&gt;
-&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
-- &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
-- &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
-for any purpose, even commercially.&lt;/p&gt;
-&lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;
 &lt;h2&gt;What will I write here?&lt;/h2&gt;
 &lt;p&gt;I am interested in many things, including but not limited to: RSS, macOS softwares, Python ... As I browse the internet (mostly via RSS), interesting things will pop up and I am happy to share online here.&lt;/p&gt;
 &lt;h2&gt;Thanks&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;
+&lt;h1&gt;License&lt;/h1&gt;
+&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
+- &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
+- &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
+for any purpose, even commercially.&lt;/p&gt;
+&lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;</content>
   </entry>
   
   <entry>
