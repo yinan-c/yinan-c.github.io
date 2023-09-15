@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
     <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2023-09-15 22:28:19+01:00</updated>
+    <updated>2023-09-15 22:30:58+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
 &lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
@@ -27,6 +27,7 @@
 The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blog is fully open source. All the articles in Markdown format, together with the templates I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;License&lt;/h1&gt;
 &lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
 - &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
 - &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
@@ -46,7 +47,7 @@ for any purpose, even commercially.&lt;/p&gt;
     <link ref="alternate" href="https://yinan.me/hello-world.html" />
     <id>hello-world</id>
     <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2023-09-15 22:28:19+01:00</updated>
+    <updated>2023-09-15 22:30:58+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
 &lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
@@ -63,8 +64,8 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
 &lt;h2&gt;版权&lt;/h2&gt;
 &lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。你可以自由地：
-&lt;strong&gt;共享&lt;/strong&gt; — 在任何媒介以任何形式复制、发行本作品
-&lt;strong&gt;演绎&lt;/strong&gt; — 修改、转换或以本作品为基础进行创作
+- &lt;strong&gt;共享&lt;/strong&gt; — 在任何媒介以任何形式复制、发行本作品
+- &lt;strong&gt;演绎&lt;/strong&gt; — 修改、转换或以本作品为基础进行创作
 在任何用途下，甚至商业目的。&lt;/p&gt;
 &lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利&lt;/p&gt;</content>
   </entry>
