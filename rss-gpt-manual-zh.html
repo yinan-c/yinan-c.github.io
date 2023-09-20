@@ -60,9 +60,9 @@
 <li>OpenAI API Key （可以在<a href="https://platform.openai.com/account/api-keys">这里</a>建立账号申请）</li>
 </ul>
 <h2>1 GitHub Actions 部署</h2>
-<p>大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 rss/ 文件夹内。</p>
+<p>大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 docs/ 文件夹内。</p>
 <p>文件夹内所有内容都将通过 Github Actions 自动部署在 GitHub Pages 上, 这样就可以通过你的 Pages 地址访问到这个 xml 文件, 然后就可以在任何 RSS 阅读器中订阅。</p>
-<p>如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 raw.githubusercontent.com 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 <a href="https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml">https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml</a>。</p>
+<p>如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 <code>https://raw.githubusercontent.com</code> 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 <a href="https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml">https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml</a>。</p>
 <h3>1.1 Fork项目</h3>
 <p>进入项目 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>, 然后 fork 项目到自己的仓库。</p>
 <h3>1.2 记录三个需要的参数</h3>
@@ -124,7 +124,7 @@
 <h2>2 设置需要合并, 过滤, 总结的 RSS 源</h2>
 <p>进入项目, 点击上方菜单栏的 &quot;Code&quot;, 点击进入 &quot;config.ini&quot; 文件, 点击右上角的铅笔图标, 编辑代码, 设置你需要的订阅源, 前两行的内容不要动。</p>
 <pre><code>[cfg]
-base = &quot;rss/&quot;
+base = &quot;docs/&quot;
 </code></pre>
 <p>然后在接下来的三行更改<strong>目标语言, 关键词数量, 和总结长度</strong>。之后的代码是 feed-specific 的配置, 格式如下, 首先是3个必填项目:</p>
 <ul>
@@ -134,10 +134,10 @@ base = &quot;rss/&quot;
 </li>
 <li><p><code>url = &quot;https://brett.trpstra.net/brettterpstra&quot;</code>: 原始RSS订阅链接, 可以包含多条, 用逗号分隔</p>
 </li>
-<li><p><code>max = &quot;10&quot;</code>: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0, 则不会总结任何文章, 返回原始条目。</p>
+<li><p><code>max_items = &quot;10&quot;</code>: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0或者不设置, 则不会总结任何文章, 返回原始条目。</p>
 </li>
 </ul>
-<p>接下来是关于过滤的可选配置: 注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。</p>
+<p>接下来是关于过滤的可选配置: <strong>注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。</strong></p>
 <ul>
 <li><p><code>filter_apply = &quot;title&quot;</code>: 过滤条件需要应用在 &quot;title&quot;（标题）, &quot;article&quot; （正文内容）or &quot;link&quot; （链接）</p>
 </li>
@@ -147,11 +147,10 @@ base = &quot;rss/&quot;
 </li>
 </ul>
 <p>点击最下边的 “Commit changes” 提交修改。</p>
-<h2>3 修改 README 输出</h2>
+<h2>3.1 修改 main.py 中的仓库名称</h2>
+<p><strong>(如果你在 1.1 中使用了默认仓库名称，或者你不想要修改 prompt, 可以跳过这一步)</strong></p>
 <ul>
-<li><p>点击 “Code” , 点击进入 “main.py&quot; 文件</p>
-</li>
-<li><p>点击笔形图标, 编辑代码, 进入第 289 行,  修改 &quot;https://yinan-c.github.io/&quot; 至你的 GitHub Pages 地址, 也就是把 yinan-c 改成你自己的用户名。</p>
+<li><p>进入 “main.py&quot; 文件, 点击笔形图标, 编辑代码, 进入第 290 行,  修改 &quot;https://{U_NAME}.github.io/RSS-GPT&quot; 中的 RSS-GPT 为你的仓库名称。</p>
 </li>
 <li><p>（可选）根据你的需求, 可以在 113 - 129 行修改 prompt, 让 GPT 生成更符合你需求的总结。</p>
 </li>
@@ -163,29 +162,44 @@ base = &quot;rss/&quot;
 <p>等待运行成功会显示绿色的勾, 运行失败会显示红色的叉。如果出现红叉, 一般都是你修改 ini 文件时, 什么地方写错了, 或者权限、Secrets 设置错误。请仔细检查。</p>
 <p>如果前边没出现错误 (主要是运动 Actions 没出现红叉), 那么你可以在项目的介绍页看到你的订阅源。</p>
 <p>每条项目的 <code>-&gt;</code> 左侧的是原始订阅链接, 右侧是转换后的链接。请确保你已经在第3步中设置了你自己的 GitHub Pages 地址。在任何 RSS 阅读器中订阅右侧的链接即可。</p>
-<p><strong>一些说明</strong></p>
+<h2>一些额外的说明</h2>
+<h3>关于 feed 刷新频率</h3>
 <ul>
-<li>默认设置是每1小时运行一次脚本, 如果有不同需要，请修改 <code>.github/workflows/cron_job.yml</code> 文件第7行, 比如：</li>
+<li>默认设置是每2小时运行一次脚本, 如果有不同需要，请修改 <code>.github/workflows/cron_job.yml</code> 文件第7行, 比如：</li>
 </ul>
 <pre><code>   - cron: '0 */2 * * *' # 每2小时运行一次
    - cron: '0 */1 * * *' # 每1小时运行一次
-   - cron: '0 */30 * * * *' # 每30分钟运行一次
+   - cron: '0 0 * * *' # 每天0点运行一次
+   - cron: '*/30 * * * *' # 每30分钟运行一次
 </code></pre>
 <p>更加具体的参数可以查看 <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule">crontab</a> 的用法 或者<a href="https://crontab.guru/">crontab.guru</a> 的文档。</p>
+<h3>如果你不想要 AI 总结的功能</h3>
+<ul>
+<li>你仍然可以使用本脚本来过滤和合并多个订阅源，只需要在 1.3 不设置 OpenAI API Key，或者在 <code>config.ini</code> 中不设置 <code>max_items</code> 或者设置为 0 即可，这个脚本默认在 AI 调用失败时也能返回文章原始条目。</li>
+<li>如果你想要 AI 总结功能并且正确设置了 <code>config.ini</code>，但是仍然返回原始条目或者久久不更新， 请检查<code>docs/</code> 文件夹内的 <code>feed_name.log</code> 文件中查看 OpenAI API 或者 feedparser 的错误信息。</li>
+</ul>
+<h3>关于 OpenAI 总结的内容</h3>
 <ul>
 <li><p>我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以根据自己需要修改 <code>main.py</code> 第 113 - 129 行的 prompt。</p>
 </li>
 <li><p>AI 总结的内容基于 feed 中每条文章的描述，如果 RSS 本身提供全文，则会全文总结；如果 RSS 仅提供文章摘要，则总结基于摘要，目前脚本没有提供抓取原文全文的功能。</p>
 </li>
-<li><p>关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：</p>
+</ul>
+<h3>关于 OpenAI API 的用量</h3>
 <ul>
+<li>关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：<ul>
 <li>所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。</li>
 <li>根据文本长度选取不同的模型，而如果文本长度超过了 16k，则会截取前 16k 字符使用 GPT-3.5 Turbo 16K.</li>
 <li>考虑到 GPT-4 费用大约是 GPT-3.5 Turbo 的十倍左右，默认用的是 GPT-3.5 Turbo，如果你想用不同的模型，可以在 <code>main.py</code> 文件修改第 227 - 243 行中传入 <code>gpt_summary</code> 函数的参数 <code>model=&quot;your_model&quot;</code> 。关于 OpenAI 不同模型的不同价格，请参考 <a href="https://openai.com/pricing/">OpenAI API Pricing</a>。</li>
-<li>脚本会读取 rss/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。</li>
+<li>脚本会读取 docs/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。</li>
 </ul>
 </li>
-<li><p>如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，欢迎 <a href="mailto:yinan.email@gmail.com">email</a> 交流。</p>
+</ul>
+<h3>关于仓库更新</h3>
+<ul>
+<li><p>我把仓库中手动修改和 workflow 自动提交修改放到了不同的分支，所以你可以直接在 <code>dev</code> 分支中看到我最后一次手动修改的时间和内容，来决定是否拉取最新的修改。</p>
+</li>
+<li><p>如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，或者发现本教程有错误，欢迎 <a href="mailto:yinan.email@gmail.com">email</a> 交流。最后，如果你觉得本教程或本项目对你有帮助，欢迎 star <a href="https://github.com/yinan-c/RSS-GPT">本项目</a>。</p>
 </li>
 </ul>
 
@@ -269,7 +283,7 @@ base = &quot;rss/&quot;
 
 <div id="updated-at">
   <span>Created: 2023-09-11</span>
-  <span>Updated: 2023-09-13</span>
+  <span>Updated: 2023-09-20</span>
 </div>
 
 <div id="footer">

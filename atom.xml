@@ -12,125 +12,17 @@
 
   
   <entry>
-    <title>Separting tasks and non-actionable items</title>
-    <link ref="alternate" href="https://yinan.me/separating-tasks-and-lists.html" />
-    <id>separating-tasks-and-lists</id>
-    <published>2023-09-19 17:32:31+01:00</published>
-    <updated>2023-09-19 17:54:47+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;The thought&lt;/h2&gt;
-&lt;p&gt;I read an discusion about devonthink on MPU forum, &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt; and came across a interesting and much enlighting comment by &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628/18&#34;&gt;@ryanjamuraphy&lt;/a&gt;, when he was talking about his usage of &lt;a href=&#34;https://www.devontechnologies.com&#34;&gt;Devonthink&lt;/a&gt; as a Notes and annotations database:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Incidentally, one lesson I learned from my recent Things adventure is that I put a lot of non-actionable items in OmniFocus. As a result, probably half of the items in there were just noise. Most of these items were just thinking on potential projects or links to things I wanted to investigate. Instead of putting them in OmniFocus, I aim now to keep my task manager clean and lean. Instead, I’ll rely on PARA/CODE and put those non-actionable items in DEVONthink as a notes database. I plan on working in DT3 on my desktop a lot more to make this happen.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I personally use &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things 3&lt;/a&gt; as my task manager and recently started using &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;Devonthink&lt;/a&gt; as my notes/documents/bookmarks database. This idea of separting tasks and non-actionable items suddenly hit me and I decided to write something about it:&lt;/p&gt;
-&lt;h2&gt;My old workflow&lt;/h2&gt;
-&lt;p&gt;This is my Things window usually looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Things.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;As you can see from the sidebar, there are 40 items in &#39;Inbox&#39;, 7 in &#39;Today&#39;, Besides these 2 there are also &#39;Upcoming&#39;, &#39;Anytime&#39;, &#39;Someday&#39; -- These time-based lists are where you assign your tasks to based on urgency and importance.&lt;/p&gt;
-&lt;p&gt;In the meanwhile, there are tags, projects, and areas where you use to catorgorize your tasks.&lt;/p&gt;
-&lt;p&gt;Inbox is something we all learned about when using emails. In the email world, it is where you receive all your emails, and you process them by replying, forwarding, or deleting them. I use inbox in Things as a place to capture everything from everywhere:&lt;/p&gt;
-&lt;p&gt;A typical workflow of mine using Things is that I will capture &lt;strong&gt;everything&lt;/strong&gt; to inbox, thoughts, tasks, articles I found online or from RSS feeds. Then I will process the inbox on a regular base, assigning tasks to the time-based lists, tagging them and carogorizing to different projects, and areas.&lt;/p&gt;
-&lt;h2&gt;The problem&lt;/h2&gt;
-&lt;p&gt;This sounds awesome, which helps me to keep my mind clear and focused on what I am doing at the moment. In the meanwhile, I don&#39;t have to worry about losing anything that comes up while I am in the middle of something.&lt;/p&gt;
-&lt;p&gt;But there is a problem underlying this workflow: &lt;strong&gt;The inbox is quickly filled up with non-actionable items, making it hard to process the inbox and find the important things to do.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;More often than not, you will find yourself doing a lot of easy yet non-important tasks, like replying emails, or reading articles, instead of doing the important difficult tasks that you should really be doing at the moment.&lt;/p&gt;
-&lt;h2&gt;The 2 lists&lt;/h2&gt;
-&lt;p&gt;Actionable tasks is generally sparse yet important, which should either be done or sorted out and/or asigned as soon as possible, in case they are forgotten.&lt;/p&gt;
-&lt;p&gt;Articles in readlist is non-actionable, something you can postponed even abandoned because of time-sensitivity.&lt;/p&gt;
-&lt;p&gt;There are always things happening, and you will always find new things to read. It is genneraylly impossible and not a good idea to devote your limited time to read infinite amount of information and articles.&lt;/p&gt;
-&lt;p&gt;If you are like me, using RSS to fetch information online and capture the interesting ones to things inbox without tagging or sorting them at the first place. You will find that your readlist is growing very fast. And more often than not, you will find your tasks buried in the inbox under a pile of readlist items.&lt;/p&gt;
-&lt;h2&gt;The solution&lt;/h2&gt;
-&lt;p&gt;The solution is simple: &lt;strong&gt;separate the tasks and non-actionable items&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Now I put all my readlist items to Devonthink, using smart rules to automatically tag them based on the source, convert them to pdf/webarchive, and put them in the &#39;readlist&#39; database so that I can read them when I have time.&lt;/p&gt;
-&lt;p&gt;This smart rule function is similar to mail rules in email clients, where you can automatically sort your emails based on the sender, subject, etc. All these can be done automatically thanks to the powerful &lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;smart rules&lt;/a&gt; in Devonthink.&lt;/p&gt;
-&lt;p&gt;I can use Things as a pure task manager which I can start working on right away, and I use Devonthink as a readlist/documents database which I can search for information when I need them.&lt;/p&gt;
-&lt;h1&gt;Some final words&lt;/h1&gt;
-&lt;p&gt;Things alone works great as a list/task manager, which can serve for multiple purposes. Despite the inability to store files, it can still be used as a proper readlist, a bookmark manager, a notes database, etc.&lt;/p&gt;
-&lt;p&gt;Without that being said, I found it much easier to keep my mind clear and focused by separating tasks and non-actionable items, and leave certain things to Devonthink.&lt;/p&gt;
-&lt;p&gt;But you can still manage your lists, get away with inbox zero, and keep your task management clean in Things alone.&lt;/p&gt;
-&lt;p&gt;For example, to achieve inbox zero, you can also tag/move/schedule your captures at the first place before sending to Inbox. This is basically processing inbox on the go before it gets too big.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The author is not affiliated with any of these companies or products mentioned above.&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;References and further reading&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://fortelabs.co/blog/para/&#34;&gt;The PARA Method: A Universal System for Organizing Digital Information&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;How to Organize with Smart Rules&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://justinyan.me/post/5790&#34;&gt;每个人每天都只有24小时，希望我的选择真的是我的选择 | 枫言枫语&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>About</title>
-    <link ref="alternate" href="https://yinan.me/about.html" />
-    <id>about</id>
-    <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2023-09-15 22:39:28+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
-&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
-&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
-&lt;h2&gt;About this blog&lt;/h2&gt;
-&lt;p&gt;This blog is created by a modified version of &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;PyBoke&lt;/a&gt;, where I added features like full text RSS, navigation buttons, and abstracts on the homepage.
-The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This blog is fully open source. All the articles in Markdown format, together with the templates I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;What will I write here?&lt;/h2&gt;
-&lt;p&gt;I am interested in many things, including but not limited to: RSS, macOS softwares, Python ... As I browse the internet (mostly via RSS), interesting things will pop up and I am happy to share online here.&lt;/p&gt;
-&lt;h2&gt;Thanks&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;License&lt;/h1&gt;
-&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
-- &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
-- &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
-for any purpose, even commercially.&lt;/p&gt;
-&lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link ref="alternate" href="https://yinan.me/hello-world.html" />
-    <id>hello-world</id>
-    <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2023-09-15 22:30:58+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
-&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
-&lt;h2&gt;为什么写博客？&lt;/h2&gt;
-&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
-&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
-&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
-&lt;h2&gt;我会写些什么&lt;/h2&gt;
-&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
-&lt;h2&gt;博客用了什么&lt;/h2&gt;
-&lt;p&gt;本博客的文章用 Markdown 编写。
-采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;
-&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
-&lt;h2&gt;版权&lt;/h2&gt;
-&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。你可以自由地：
-- &lt;strong&gt;共享&lt;/strong&gt; — 在任何媒介以任何形式复制、发行本作品
-- &lt;strong&gt;演绎&lt;/strong&gt; — 修改、转换或以本作品为基础进行创作
-在任何用途下，甚至商业目的。&lt;/p&gt;
-&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
     <title>RSS-GPT Configuration</title>
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
     <id>rss-gpt-manual-en</id>
     <published>2023-09-11 18:14:50+01:00</published>
-    <updated>2023-09-13 15:19:23+01:00</updated>
+    <updated>2023-09-20 17:20:56+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文教程&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
@@ -140,44 +32,22 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;h2&gt;1. GitHub Actions deployment&lt;/h2&gt;
 &lt;p&gt;The main idea is to use GitHub Actions to run Python scripts periodically, the script calls OpenAI API to generate summaries and append them to original RSS entries, then generate a new xml file, and commit it to the repo. &lt;/p&gt;
 &lt;p&gt;All contents in the repo folder are deployed on GitHub Pages via GitHub Actions, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.&lt;/p&gt;
-&lt;p&gt;If you don&#39;t want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with raw.githubusercontent.com), e.g. the xml file URL of this repo is &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you don&#39;t want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with &lt;code&gt;https://raw.githubusercontent.com&lt;/code&gt;), e.g. the xml file URL of this repo is &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;1.1 Fork the project&lt;/h3&gt;
-&lt;p&gt;Go to the project &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt; and fork it to your own repo.&lt;/p&gt;
+&lt;p&gt;Go to the project &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt; and fork it to your own repo. I recommend not to change the repo name, if you do so, you&#39;ll have to modify &lt;code&gt;main.py&lt;/code&gt; in step 3.&lt;/p&gt;
 &lt;h3&gt;1.2 Three Repo Secrets&lt;/h3&gt;
 &lt;h4&gt;U_NAME&lt;/h4&gt;
-&lt;p&gt;The username used for &lt;code&gt;git commit&lt;/code&gt;, usually your GitHub username. Your username is the last part of your GitHub homepage URL, e.g. https://github.com/yinan-c, the username is yinan-c.&lt;/p&gt;
+&lt;p&gt;The username used for &lt;code&gt;git commit&lt;/code&gt;, &lt;strong&gt;please set to your GitHub username&lt;/strong&gt;.&lt;/p&gt;
 &lt;h4&gt;U_EMAIL&lt;/h4&gt;
 &lt;p&gt;The email used for &lt;code&gt;git commit&lt;/code&gt;, it&#39;s the email you used to register GitHub, can be found in &lt;a href=&#34;https://github.com/settings/emails&#34;&gt;GitHub Settings page&lt;/a&gt;.&lt;/p&gt;
 &lt;h4&gt;WORK_TOKEN&lt;/h4&gt;
-&lt;p&gt;Since the project involves using scripts to operate repo contents, permissions are needed for the script to modify files in the repo. Apply for a Repository Secret token:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Click your avatar at top right of GitHub homepage, choose &#34;Settings&#34; to go to settings page.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Developer settings&#34; at bottom of left sidebar.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Personal access tokens&#34; under &#34;Developer settings&#34;, choose &#34;Tokens (classic)&#34;, click &#34;Generate new token (classic)&#34; at top left. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Configure the new token:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Since the project involves using scripts to operate repo contents, permissions are needed for the script to modify files in the repo. Apply for a new personal access token (classic) in &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;GitHub settings page&lt;/a&gt; and configure the new token as follows:&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-set.png&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Note: RSS-GPT&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select scopes: Check all options under &#34;repo&#34; and &#34;workflow&#34; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Expiration: Choose &#34;No expiration&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Generate token&#34; at bottom.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Note: RSS-GPT or any name you like&lt;/li&gt;
+&lt;li&gt;Select scopes: Check all options under &#34;repo&#34; and &#34;workflow&#34; &lt;/li&gt;
+&lt;li&gt;Expiration: Choose &#34;No expiration&#34; &lt;/li&gt;
+&lt;li&gt;Click &#34;Generate token&#34; at bottom.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-copy.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Copy the token after clicking, make sure to copy it on this page, you won&#39;t be able to see the token after leaving this page. If you miss it, you&#39;ll have to generate a new one following the steps above.&lt;/strong&gt;&lt;/p&gt;
@@ -191,86 +61,67 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Name: U_NAME, U_EMAIL, WORK_TOKEN, OPENAI_API_KEY&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Value: Your username, email, the copied GitHub token and OpenAI API Key&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Add secret&#34;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Value: Your username, email, the copied GitHub token and OpenAI API Key&lt;/li&gt;
+&lt;li&gt;Click &#34;Add secret&#34;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;1.4 Grant required permissions&lt;/h3&gt;
 &lt;p&gt;Enable GitHub Actions access to Pages:&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/pages.png&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Settings&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Find &#34;Pages&#34; under &#34;Code and automation&#34; in left sidebar and click in&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Set &#34;Source&#34; as &#34;GitHub Actions&#34;, then click &#34;Save&#34;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Click &#34;Settings&#34; in top menu bar&lt;/li&gt;
+&lt;li&gt;Find &#34;Pages&#34; under &#34;Code and automation&#34; in left sidebar and click in&lt;/li&gt;
+&lt;li&gt;Set &#34;Source&#34; as &#34;GitHub Actions&#34;, then click &#34;Save&#34;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;2. Configure RSS sources to merge, filter and summarize&lt;/h2&gt;
-&lt;p&gt;Go to the project, click &#34;Code&#34; in top menu bar, open the &#34;config.ini&#34; file, click the pencil icon at top right to edit code and configure your desired sources. Don&#39;t change the first two lines.&lt;/p&gt;
+&lt;p&gt;Go to the project, open the &#34;config.ini&#34; file, click the pencil icon at top right to edit code and configure your desired sources. Don&#39;t change the first two lines.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;[cfg] 
-base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
+base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Then modify the &lt;strong&gt;target language, number of keywords, and summary length&lt;/strong&gt; in the next 3 lines. The following code is feed-specific configs, format is:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;[source001]&lt;/code&gt;: Feed ID, starts from 001 and increments, make sure IDs are unique to avoid errors.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: Name of the generated feed, only letters (a-z A-Z), numbers (0-9), (&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) allowed. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: Original RSS feed URL, can contain multiple feeds separated by comma. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;max = &#34;10&#34;&lt;/code&gt;: Number of articles to summarize between refreshes. E.g. 10 means summarizing the latest 10 articles on each refresh. 0 means no summarization, returning original entries.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[source001]&lt;/code&gt;: Feed ID, starts from 001 and increments, make sure IDs are unique to avoid errors.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: Name of the generated feed, only letters (a-z A-Z), numbers (0-9), (&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) allowed. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: Original RSS feed URL, can contain multiple feeds separated by comma. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;max_items = &#34;10&#34;&lt;/code&gt;: Number of articles to summarize between refreshes. E.g. 10 means summarizing the latest 10 articles on each refresh. If set to 0 or not set, no articles will be summarized and original entries will be returned.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Next are optional filter configs, note all 3 must be set together or not set: &lt;/p&gt;
+&lt;p&gt;Next are optional filter configs, &lt;strong&gt;note all three configs must be set or not set at the same time, error will occur if only one or two of them are set&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: Apply filter on &#34;title&#34;, &#34;article&#34; (content) or &#34;link&#34;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: Filter type: &#34;include&#34;, &#34;exclude&#34;, &#34;regex match&#34; or &#34;regex not match&#34;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: Filter text or regex.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: Apply filter on &#34;title&#34;, &#34;article&#34; (content) or &#34;link&#34;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: Filter type: &#34;include&#34;, &#34;exclude&#34;, &#34;regex match&#34; or &#34;regex not match&#34;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: Filter text or regex.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits. &lt;/p&gt;
-&lt;h2&gt;3. Modify README output&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Code&#34;, open &#34;main.py&#34; file. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click the pencil icon to edit code, go to line 289 and modify &#34;https://yinan-c.github.io/&#34; to your own GitHub Pages URL, change yinan-c to your username.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;(Optional) Modify prompt at lines 113-129 based on your needs for better summaries. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits.&lt;/p&gt;
-&lt;/li&gt;
+&lt;h2&gt;3 Modify &lt;code&gt;main.py&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;(if you used default repo name in 1.1 and you don&#39;t want to modify prompt, you can skip this step)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open &#34;main.py&#34; file, click the pencil icon to edit code, go to line 290 and modify the &#34;RSS-GPT&#34; in &#34;https://{U_NAME}.github.io/RSS-GPT&#34; to your repo name.&lt;/li&gt;
+&lt;li&gt;(Optional) Modify prompt at lines 113-129 based on your needs for better summaries. &lt;/li&gt;
+&lt;li&gt;Click &#34;Commit changes&#34; at bottom to submit edits.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;4. Test GitHub Actions&lt;/h2&gt;
 &lt;p&gt;Go to the project, click &#34;Actions&#34; in top menu bar, click &#34;cron_job&#34; and choose &#34;Run workflow&#34;.&lt;/p&gt;
 &lt;p&gt;Green check mark means successful run, red x means failure, usually due to errors in edited ini file or incorrect permissions/tokens. Double check if errors occur.&lt;/p&gt;
 &lt;p&gt;If there are no errors, you should see your feeds on the project README page. &lt;/p&gt;
-&lt;p&gt;On the left of &lt;code&gt;-&amp;gt;&lt;/code&gt; is original URL, right is converted URL to subscribe like any other RSS feeds. Make sure you have changed your username in step 3.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;On the left of &lt;code&gt;-&amp;gt;&lt;/code&gt; is original URL, right is converted URL to subscribe like any other RSS feeds.&lt;/p&gt;
+&lt;h2&gt;Some extra notes&lt;/h2&gt;
+&lt;h3&gt;About feeds refresh frequency&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Default run frequency is every 2 hours, modify &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; line 7 to change, e.g. &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # run every 2 hours
-   - cron: &#39;0 */1 * * *&#39; # run every 1 hours&lt;/code&gt;&lt;/p&gt;
+   - cron: &#39;0 */1 * * *&#39; # run every 1 hours
+   - cron: &#39;0 0 * * *&#39; # run every day at 00:00
+   - cron: &#39;*/30 * * * *&#39; # run every 30 minutes&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;For more info on cron syntax, see &lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab docs&lt;/a&gt; or &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;GitHub docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;What if I don&#39;t want to use summarization feature?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Well, you can still use this script to filter and merge multiple subscription sources. You just need to not set the OpenAI API Key in 1.3, or not set the &lt;code&gt;max_items&lt;/code&gt; in &lt;code&gt;config.ini&lt;/code&gt;, or set it to 0. By default, this script can also return the original article entries when the AI call fails. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you do want the AI summarization feature and have correctly set &lt;code&gt;config.ini&lt;/code&gt;, but still receive the original entries without summarization or experience infrequent updates, you can check the error information of the OpenAI API or feedparser from the &lt;code&gt;feed_name.log&lt;/code&gt; file in the &lt;code&gt;docs/&lt;/code&gt; subdirectory of the repo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About AI summary content&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.&lt;/p&gt;
@@ -278,23 +129,26 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;AI summaries are based on the description of each article in the feed. If the RSS itself provides the full text article, the full text will be summarized; if the RSS only provides the article summary, the summary will be based on the summary, and the script does not currently provide the function of crawling the full text of the original article.&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About the usage of OpenAI API&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Regarding the usage of the OpenAI API, in order to minimize costs as much as possible, the following default measures have been adopted for this project:&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K. &lt;/li&gt;
+&lt;li&gt;Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/li&gt;
+&lt;li&gt;The script will read the xml files already existing in the docs/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About repo updates&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K. &lt;/p&gt;
+&lt;p&gt;I have separated manual edits and workflow auto commits into different branches, so you can see when and what I have edited in the &lt;code&gt;dev&lt;/code&gt; branch to decide whether to pull the latest changes.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The script will read the xml files already existing in the rss/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If OpenAI releases more models in the future, I will choose the most suitable default model and update the code accordingly. If you have a better way to use AI or encounter any issues, feel free to &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email me&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;If OpenAI releases more models in the future, I will choose the most suitable default model and update the code accordingly. If you have a better way to use AI or encounter any issues or spotted any errors, feel free to &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email me&lt;/a&gt;. &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
@@ -304,7 +158,7 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
     <id>rss-gpt-manual-zh</id>
     <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-09-13 15:19:23+01:00</updated>
+    <updated>2023-09-20 17:20:56+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址与功能介绍&lt;/h2&gt;
 &lt;ul&gt;
@@ -318,9 +172,9 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;OpenAI API Key （可以在&lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;这里&lt;/a&gt;建立账号申请）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;1 GitHub Actions 部署&lt;/h2&gt;
-&lt;p&gt;大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 rss/ 文件夹内。&lt;/p&gt;
+&lt;p&gt;大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 docs/ 文件夹内。&lt;/p&gt;
 &lt;p&gt;文件夹内所有内容都将通过 Github Actions 自动部署在 GitHub Pages 上, 这样就可以通过你的 Pages 地址访问到这个 xml 文件, 然后就可以在任何 RSS 阅读器中订阅。&lt;/p&gt;
-&lt;p&gt;如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 raw.githubusercontent.com 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 &lt;code&gt;https://raw.githubusercontent.com&lt;/code&gt; 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml&lt;/a&gt;。&lt;/p&gt;
 &lt;h3&gt;1.1 Fork项目&lt;/h3&gt;
 &lt;p&gt;进入项目 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;, 然后 fork 项目到自己的仓库。&lt;/p&gt;
 &lt;h3&gt;1.2 记录三个需要的参数&lt;/h3&gt;
@@ -395,7 +249,7 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;h2&gt;2 设置需要合并, 过滤, 总结的 RSS 源&lt;/h2&gt;
 &lt;p&gt;进入项目, 点击上方菜单栏的 &#34;Code&#34;, 点击进入 &#34;config.ini&#34; 文件, 点击右上角的铅笔图标, 编辑代码, 设置你需要的订阅源, 前两行的内容不要动。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;[cfg]
-base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
+base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;然后在接下来的三行更改&lt;strong&gt;目标语言, 关键词数量, 和总结长度&lt;/strong&gt;。之后的代码是 feed-specific 的配置, 格式如下, 首先是3个必填项目:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -408,10 +262,10 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: 原始RSS订阅链接, 可以包含多条, 用逗号分隔&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;max = &#34;10&#34;&lt;/code&gt;: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0, 则不会总结任何文章, 返回原始条目。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;max_items = &#34;10&#34;&lt;/code&gt;: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0或者不设置, 则不会总结任何文章, 返回原始条目。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;接下来是关于过滤的可选配置: 注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。&lt;/p&gt;
+&lt;p&gt;接下来是关于过滤的可选配置: &lt;strong&gt;注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: 过滤条件需要应用在 &#34;title&#34;（标题）, &#34;article&#34; （正文内容）or &#34;link&#34; （链接）&lt;/li&gt;
 &lt;li&gt;
@@ -422,13 +276,11 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
-&lt;h2&gt;3 修改 README 输出&lt;/h2&gt;
+&lt;h2&gt;3.1 修改 main.py 中的仓库名称&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;(如果你在 1.1 中使用了默认仓库名称，或者你不想要修改 prompt, 可以跳过这一步)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;点击 “Code” , 点击进入 “main.py&#34; 文件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;点击笔形图标, 编辑代码, 进入第 289 行,  修改 &#34;https://yinan-c.github.io/&#34; 至你的 GitHub Pages 地址, 也就是把 yinan-c 改成你自己的用户名。&lt;/p&gt;
+&lt;p&gt;进入 “main.py&#34; 文件, 点击笔形图标, 编辑代码, 进入第 290 行,  修改 &#34;https://{U_NAME}.github.io/RSS-GPT&#34; 中的 RSS-GPT 为你的仓库名称。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;（可选）根据你的需求, 可以在 113 - 129 行修改 prompt, 让 GPT 生成更符合你需求的总结。&lt;/p&gt;
@@ -442,14 +294,22 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;等待运行成功会显示绿色的勾, 运行失败会显示红色的叉。如果出现红叉, 一般都是你修改 ini 文件时, 什么地方写错了, 或者权限、Secrets 设置错误。请仔细检查。&lt;/p&gt;
 &lt;p&gt;如果前边没出现错误 (主要是运动 Actions 没出现红叉), 那么你可以在项目的介绍页看到你的订阅源。&lt;/p&gt;
 &lt;p&gt;每条项目的 &lt;code&gt;-&amp;gt;&lt;/code&gt; 左侧的是原始订阅链接, 右侧是转换后的链接。请确保你已经在第3步中设置了你自己的 GitHub Pages 地址。在任何 RSS 阅读器中订阅右侧的链接即可。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;一些说明&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;一些额外的说明&lt;/h2&gt;
+&lt;h3&gt;关于 feed 刷新频率&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;默认设置是每1小时运行一次脚本, 如果有不同需要，请修改 &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; 文件第7行, 比如：&lt;/li&gt;
+&lt;li&gt;默认设置是每2小时运行一次脚本, 如果有不同需要，请修改 &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; 文件第7行, 比如：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # 每2小时运行一次
    - cron: &#39;0 */1 * * *&#39; # 每1小时运行一次
-   - cron: &#39;0 */30 * * * *&#39; # 每30分钟运行一次&lt;/code&gt;&lt;/p&gt;
+   - cron: &#39;0 0 * * *&#39; # 每天0点运行一次
+   - cron: &#39;*/30 * * * *&#39; # 每30分钟运行一次&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;更加具体的参数可以查看 &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;crontab&lt;/a&gt; 的用法 或者&lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt; 的文档。&lt;/p&gt;
+&lt;h3&gt;如果你不想要 AI 总结的功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;你仍然可以使用本脚本来过滤和合并多个订阅源，只需要在 1.3 不设置 OpenAI API Key，或者在 &lt;code&gt;config.ini&lt;/code&gt; 中不设置 &lt;code&gt;max_items&lt;/code&gt; 或者设置为 0 即可，这个脚本默认在 AI 调用失败时也能返回文章原始条目。 &lt;/li&gt;
+&lt;li&gt;如果你想要 AI 总结功能并且正确设置了 &lt;code&gt;config.ini&lt;/code&gt;，但是仍然返回原始条目或者久久不更新， 请检查&lt;code&gt;docs/&lt;/code&gt; 文件夹内的 &lt;code&gt;feed_name.log&lt;/code&gt; 文件中查看 OpenAI API 或者 feedparser 的错误信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;关于 OpenAI 总结的内容&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以根据自己需要修改 &lt;code&gt;main.py&lt;/code&gt; 第 113 - 129 行的 prompt。&lt;/p&gt;
@@ -457,19 +317,132 @@ base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;AI 总结的内容基于 feed 中每条文章的描述，如果 RSS 本身提供全文，则会全文总结；如果 RSS 仅提供文章摘要，则总结基于摘要，目前脚本没有提供抓取原文全文的功能。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：&lt;/p&gt;
-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;关于 OpenAI API 的用量&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：&lt;/li&gt;
 &lt;li&gt;所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。&lt;/li&gt;
 &lt;li&gt;根据文本长度选取不同的模型，而如果文本长度超过了 16k，则会截取前 16k 字符使用 GPT-3.5 Turbo 16K.&lt;/li&gt;
 &lt;li&gt;考虑到 GPT-4 费用大约是 GPT-3.5 Turbo 的十倍左右，默认用的是 GPT-3.5 Turbo，如果你想用不同的模型，可以在 &lt;code&gt;main.py&lt;/code&gt; 文件修改第 227 - 243 行中传入 &lt;code&gt;gpt_summary&lt;/code&gt; 函数的参数 &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt; 。关于 OpenAI 不同模型的不同价格，请参考 &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;脚本会读取 docs/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;关于仓库更新&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;脚本会读取 rss/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。&lt;/p&gt;
+&lt;p&gt;我把仓库中手动修改和 workflow 自动提交修改放到了不同的分支，所以你可以直接在 &lt;code&gt;dev&lt;/code&gt; 分支中看到我最后一次手动修改的时间和内容，来决定是否拉取最新的修改。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。&lt;/p&gt;
+&lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，或者发现本教程有错误，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。最后，如果你觉得本教程或本项目对你有帮助，欢迎 star &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;本项目&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Separating tasks and non-actionable items</title>
+    <link ref="alternate" href="https://yinan.me/separating-tasks-and-lists.html" />
+    <id>separating-tasks-and-lists</id>
+    <published>2023-09-20 17:20:56+01:00</published>
+    <updated>2023-09-20 17:20:56+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;The thought&lt;/h2&gt;
+&lt;p&gt;I read an discusion about devonthink on MPU forum, &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt; and came across a interesting and much enlighting comment by &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628/18&#34;&gt;@ryanjamuraphy&lt;/a&gt;, when he was talking about his usage of &lt;a href=&#34;https://www.devontechnologies.com&#34;&gt;Devonthink&lt;/a&gt; as a Notes and annotations database:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Incidentally, one lesson I learned from my recent Things adventure is that I put a lot of non-actionable items in OmniFocus. As a result, probably half of the items in there were just noise. Most of these items were just thinking on potential projects or links to things I wanted to investigate. Instead of putting them in OmniFocus, I aim now to keep my task manager clean and lean. Instead, I’ll rely on PARA/CODE and put those non-actionable items in DEVONthink as a notes database. I plan on working in DT3 on my desktop a lot more to make this happen.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I personally use &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things 3&lt;/a&gt; as my task manager and recently started using &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;Devonthink&lt;/a&gt; as my notes/documents/bookmarks database. This idea of separting tasks and non-actionable items suddenly hit me and I decided to write something about it:&lt;/p&gt;
+&lt;h2&gt;My old workflow&lt;/h2&gt;
+&lt;p&gt;This is my Things 3 window usually looks like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Things.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As you can see from the sidebar, there are 40 items in &#39;Inbox&#39;, 7 in &#39;Today&#39;, Besides these 2 there are also &#39;Upcoming&#39;, &#39;Anytime&#39;, &#39;Someday&#39; -- These time-based lists are where you assign your tasks to based on urgency and importance.&lt;/p&gt;
+&lt;p&gt;In the meanwhile, there are tags, projects, and areas where you use to catorgorize your tasks.&lt;/p&gt;
+&lt;p&gt;Inbox is something we all learned about when using emails. In the email world, it is where you receive all your emails, and you process them by replying, forwarding, or deleting them. I use inbox in Things 3 as a place to capture everything from everywhere:&lt;/p&gt;
+&lt;p&gt;A typical workflow of mine using Things 3 is that I will capture &lt;strong&gt;everything&lt;/strong&gt; to inbox, thoughts, tasks, articles I found online or from RSS feeds. Then I will process the inbox on a regular base, assigning tasks to the time-based lists, tagging them and carogorizing to different projects, and areas.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;This sounds awesome, which helps me to keep my mind clear and focused on what I am doing at the moment. In the meanwhile, I don&#39;t have to worry about losing anything that comes up while I am in the middle of something.&lt;/p&gt;
+&lt;p&gt;But there is a problem underlying this workflow: &lt;strong&gt;The inbox is quickly filled up with non-actionable items, making it hard to process the inbox and find the important things to do.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;More often than not, you will find yourself doing a lot of easy yet non-important tasks, like replying emails, or reading articles, instead of doing the important difficult tasks that you should really be doing at the moment.&lt;/p&gt;
+&lt;h2&gt;The 2 lists&lt;/h2&gt;
+&lt;p&gt;Actionable tasks is generally sparse yet important, which should either be done or sorted out and/or asigned as soon as possible, in case they are forgotten.&lt;/p&gt;
+&lt;p&gt;Articles in readlist is non-actionable, something you can postponed even abandoned because of time-sensitivity.&lt;/p&gt;
+&lt;p&gt;There are always things happening, and you will always find new things to read. It is genneraylly impossible and not a good idea to devote your limited time to read infinite amount of information and articles.&lt;/p&gt;
+&lt;p&gt;If you are like me, using RSS to fetch information online and capture the interesting ones to things inbox without tagging or sorting them at the first place. You will find that your readlist is growing very fast. And more often than not, you will find your tasks buried in the inbox under a pile of readlist items.&lt;/p&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;The solution is simple: &lt;strong&gt;separate the tasks and non-actionable items&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now I put all my readlist items to Devonthink, using smart rules to automatically tag them based on the source, convert them to pdf/webarchive, and put them in the &#39;readlist&#39; database so that I can read them when I have time.&lt;/p&gt;
+&lt;p&gt;This smart rule function is similar to mail rules in email clients, where you can automatically sort your emails based on the sender, subject, etc. All these can be done automatically thanks to the powerful &lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;smart rules&lt;/a&gt; in Devonthink.&lt;/p&gt;
+&lt;p&gt;I can use Things 3 as a pure task manager which I can start working on right away, and I use Devonthink as a readlist/documents database which I can search for information when I need them.&lt;/p&gt;
+&lt;h1&gt;Some final words&lt;/h1&gt;
+&lt;p&gt;Things 3 alone works great as a list/task manager, which can serve for multiple purposes. Despite the inability to store files, it can still be used as a proper readlist, a bookmark manager, a notes database, etc.&lt;/p&gt;
+&lt;p&gt;Without that being said, I found it much easier to keep my mind clear and focused by separating tasks and non-actionable items, and leave certain things to Devonthink.&lt;/p&gt;
+&lt;p&gt;But you can still manage your lists, get away with inbox zero, and keep your task management clean in Things 3 alone.&lt;/p&gt;
+&lt;p&gt;For example, to achieve inbox zero, you can also tag/move/schedule your captures at the first place before sending to Inbox. This is basically processing inbox on the go before it gets too big.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The author is not affiliated with any of these companies or products mentioned above.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;References and further reading&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fortelabs.co/blog/para/&#34;&gt;The PARA Method: A Universal System for Organizing Digital Information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;How to Organize with Smart Rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://justinyan.me/post/5790&#34;&gt;每个人每天都只有24小时，希望我的选择真的是我的选择 | 枫言枫语&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>About</title>
+    <link ref="alternate" href="https://yinan.me/about.html" />
+    <id>about</id>
+    <published>2023-06-19 17:35:38+01:00</published>
+    <updated>2023-09-15 22:39:28+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
+&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
+&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
+&lt;h2&gt;About this blog&lt;/h2&gt;
+&lt;p&gt;This blog is created by a modified version of &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;PyBoke&lt;/a&gt;, where I added features like full text RSS, navigation buttons, and abstracts on the homepage.
+The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This blog is fully open source. All the articles in Markdown format, together with the templates I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;What will I write here?&lt;/h2&gt;
+&lt;p&gt;I am interested in many things, including but not limited to: RSS, macOS softwares, Python ... As I browse the internet (mostly via RSS), interesting things will pop up and I am happy to share online here.&lt;/p&gt;
+&lt;h2&gt;Thanks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;License&lt;/h1&gt;
+&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
+- &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
+- &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
+for any purpose, even commercially.&lt;/p&gt;
+&lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link ref="alternate" href="https://yinan.me/hello-world.html" />
+    <id>hello-world</id>
+    <published>2023-06-18 18:59:53+01:00</published>
+    <updated>2023-09-15 22:30:58+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
+&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
+&lt;h2&gt;为什么写博客？&lt;/h2&gt;
+&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
+&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
+&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
+&lt;h2&gt;我会写些什么&lt;/h2&gt;
+&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
+&lt;h2&gt;博客用了什么&lt;/h2&gt;
+&lt;p&gt;本博客的文章用 Markdown 编写。
+采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;
+&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
+&lt;h2&gt;版权&lt;/h2&gt;
+&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。你可以自由地：
+- &lt;strong&gt;共享&lt;/strong&gt; — 在任何媒介以任何形式复制、发行本作品
+- &lt;strong&gt;演绎&lt;/strong&gt; — 修改、转换或以本作品为基础进行创作
+在任何用途下，甚至商业目的。&lt;/p&gt;
+&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利&lt;/p&gt;</content>
   </entry>
   
   <entry>
