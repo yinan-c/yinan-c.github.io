@@ -110,7 +110,7 @@
 </li>
 <li><p>Find &quot;Pages&quot; under &quot;Code and automation&quot; in left sidebar and click in</p>
 </li>
-<li><p>Set &quot;Source&quot; as &quot;GitHub Actions&quot;, then click &quot;Save&quot;</p>
+<li><p>Set &quot;Source&quot; as &quot;auto-commit&quot; branch, choose &quot;/(docs)&quot;, click &quot;Save&quot;</p>
 </li>
 </ul>
 <h2>2. Configure RSS sources to merge, filter and summarize</h2>
@@ -118,7 +118,7 @@
 <p><img src="https://yinan.me/pics/change_branch.png" alt="" /></p>
 <p>Open the &quot;config.ini&quot; file, click the pencil icon at top right to edit code and configure your desired sources. Don't change the first two lines.</p>
 <pre><code>[cfg] 
-base = &quot;rss/&quot;
+base = &quot;docs/&quot;
 </code></pre>
 <p>Then modify the <strong>target language, number of keywords, and summary length</strong> in the next 3 lines. The following code is feed-specific configs, format is:</p>
 <ul>
@@ -141,7 +141,9 @@ base = &quot;rss/&quot;
 </li>
 </ul>
 <p>Click &quot;Commit changes&quot; at bottom to submit edits.</p>
-<h2>3.1 Modify <code>main.py</code> (if you used default repo name in 1.1, you can skip this step)</h2>
+<h2>3.1 Modify <code>main.py</code></h2>
+<p>**
+(if you used default repo name in 1.1, you can skip this step)**</p>
 <ul>
 <li><p>Open &quot;main.py&quot; file, click the pencil icon to edit code, go to line 290 and modify the &quot;RSS-GPT&quot; in &quot;https://{U_NAME}.github.io/RSS-GPT&quot; to your repo name.</p>
 </li>
@@ -150,7 +152,8 @@ base = &quot;rss/&quot;
 <li><p>Click &quot;Commit changes&quot; at bottom to submit edits.</p>
 </li>
 </ul>
-<h2>3.2 Modify <code>cron_job.yml</code> (if you forked &quot;auto-commit&quot; branch in 1.1 and edited auto-commit branch in Step 2, you can skip this step)</h2>
+<h2>3.2 Modify <code>cron_job.yml</code></h2>
+<p><strong>(if you forked &quot;auto-commit&quot; branch in 1.1 and edited auto-commit branch in Step 2, you can skip this step)</strong></p>
 <p>This step is to let GitHub Actions automatically commit to main branch instead of auto-commit branch.</p>
 <ul>
 <li>Open &quot;.github/workflows/cron_job.yml&quot; file, click the pencil icon to edit code, delete line 15 <code>    if: ${{ github.ref == 'refs/heads/auto-commit' }}</code>, then click &quot;Commit changes&quot; at bottom to submit edits.</li>
@@ -259,7 +262,7 @@ base = &quot;rss/&quot;
 
 
 
-    <a href="separating-tasks-and-lists.html" class="nav-button" id="prev-button">&lt; Separting tasks and non-actionable items</a>
+    <a href="separating-tasks-and-lists.html" class="nav-button" id="prev-button">&lt; Separating tasks and non-actionable items</a>
 
 
     <a href="rss-gpt-manual-zh.html" class="nav-button" id="next-button">RSS-GPT 使用指南 &gt;</a>
