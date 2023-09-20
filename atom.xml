@@ -12,11 +12,206 @@
 
   
   <entry>
+    <title>RSS-GPT Configuration</title>
+    <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
+    <id>rss-gpt-manual-en</id>
+    <published>2023-09-11 18:14:50+01:00</published>
+    <updated>2023-09-20 02:39:54+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub account&lt;/li&gt;
+&lt;li&gt;OpenAI API Key (get it at &lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;OpenAI website&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;1. GitHub Actions deployment&lt;/h2&gt;
+&lt;p&gt;The main idea is to use GitHub Actions to run Python scripts periodically, the script calls OpenAI API to generate summaries and append them to original RSS entries, then generate a new xml file, and commit it to the repo. &lt;/p&gt;
+&lt;p&gt;All contents in the repo folder are deployed on GitHub Pages via GitHub Actions, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.&lt;/p&gt;
+&lt;p&gt;If you don&#39;t want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with raw.githubusercontent.com), e.g. the xml file URL of this repo is &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;1.1 Fork the project, uncheck &#39;copy only the main branch&#39;&lt;/h3&gt;
+&lt;p&gt;Go to the project &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt; and fork the repo, uncheck &#39;copy only the main branch&#39; to copy all branches. This is for separating the workflow auto commit branch from the main branch. Note, in that case, the &#39;auto-commit&#39; branch will be the working branch that actually generate new xml files and push to your repo and GitHub Pages, &lt;strong&gt;only edits in the &#39;auto-commit&#39; branch will take effect&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I did this because I want to keep the main branch clean, so that others can see when the script was actully updated and decided whether to pull the changes.&lt;/p&gt;
+&lt;p&gt;If you don&#39;t mind the main branch having auto-commit edits, you can also just fork the main branch and configure your workflows to commit to the main branch, which I will cover later.&lt;/p&gt;
+&lt;h3&gt;1.2 Three Repo Secrets&lt;/h3&gt;
+&lt;h4&gt;U_NAME&lt;/h4&gt;
+&lt;p&gt;The username used for &lt;code&gt;git commit&lt;/code&gt;, &lt;strong&gt;please set to your GitHub username&lt;/strong&gt;. Your username is the last part of your GitHub homepage URL, e.g. https://github.com/yinan-c, the username is yinan-c.&lt;/p&gt;
+&lt;h4&gt;U_EMAIL&lt;/h4&gt;
+&lt;p&gt;The email used for &lt;code&gt;git commit&lt;/code&gt;, it&#39;s the email you used to register GitHub, can be found in &lt;a href=&#34;https://github.com/settings/emails&#34;&gt;GitHub settings page&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;WORK_TOKEN&lt;/h4&gt;
+&lt;p&gt;Since the project involves using scripts to operate repo contents, permissions are needed for the script to modify files in the repo. Apply for a new personal access token (classic) in &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;GitHub settings page&lt;/a&gt; and configure the new token as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-set.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Note: &#34;RSS-GPT&#34; or any name you like&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select scopes: Check all options under &#34;repo&#34; and &#34;workflow&#34; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expiration: Choose &#34;No expiration&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Generate token&#34; at bottom.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-copy.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Copy the token after clicking, make sure to copy it on this page, you won&#39;t be able to see the token after leaving this page. If you miss it, you&#39;ll have to generate a new one following the steps above.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;1.3 Set Repository Secrets&lt;/h3&gt;
+&lt;p&gt;Go to your forked repo, click &#34;Settings&#34; in top menu bar, then click &#34;Secrets and variables&#34; in left sidebar, choose &#34;Actions&#34;, then click &#34;New repository secret&#34; at top right. &lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/secrets.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add &lt;code&gt;U_NAME&lt;/code&gt;, &lt;code&gt;U_EMAIL&lt;/code&gt;, &lt;code&gt;WORK_TOKEN&lt;/code&gt;, &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; as secrets to the repo, can only add one at a time:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name: U_NAME, U_EMAIL, WORK_TOKEN, OPENAI_API_KEY&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Value: Your username, email, the copied GitHub token and OpenAI API Key&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Add secret&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.4 Grant required permissions&lt;/h3&gt;
+&lt;p&gt;Enable GitHub Actions access to Pages:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/pages.png&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Settings&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find &#34;Pages&#34; under &#34;Code and automation&#34; in left sidebar and click in&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set &#34;Source&#34; as &#34;GitHub Actions&#34;, then click &#34;Save&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2. Configure RSS sources to merge, filter and summarize&lt;/h2&gt;
+&lt;p&gt;Go to the project, if you forked both main and auto-commit branches, &lt;strong&gt;switch to the auto-commit branch as below&lt;/strong&gt;, other wise skip this step.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/change_branch.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Open the &#34;config.ini&#34; file, click the pencil icon at top right to edit code and configure your desired sources. Don&#39;t change the first two lines.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[cfg] 
+base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then modify the &lt;strong&gt;target language, number of keywords, and summary length&lt;/strong&gt; in the next 3 lines. The following code is feed-specific configs, format is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;[source001]&lt;/code&gt;: Feed ID, starts from 001 and increments, make sure IDs are unique to avoid errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: Name of the generated feed, only letters (a-z A-Z), numbers (0-9), (&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) allowed. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: Original RSS feed URL, can contain multiple feeds separated by comma. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;max_items = &#34;10&#34;&lt;/code&gt;: Number of articles to summarize between refreshes. E.g. 10 means summarizing the latest 10 articles on each refresh. 0 means no summarization, returning original entries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next are optional filter configs, note all 3 must be set together or not set: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: Apply filter on &#34;title&#34;, &#34;article&#34; (content) or &#34;link&#34;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: Filter type: &#34;include&#34;, &#34;exclude&#34;, &#34;regex match&#34; or &#34;regex not match&#34;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: Filter text or regex.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits. &lt;/p&gt;
+&lt;h2&gt;3.1 Modify &lt;code&gt;main.py&lt;/code&gt; (if you used default repo name in 1.1, you can skip this step)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open &#34;main.py&#34; file, click the pencil icon to edit code, go to line 290 and modify the &#34;RSS-GPT&#34; in &#34;https://{U_NAME}.github.io/RSS-GPT&#34; to your repo name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Optional) Modify prompt at lines 113-129 based on your needs for better summaries. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3.2 Modify &lt;code&gt;cron_job.yml&lt;/code&gt; (if you forked &#34;auto-commit&#34; branch in 1.1 and edited auto-commit branch in Step 2, you can skip this step)&lt;/h2&gt;
+&lt;p&gt;This step is to let GitHub Actions automatically commit to main branch instead of auto-commit branch.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open &#34;.github/workflows/cron_job.yml&#34; file, click the pencil icon to edit code, delete line 15 &lt;code&gt;if: ${{ github.ref == &#39;refs/heads/auto-commit&#39; }}&lt;/code&gt;, then click &#34;Commit changes&#34; at bottom to submit edits.&lt;/li&gt;
+&lt;li&gt;Open &#34;.github/workflows/jekyll-gh-pages.yml&#34; file, click the pencil icon to edit code, delete line 28 &lt;code&gt;if: ${{ github.ref == &#39;refs/heads/auto-commit&#39; }}&lt;/code&gt;, modify line 8 &lt;code&gt;- auto-commit&lt;/code&gt; to &lt;code&gt;- main&lt;/code&gt;, then click &#34;Commit changes&#34; at bottom to submit edits.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4. Test GitHub Actions&lt;/h2&gt;
+&lt;p&gt;Go to the project, click &#34;Actions&#34; in top menu bar, click &#34;cron_job&#34; select &#39;auto-commit&#39; branch and choose &#34;Run workflow&#34;.&lt;/p&gt;
+&lt;p&gt;Green check mark means successful run, red x means failure, usually due to errors in edited ini file or incorrect permissions/tokens, or the edits are not in the auto-commit branch.&lt;/p&gt;
+&lt;p&gt;If there are no errors, you should see your feeds on the project README page. &lt;/p&gt;
+&lt;p&gt;On the left of &lt;code&gt;-&amp;gt;&lt;/code&gt; is original URL, right is converted URL to subscribe like any other RSS feeds. Make sure you have changed your username in step 3.&lt;/p&gt;
+&lt;h2&gt;Some extra notes&lt;/h2&gt;
+&lt;h3&gt;About feeds refresh frequency&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Default run frequency is every 2 hours, modify &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; line 7 to change, e.g. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # run every 2 hours
+   - cron: &#39;0 */1 * * *&#39; # run every 1 hours
+   - cron: &#39;0 0 * * *&#39; # run every day at 00:00
+   - cron: &#39;*/30 * * * *&#39; # run every 30 minutes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For more info on cron syntax, see &lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab docs&lt;/a&gt; or &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;GitHub docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;What if I don&#39;t want to use summarization feature?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Well, you can still use this script to filter and merge multiple subscription sources. You just need to not set the OpenAI API Key in 1.3, or not set the &lt;code&gt;max_items&lt;/code&gt; in &lt;code&gt;config.ini&lt;/code&gt;, or set it to 0. By default, this script can also return the original article entries when the AI call fails. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you do want the AI summarization feature and have correctly set &lt;code&gt;config.ini&lt;/code&gt;, but still receive the original entries without summarization or experience infrequent updates, you can check the error information of the OpenAI API or feedparser from the &lt;code&gt;feed_name.log&lt;/code&gt; file in the &#34;auto-commit&#34; branch&#39;s &lt;code&gt;rss/&lt;/code&gt; folder of the project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About AI summary Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AI summaries are based on the description of each article in the feed. If the RSS itself provides the full text article, the full text will be summarized; if the RSS only provides the article summary, the summary will be based on the summary, and the script does not currently provide the function of crawling the full text of the original article.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About the usage of OpenAI API&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Regarding the usage of the OpenAI API, in order to minimize costs as much as possible, the following default measures have been adopted for this project:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The script will read the xml files already existing in the rss/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About repo updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I have separated manual edits and workflow auto commits into different branches, so you can see when and what I have edited in the main branch to decide whether to pull the latest changes. Note that if you want the edits to take effect, please pull to the working branch, which is the auto-commit branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If OpenAI releases more models in the future, I will choose the most suitable default model and update the code accordingly. If you have a better way to use AI or encounter any issues or spotted any errors, feel free to &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email me&lt;/a&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
     <title>RSS-GPT 使用指南</title>
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
     <id>rss-gpt-manual-zh</id>
     <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-09-20 04:17:05+01:00</updated>
+    <updated>2023-09-20 02:39:54+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址与功能介绍&lt;/h2&gt;
 &lt;ul&gt;
@@ -90,7 +285,7 @@
 &lt;p&gt;在左侧 “Code and automation” 下找到 “Pages” 点击进入&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;将 “Source&#34; 设置成 &#34;auto-commit&#34; 分支, 选择 “/(docs)”, 点击 “Save”&lt;/p&gt;
+&lt;p&gt;将 “Source&#34; 设置成 &#34;GitHub Actions&#34;, 然后点击 “Save”&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;2 设置需要合并, 过滤, 总结的 RSS 源&lt;/h2&gt;
@@ -98,7 +293,7 @@
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/change_branch.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;进入 &#34;config.ini&#34; 文件, 点击右上角的铅笔图标, 编辑代码, 设置你需要的订阅源, 前两行的内容不要动。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;[cfg]
-base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
+base = &#34;rss/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;然后在接下来的三行更改&lt;strong&gt;目标语言, 关键词数量, 和总结长度&lt;/strong&gt;。之后的代码是 feed-specific 的配置, 格式如下, 首先是3个必填项目:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -125,8 +320,7 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
-&lt;h2&gt;3.1 修改 main.py 中的仓库名称&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;如果你在 1.1 中使用了默认仓库名称，可以跳过这一步）&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;3.1 修改 main.py 中的仓库名称（如果你在 1.1 中使用了默认仓库名称，可以跳过这一步）&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;进入 “main.py&#34; 文件, 点击笔形图标, 编辑代码, 进入第 290 行,  修改 &#34;https://{U_NAME}.github.io/RSS-GPT&#34; 中的 RSS-GPT 为你的仓库名称。&lt;/p&gt;
@@ -138,8 +332,7 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;3.2 修改 workflow 文件&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;(如果你在 1.1 中 fork 了 auto-commit 分支, 并在 2 中修改的是 auto-commit 分支, 可以跳过这一步)&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;3.2 修改 workflow 文件 (如果你在 1.1 中 fork 了 auto-commit 分支, 并在 2 中修改的是 auto-commit 分支, 可以跳过这一步)&lt;/h2&gt;
 &lt;p&gt;这一步是为了让 GitHub Actions 在 main 分支中自动提交修改, 而不是在 auto-commit 分支中提交。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -193,204 +386,6 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，或者发现本教程有错误，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。最后，如果你觉得本教程或本项目对你有帮助，欢迎 star &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;本项目&lt;/a&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>RSS-GPT Configuration</title>
-    <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
-    <id>rss-gpt-manual-en</id>
-    <published>2023-09-11 18:14:50+01:00</published>
-    <updated>2023-09-20 04:16:13+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;中文指南&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Prerequisites&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub account&lt;/li&gt;
-&lt;li&gt;OpenAI API Key (get it at &lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;OpenAI website&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;1. GitHub Actions deployment&lt;/h2&gt;
-&lt;p&gt;The main idea is to use GitHub Actions to run Python scripts periodically, the script calls OpenAI API to generate summaries and append them to original RSS entries, then generate a new xml file, and commit it to the repo. &lt;/p&gt;
-&lt;p&gt;All contents in the repo folder are deployed on GitHub Pages via GitHub Actions, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.&lt;/p&gt;
-&lt;p&gt;If you don&#39;t want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with raw.githubusercontent.com), e.g. the xml file URL of this repo is &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/rss/brett-terpstra.xml&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;1.1 Fork the project, uncheck &#39;copy only the main branch&#39;&lt;/h3&gt;
-&lt;p&gt;Go to the project &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt; and fork the repo, uncheck &#39;copy only the main branch&#39; to copy all branches. This is for separating the workflow auto commit branch from the main branch. Note, in that case, the &#39;auto-commit&#39; branch will be the working branch that actually generate new xml files and push to your repo and GitHub Pages, &lt;strong&gt;only edits in the &#39;auto-commit&#39; branch will take effect&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;I did this because I want to keep the main branch clean, so that others can see when the script was actully updated and decided whether to pull the changes.&lt;/p&gt;
-&lt;p&gt;If you don&#39;t mind the main branch having auto-commit edits, you can also just fork the main branch and configure your workflows to commit to the main branch, which I will cover later.&lt;/p&gt;
-&lt;h3&gt;1.2 Three Repo Secrets&lt;/h3&gt;
-&lt;h4&gt;U_NAME&lt;/h4&gt;
-&lt;p&gt;The username used for &lt;code&gt;git commit&lt;/code&gt;, &lt;strong&gt;please set to your GitHub username&lt;/strong&gt;. Your username is the last part of your GitHub homepage URL, e.g. https://github.com/yinan-c, the username is yinan-c.&lt;/p&gt;
-&lt;h4&gt;U_EMAIL&lt;/h4&gt;
-&lt;p&gt;The email used for &lt;code&gt;git commit&lt;/code&gt;, it&#39;s the email you used to register GitHub, can be found in &lt;a href=&#34;https://github.com/settings/emails&#34;&gt;GitHub settings page&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;WORK_TOKEN&lt;/h4&gt;
-&lt;p&gt;Since the project involves using scripts to operate repo contents, permissions are needed for the script to modify files in the repo. Apply for a new personal access token (classic) in &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;GitHub settings page&lt;/a&gt; and configure the new token as follows:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-set.png&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Note: &#34;RSS-GPT&#34; or any name you like&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select scopes: Check all options under &#34;repo&#34; and &#34;workflow&#34; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Expiration: Choose &#34;No expiration&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Generate token&#34; at bottom.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-copy.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Copy the token after clicking, make sure to copy it on this page, you won&#39;t be able to see the token after leaving this page. If you miss it, you&#39;ll have to generate a new one following the steps above.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;1.3 Set Repository Secrets&lt;/h3&gt;
-&lt;p&gt;Go to your forked repo, click &#34;Settings&#34; in top menu bar, then click &#34;Secrets and variables&#34; in left sidebar, choose &#34;Actions&#34;, then click &#34;New repository secret&#34; at top right. &lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/secrets.png&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Add &lt;code&gt;U_NAME&lt;/code&gt;, &lt;code&gt;U_EMAIL&lt;/code&gt;, &lt;code&gt;WORK_TOKEN&lt;/code&gt;, &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; as secrets to the repo, can only add one at a time:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Name: U_NAME, U_EMAIL, WORK_TOKEN, OPENAI_API_KEY&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Value: Your username, email, the copied GitHub token and OpenAI API Key&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Add secret&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;1.4 Grant required permissions&lt;/h3&gt;
-&lt;p&gt;Enable GitHub Actions access to Pages:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/pages.png&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Settings&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Find &#34;Pages&#34; under &#34;Code and automation&#34; in left sidebar and click in&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Set &#34;Source&#34; as &#34;auto-commit&#34; branch, choose &#34;/(docs)&#34;, click &#34;Save&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;2. Configure RSS sources to merge, filter and summarize&lt;/h2&gt;
-&lt;p&gt;Go to the project, if you forked both main and auto-commit branches, &lt;strong&gt;switch to the auto-commit branch as below&lt;/strong&gt;, other wise skip this step.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/change_branch.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Open the &#34;config.ini&#34; file, click the pencil icon at top right to edit code and configure your desired sources. Don&#39;t change the first two lines.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[cfg] 
-base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Then modify the &lt;strong&gt;target language, number of keywords, and summary length&lt;/strong&gt; in the next 3 lines. The following code is feed-specific configs, format is:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;[source001]&lt;/code&gt;: Feed ID, starts from 001 and increments, make sure IDs are unique to avoid errors.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: Name of the generated feed, only letters (a-z A-Z), numbers (0-9), (&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) allowed. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: Original RSS feed URL, can contain multiple feeds separated by comma. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;max_items = &#34;10&#34;&lt;/code&gt;: Number of articles to summarize between refreshes. E.g. 10 means summarizing the latest 10 articles on each refresh. 0 means no summarization, returning original entries.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next are optional filter configs, note all 3 must be set together or not set: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: Apply filter on &#34;title&#34;, &#34;article&#34; (content) or &#34;link&#34;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: Filter type: &#34;include&#34;, &#34;exclude&#34;, &#34;regex match&#34; or &#34;regex not match&#34;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: Filter text or regex.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits. &lt;/p&gt;
-&lt;h2&gt;3.1 Modify &lt;code&gt;main.py&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;**
-(if you used default repo name in 1.1, you can skip this step)**&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Open &#34;main.py&#34; file, click the pencil icon to edit code, go to line 290 and modify the &#34;RSS-GPT&#34; in &#34;https://{U_NAME}.github.io/RSS-GPT&#34; to your repo name.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;(Optional) Modify prompt at lines 113-129 based on your needs for better summaries. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &#34;Commit changes&#34; at bottom to submit edits.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;3.2 Modify &lt;code&gt;cron_job.yml&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;(if you forked &#34;auto-commit&#34; branch in 1.1 and edited auto-commit branch in Step 2, you can skip this step)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This step is to let GitHub Actions automatically commit to main branch instead of auto-commit branch.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Open &#34;.github/workflows/cron_job.yml&#34; file, click the pencil icon to edit code, delete line 15 &lt;code&gt;if: ${{ github.ref == &#39;refs/heads/auto-commit&#39; }}&lt;/code&gt;, then click &#34;Commit changes&#34; at bottom to submit edits.&lt;/li&gt;
-&lt;li&gt;Open &#34;.github/workflows/jekyll-gh-pages.yml&#34; file, click the pencil icon to edit code, delete line 28 &lt;code&gt;if: ${{ github.ref == &#39;refs/heads/auto-commit&#39; }}&lt;/code&gt;, modify line 8 &lt;code&gt;- auto-commit&lt;/code&gt; to &lt;code&gt;- main&lt;/code&gt;, then click &#34;Commit changes&#34; at bottom to submit edits.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;4. Test GitHub Actions&lt;/h2&gt;
-&lt;p&gt;Go to the project, click &#34;Actions&#34; in top menu bar, click &#34;cron_job&#34; select &#39;auto-commit&#39; branch and choose &#34;Run workflow&#34;.&lt;/p&gt;
-&lt;p&gt;Green check mark means successful run, red x means failure, usually due to errors in edited ini file or incorrect permissions/tokens, or the edits are not in the auto-commit branch.&lt;/p&gt;
-&lt;p&gt;If there are no errors, you should see your feeds on the project README page. &lt;/p&gt;
-&lt;p&gt;On the left of &lt;code&gt;-&amp;gt;&lt;/code&gt; is original URL, right is converted URL to subscribe like any other RSS feeds. Make sure you have changed your username in step 3.&lt;/p&gt;
-&lt;h2&gt;Some extra notes&lt;/h2&gt;
-&lt;h3&gt;About feeds refresh frequency&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Default run frequency is every 2 hours, modify &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; line 7 to change, e.g. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # run every 2 hours
-   - cron: &#39;0 */1 * * *&#39; # run every 1 hours
-   - cron: &#39;0 0 * * *&#39; # run every day at 00:00
-   - cron: &#39;*/30 * * * *&#39; # run every 30 minutes&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;For more info on cron syntax, see &lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab docs&lt;/a&gt; or &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;GitHub docs&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;What if I don&#39;t want to use summarization feature?&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Well, you can still use this script to filter and merge multiple subscription sources. You just need to not set the OpenAI API Key in 1.3, or not set the &lt;code&gt;max_items&lt;/code&gt; in &lt;code&gt;config.ini&lt;/code&gt;, or set it to 0. By default, this script can also return the original article entries when the AI call fails. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If you do want the AI summarization feature and have correctly set &lt;code&gt;config.ini&lt;/code&gt;, but still receive the original entries without summarization or experience infrequent updates, you can check the error information of the OpenAI API or feedparser from the &lt;code&gt;feed_name.log&lt;/code&gt; file in the &#34;auto-commit&#34; branch&#39;s &lt;code&gt;rss/&lt;/code&gt; folder of the project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;About AI summary Content&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;My prompt is basically asking AI to extract keywords + summarize + auto-formatting. Formatting is not always perfect, and my prompt is not perfectly optmized for everyone. You can modify prompt at lines 113-129 based on your needs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;AI summaries are based on the description of each article in the feed. If the RSS itself provides the full text article, the full text will be summarized; if the RSS only provides the article summary, the summary will be based on the summary, and the script does not currently provide the function of crawling the full text of the original article.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;About the usage of OpenAI API&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Regarding the usage of the OpenAI API, in order to minimize costs as much as possible, the following default measures have been adopted for this project:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The script will read the xml files already existing in the rss/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;About repo updates&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;I have separated manual edits and workflow auto commits into different branches, so you can see when and what I have edited in the main branch to decide whether to pull the latest changes. Note that if you want the edits to take effect, please pull to the working branch, which is the auto-commit branch.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If OpenAI releases more models in the future, I will choose the most suitable default model and update the code accordingly. If you have a better way to use AI or encounter any issues or spotted any errors, feel free to &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email me&lt;/a&gt;. &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
