@@ -12,6 +12,54 @@
 
   
   <entry>
+    <title>Separating tasks and non-actionable items</title>
+    <link ref="alternate" href="https://yinan.me/separating-tasks-and-lists.html" />
+    <id>separating-tasks-and-lists</id>
+    <published>2023-09-20 17:20:56+01:00</published>
+    <updated>2023-09-29 22:02:44+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;The thought&lt;/h2&gt;
+&lt;p&gt;I read an discusion about devonthink on MPU forum, &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt; and came across a interesting and much enlighting comment by &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628/18&#34;&gt;@ryanjamuraphy&lt;/a&gt;, when he was talking about his usage of &lt;a href=&#34;https://www.devontechnologies.com&#34;&gt;Devonthink&lt;/a&gt; as a Notes and annotations database:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Incidentally, one lesson I learned from my recent Things adventure is that I put a lot of non-actionable items in OmniFocus. As a result, probably half of the items in there were just noise. Most of these items were just thinking on potential projects or links to things I wanted to investigate. Instead of putting them in OmniFocus, I aim now to keep my task manager clean and lean. Instead, I’ll rely on PARA/CODE and put those non-actionable items in DEVONthink as a notes database. I plan on working in DT3 on my desktop a lot more to make this happen.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I personally use &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things 3&lt;/a&gt; as my task manager and recently started using &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;Devonthink&lt;/a&gt; as my notes/documents/bookmarks database. This idea of separting tasks and non-actionable items suddenly hit me and I decided to write something about it:&lt;/p&gt;
+&lt;h2&gt;My old workflow&lt;/h2&gt;
+&lt;p&gt;This is my Things 3 window usually looks like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Things.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As you can see from the sidebar, there are 40 items in &#39;Inbox&#39;, 7 in &#39;Today&#39;, Besides these 2 there are also &#39;Upcoming&#39;, &#39;Anytime&#39;, &#39;Someday&#39; -- These time-based lists are where you assign your tasks to based on urgency and importance.&lt;/p&gt;
+&lt;p&gt;In the meanwhile, there are tags, projects, and areas where you use to catorgorize your tasks.&lt;/p&gt;
+&lt;p&gt;Inbox is something we all learned about when using emails. In the email world, it is where you receive all your emails, and you process them by replying, forwarding, or deleting them. I use inbox in Things 3 as a place to capture everything from everywhere:&lt;/p&gt;
+&lt;p&gt;A typical workflow of mine using Things 3 is that I will capture &lt;strong&gt;everything&lt;/strong&gt; to inbox, thoughts, tasks, articles I found online or from RSS feeds. Then I will process the inbox on a regular base, assigning tasks to the time-based lists, tagging them and carogorizing to different projects, and areas.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;This sounds awesome, which helps me to keep my mind clear and focused on what I am doing at the moment. In the meanwhile, I don&#39;t have to worry about losing anything that comes up while I am in the middle of something.&lt;/p&gt;
+&lt;p&gt;But there is a problem underlying this workflow: &lt;strong&gt;The inbox is quickly filled up with non-actionable items, making it hard to process the inbox and find the important things to do.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;More often than not, you will find yourself doing a lot of easy yet non-important tasks, like replying emails, or reading articles, instead of doing the important difficult tasks that you should really be doing at the moment.&lt;/p&gt;
+&lt;h2&gt;The 2 lists&lt;/h2&gt;
+&lt;p&gt;Actionable tasks is generally sparse yet important, which should either be done or sorted out and/or asigned as soon as possible, in case they are forgotten.&lt;/p&gt;
+&lt;p&gt;Articles in readlist is non-actionable, something you can postponed even abandoned because of time-sensitivity.&lt;/p&gt;
+&lt;p&gt;There are always things happening, and you will always find new things to read. It is genneraylly impossible and not a good idea to devote your limited time to read infinite amount of information and articles.&lt;/p&gt;
+&lt;p&gt;If you are like me, using RSS to fetch information online and capture the interesting ones to things inbox without tagging or sorting them at the first place. You will find that your readlist is growing very fast. And more often than not, you will find your tasks buried in the inbox under a pile of readlist items.&lt;/p&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;The solution is simple: &lt;strong&gt;separate the tasks and non-actionable items&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now I put all my readlist items to Devonthink, using smart rules to automatically tag them based on the source, convert them to pdf/webarchive, and put them in the &#39;readlist&#39; database so that I can read them when I have time.&lt;/p&gt;
+&lt;p&gt;This smart rule function is similar to mail rules in email clients, where you can automatically sort your emails based on the sender, subject, etc. All these can be done automatically thanks to the powerful &lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;smart rules&lt;/a&gt; in Devonthink.&lt;/p&gt;
+&lt;p&gt;I can use Things 3 as a pure task manager which I can start working on right away, and I use Devonthink as a readlist/documents database which I can search for information when I need them.&lt;/p&gt;
+&lt;h1&gt;Some final words&lt;/h1&gt;
+&lt;p&gt;Things 3 alone works great as a list/task manager, which can serve for multiple purposes. Despite the inability to store files, it can still be used as a proper readlist, a bookmark manager, a notes database, etc.&lt;/p&gt;
+&lt;p&gt;Without that being said, I found it much easier to keep my mind clear and focused by separating tasks and non-actionable items, and leave certain things to Devonthink.&lt;/p&gt;
+&lt;p&gt;But you can still manage your lists, get away with inbox zero, and keep your task management clean in Things 3 alone.&lt;/p&gt;
+&lt;p&gt;For example, to achieve inbox zero, you can also tag/move/schedule your captures at the first place before sending to Inbox. This is basically processing inbox on the go before it gets too big.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The author is not affiliated with any of these companies or products mentioned above.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;References and further reading&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fortelabs.co/blog/para/&#34;&gt;The PARA Method: A Universal System for Organizing Digital Information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;How to Organize with Smart Rules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link ref="alternate" href="https://yinan.me/hello-world.html" />
     <id>hello-world</id>
@@ -390,55 +438,6 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，或者发现本教程有错误，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。最后，如果你觉得本教程或本项目对你有帮助，欢迎 star &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;本项目&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Separating tasks and non-actionable items</title>
-    <link ref="alternate" href="https://yinan.me/separating-tasks-and-lists.html" />
-    <id>separating-tasks-and-lists</id>
-    <published>2023-09-20 17:20:56+01:00</published>
-    <updated>2023-09-20 17:20:56+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;The thought&lt;/h2&gt;
-&lt;p&gt;I read an discusion about devonthink on MPU forum, &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt; and came across a interesting and much enlighting comment by &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628/18&#34;&gt;@ryanjamuraphy&lt;/a&gt;, when he was talking about his usage of &lt;a href=&#34;https://www.devontechnologies.com&#34;&gt;Devonthink&lt;/a&gt; as a Notes and annotations database:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Incidentally, one lesson I learned from my recent Things adventure is that I put a lot of non-actionable items in OmniFocus. As a result, probably half of the items in there were just noise. Most of these items were just thinking on potential projects or links to things I wanted to investigate. Instead of putting them in OmniFocus, I aim now to keep my task manager clean and lean. Instead, I’ll rely on PARA/CODE and put those non-actionable items in DEVONthink as a notes database. I plan on working in DT3 on my desktop a lot more to make this happen.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I personally use &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things 3&lt;/a&gt; as my task manager and recently started using &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;Devonthink&lt;/a&gt; as my notes/documents/bookmarks database. This idea of separting tasks and non-actionable items suddenly hit me and I decided to write something about it:&lt;/p&gt;
-&lt;h2&gt;My old workflow&lt;/h2&gt;
-&lt;p&gt;This is my Things 3 window usually looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Things.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;As you can see from the sidebar, there are 40 items in &#39;Inbox&#39;, 7 in &#39;Today&#39;, Besides these 2 there are also &#39;Upcoming&#39;, &#39;Anytime&#39;, &#39;Someday&#39; -- These time-based lists are where you assign your tasks to based on urgency and importance.&lt;/p&gt;
-&lt;p&gt;In the meanwhile, there are tags, projects, and areas where you use to catorgorize your tasks.&lt;/p&gt;
-&lt;p&gt;Inbox is something we all learned about when using emails. In the email world, it is where you receive all your emails, and you process them by replying, forwarding, or deleting them. I use inbox in Things 3 as a place to capture everything from everywhere:&lt;/p&gt;
-&lt;p&gt;A typical workflow of mine using Things 3 is that I will capture &lt;strong&gt;everything&lt;/strong&gt; to inbox, thoughts, tasks, articles I found online or from RSS feeds. Then I will process the inbox on a regular base, assigning tasks to the time-based lists, tagging them and carogorizing to different projects, and areas.&lt;/p&gt;
-&lt;h2&gt;The problem&lt;/h2&gt;
-&lt;p&gt;This sounds awesome, which helps me to keep my mind clear and focused on what I am doing at the moment. In the meanwhile, I don&#39;t have to worry about losing anything that comes up while I am in the middle of something.&lt;/p&gt;
-&lt;p&gt;But there is a problem underlying this workflow: &lt;strong&gt;The inbox is quickly filled up with non-actionable items, making it hard to process the inbox and find the important things to do.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;More often than not, you will find yourself doing a lot of easy yet non-important tasks, like replying emails, or reading articles, instead of doing the important difficult tasks that you should really be doing at the moment.&lt;/p&gt;
-&lt;h2&gt;The 2 lists&lt;/h2&gt;
-&lt;p&gt;Actionable tasks is generally sparse yet important, which should either be done or sorted out and/or asigned as soon as possible, in case they are forgotten.&lt;/p&gt;
-&lt;p&gt;Articles in readlist is non-actionable, something you can postponed even abandoned because of time-sensitivity.&lt;/p&gt;
-&lt;p&gt;There are always things happening, and you will always find new things to read. It is genneraylly impossible and not a good idea to devote your limited time to read infinite amount of information and articles.&lt;/p&gt;
-&lt;p&gt;If you are like me, using RSS to fetch information online and capture the interesting ones to things inbox without tagging or sorting them at the first place. You will find that your readlist is growing very fast. And more often than not, you will find your tasks buried in the inbox under a pile of readlist items.&lt;/p&gt;
-&lt;h2&gt;The solution&lt;/h2&gt;
-&lt;p&gt;The solution is simple: &lt;strong&gt;separate the tasks and non-actionable items&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Now I put all my readlist items to Devonthink, using smart rules to automatically tag them based on the source, convert them to pdf/webarchive, and put them in the &#39;readlist&#39; database so that I can read them when I have time.&lt;/p&gt;
-&lt;p&gt;This smart rule function is similar to mail rules in email clients, where you can automatically sort your emails based on the sender, subject, etc. All these can be done automatically thanks to the powerful &lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;smart rules&lt;/a&gt; in Devonthink.&lt;/p&gt;
-&lt;p&gt;I can use Things 3 as a pure task manager which I can start working on right away, and I use Devonthink as a readlist/documents database which I can search for information when I need them.&lt;/p&gt;
-&lt;h1&gt;Some final words&lt;/h1&gt;
-&lt;p&gt;Things 3 alone works great as a list/task manager, which can serve for multiple purposes. Despite the inability to store files, it can still be used as a proper readlist, a bookmark manager, a notes database, etc.&lt;/p&gt;
-&lt;p&gt;Without that being said, I found it much easier to keep my mind clear and focused by separating tasks and non-actionable items, and leave certain things to Devonthink.&lt;/p&gt;
-&lt;p&gt;But you can still manage your lists, get away with inbox zero, and keep your task management clean in Things 3 alone.&lt;/p&gt;
-&lt;p&gt;For example, to achieve inbox zero, you can also tag/move/schedule your captures at the first place before sending to Inbox. This is basically processing inbox on the go before it gets too big.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The author is not affiliated with any of these companies or products mentioned above.&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;References and further reading&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://fortelabs.co/blog/para/&#34;&gt;The PARA Method: A Universal System for Organizing Digital Information&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;How to Organize with Smart Rules&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://justinyan.me/post/5790&#34;&gt;每个人每天都只有24小时，希望我的选择真的是我的选择 | 枫言枫语&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
   
