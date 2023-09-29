@@ -12,6 +12,34 @@
 
   
   <entry>
+    <title>Hello World</title>
+    <link ref="alternate" href="https://yinan.me/hello-world.html" />
+    <id>hello-world</id>
+    <published>2023-06-18 18:59:53+01:00</published>
+    <updated>2023-09-29 20:04:07+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
+&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
+&lt;h2&gt;为什么写博客？&lt;/h2&gt;
+&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
+&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
+&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
+&lt;h2&gt;我会写些什么&lt;/h2&gt;
+&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
+&lt;h2&gt;博客用了什么&lt;/h2&gt;
+&lt;p&gt;本博客的文章用 Markdown 编写。
+采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;
+&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
+&lt;h2&gt;版权&lt;/h2&gt;
+&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。你可以自由地：
+- &lt;strong&gt;共享&lt;/strong&gt; — 在任何媒介以任何形式复制、发行本作品
+- &lt;strong&gt;演绎&lt;/strong&gt; — 修改、转换或以本作品为基础进行创作
+在任何用途下，甚至商业目的。&lt;/p&gt;
+&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>AI 总结 RSS Feeds</title>
     <link ref="alternate" href="https://yinan.me/rss-gpt.html" />
     <id>rss-gpt</id>
@@ -443,34 +471,6 @@ The original version of PyBoke is created by &lt;a href=&#34;https://github.com/
 - &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
 for any purpose, even commercially.&lt;/p&gt;
 &lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link ref="alternate" href="https://yinan.me/hello-world.html" />
-    <id>hello-world</id>
-    <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2023-09-15 22:30:58+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
-&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
-&lt;h2&gt;为什么写博客？&lt;/h2&gt;
-&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
-&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
-&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
-&lt;h2&gt;我会写些什么&lt;/h2&gt;
-&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
-&lt;h2&gt;博客用了什么&lt;/h2&gt;
-&lt;p&gt;本博客的文章用 Markdown 编写。
-采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;
-&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
-&lt;h2&gt;版权&lt;/h2&gt;
-&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。你可以自由地：
-- &lt;strong&gt;共享&lt;/strong&gt; — 在任何媒介以任何形式复制、发行本作品
-- &lt;strong&gt;演绎&lt;/strong&gt; — 修改、转换或以本作品为基础进行创作
-在任何用途下，甚至商业目的。&lt;/p&gt;
-&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利&lt;/p&gt;</content>
   </entry>
   
   <entry>
