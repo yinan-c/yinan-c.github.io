@@ -63,7 +63,7 @@
 </ul>
 <h2>1 GitHub Actions 部署</h2>
 <p>大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 docs/ 文件夹内。</p>
-<p>文件夹内所有内容都将通过 Github Actions 自动部署在 GitHub Pages 上, 这样就可以通过你的 Pages 地址访问到这个 xml 文件, 然后就可以在任何 RSS 阅读器中订阅。</p>
+<p>文件夹内所有内容都将自动部署在 GitHub Pages 上, 这样就可以通过你的 Pages 地址访问到这个 xml 文件, 然后就可以在任何 RSS 阅读器中订阅。</p>
 <p>如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 <code>https://raw.githubusercontent.com</code> 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 <a href="https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml">https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml</a>。</p>
 <h3>1.1 Fork项目</h3>
 <p>进入项目 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>, 然后 fork 项目到自己的仓库。</p>
@@ -120,7 +120,7 @@
 </li>
 <li><p>在左侧 “Code and automation” 下找到 “Pages” 点击进入</p>
 </li>
-<li><p>将 “Source&quot; 设置成 &quot;GitHub Actions&quot;, 然后点击 “Save”</p>
+<li><p>将 Source 设置为 deploy from main branch /docs folder. 即从 main 分支的 docs 文件夹部署到 Pages 上。</p>
 </li>
 </ul>
 <h2>2 设置需要合并, 过滤, 总结的 RSS 源</h2>
@@ -159,7 +159,7 @@ base = &quot;docs/&quot;
 <li><p>点击最下边的 “Commit changes” 提交修改。</p>
 </li>
 </ul>
-<h2>4 测试 GitHub Actions</h2>
+<h2>4 开启并测试 GitHub Actions</h2>
 <p>进入项目, 点击上方菜单栏的 &quot;Actions&quot;, 点击 “cron_job&quot;, 选择 “Run workflow&quot;</p>
 <p>等待运行成功会显示绿色的勾, 运行失败会显示红色的叉。如果出现红叉, 一般都是你修改 ini 文件时, 什么地方写错了, 或者权限、Secrets 设置错误。请仔细检查。</p>
 <p>如果前边没出现错误 (主要是运动 Actions 没出现红叉), 那么你可以在项目的介绍页看到你的订阅源。</p>
@@ -285,7 +285,7 @@ base = &quot;docs/&quot;
 
 <div id="updated-at">
   <span>Created: 2023-09-11</span>
-  <span>Updated: 2023-09-20</span>
+  <span>Updated: 2023-10-18</span>
 </div>
 
 <div id="footer">

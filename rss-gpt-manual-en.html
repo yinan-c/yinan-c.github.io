@@ -63,7 +63,7 @@
 </ul>
 <h2>1. GitHub Actions deployment</h2>
 <p>The main idea is to use GitHub Actions to run Python scripts periodically, the script calls OpenAI API to generate summaries and append them to original RSS entries, then generate a new xml file, and commit it to the repo.</p>
-<p>All contents in the repo folder are deployed on GitHub Pages via GitHub Actions, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.</p>
+<p>All contents in the repo folder are deployed on GitHub Pages, so you can access the xml file via your GitHub Pages URL, and subscribe to it like normal RSS feeds in any RSS reader.</p>
 <p>If you don't want to deploy on GitHub Pages, you can also subscribe to the raw xml file in the repo (URL starts with <code>https://raw.githubusercontent.com</code>), e.g. the xml file URL of this repo is <a href="https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml">https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml</a>.</p>
 <h3>1.1 Fork the project</h3>
 <p>Go to the project <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a> and fork it to your own repo. I recommend not to change the repo name, if you do so, you'll have to modify <code>main.py</code> in step 3.</p>
@@ -101,7 +101,7 @@
 <ul>
 <li>Click &quot;Settings&quot; in top menu bar</li>
 <li>Find &quot;Pages&quot; under &quot;Code and automation&quot; in left sidebar and click in</li>
-<li>Set &quot;Source&quot; as &quot;GitHub Actions&quot;, then click &quot;Save&quot;</li>
+<li>Set source as deploy from main branch /docs folder.</li>
 </ul>
 <h2>2. Configure RSS sources to merge, filter and summarize</h2>
 <p>Go to the project, open the &quot;config.ini&quot; file, click the pencil icon at top right to edit code and configure your desired sources. Don't change the first two lines.</p>
@@ -129,7 +129,7 @@ base = &quot;docs/&quot;
 <li>(Optional) Modify prompt at lines 113-129 based on your needs for better summaries.</li>
 <li>Click &quot;Commit changes&quot; at bottom to submit edits.</li>
 </ul>
-<h2>4. Test GitHub Actions</h2>
+<h2>4. Configure and test GitHub Actions</h2>
 <p>Go to the project, click &quot;Actions&quot; in top menu bar, click &quot;cron_job&quot; and choose &quot;Run workflow&quot;.</p>
 <p>Green check mark means successful run, red x means failure, usually due to errors in edited ini file or incorrect permissions/tokens. Double check if errors occur.</p>
 <p>If there are no errors, you should see your feeds on the project README page.</p>
@@ -258,7 +258,7 @@ base = &quot;docs/&quot;
 
 <div id="updated-at">
   <span>Created: 2023-09-11</span>
-  <span>Updated: 2023-09-20</span>
+  <span>Updated: 2023-10-18</span>
 </div>
 
 <div id="footer">
