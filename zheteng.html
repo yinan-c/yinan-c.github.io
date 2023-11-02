@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>折腾 - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2023-11-02 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+<div class="post-ai">
+    <div class="ai-title">
+        <div class="ai-title-text">AI Summary by GPT-4</div>
+    </div>
+
+    <div class="ai-explanation ai-explanation-content">
+        文章讨论了博主对其使用的Pyboke博客系统进行多项功能优化和扩展的想法和尝试。他首先考虑利用ChatGPT进行文章内容的自动总结，并思考了实现这一功能可能遇到的问题和解决方案。此外，他还探索了在博客中加入评论、点赞功能，并考虑引入RSS全文阅读和在博客中展示简短生活点滴的功能。他还提到了一些暂时搁置的功能，如搜索和标签，并对现有的metadata存储方式进行了一些思考。总体上，博主希望通过这些改进提升博客的功能性和用户体验。
+    </div>
+</div>
+
+
+
+<h1>折腾</h1>
+<p>最近又开始折腾博客了，目前 Pyboke 博客能够实现的功能比较简单，所以会有很多想法。虽然这些想法也不一定都会实现，但还是想记录下来。
+以下想法有些是直接接入第三方 API 修改模板即可实现， 有些则可能需要修改 Pyboke 源代码。</p>
+<h2>ChatGPT 总结</h2>
+<p>首先就是 AI 总结，ChatGPT 已经帮我总结了不少 <a href="https://yinan.me/RSS-GPT/index.html">RSS 订阅源</a>。在决定深入阅读前，可以先借助 AI 总结的内容判断是否感兴趣，效果很不错。</p>
+<p>尝到甜头后我就想能不能也用在自己的博客文章中，方便游客快速了解文章内容。首先的想法是加一个 metadata 条目 'summary'，然后在提交文章时自动调用 ChatGPT 总结，把结果填入 summary 中，因为之前主页上的预览也是这样做的，再加上我之前也写过 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>，所以花了一些功夫就写出大概功能了。但是目前还有几个问题没解决：</p>
+<ol>
+<li>是否所有文章都需要总结？是否要加一个条件判断？比如有些文章，about，contact 等，不需要总结。</li>
+<li>文章的 metadata 是在运行 <code>Pyboke</code> 之后才生成的，如果要加条件判断，那么就需要在生成 metadata 之后再运行脚本进行 ChatGPT 总结。</li>
+<li>或者，是否应该引入 YAML 格式的 front matter，来代替现在 toml 格式分开存储的 metadata？这样就可以在文章中直接修改，而不需要在生成 metadata 之后再手动修改。</li>
+</ol>
+<p>在这些问题还没有定论之间，我还没有想要把自动总结加入 Pyboke 的源代码。目前以我可怜的博文数量以及更新频率来看，手动让 GPT-4 总结然后添加到 metadata 然后修改 Jinja 渲染模板，应该就够了。 如果你想要折腾出自动化的方案，并且用的是 Hugo，可以参考大大的小蜗牛的<a href="https://eallion.com/ai-summary/">这篇文章</a>。</p>
+<h2>评论和点赞</h2>
+<p>之前看过水八口的一篇帖子<a href="https://shuiba.co/third-party-comments-2023">第三方评论之2023年版</a>详细对比了不同方案的优缺点。</p>
+<p>最终决定用了<a href="https://giscus.app/">giscus</a>，利用的是 <a href="https://github.com/yinan-c/pages-comment">GitHub Repository</a> 的 discussions 功能，所以既可以在 Repo 里评论，也可在博客内评论。好在设置非常简单，在 template html 加上一段 js 脚本即可。除了评论点赞必须要登录 GitHub 账号外，目前没有什么太大问题。</p>
+<p>这两天又在逛博客，发现了一些很有趣的方案，<a href="https://yuxiyuqi.com">Yuxi&amp;Yuqi</a>的评论是用的<a href="https://twikoo.js.org/en/">twikoo</a>，<a href="https://koobai.com/">koobai</a> 用了<a href="https://artalk.js.org/en/">Artalk</a>，<a href="https://zishu.me/">子舒的博客</a>用了 <a href="https://github.com/emaction/emaction.frontend">emaction</a> 来实现 emoji reaction，点赞无需登录，也可以自己部署<a href="https://github.com/emaction/emaction.backend">后端</a>。后续可能会考接入我的博客。</p>
+<h2>全文 RSS</h2>
+<p>这是之前一段时间 (2023-09) 就已经实现的功能。原项目的 RSS 带了 Markdown 的格式符以及截取到前 150 个字符。我给 Markdown 转成了 HTML，并取消了字数限制，这样就可以直接在 RSS 阅读器里看到全文了。</p>
+<h2>Memos as in-line &quot;Tweet&quot;</h2>
+<p>我想要把生活中简短的点滴放在博客，而不是仅仅写长 posts，推特本来是一个理想的平台，但是因为 Twitter API 以及 RSS 的封闭，除了 <a href="https://publish.twitter.com/">embed Twiiter</a>，我好像没有特别好的办法把上面的内容搬运过来。<a href="https://koobai.com/memos">Koobai</a>的“唠叨”使用的是 <a href="https://github.com/usememos/memos">Memos</a> 方案，而<a href="https://yuxiyuqi.com/timeline/">Yuxi&amp;Yuqi</a> 则使用了时间线的方式, 目前我还没搞懂是用的啥方案还是自己搭的。</p>
+<p>关于这个功能，我目前并不急着实现，就算之后要选择第三方实现，数据的 privacy, self-hosted 对我来说，应该是首要考虑因素。</p>
+<h2>展示个性化订阅源</h2>
+<p>使用 <a href="https://github.com/avadhesh18/rssTea">rssTea</a> 展示播客订阅源，或个性化的订阅源，比如即刻，v2ex动态等。</p>
+<h2>暂时搁置的功能</h2>
+<p>搜索和标签, 目录</p>
+<p>目前来看，Pyboke 以 metadata 以 toml 格式保存以及与文章分开存储的方案，相比较于 YAML front matter，各有利弊，前者保留了 Markdown 的文本格式，后者则可以直接在文章中修改 metadata。目前新添加的功能例如 首页预览，文章内总结，确实需要在渲染生成 metadata 文件之后，然后手动进入文件修改。但是目前以我更新博客的频率来看，还是可以接受的。如若以后有了更多需要手动添加的 metadata，例如标签，那么我或许会考虑引入 YAML front matter。最后一句话赶紧掐断我写下更多的折腾的想法吧，Hey, if it ain't broke, don't fix it.</p>
+<h2>Further Reading</h2>
+<ul>
+<li><a href="https://eallion.com/ai-summary/">博客 AI 摘要及优化 - 大大的小蜗牛</a></li>
+<li><a href="https://shuiba.co/third-party-comments-2023">第三方评论之2023年版 - 水八口</a></li>
+</ul>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="separating-tasks-and-lists.html" class="nav-button" id="next-button">Separating tasks and non-actionable items &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2023-11-02</span>
+  <span>Updated: 2023-11-02</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#ie68a98">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
