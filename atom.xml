@@ -16,10 +16,10 @@
     <link ref="alternate" href="https://yinan.me/zheteng.html" />
     <id>zheteng</id>
     <published>2023-11-02 17:17:47+00:00</published>
-    <updated>2023-11-02 17:17:47+00:00</updated>
+    <updated>2023-11-02 17:28:58+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;最近又开始折腾博客了，目前 Pyboke 博客能够实现的功能比较简单，所以会有很多想法。虽然这些想法也不一定都会实现，但还是想记录下来。
-以下想法有些是直接接入第三方 API 修改模板即可实现， 有些则可能需要修改 Pyboke 源代码。&lt;/p&gt;
+    <content type="html">&lt;p&gt;最近又开始折腾博客了，我用的是 &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;Pyboke&lt;/a&gt;，一个通过 Python 实现的简约的博客生成器。&lt;/p&gt;
+&lt;p&gt;简约，换句话说就是能够实现的功能比较简单。所以会有很多想法, 有些接入第三方 API 修改模板即可实现，有些则可能需要修改 Pyboke 源代码。虽然这些想法也不一定都会实现，但还是记录下来，之后有时间再慢慢折腾。&lt;/p&gt;
 &lt;h2&gt;ChatGPT 总结&lt;/h2&gt;
 &lt;p&gt;首先就是 AI 总结，ChatGPT 已经帮我总结了不少 &lt;a href=&#34;https://yinan.me/RSS-GPT/index.html&#34;&gt;RSS 订阅源&lt;/a&gt;。在决定深入阅读前，可以先借助 AI 总结的内容判断是否感兴趣，效果很不错。&lt;/p&gt;
 &lt;p&gt;尝到甜头后我就想能不能也用在自己的博客文章中，方便游客快速了解文章内容。首先的想法是加一个 metadata 条目 &#39;summary&#39;，然后在提交文章时自动调用 ChatGPT 总结，把结果填入 summary 中，因为之前主页上的预览也是这样做的，再加上我之前也写过 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;，所以花了一些功夫就写出大概功能了。但是目前还有几个问题没解决：&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;h2&gt;评论和点赞&lt;/h2&gt;
 &lt;p&gt;之前看过水八口的一篇帖子&lt;a href=&#34;https://shuiba.co/third-party-comments-2023&#34;&gt;第三方评论之2023年版&lt;/a&gt;详细对比了不同方案的优缺点。&lt;/p&gt;
 &lt;p&gt;最终决定用了&lt;a href=&#34;https://giscus.app/&#34;&gt;giscus&lt;/a&gt;，利用的是 &lt;a href=&#34;https://github.com/yinan-c/pages-comment&#34;&gt;GitHub Repository&lt;/a&gt; 的 discussions 功能，所以既可以在 Repo 里评论，也可在博客内评论。好在设置非常简单，在 template html 加上一段 js 脚本即可。除了评论点赞必须要登录 GitHub 账号外，目前没有什么太大问题。&lt;/p&gt;
-&lt;p&gt;这两天又在逛博客，发现了一些很有趣的方案，&lt;a href=&#34;https://yuxiyuqi.com&#34;&gt;Yuxi&amp;amp;Yuqi&lt;/a&gt;的评论是用的&lt;a href=&#34;https://twikoo.js.org/en/&#34;&gt;twikoo&lt;/a&gt;，&lt;a href=&#34;https://koobai.com/&#34;&gt;koobai&lt;/a&gt; 用了&lt;a href=&#34;https://artalk.js.org/en/&#34;&gt;Artalk&lt;/a&gt;，&lt;a href=&#34;https://zishu.me/&#34;&gt;子舒的博客&lt;/a&gt;用了 &lt;a href=&#34;https://github.com/emaction/emaction.frontend&#34;&gt;emaction&lt;/a&gt; 来实现 emoji reaction，点赞无需登录，也可以自己部署&lt;a href=&#34;https://github.com/emaction/emaction.backend&#34;&gt;后端&lt;/a&gt;。后续可能会考接入我的博客。&lt;/p&gt;
+&lt;p&gt;这两天又在逛博客，发现了一些很有趣的方案，&lt;a href=&#34;https://yuxiyuqi.com&#34;&gt;Yuxi&amp;amp;Yuqi&lt;/a&gt;的评论是用的&lt;a href=&#34;https://twikoo.js.org/en/&#34;&gt;twikoo&lt;/a&gt;，&lt;a href=&#34;https://koobai.com/&#34;&gt;koobai&lt;/a&gt; 用了 &lt;a href=&#34;https://artalk.js.org/en/&#34;&gt;Artalk&lt;/a&gt;，&lt;a href=&#34;https://zishu.me/&#34;&gt;子舒的博客&lt;/a&gt;用了 &lt;a href=&#34;https://github.com/emaction/emaction.frontend&#34;&gt;emaction&lt;/a&gt; 来实现 emoji reaction，点赞无需登录，也可以自己部署&lt;a href=&#34;https://github.com/emaction/emaction.backend&#34;&gt;后端&lt;/a&gt;。后续可能会考接入我的博客。&lt;/p&gt;
 &lt;h2&gt;全文 RSS&lt;/h2&gt;
 &lt;p&gt;这是之前一段时间 (2023-09) 就已经实现的功能。原项目的 RSS 带了 Markdown 的格式符以及截取到前 150 个字符。我给 Markdown 转成了 HTML，并取消了字数限制，这样就可以直接在 RSS 阅读器里看到全文了。&lt;/p&gt;
 &lt;h2&gt;Memos as in-line &#34;Tweet&#34;&lt;/h2&gt;
