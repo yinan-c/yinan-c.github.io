@@ -68,11 +68,11 @@
 <p>首先就是 AI 总结，ChatGPT 已经帮我总结了不少 <a href="https://yinan.me/RSS-GPT/index.html">RSS 订阅源</a>。在决定深入阅读前，可以先借助 AI 总结的内容判断是否感兴趣，效果很不错。</p>
 <p>尝到甜头后我就想能不能也用在自己的博客文章中，方便游客快速了解文章内容。首先的想法是加一个 metadata 条目 'summary'，然后在提交文章时自动调用 ChatGPT 总结，把结果填入 summary 中，因为之前主页上的预览也是这样做的，再加上我之前也写过 <a href="https://github.com/yinan-c/RSS-GPT">RSS-GPT</a>，所以花了一些功夫就写出大概功能了。但是目前还有几个问题没解决：</p>
 <ol>
-<li>是否所有文章都需要总结？是否要加一个条件判断？比如有些文章，about，contact 等，不需要总结。</li>
-<li>文章的 metadata 是在运行 <code>Pyboke</code> 之后才生成的，如果要加条件判断，那么就需要在生成 metadata 之后再运行脚本进行 ChatGPT 总结。</li>
-<li>或者，是否应该引入 YAML 格式的 front matter，来代替现在 toml 格式分开存储的 metadata？这样就可以在文章中直接修改，而不需要在生成 metadata 之后再手动修改。</li>
+<li>是否所有文章都需要总结？是否要在 metadata 文件中加一个条件判断？比如有些文章，about，contact 等，可以加一个 <code>ignored = True</code> 标签。</li>
+<li>文章的 metadata 是在运行 <code>pyboke</code> 之后才生成的，如果要加条件判断，那么就需要在生成 metadata之后，再运行脚本进行 ChatGPT 总结。</li>
+<li>那么，是否应该引入 YAML 格式的 front matter，来代替现在 toml 格式分开存储的 metadata？这样就可以在文章中直接设定是否需要总结，而不需要在生成 metadata 之后再手动修改。</li>
 </ol>
-<p>在这些问题还没有定论之间，我还没有想要把自动总结加入 Pyboke 的源代码。目前以我可怜的博文数量以及更新频率来看，手动让 GPT-4 总结然后添加到 metadata 然后修改 Jinja 渲染模板，应该就够了。</p>
+<p>在这些问题还没有定论之间，我还没有想要把自动总结加入 Pyboke 的源代码。目前以我可怜的博文数量以及更新频率来看，手动让 GPT-4 总结，然后添加到 metadata 后通过 Jinja 模板自动渲染，应该就够了。</p>
 <p>我还在考虑是否需要将 AI summary 附加在 RSS 上，那么在这种情况下，需要在发布文章之前就附上总结，并且修改 <code>atom.xml</code> 的模板使其包含总结信息。这样自动化总结或许是更好的方案。</p>
 <p>如果你想要折腾自动化的方案，并且用的是 Hugo，可以参考大大的小蜗牛的<a href="https://eallion.com/ai-summary/">这篇文章</a>。</p>
 <h2>评论和点赞</h2>
