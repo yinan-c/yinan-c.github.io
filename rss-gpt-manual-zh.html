@@ -202,10 +202,12 @@ base = &quot;docs/&quot;
 <h3>关于 OpenAI API 的用量</h3>
 <ul>
 <li>关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：<ul>
-<li>所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。</li>
-<li>根据文本长度选取不同的模型，而如果文本长度超过了 16k，则会截取前 16k 字符使用 GPT-3.5 Turbo 16K.</li>
-<li>考虑到 GPT-4 费用大约是 GPT-3.5 Turbo 的十倍左右，默认用的是 GPT-3.5 Turbo，如果你想用不同的模型，可以在 <code>main.py</code> 文件修改第 227 - 243 行中传入 <code>gpt_summary</code> 函数的参数 <code>model=&quot;your_model&quot;</code> 。关于 OpenAI 不同模型的不同价格，请参考 <a href="https://openai.com/pricing/">OpenAI API Pricing</a>。</li>
-<li>脚本会读取 docs/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。</li>
+<li><p>所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。</p>
+</li>
+<li><p>根据文本长度选取不同的模型，而如果文本长度超过了 16k，<code>gpt-4-1106-preview</code> 模型会被使用，否则默认使用 <code>GPT-3.5 Turbo</code>。如果你想要使用不同的模型，可以在 <code>main.py</code> 文件修改第 227 - 243 行中传入 <code>gpt_summary</code> 函数的参数 <code>model=&quot;your_model&quot;</code> 。请参考 <a href="https://openai.com/pricing/">OpenAI API Pricing</a> 了解不同 OpenAI 模型的不同价格。</p>
+</li>
+<li><p>脚本会读取 docs/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -297,7 +299,7 @@ base = &quot;docs/&quot;
 
 <div id="updated-at">
   <span>Created: 2023-09-11</span>
-  <span>Updated: 2023-10-18</span>
+  <span>Updated: 2023-11-07</span>
 </div>
 
 <div id="footer">

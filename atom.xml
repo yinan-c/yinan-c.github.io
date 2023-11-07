@@ -12,100 +12,11 @@
 
   
   <entry>
-    <title>Separating tasks and non-actionable items</title>
-    <link ref="alternate" href="https://yinan.me/separating-tasks-and-lists.html" />
-    <id>separating-tasks-and-lists</id>
-    <published>2023-09-20 17:20:56+01:00</published>
-    <updated>2023-11-04 15:41:59+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;The thought&lt;/h2&gt;
-&lt;p&gt;I read an discusion about devonthink on MPU forum, &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt; and came across a interesting and much enlighting comment by &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628/18&#34;&gt;@ryanjamuraphy&lt;/a&gt;, when he was talking about his usage of &lt;a href=&#34;https://www.devontechnologies.com&#34;&gt;Devonthink&lt;/a&gt; as a Notes and annotations database:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Incidentally, one lesson I learned from my recent Things adventure is that I put a lot of non-actionable items in OmniFocus. As a result, probably half of the items in there were just noise. Most of these items were just thinking on potential projects or links to things I wanted to investigate. Instead of putting them in OmniFocus, I aim now to keep my task manager clean and lean. Instead, I’ll rely on PARA/CODE and put those non-actionable items in DEVONthink as a notes database. I plan on working in DT3 on my desktop a lot more to make this happen.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I personally use &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things 3&lt;/a&gt; as my task manager and recently started using &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;Devonthink&lt;/a&gt; as my notes/documents/bookmarks database. This idea of separting tasks and non-actionable items suddenly hit me and I decided to write something about it:&lt;/p&gt;
-&lt;h2&gt;My old workflow&lt;/h2&gt;
-&lt;p&gt;This is my Things 3 window usually looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Things.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;As you can see from the sidebar, there are 40 items in &#39;Inbox&#39;, 7 in &#39;Today&#39;, Besides these 2 there are also &#39;Upcoming&#39;, &#39;Anytime&#39;, &#39;Someday&#39; -- These time-based lists are where you assign your tasks to based on urgency and importance.&lt;/p&gt;
-&lt;p&gt;In the meanwhile, there are tags, projects, and areas where you use to catorgorize your tasks.&lt;/p&gt;
-&lt;p&gt;Inbox is something we all learned about when using emails. In the email world, it is where you receive all your emails, and you process them by replying, forwarding, or deleting them. I use inbox in Things 3 as a place to capture everything from everywhere:&lt;/p&gt;
-&lt;p&gt;A typical workflow of mine using Things 3 is that I will capture &lt;strong&gt;everything&lt;/strong&gt; to inbox, thoughts, tasks, articles I found online or from RSS feeds. Then I will process the inbox on a regular base, assigning tasks to the time-based lists, tagging them and carogorizing to different projects, and areas.&lt;/p&gt;
-&lt;h2&gt;The problem&lt;/h2&gt;
-&lt;p&gt;This sounds awesome, which helps me to keep my mind clear and focused on what I am doing at the moment. In the meanwhile, I don&#39;t have to worry about losing anything that comes up while I am in the middle of something.&lt;/p&gt;
-&lt;p&gt;But there is a problem underlying this workflow: &lt;strong&gt;The inbox is quickly filled up with non-actionable items, making it hard to process the inbox and find the important things to do.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;More often than not, you will find yourself doing a lot of easy yet non-important tasks, like replying emails, or reading articles, instead of doing the important difficult tasks that you should really be doing at the moment.&lt;/p&gt;
-&lt;h2&gt;The 2 lists&lt;/h2&gt;
-&lt;p&gt;Actionable tasks is generally sparse yet important, which should either be done or sorted out and/or asigned as soon as possible, in case they are forgotten.&lt;/p&gt;
-&lt;p&gt;Articles in readlist is non-actionable, something you can postponed even abandoned because of time-sensitivity.&lt;/p&gt;
-&lt;p&gt;There are always things happening, and you will always find new things to read. It is genneraylly impossible and not a good idea to devote your limited time to read infinite amount of information and articles.&lt;/p&gt;
-&lt;p&gt;If you are like me, using RSS to fetch information online and capture the interesting ones to things inbox without tagging or sorting them at the first place. You will find that your readlist is growing very fast. And more often than not, you will find your tasks buried in the inbox under a pile of readlist items.&lt;/p&gt;
-&lt;h2&gt;The solution&lt;/h2&gt;
-&lt;p&gt;The solution is simple: &lt;strong&gt;separate the tasks and non-actionable items&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Now I put all my readlist items to Devonthink, using smart rules to automatically tag them based on the source, convert them to pdf/webarchive, and put them in the &#39;readlist&#39; database so that I can read them when I have time.&lt;/p&gt;
-&lt;p&gt;This smart rule function is similar to mail rules in email clients, where you can automatically sort your emails based on the sender, subject, etc. All these can be done automatically thanks to the powerful &lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;smart rules&lt;/a&gt; in Devonthink.&lt;/p&gt;
-&lt;p&gt;I can use Things 3 as a pure task manager which I can start working on right away, and I use Devonthink as a readlist/documents database which I can search for information when I need them.&lt;/p&gt;
-&lt;h2&gt;Some final words&lt;/h2&gt;
-&lt;p&gt;Things 3 alone works great as a list/task manager, which can serve for multiple purposes. Despite the inability to store files, it can still be used as a proper readlist, a bookmark manager, a notes database, etc.&lt;/p&gt;
-&lt;p&gt;Without that being said, I found it much easier to keep my mind clear and focused by separating tasks and non-actionable items, and leave certain things to Devonthink.&lt;/p&gt;
-&lt;p&gt;But you can still manage your lists, get away with inbox zero, and keep your task management clean in Things 3 alone.&lt;/p&gt;
-&lt;p&gt;For example, to achieve inbox zero, you can also tag/move/schedule your captures at the first place before sending to Inbox. This is basically processing inbox on the go before it gets too big.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The author is not affiliated with any of these companies or products mentioned above.&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;References and further reading&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://fortelabs.co/blog/para/&#34;&gt;The PARA Method: A Universal System for Organizing Digital Information&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;How to Organize with Smart Rules&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>折腾</title>
-    <link ref="alternate" href="https://yinan.me/zheteng.html" />
-    <id>zheteng</id>
-    <published>2023-11-02 17:17:47+00:00</published>
-    <updated>2023-11-02 18:20:04+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;最近又开始折腾博客了，我用的是 &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;Pyboke&lt;/a&gt;，一个通过 Python 实现的简约的博客生成器。&lt;/p&gt;
-&lt;p&gt;简约，换句话说就是能够实现的功能比较简单。所以会有很多想法, 有些接入第三方 API 修改模板即可实现，有些则可能需要修改 Pyboke 源代码。虽然这些想法也不一定都会实现，但还是记录下来，之后有时间再慢慢折腾。&lt;/p&gt;
-&lt;h2&gt;ChatGPT 总结&lt;/h2&gt;
-&lt;p&gt;首先就是 AI 总结，ChatGPT 已经帮我总结了不少 &lt;a href=&#34;https://yinan.me/RSS-GPT/index.html&#34;&gt;RSS 订阅源&lt;/a&gt;。在决定深入阅读前，可以先借助 AI 总结的内容判断是否感兴趣，效果很不错。&lt;/p&gt;
-&lt;p&gt;尝到甜头后我就想能不能也用在自己的博客文章中，方便游客快速了解文章内容。首先的想法是加一个 metadata 条目 &#39;summary&#39;，然后在提交文章时自动调用 ChatGPT 总结，把结果填入 summary 中，因为之前主页上的预览也是这样做的，再加上我之前也写过 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;，所以花了一些功夫就写出大概功能了。但是目前还有几个问题没解决：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;是否所有文章都需要总结？是否要在 metadata 文件中加一个条件判断？比如有些文章，about，contact 等，可以加一个 &lt;code&gt;ignored = True&lt;/code&gt; 标签。&lt;/li&gt;
-&lt;li&gt;文章的 metadata 是在运行 &lt;code&gt;pyboke&lt;/code&gt; 之后才生成的，如果要加条件判断，那么就需要在生成 metadata之后，再运行脚本进行 ChatGPT 总结。&lt;/li&gt;
-&lt;li&gt;那么，是否应该引入 YAML 格式的 front matter，来代替现在 toml 格式分开存储的 metadata？这样就可以在文章中直接设定是否需要总结，而不需要在生成 metadata 之后再手动修改。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在这些问题还没有定论之间，我还没有想要把自动总结加入 Pyboke 的源代码。目前以我可怜的博文数量以及更新频率来看，手动让 GPT-4 总结，然后添加到 metadata 后通过 Jinja 模板自动渲染，应该就够了。 &lt;/p&gt;
-&lt;p&gt;我还在考虑是否需要将 AI summary 附加在 RSS 上，那么在这种情况下，需要在发布文章之前就附上总结，并且修改 &lt;code&gt;atom.xml&lt;/code&gt; 的模板使其包含总结信息。这样自动化总结或许是更好的方案。&lt;/p&gt;
-&lt;p&gt;如果你想要折腾自动化的方案，并且用的是 Hugo，可以参考大大的小蜗牛的&lt;a href=&#34;https://eallion.com/ai-summary/&#34;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;评论和点赞&lt;/h2&gt;
-&lt;p&gt;之前看过水八口的一篇帖子&lt;a href=&#34;https://shuiba.co/third-party-comments-2023&#34;&gt;第三方评论之2023年版&lt;/a&gt;详细对比了不同方案的优缺点。&lt;/p&gt;
-&lt;p&gt;最终决定用了&lt;a href=&#34;https://giscus.app/&#34;&gt;giscus&lt;/a&gt;，利用的是 &lt;a href=&#34;https://github.com/yinan-c/pages-comment&#34;&gt;GitHub Repository&lt;/a&gt; 的 discussions 功能，所以既可以在 Repo 里评论，也可在博客内评论。好在设置非常简单，在 template html 加上一段 js 脚本即可。除了评论点赞必须要登录 GitHub 账号外，目前没有什么太大问题。&lt;/p&gt;
-&lt;p&gt;这两天又在逛博客，发现了一些很有趣的方案，&lt;a href=&#34;https://yuxiyuqi.com&#34;&gt;Yuxi&amp;amp;Yuqi&lt;/a&gt;的评论是用的&lt;a href=&#34;https://twikoo.js.org/en/&#34;&gt;twikoo&lt;/a&gt;，&lt;a href=&#34;https://koobai.com/&#34;&gt;koobai&lt;/a&gt; 用了 &lt;a href=&#34;https://artalk.js.org/en/&#34;&gt;Artalk&lt;/a&gt;，&lt;a href=&#34;https://zishu.me/&#34;&gt;子舒的博客&lt;/a&gt;用了 &lt;a href=&#34;https://github.com/emaction/emaction.frontend&#34;&gt;emaction&lt;/a&gt; 来实现 emoji reaction，点赞无需登录，也可以自己部署&lt;a href=&#34;https://github.com/emaction/emaction.backend&#34;&gt;后端&lt;/a&gt;。后续可能会考接入我的博客。&lt;/p&gt;
-&lt;h2&gt;全文 RSS&lt;/h2&gt;
-&lt;p&gt;这是之前一段时间 (2023-09) 就已经实现的功能。原项目的 RSS 带了 Markdown 的格式符以及截取到前 150 个字符。我给 Markdown 转成了 HTML，并取消了字数限制，这样就可以直接在 RSS 阅读器里看到全文了。&lt;/p&gt;
-&lt;h2&gt;Memos as in-line &#34;Tweet&#34;&lt;/h2&gt;
-&lt;p&gt;我想要把生活中简短的点滴放在博客，而不是仅仅写长 posts，推特本来是一个理想的平台，但是因为 Twitter API 以及 RSS 的封闭，除了 &lt;a href=&#34;https://publish.twitter.com/&#34;&gt;embed Twiiter&lt;/a&gt;，我好像没有特别好的办法把上面的内容搬运过来。&lt;a href=&#34;https://koobai.com/memos&#34;&gt;Koobai&lt;/a&gt;的“唠叨”使用的是 &lt;a href=&#34;https://github.com/usememos/memos&#34;&gt;Memos&lt;/a&gt; 方案，而&lt;a href=&#34;https://yuxiyuqi.com/timeline/&#34;&gt;Yuxi&amp;amp;Yuqi&lt;/a&gt; 则使用了时间线的方式, 目前我还没搞懂是用的啥方案还是自己搭的。&lt;/p&gt;
-&lt;p&gt;关于这个功能，我目前并不急着实现，就算之后要选择第三方实现，数据的 privacy, self-hosted 对我来说，应该是首要考虑因素。&lt;/p&gt;
-&lt;h2&gt;展示个性化订阅源&lt;/h2&gt;
-&lt;p&gt;使用 &lt;a href=&#34;https://github.com/avadhesh18/rssTea&#34;&gt;rssTea&lt;/a&gt; 展示播客订阅源，或个性化的订阅源，比如即刻，v2ex动态等。&lt;/p&gt;
-&lt;h2&gt;暂时搁置的功能&lt;/h2&gt;
-&lt;p&gt;搜索和标签, 目录&lt;/p&gt;
-&lt;p&gt;目前来看，Pyboke 以 metadata 以 toml 格式保存以及与文章分开存储的方案，相比较于 YAML front matter，各有利弊，前者保留了 Markdown 的文本格式，后者则可以直接在文章中修改 metadata。目前新添加的功能例如 首页预览，文章内总结，确实需要在渲染生成 metadata 文件之后，然后手动进入文件修改。但是目前以我更新博客的频率来看，还是可以接受的。如若以后有了更多需要手动添加的 metadata，例如标签，那么我或许会考虑引入 YAML front matter。最后一句话赶紧掐断我写下更多的折腾的想法吧，Hey, if it ain&#39;t broke, don&#39;t fix it.&lt;/p&gt;
-&lt;h2&gt;Further Reading&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://eallion.com/ai-summary/&#34;&gt;博客 AI 摘要及优化 - 大大的小蜗牛&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://shuiba.co/third-party-comments-2023&#34;&gt;第三方评论之2023年版 - 水八口&lt;/a&gt; &lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
     <title>RSS-GPT Configuration</title>
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
     <id>rss-gpt-manual-en</id>
     <published>2023-09-11 18:14:50+01:00</published>
-    <updated>2023-10-18 01:17:57+01:00</updated>
+    <updated>2023-11-07 22:15:43+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;ul&gt;
@@ -227,9 +138,12 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K. &lt;/li&gt;
-&lt;li&gt;Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/li&gt;
-&lt;li&gt;The script will read the xml files already existing in the docs/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the text length exceeds 16k, &lt;code&gt;gpt-4-1106-preview&lt;/code&gt; will be used, otherwise &lt;code&gt;GPT-3.5 Turbo&lt;/code&gt; is used by default. If you want to use a different model, you can modify the model parameter passed to the &lt;code&gt;gpt_summary&lt;/code&gt; function of lines 227-243 of main.py, e.g. &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt;. Please refer to the &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; for different prices of different OpenAI models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The script will read the xml files already existing in the docs/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed. &lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;About repo updates&lt;/h3&gt;
 &lt;ul&gt;
@@ -247,7 +161,7 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
     <id>rss-gpt-manual-zh</id>
     <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-10-18 01:17:57+01:00</updated>
+    <updated>2023-11-07 22:15:43+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;项目地址与功能介绍&lt;/h2&gt;
 &lt;ul&gt;
@@ -410,9 +324,12 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;关于 OpenAI API 的用量&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：&lt;/li&gt;
-&lt;li&gt;所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。&lt;/li&gt;
-&lt;li&gt;根据文本长度选取不同的模型，而如果文本长度超过了 16k，则会截取前 16k 字符使用 GPT-3.5 Turbo 16K.&lt;/li&gt;
-&lt;li&gt;考虑到 GPT-4 费用大约是 GPT-3.5 Turbo 的十倍左右，默认用的是 GPT-3.5 Turbo，如果你想用不同的模型，可以在 &lt;code&gt;main.py&lt;/code&gt; 文件修改第 227 - 243 行中传入 &lt;code&gt;gpt_summary&lt;/code&gt; 函数的参数 &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt; 。关于 OpenAI 不同模型的不同价格，请参考 &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据文本长度选取不同的模型，而如果文本长度超过了 16k，&lt;code&gt;gpt-4-1106-preview&lt;/code&gt; 模型会被使用，否则默认使用 &lt;code&gt;GPT-3.5 Turbo&lt;/code&gt;。如果你想要使用不同的模型，可以在 &lt;code&gt;main.py&lt;/code&gt; 文件修改第 227 - 243 行中传入 &lt;code&gt;gpt_summary&lt;/code&gt; 函数的参数 &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt; 。请参考 &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; 了解不同 OpenAI 模型的不同价格。&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;脚本会读取 docs/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;关于仓库更新&lt;/h3&gt;
@@ -423,6 +340,95 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，或者发现本教程有错误，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。最后，如果你觉得本教程或本项目对你有帮助，欢迎 star &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;本项目&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Separating tasks and non-actionable items</title>
+    <link ref="alternate" href="https://yinan.me/separating-tasks-and-lists.html" />
+    <id>separating-tasks-and-lists</id>
+    <published>2023-09-20 17:20:56+01:00</published>
+    <updated>2023-11-04 15:41:59+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;The thought&lt;/h2&gt;
+&lt;p&gt;I read an discusion about devonthink on MPU forum, &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt; and came across a interesting and much enlighting comment by &lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628/18&#34;&gt;@ryanjamuraphy&lt;/a&gt;, when he was talking about his usage of &lt;a href=&#34;https://www.devontechnologies.com&#34;&gt;Devonthink&lt;/a&gt; as a Notes and annotations database:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Incidentally, one lesson I learned from my recent Things adventure is that I put a lot of non-actionable items in OmniFocus. As a result, probably half of the items in there were just noise. Most of these items were just thinking on potential projects or links to things I wanted to investigate. Instead of putting them in OmniFocus, I aim now to keep my task manager clean and lean. Instead, I’ll rely on PARA/CODE and put those non-actionable items in DEVONthink as a notes database. I plan on working in DT3 on my desktop a lot more to make this happen.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I personally use &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things 3&lt;/a&gt; as my task manager and recently started using &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;Devonthink&lt;/a&gt; as my notes/documents/bookmarks database. This idea of separting tasks and non-actionable items suddenly hit me and I decided to write something about it:&lt;/p&gt;
+&lt;h2&gt;My old workflow&lt;/h2&gt;
+&lt;p&gt;This is my Things 3 window usually looks like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Things.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As you can see from the sidebar, there are 40 items in &#39;Inbox&#39;, 7 in &#39;Today&#39;, Besides these 2 there are also &#39;Upcoming&#39;, &#39;Anytime&#39;, &#39;Someday&#39; -- These time-based lists are where you assign your tasks to based on urgency and importance.&lt;/p&gt;
+&lt;p&gt;In the meanwhile, there are tags, projects, and areas where you use to catorgorize your tasks.&lt;/p&gt;
+&lt;p&gt;Inbox is something we all learned about when using emails. In the email world, it is where you receive all your emails, and you process them by replying, forwarding, or deleting them. I use inbox in Things 3 as a place to capture everything from everywhere:&lt;/p&gt;
+&lt;p&gt;A typical workflow of mine using Things 3 is that I will capture &lt;strong&gt;everything&lt;/strong&gt; to inbox, thoughts, tasks, articles I found online or from RSS feeds. Then I will process the inbox on a regular base, assigning tasks to the time-based lists, tagging them and carogorizing to different projects, and areas.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;This sounds awesome, which helps me to keep my mind clear and focused on what I am doing at the moment. In the meanwhile, I don&#39;t have to worry about losing anything that comes up while I am in the middle of something.&lt;/p&gt;
+&lt;p&gt;But there is a problem underlying this workflow: &lt;strong&gt;The inbox is quickly filled up with non-actionable items, making it hard to process the inbox and find the important things to do.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;More often than not, you will find yourself doing a lot of easy yet non-important tasks, like replying emails, or reading articles, instead of doing the important difficult tasks that you should really be doing at the moment.&lt;/p&gt;
+&lt;h2&gt;The 2 lists&lt;/h2&gt;
+&lt;p&gt;Actionable tasks is generally sparse yet important, which should either be done or sorted out and/or asigned as soon as possible, in case they are forgotten.&lt;/p&gt;
+&lt;p&gt;Articles in readlist is non-actionable, something you can postponed even abandoned because of time-sensitivity.&lt;/p&gt;
+&lt;p&gt;There are always things happening, and you will always find new things to read. It is genneraylly impossible and not a good idea to devote your limited time to read infinite amount of information and articles.&lt;/p&gt;
+&lt;p&gt;If you are like me, using RSS to fetch information online and capture the interesting ones to things inbox without tagging or sorting them at the first place. You will find that your readlist is growing very fast. And more often than not, you will find your tasks buried in the inbox under a pile of readlist items.&lt;/p&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;The solution is simple: &lt;strong&gt;separate the tasks and non-actionable items&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now I put all my readlist items to Devonthink, using smart rules to automatically tag them based on the source, convert them to pdf/webarchive, and put them in the &#39;readlist&#39; database so that I can read them when I have time.&lt;/p&gt;
+&lt;p&gt;This smart rule function is similar to mail rules in email clients, where you can automatically sort your emails based on the sender, subject, etc. All these can be done automatically thanks to the powerful &lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;smart rules&lt;/a&gt; in Devonthink.&lt;/p&gt;
+&lt;p&gt;I can use Things 3 as a pure task manager which I can start working on right away, and I use Devonthink as a readlist/documents database which I can search for information when I need them.&lt;/p&gt;
+&lt;h2&gt;Some final words&lt;/h2&gt;
+&lt;p&gt;Things 3 alone works great as a list/task manager, which can serve for multiple purposes. Despite the inability to store files, it can still be used as a proper readlist, a bookmark manager, a notes database, etc.&lt;/p&gt;
+&lt;p&gt;Without that being said, I found it much easier to keep my mind clear and focused by separating tasks and non-actionable items, and leave certain things to Devonthink.&lt;/p&gt;
+&lt;p&gt;But you can still manage your lists, get away with inbox zero, and keep your task management clean in Things 3 alone.&lt;/p&gt;
+&lt;p&gt;For example, to achieve inbox zero, you can also tag/move/schedule your captures at the first place before sending to Inbox. This is basically processing inbox on the go before it gets too big.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The author is not affiliated with any of these companies or products mentioned above.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;References and further reading&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talk.macpowerusers.com/t/yet-another-devonthink-topic/15628&#34;&gt;Yet another DevonThink topic - Software - MPU Talk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fortelabs.co/blog/para/&#34;&gt;The PARA Method: A Universal System for Organizing Digital Information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/blog/20201110-organize-with-smart-rules&#34;&gt;How to Organize with Smart Rules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>折腾</title>
+    <link ref="alternate" href="https://yinan.me/zheteng.html" />
+    <id>zheteng</id>
+    <published>2023-11-02 17:17:47+00:00</published>
+    <updated>2023-11-02 18:20:04+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;最近又开始折腾博客了，我用的是 &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;Pyboke&lt;/a&gt;，一个通过 Python 实现的简约的博客生成器。&lt;/p&gt;
+&lt;p&gt;简约，换句话说就是能够实现的功能比较简单。所以会有很多想法, 有些接入第三方 API 修改模板即可实现，有些则可能需要修改 Pyboke 源代码。虽然这些想法也不一定都会实现，但还是记录下来，之后有时间再慢慢折腾。&lt;/p&gt;
+&lt;h2&gt;ChatGPT 总结&lt;/h2&gt;
+&lt;p&gt;首先就是 AI 总结，ChatGPT 已经帮我总结了不少 &lt;a href=&#34;https://yinan.me/RSS-GPT/index.html&#34;&gt;RSS 订阅源&lt;/a&gt;。在决定深入阅读前，可以先借助 AI 总结的内容判断是否感兴趣，效果很不错。&lt;/p&gt;
+&lt;p&gt;尝到甜头后我就想能不能也用在自己的博客文章中，方便游客快速了解文章内容。首先的想法是加一个 metadata 条目 &#39;summary&#39;，然后在提交文章时自动调用 ChatGPT 总结，把结果填入 summary 中，因为之前主页上的预览也是这样做的，再加上我之前也写过 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;，所以花了一些功夫就写出大概功能了。但是目前还有几个问题没解决：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;是否所有文章都需要总结？是否要在 metadata 文件中加一个条件判断？比如有些文章，about，contact 等，可以加一个 &lt;code&gt;ignored = True&lt;/code&gt; 标签。&lt;/li&gt;
+&lt;li&gt;文章的 metadata 是在运行 &lt;code&gt;pyboke&lt;/code&gt; 之后才生成的，如果要加条件判断，那么就需要在生成 metadata之后，再运行脚本进行 ChatGPT 总结。&lt;/li&gt;
+&lt;li&gt;那么，是否应该引入 YAML 格式的 front matter，来代替现在 toml 格式分开存储的 metadata？这样就可以在文章中直接设定是否需要总结，而不需要在生成 metadata 之后再手动修改。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在这些问题还没有定论之间，我还没有想要把自动总结加入 Pyboke 的源代码。目前以我可怜的博文数量以及更新频率来看，手动让 GPT-4 总结，然后添加到 metadata 后通过 Jinja 模板自动渲染，应该就够了。 &lt;/p&gt;
+&lt;p&gt;我还在考虑是否需要将 AI summary 附加在 RSS 上，那么在这种情况下，需要在发布文章之前就附上总结，并且修改 &lt;code&gt;atom.xml&lt;/code&gt; 的模板使其包含总结信息。这样自动化总结或许是更好的方案。&lt;/p&gt;
+&lt;p&gt;如果你想要折腾自动化的方案，并且用的是 Hugo，可以参考大大的小蜗牛的&lt;a href=&#34;https://eallion.com/ai-summary/&#34;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;评论和点赞&lt;/h2&gt;
+&lt;p&gt;之前看过水八口的一篇帖子&lt;a href=&#34;https://shuiba.co/third-party-comments-2023&#34;&gt;第三方评论之2023年版&lt;/a&gt;详细对比了不同方案的优缺点。&lt;/p&gt;
+&lt;p&gt;最终决定用了&lt;a href=&#34;https://giscus.app/&#34;&gt;giscus&lt;/a&gt;，利用的是 &lt;a href=&#34;https://github.com/yinan-c/pages-comment&#34;&gt;GitHub Repository&lt;/a&gt; 的 discussions 功能，所以既可以在 Repo 里评论，也可在博客内评论。好在设置非常简单，在 template html 加上一段 js 脚本即可。除了评论点赞必须要登录 GitHub 账号外，目前没有什么太大问题。&lt;/p&gt;
+&lt;p&gt;这两天又在逛博客，发现了一些很有趣的方案，&lt;a href=&#34;https://yuxiyuqi.com&#34;&gt;Yuxi&amp;amp;Yuqi&lt;/a&gt;的评论是用的&lt;a href=&#34;https://twikoo.js.org/en/&#34;&gt;twikoo&lt;/a&gt;，&lt;a href=&#34;https://koobai.com/&#34;&gt;koobai&lt;/a&gt; 用了 &lt;a href=&#34;https://artalk.js.org/en/&#34;&gt;Artalk&lt;/a&gt;，&lt;a href=&#34;https://zishu.me/&#34;&gt;子舒的博客&lt;/a&gt;用了 &lt;a href=&#34;https://github.com/emaction/emaction.frontend&#34;&gt;emaction&lt;/a&gt; 来实现 emoji reaction，点赞无需登录，也可以自己部署&lt;a href=&#34;https://github.com/emaction/emaction.backend&#34;&gt;后端&lt;/a&gt;。后续可能会考接入我的博客。&lt;/p&gt;
+&lt;h2&gt;全文 RSS&lt;/h2&gt;
+&lt;p&gt;这是之前一段时间 (2023-09) 就已经实现的功能。原项目的 RSS 带了 Markdown 的格式符以及截取到前 150 个字符。我给 Markdown 转成了 HTML，并取消了字数限制，这样就可以直接在 RSS 阅读器里看到全文了。&lt;/p&gt;
+&lt;h2&gt;Memos as in-line &#34;Tweet&#34;&lt;/h2&gt;
+&lt;p&gt;我想要把生活中简短的点滴放在博客，而不是仅仅写长 posts，推特本来是一个理想的平台，但是因为 Twitter API 以及 RSS 的封闭，除了 &lt;a href=&#34;https://publish.twitter.com/&#34;&gt;embed Twiiter&lt;/a&gt;，我好像没有特别好的办法把上面的内容搬运过来。&lt;a href=&#34;https://koobai.com/memos&#34;&gt;Koobai&lt;/a&gt;的“唠叨”使用的是 &lt;a href=&#34;https://github.com/usememos/memos&#34;&gt;Memos&lt;/a&gt; 方案，而&lt;a href=&#34;https://yuxiyuqi.com/timeline/&#34;&gt;Yuxi&amp;amp;Yuqi&lt;/a&gt; 则使用了时间线的方式, 目前我还没搞懂是用的啥方案还是自己搭的。&lt;/p&gt;
+&lt;p&gt;关于这个功能，我目前并不急着实现，就算之后要选择第三方实现，数据的 privacy, self-hosted 对我来说，应该是首要考虑因素。&lt;/p&gt;
+&lt;h2&gt;展示个性化订阅源&lt;/h2&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/avadhesh18/rssTea&#34;&gt;rssTea&lt;/a&gt; 展示播客订阅源，或个性化的订阅源，比如即刻，v2ex动态等。&lt;/p&gt;
+&lt;h2&gt;暂时搁置的功能&lt;/h2&gt;
+&lt;p&gt;搜索和标签, 目录&lt;/p&gt;
+&lt;p&gt;目前来看，Pyboke 以 metadata 以 toml 格式保存以及与文章分开存储的方案，相比较于 YAML front matter，各有利弊，前者保留了 Markdown 的文本格式，后者则可以直接在文章中修改 metadata。目前新添加的功能例如 首页预览，文章内总结，确实需要在渲染生成 metadata 文件之后，然后手动进入文件修改。但是目前以我更新博客的频率来看，还是可以接受的。如若以后有了更多需要手动添加的 metadata，例如标签，那么我或许会考虑引入 YAML front matter。最后一句话赶紧掐断我写下更多的折腾的想法吧，Hey, if it ain&#39;t broke, don&#39;t fix it.&lt;/p&gt;
+&lt;h2&gt;Further Reading&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://eallion.com/ai-summary/&#34;&gt;博客 AI 摘要及优化 - 大大的小蜗牛&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://shuiba.co/third-party-comments-2023&#34;&gt;第三方评论之2023年版 - 水八口&lt;/a&gt; &lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
   

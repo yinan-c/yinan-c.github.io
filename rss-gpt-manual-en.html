@@ -175,10 +175,12 @@ base = &quot;docs/&quot;
 <ul>
 <li><p>Regarding the usage of the OpenAI API, in order to minimize costs as much as possible, the following default measures have been adopted for this project:</p>
 <ul>
-<li>All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.</li>
-<li>Different models are selected based on text length, and if the text length exceeds 16k, the first 16k characters will be used with GPT-3.5 Turbo 16K.</li>
-<li>Considering GPT-4 costs about 10 times more than GPT-3.5 Turbo, GPT-3.5 Turbo is used by default. If you want to use a different model, you can modify the model parameter passed to the <code>gpt_summary</code> function of lines 227-243 of main.py, e.g. <code>model=&quot;your_model&quot;</code>. Please refer to the <a href="https://openai.com/pricing/">OpenAI API Pricing</a> for different prices of different OpenAI models.</li>
-<li>The script will read the xml files already existing in the docs/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed.</li>
+<li><p>All unrelevent content (images, frames, HTML tags etc.) are removed before sending to OpenAI API, in order to reduce the token length and cost.</p>
+</li>
+<li><p>If the text length exceeds 16k, <code>gpt-4-1106-preview</code> will be used, otherwise <code>GPT-3.5 Turbo</code> is used by default. If you want to use a different model, you can modify the model parameter passed to the <code>gpt_summary</code> function of lines 227-243 of main.py, e.g. <code>model=&quot;your_model&quot;</code>. Please refer to the <a href="https://openai.com/pricing/">OpenAI API Pricing</a> for different prices of different OpenAI models.</p>
+</li>
+<li><p>The script will read the xml files already existing in the docs/ folder. Existing articles will not be summarized again, so OpenAI API will not be repeatedly consumed.</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -270,7 +272,7 @@ base = &quot;docs/&quot;
 
 <div id="updated-at">
   <span>Created: 2023-09-11</span>
-  <span>Updated: 2023-10-18</span>
+  <span>Updated: 2023-11-07</span>
 </div>
 
 <div id="footer">
