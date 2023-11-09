@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/my-defaults.html" />
     <id>my-defaults</id>
     <published>2023-11-09 21:30:40+00:00</published>
-    <updated>2023-11-09 22:50:40+00:00</updated>
+    <updated>2023-11-09 23:01:18+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Inspired by &lt;a href=&#34;https://listen.hemisphericviews.com/097&#34;&gt;Hemispheric Views 097 - Duel of the Defaults!&lt;/a&gt; and blog posts by &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;many&lt;/a&gt;. I would like to write my own defaults too.&lt;/p&gt;
 &lt;ul&gt;
@@ -48,7 +48,7 @@
 &lt;p&gt;📁 &lt;strong&gt;Cloud File Storage&lt;/strong&gt;: iCloud Drive (Personal) and Google Drive (Work)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;📖 &lt;strong&gt;RSS&lt;/strong&gt;: Previously &lt;a href=&#34;https://www.reederapp.com/&#34;&gt;Reeder&lt;/a&gt; with &lt;a href=&#34;https://www.freshrss.org/&#34;&gt;FreshRSS&lt;/a&gt;, Now &lt;a href=&#34;https://netnewswire.com/&#34;&gt;NetNewsWire&lt;/a&gt; iCloud Account&lt;/p&gt;
+&lt;p&gt;📖 &lt;strong&gt;RSS&lt;/strong&gt;: Previously &lt;a href=&#34;https://www.reederapp.com/&#34;&gt;Reeder&lt;/a&gt; with &lt;a href=&#34;https://www.freshrss.org/&#34;&gt;FreshRSS&lt;/a&gt;, Now &lt;a href=&#34;https://netnewswire.com/&#34;&gt;NetNewsWire&lt;/a&gt; iCloud account&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;🙍🏻‍♂️ &lt;strong&gt;Contacts Management&lt;/strong&gt;: Contacts.app&lt;/p&gt;
@@ -57,7 +57,7 @@
 &lt;p&gt;🌐 &lt;strong&gt;Browser&lt;/strong&gt;: Safari on iOS, and &lt;a href=&#34;https://arc.net/&#34;&gt;Arc&lt;/a&gt; on my Mac&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;💬 &lt;strong&gt;Chat&lt;/strong&gt;: &lt;a href=&#34;https://weixin.qq.com/&#34;&gt;WeChat&lt;/a&gt;, &lt;a href=&#34;https://telegram.org/&#34;&gt;Telegram&lt;/a&gt;, &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://discord.com/&#34;&gt;Discord&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;💬 &lt;strong&gt;Chat&lt;/strong&gt;: &lt;a href=&#34;https://wechat.com/&#34;&gt;WeChat&lt;/a&gt;, &lt;a href=&#34;https://telegram.org/&#34;&gt;Telegram&lt;/a&gt;, &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://discord.com/&#34;&gt;Discord&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;🔖 &lt;strong&gt;Bookmarks&lt;/strong&gt;: &lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
@@ -66,13 +66,13 @@
 &lt;p&gt;📑 &lt;strong&gt;Read-it-Later&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;📜 &lt;strong&gt;Word Processing&lt;/strong&gt;: &lt;a href=&#34;https://www.google.com/docs/about/&#34;&gt;Google Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;📜 &lt;strong&gt;Word Processing&lt;/strong&gt;: Google Docs&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;📈 &lt;strong&gt;Spreadsheets&lt;/strong&gt;:  &lt;a href=&#34;https://www.google.com/sheets/about/&#34;&gt;Google Sheets&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;📈 &lt;strong&gt;Spreadsheets&lt;/strong&gt;: Google Sheets&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;📊 &lt;strong&gt;Presentations&lt;/strong&gt;: &lt;a href=&#34;https://www.apple.com/keynote/&#34;&gt;Keynote&lt;/a&gt;, and PDF generated from Markdown using &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&lt;/a&gt; or &lt;a href=&#34;https://latex-project.org&#34;&gt;LaTeX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;📊 &lt;strong&gt;Presentations&lt;/strong&gt;: Keynote.app, and PDF generated from Markdown using &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&lt;/a&gt; or &lt;a href=&#34;https://latex-project.org&#34;&gt;LaTeX&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;🛒 &lt;strong&gt;Shopping List&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt;&lt;/p&gt;
@@ -87,10 +87,10 @@
 &lt;p&gt;📰 &lt;strong&gt;News&lt;/strong&gt;: From podcast, RSS feeds and Twitter.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;🎵 &lt;strong&gt;Music&lt;/strong&gt;: &lt;a href=&#34;https://www.apple.com/apple-music/&#34;&gt;Apple Music&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;🎵 &lt;strong&gt;Music&lt;/strong&gt;: Apple Music, sometimes on &lt;a href=&#34;https://www.bilibili.com/&#34;&gt;Bilibili&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;🎤 &lt;strong&gt;Podcast&lt;/strong&gt;: &lt;a href=&#34;https://apps.apple.com/gb/app/%E5%B0%8F%E5%AE%87%E5%AE%99-%E4%B8%80%E8%B5%B7%E5%90%AC%E6%92%AD%E5%AE%A2/id1488894313&#34;&gt;小宇宙&lt;/a&gt; for Chinese channels and &lt;a href=&#34;https://www.apple.com/apple-podcasts/&#34;&gt;Apple Podcasts&lt;/a&gt; for all others. I am also using &lt;a href=&#34;https://podwise.xyz/&#34;&gt;Podwise.xyz&lt;/a&gt; as an AI tool.&lt;/p&gt;
+&lt;p&gt;🎤 &lt;strong&gt;Podcast&lt;/strong&gt;: &lt;a href=&#34;https://apps.apple.com/gb/app/%E5%B0%8F%E5%AE%87%E5%AE%99-%E4%B8%80%E8%B5%B7%E5%90%AC%E6%92%AD%E5%AE%A2/id1488894313&#34;&gt;小宇宙&lt;/a&gt; for Chinese channels and Apple Podcasts for all others. I am also using &lt;a href=&#34;https://podwise.xyz/&#34;&gt;Podwise.xyz&lt;/a&gt; as an AI tool.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;🔐 &lt;strong&gt;Password Management&lt;/strong&gt;: &lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt;&lt;/p&gt;
