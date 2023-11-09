@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/my-defaults.html" />
     <id>my-defaults</id>
     <published>2023-11-09 21:30:40+00:00</published>
-    <updated>2023-11-09 21:49:58+00:00</updated>
+    <updated>2023-11-09 22:08:49+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Inspired by &lt;a href=&#34;https://listen.hemisphericviews.com/097&#34;&gt;Hemispheric Views 097 - Duel of the Defaults!&lt;/a&gt; and blog posts by &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;many&lt;/a&gt;. I would like to write my own defaults too.&lt;/p&gt;
 &lt;ul&gt;
@@ -54,7 +54,7 @@
 &lt;p&gt;🙍🏻‍♂️ &lt;strong&gt;Contacts Management&lt;/strong&gt;: Contacts.app&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;🔎 &lt;strong&gt;Browser&lt;/strong&gt;: Safari on iOS, and &lt;a href=&#34;https://arc.net/&#34;&gt;Arc&lt;/a&gt; on my Mac&lt;/p&gt;
+&lt;p&gt;🌐 &lt;strong&gt;Browser&lt;/strong&gt;: Safari on iOS, and &lt;a href=&#34;https://arc.net/&#34;&gt;Arc&lt;/a&gt; on my Mac&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;💬 &lt;strong&gt;Chat&lt;/strong&gt;: &lt;a href=&#34;https://weixin.qq.com/&#34;&gt;WeChat&lt;/a&gt;, &lt;a href=&#34;https://telegram.org/&#34;&gt;Telegram&lt;/a&gt;, &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://discord.com/&#34;&gt;Discord&lt;/a&gt;&lt;/p&gt;
@@ -67,6 +67,12 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;📜 &lt;strong&gt;Word Processing&lt;/strong&gt;: &lt;a href=&#34;https://www.google.com/docs/about/&#34;&gt;Google Docs&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📈 &lt;strong&gt;Spreadsheets&lt;/strong&gt;:  &lt;a href=&#34;https://www.google.com/sheets/about/&#34;&gt;Google Sheets&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📊 &lt;strong&gt;Presentations&lt;/strong&gt;: &lt;a href=&#34;https://www.apple.com/keynote/&#34;&gt;Keynote&lt;/a&gt;, and PDF generated from markdown using &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&lt;/a&gt; or &lt;a href=&#34;https://latex-project.org&#34;&gt;LaTeX&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;🛒 &lt;strong&gt;Shopping List&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt;&lt;/p&gt;
