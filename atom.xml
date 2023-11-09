@@ -12,6 +12,90 @@
 
   
   <entry>
+    <title>My App Defaults</title>
+    <link ref="alternate" href="https://yinan.me/my-defaults.html" />
+    <id>my-defaults</id>
+    <published>2023-11-09 21:30:40+00:00</published>
+    <updated>2023-11-09 21:49:58+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;Inspired by &lt;a href=&#34;https://listen.hemisphericviews.com/097&#34;&gt;Hemispheric Views 097 - Duel of the Defaults!&lt;/a&gt; and blog posts by &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;many&lt;/a&gt;. I would like to write my own defaults too.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;📮 &lt;strong&gt;Mail Server&lt;/strong&gt;: iCloud and Gmail&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📨 &lt;strong&gt;Mail Client&lt;/strong&gt;: iOS: &lt;a href=&#34;https://sparkmailapp.com/&#34;&gt;Spark&lt;/a&gt; and Mail.app and macOS: &lt;a href=&#34;https://canarymail.io/&#34;&gt;Canary Mail&lt;/a&gt; and Mail.app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📝 &lt;strong&gt;Notes&lt;/strong&gt;: &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✅ &lt;strong&gt;To-Do&lt;/strong&gt;: Previously &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things&lt;/a&gt;, now &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📷 &lt;strong&gt;iPhone Photo Shooting&lt;/strong&gt;: Camera.app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🟦 &lt;strong&gt;Photos Management&lt;/strong&gt;: Photos.app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📆 &lt;strong&gt;Calendar&lt;/strong&gt;: Calendar.app (Personal) and Outlook (Work)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📅 &lt;strong&gt;Calendar Backend&lt;/strong&gt;: iCloud (Personal) and Nexus365 (Work)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📁 &lt;strong&gt;Cloud File Storage&lt;/strong&gt;: iCloud Drive (Personal) and Google Drive (Work)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📖 &lt;strong&gt;RSS&lt;/strong&gt;: &lt;a href=&#34;https://netnewswire.com/&#34;&gt;NetNewsWire&lt;/a&gt; iCloud Account&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🙍🏻‍♂️ &lt;strong&gt;Contacts Management&lt;/strong&gt;: Contacts.app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🔎 &lt;strong&gt;Browser&lt;/strong&gt;: Safari on iOS, and &lt;a href=&#34;https://arc.net/&#34;&gt;Arc&lt;/a&gt; on my Mac&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;💬 &lt;strong&gt;Chat&lt;/strong&gt;: &lt;a href=&#34;https://weixin.qq.com/&#34;&gt;WeChat&lt;/a&gt;, &lt;a href=&#34;https://telegram.org/&#34;&gt;Telegram&lt;/a&gt;, &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://discord.com/&#34;&gt;Discord&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🔖 &lt;strong&gt;Bookmarks&lt;/strong&gt;: &lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📑 &lt;strong&gt;Read-it-Later&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;Omnifocus&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📜 &lt;strong&gt;Word Processing&lt;/strong&gt;: &lt;a href=&#34;https://www.google.com/docs/about/&#34;&gt;Google Docs&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🛒 &lt;strong&gt;Shopping List&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🍴 &lt;strong&gt;Meal Planning (as Recipe Management)&lt;/strong&gt;: N/A, not that I don&#39;t eat/cook, but I don&#39;t have a meal planning system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;💰 &lt;strong&gt;Budgeting and finance&lt;/strong&gt;: &lt;a href=&#34;https://apps.apple.com/gb/app/cookie-%E8%AE%B0%E8%B4%A6-money-manager/id1559943673&#34;&gt;Cookies&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📰 &lt;strong&gt;News&lt;/strong&gt;: From podcast, RSS feeds and Twitter.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🎵 &lt;strong&gt;Music&lt;/strong&gt;: &lt;a href=&#34;https://www.apple.com/apple-music/&#34;&gt;Apple Music&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🎤 &lt;strong&gt;Podcast&lt;/strong&gt;: &lt;a href=&#34;https://xiaoyuzhoufm.com/&#34;&gt;小宇宙&lt;/a&gt; for Chinese channels and &lt;a href=&#34;https://www.apple.com/apple-podcasts/&#34;&gt;Apple Podcasts&lt;/a&gt; for all others. I am also using &lt;a href=&#34;https://podwise.xyz/&#34;&gt;Podwise.xyz&lt;/a&gt; as an AI tool.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🔐 &lt;strong&gt;Password Management&lt;/strong&gt;: &lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🧑‍💻 &lt;strong&gt;Code Editor&lt;/strong&gt;: &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
     <title>RSS-GPT Configuration</title>
     <link ref="alternate" href="https://yinan.me/rss-gpt-manual-en.html" />
     <id>rss-gpt-manual-en</id>
@@ -627,48 +711,6 @@ As tested in 1Password 8 in July 2023, these instructions will be automatically 
 &lt;p&gt;[2] &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;SSH &amp;amp; Git - 1Password docs&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[3] &lt;a href=&#34;https://developer.1password.com/docs/ssh/git-commit-signing&#34;&gt;Sign Git commits with SSH - 1Password docs&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[4] &lt;a href=&#34;https://thenewstack.io/how-to-sign-git-commits-with-an-ssh-key/&#34;&gt;How to Sign git Commits with an SSH key - Jack Wallen&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Setting up Globus endpoint for your servers</title>
-    <link ref="alternate" href="https://yinan.me/globus-endpoint.html" />
-    <id>globus-endpoint</id>
-    <published>2023-06-16 16:12:43+01:00</published>
-    <updated>2023-07-09 00:10:04+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;This instruction is for setting up a &lt;a href=&#34;https://app.globus.org/&#34;&gt;Globus&lt;/a&gt; endpoint for your servers. I have tested two clusters/supercomputers that I use. In principle, you should test it on your clusters.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;With Globus, you can easily, reliably and securely move, share, &amp;amp; discover data no matter where it lives – from a supercomputer, lab cluster, tape archive, public cloud or laptop. Access and manage all your data, even protected data, from anywhere, using your existing identities, with just a web browser. &lt;a href=&#34;https://www.globus.org/what-we-do&#34;&gt;from Globus&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;1. Login to the cluster with trusted X11 forwarding enabled:&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;ssh -YC username@hostname&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;2. Install Globus connect on the cluster.&lt;/h2&gt;
-&lt;p&gt;On servers that do not run GridFTP , you have to install the Globus Connect client software in your user space as:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
-tar xzf globusconnectpersonal-latest.tgz
-cd globusconnectpersonal-3.2.2/&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;3. Execute the globus client on cli mode as:&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;./globusconnectpersonal -setup --no-gui&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;4. A login url will be displayed on terminal&lt;/h2&gt;
-&lt;p&gt;Copy and paste it in your browser. Assuming that you already have a Globus account, login to your globus using the displayed url.&lt;/p&gt;
-&lt;h2&gt;5. Provide a label for future reference&lt;/h2&gt;
-&lt;p&gt;An authorization code will be displayed in your browser. Copy it and paste it on the cluster next to the prompt &lt;code&gt;Enter the auth code:&lt;/code&gt;. Then provide a name for this collection as &#34;Input a value for the Endpoint Name:&#34;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;If everything went well then you should get a message &#34;setup completed successfully&#34;&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;6. Access $SCRATCH etc. (&lt;a href=&#34;https://github.com/Supercomputing/DailyTasks/wiki/Using-Globus-Online-from-the-command-line&#34;&gt;source&lt;/a&gt;)&lt;/h2&gt;
-&lt;p&gt;Now you only have access to files in $home, in order to access files in other places like SCRATCH, add the following lines in  &lt;code&gt;~/.globusonline/lta/config-paths&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;~/,0,1
-/path/to/directory,0,1&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;code&gt;1&lt;/code&gt; means read/write permitted.
-From now on you can use the cluster to transfer data via Globus. Everytime you use Globus, you need to start the client on the cluster in order to activate it as an endpoint:
-&lt;code&gt;./globusconnectpersonal -start&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Then you should be able to use your cluster account from the Globus web interface in your browser and browse the data from the collection name you provided in step 5.&lt;/p&gt;
-&lt;p&gt;Extra tip: If you want the program to run in the background without the session on, you can try using the &lt;code&gt;nohup ./globusconnectpersonal -start &amp;amp;&lt;/code&gt; command. &lt;/p&gt;
-&lt;p&gt;Your endpoint will be online on Globus as long as the process is running in the background without ssh-ing your server.&lt;/p&gt;
-&lt;p&gt;To kill the process, find the PID of your process:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ps aux | grep globusconnectpersonal&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;kill -9 PID&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Thanks&lt;/h2&gt;
-&lt;p&gt;A collarborator of mine, IT support for Oxford clusters - Glamdring and Globus.&lt;/p&gt;</content>
   </entry>
   
 
