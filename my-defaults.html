@@ -214,3 +214,29 @@
 
   
 </html>
+
+<script>
+  function changeGiscusTheme() {
+    const theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+                  ? 'dark'
+                  : 'light';
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: theme
+      }
+    });
+  }
+  changeGiscusTheme();
+
+  const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  colorSchemeQuery.addListener((e) => {
+    changeGiscusTheme();
+  });
+</script>
