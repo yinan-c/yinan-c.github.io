@@ -63,45 +63,41 @@
 
 
 <h1>How to let your shell to remember your commands</h1>
-<p>Whenever you got a new machine, it means endless porting configurations, compilation of codes and installation of packages to let it be usable for you.</p>
-<p>Recently, I got access to a new supercomputer for a limited amount of time, so I start using it without much configuration. Soon I found myself missing the convenience of auto-completion and auto-suggestion of my shell, which I got really used to in any other machines I used.</p>
-<p>What shell auto-completion and auto-suggestion do is to remember your commands and give you suggestions when you type in the first few letters of a command. When you find yourself typing the same commands over and over again (such as <code>ssh</code> to a specific server), you'll find it really useful.</p>
+<p>Whenever you got a new machine, there's always endless configurations porting, codes compilations and packages installations. It is crutial step to make the new machine meets your habits.</p>
+<p>Recently, I got access to a new supercomputer for a limited amount of time, I started using it without much configuration. Soon I found myself missing the convenience of auto-suggestion for commands, which I got used to in prevously machines I've wored on.</p>
+<p>Auto-suggestion in your shell is basically a plugin/extension that remembers your commands history and provide suggestions when you type in the first few letters of a command. When you find yourself frequently using the same commands (such as <code>ssh</code> to a specific server), it could be really useful.</p>
 <p>This is how the suggestions will look like (I'm using zsh-autosuggestions here):</p>
 <p><img src="https://yinan.me/pics/zsh.png" alt="" /></p>
-<p>So this article is mainly to give recommendations for both zsh and bash users on how to let the shell to remember your commands.</p>
+<p>So this article is mainly to give recommendations for both zsh and bash users on how to configure the shell to remember your commands.</p>
 <h2>1. zsh-autosuggestions for zsh</h2>
-<p>On my mac, zsh is the default shell, the plugin <code>zsh-autosuggestions</code> is the one I want to recommend here. As the name suggests, it gives you suggestions for commands when you type in a zsh shell, and you can simple press the right arrow key to accept the suggestion.</p>
+<p>On my mac, zsh is the default shell, the plugin <code>zsh-autosuggestions</code> is what I want to recommend here. It suggests commands when you type in a zsh shell, and you can simply press the right arrow key to accept the suggestion.</p>
 <p>To install it, you can follow the instructions on their <a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">github repo</a>. You can use Antigen, Oh My Zsh, Homebrew or manually install it.</p>
-<p>I use oh-my-zsh for managing my zsh configuration. Actually I adopt a minimal configuration of oh-my-zsh, which is just 2 plugins. These are the lines to configure oh-my-zsh in my <code>~/.zshrc</code>:</p>
+<p>I use oh-my-zsh for managing my zsh configurations. Actually I'm using a rather minimal configuration of oh-my-zsh, which consists only 2 plugins. These are the lines to configure oh-my-zsh in my <code>~/.zshrc</code>:</p>
 <pre><code class="language-bash">export ZSH=&quot;$HOME/.oh-my-zsh&quot;
 ZSH_THEME=&quot;alanpeabody&quot;
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 </code></pre>
-<p>As you can see to install <code>zsh-autosuggestions</code> you just need to add it to the <code>plugins</code> list, separated by a space, tab, or newline.</p>
-<p>There are definitely more to explore in oh-my-zsh, but I'm not going to talk about them in detail here.</p>
-<p>If you're interested in more configurations, you can check out the <a href="https://ohmyz.sh/">official website</a> or their <a href="https://github.com/ohmyzsh/ohmyzsh">github repo</a>.</p>
+<p>As you can see, to install <code>zsh-autosuggestions</code> you just need to add it to the <code>plugins</code> list, separated by a space, tab, or newline.</p>
+<p>There are definitely more to explore in oh-my-zsh, but I'm not going to talk about them in detail here. If you're interested in more configurations, you can always check out the <a href="https://ohmyz.sh/">official website</a> or their <a href="https://github.com/ohmyzsh/ohmyzsh">github repo</a>.</p>
 <blockquote>
 <p>(PS. I also recommend <a href="https://github.com/sindresorhus/pure">pure</a> as a beautiful and minimal ZSH prompt theme, and it is developed and maintained by my favorite open source and mac apps developer Sindre Sorhus.)</p>
 </blockquote>
 <h2>2. ble.sh for bash</h2>
-<p>For some linux machines, bash is default shell. If you are using bash, I would recommend <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>.</p>
-<p>I was looking for a way to let my bash shell to remember my commands, and I found there is a <a href="https://github.com/ohmybash/oh-my-bash">oh-my-bash</a> for managing your bash configuration, but I couldn't find a easy-to-use auto-suggestion plugin that can be easily installed via oh-my-bash.</p>
-<p>Then I found <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>, you can try it first without installation.</p>
-<pre><code class="language-bash"># TRIAL without installation
-git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+<p>For some linux machines, bash is default shell. If you are using bash, I would recommend <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>, which stands for Bash Line Editor.</p>
+<p>I was looking for a way to let my bash shell to remember my commands, and I found there is a <a href="https://github.com/ohmybash/oh-my-bash">oh-my-bash</a> repo, which is the counterpart of oh-my-zsh, for managing your bash configuration. However, I couldn't find a easy-to-use auto-suggestion plugin that can be installed via oh-my-bash.</p>
+<p>Then I found <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>, and you can even try it first without installation.</p>
+<pre><code>git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh
 source ble.sh/out/ble.sh
 </code></pre>
-<p>Then try typing in a few commands, you'll find it achives the same functionality as <code>zsh-autosuggestions</code>, it also give suggestions for commands that you never used before.</p>
+<p>Then try typing in a few commands, you'll find it achieves the same functionality as <code>zsh-autosuggestions</code>, it even gives suggestions on commands that you never used before.</p>
 <p>If you like it, you can quickly install it via running the following command:</p>
-<pre><code class="language-bash"># Quick INSTALL to BASHRC
-
-git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+<pre><code>git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX=~/.local
 echo 'source ~/.local/share/blesh/ble.sh' &gt;&gt; ~/.bashrc
 </code></pre>
-<p>I hope some of you will find this article useful, and I'm also looking forward to hearing your recommendations on other useful plugins or your configurations for your shell.</p>
+<p>I hope some of you will find this article useful, and I'm also looking forward to hearing your recommendations on other useful plugins or your shell configurations.</p>
 
 
 
