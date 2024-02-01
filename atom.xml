@@ -12,6 +12,56 @@
 
   
   <entry>
+    <title>How to let your shell to remember your commands</title>
+    <link ref="alternate" href="https://yinan.me/shell-auto-suggestions.html" />
+    <id>shell-auto-suggestions</id>
+    <published>2024-02-01 17:09:21+00:00</published>
+    <updated>2024-02-01 17:22:55+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;Whenever you got a new machine, it means endless porting configurations, compilation of codes and installation of packages to let it be usable for you.&lt;/p&gt;
+&lt;p&gt;Recently, I got access to a new supercomputer for a limited amount of time, so I start using it without much configuration. Soon I found myself missing the convenience of auto-completion and auto-suggestion of my shell, which I got really used to in any other machines I used.&lt;/p&gt;
+&lt;p&gt;What shell auto-completion and auto-suggestion do is to remember your commands and give you suggestions when you type in the first few letters of a command. When you find yourself typing the same commands over and over again (such as &lt;code&gt;ssh&lt;/code&gt; to a specific server), you&#39;ll find it really useful.&lt;/p&gt;
+&lt;p&gt;This is how the suggestions will look like (I&#39;m using zsh-autosuggestions here):&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/zsh.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So this article is mainly about giving recommendations for both zsh and bash users on how to let the shell to remember your commands.&lt;/p&gt;
+&lt;h2&gt;1. zsh-autosuggestions for zsh&lt;/h2&gt;
+&lt;p&gt;On my mac, zsh is the default shell, &lt;/p&gt;
+&lt;p&gt;The plugin &lt;code&gt;zsh-autosuggestions&lt;/code&gt; is the one I want to recommend here. As the name suggests, it gives you suggestions for commands when you type in a zsh shell, and you can simple press the right arrow key to accept the suggestion.&lt;/p&gt;
+&lt;p&gt;To install it, you can follow the instructions on their &lt;a href=&#34;https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md&#34;&gt;github repo&lt;/a&gt;. You can use Antigen, Oh My Zsh, Homebrew or manually install it.&lt;/p&gt;
+&lt;p&gt;I use oh-my-zsh for managing my zsh configuration. Actually I adopt a minimal configuration of oh-my-zsh, which is just 2 plugins. These are the lines to configure oh-my-zsh in my &lt;code&gt;~/.zshrc&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash
+export ZSH=&#34;$HOME/.oh-my-zsh&#34;
+ZSH_THEME=&#34;alanpeabody&#34;
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh&lt;/code&gt;
+As you can see to install &lt;code&gt;zsh-autosuggestions&lt;/code&gt; you just need to add it to the &lt;code&gt;plugins&lt;/code&gt; list, separated by a space, tab, or newline.&lt;/p&gt;
+&lt;p&gt;There are definitely more to explore in oh-my-zsh, but I&#39;m not going to talk about them in detail here.&lt;/p&gt;
+&lt;p&gt;If you&#39;re interested in more configurations, you can check out the &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;official website&lt;/a&gt; or their &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(PS. I also recommend &lt;a href=&#34;https://github.com/sindresorhus/pure&#34;&gt;pure&lt;/a&gt; as a beautiful and minimal ZSH prompt theme, and it is developed and maintained by my favorite open source and mac apps developer Sindre Sorhus.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;2. ble.sh for bash&lt;/h2&gt;
+&lt;p&gt;For some linux machines, bash is default shell. If you are using bash, I would recommend &lt;a href=&#34;https://github.com/akinomyoga/ble.sh&#34;&gt;ble.sh&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I was looking for a way to let my bash shell to remember my commands, and I found there is a &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;oh-my-bash&lt;/a&gt; for managing your bash configuration, but I couldn&#39;t find a easy-to-use auto-suggestion plugin that can be easily installed via oh-my-bash.&lt;/p&gt;
+&lt;p&gt;Then I found &lt;a href=&#34;https://github.com/akinomyoga/ble.sh&#34;&gt;ble.sh&lt;/a&gt;, you can try it first without installation.&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;h1&gt;TRIAL without installation&lt;/h1&gt;
+&lt;p&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh
+source ble.sh/out/ble.sh
+&lt;code&gt;``
+Then try typing in a few commands, you&#39;ll find it achives the same functionality as&lt;/code&gt;zsh-autosuggestions`, it also give suggestions for commands that you never used before.&lt;/p&gt;
+&lt;p&gt;If you like it, you can quickly install it via running the following command:&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;h1&gt;Quick INSTALL to BASHRC&lt;/h1&gt;
+&lt;p&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh install PREFIX=~/.local
+echo &#39;source ~/.local/share/blesh/ble.sh&#39; &amp;gt;&amp;gt; ~/.bashrc
+```&lt;/p&gt;
+&lt;p&gt;I hope some of you will find this article useful, and I&#39;m also looking forward to hearing your recommendations on other useful plugins or your configurations for your shell.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>My App Defaults</title>
     <link ref="alternate" href="https://yinan.me/my-defaults.html" />
     <id>my-defaults</id>
@@ -633,90 +683,6 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Using ChatGPT to summarize your personalized RSS feeds.&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Setup SSH keys for GitHub and remote servers</title>
-    <link ref="alternate" href="https://yinan.me/ssh-keys.html" />
-    <id>ssh-keys</id>
-    <published>2023-07-01 19:55:37+01:00</published>
-    <updated>2023-07-09 00:25:49+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;Why using SSH keys?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;When connecting a remote server, it may be preferable to use SSH keys, which provide a more secure form of remote communication.&lt;/li&gt;
-&lt;li&gt;SSH keys make it possible to securely connect to servers without having to type password every time.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Method 1: Using ssh-keygen&lt;/h2&gt;
-&lt;h3&gt;Generate the SSH keys on your local machine&lt;/h3&gt;
-&lt;p&gt;On your local machine terminal, run: &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -b 2048&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;You will be prompted to choose a passphrase for the keys as following. Please be sure to enter a passphrase. This is the password that will protect your keys. It can be a sentence with spaces between the words. Be sure to use a combination of lower and upper case letters, numbers and punctuation marks.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Generating public/private rsa key pair.
-Enter file in which to save the key (/home/localuser/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase): 
-Enter your passphrase here&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Copy the public key to the remote server or GitHub&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;On your local machine, run following command to transfer the generated public key to remote server:
-&lt;code&gt;scp ~/.ssh/id_rsa.pub username@remote.server:~/.ssh/temp.pub&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SSH to your remote server,
-&lt;code&gt;ssh username@remote.server&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;On your remote server, append the public key to &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;:
-&lt;code&gt;cat ~/.ssh/temp.pub &amp;gt;&amp;gt; .ssh/authorized_keys
-chmod 600 .ssh/authorized_keys &amp;amp;&amp;amp; rm .ssh/temp.pub&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Now connecting with SSH from your local machine to remote server will now ask for a passphrase instead of a password. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Activate the SSH agent on your local machine&lt;/h3&gt;
-&lt;p&gt;You will now need to set up the SSH agent on your local computer. The SSH agent will remember your passphrase and forward your key on, securely, to your remote server.&lt;/p&gt;
-&lt;p&gt;Use &lt;code&gt;ssh-add&lt;/code&gt; to add your passphrase to the SSH agent for the current login session. 
-On your local machine: run &lt;code&gt;ssh-add&lt;/code&gt; and you will be prompted to enter your passphrase you just set up.&lt;/p&gt;
-&lt;p&gt;Within the same login session, you can now ssh to your remote server without entering the passphrase or password.&lt;/p&gt;
-&lt;h3&gt;Sign your commits with SSH keys on GitHub&lt;/h3&gt;
-&lt;h4&gt;Configure Git&lt;/h4&gt;
-&lt;p&gt;We need to configure Git to let it know who we are by setting up our name and email address.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git config --global user.name &#34;Your Name&#34;
-git config --global user.email &#34;Your Email&#34;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Then we need to eanble GPG signing for Git commits and the format of the signature will be SSH keys.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git config --global commit.gpgsign true
-git config --global gpg.format ssh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Then we want to tell Git to use the key we just generated locally and uploaded to GitHub.&lt;/p&gt;
-&lt;p&gt;List your public SSH keys with &lt;code&gt;ssh-add -L&lt;/code&gt; and copy the key you just generated. &lt;/p&gt;
-&lt;p&gt;Then set our signing key in Git to the key we just copied.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git config --global user.signingkey &amp;lt;paste your key here&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Your commits will now be signed with your SSH key. you can test it by making a commit and checking the signature with &lt;code&gt;git log --show-signature&lt;/code&gt;.&lt;/p&gt;
-&lt;h4&gt;Add SSH key to GitHub&lt;/h4&gt;
-&lt;p&gt;To sign your pushed commits on GitHub so that your commits will be marked as verified, you need to add your public SSH key to GitHub.&lt;/p&gt;
-&lt;p&gt;Login to &lt;a href=&#34;https://github.com/settings/keys&#34;&gt;GitHub SSH keys&lt;/a&gt;, copy and Paste your public key to both Authentication Keys and Signing keys. &lt;/p&gt;
-&lt;h2&gt;Method 2: using 1Password SSH agent&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt; is a powerful password manager with easy-to-use auto-fill functionalities. I use it to store any sensitive documents and login credentials, to generate random passwords for all my online accounts.  (no affiliation or sponsorship, just a happy user)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For students, you can get 1-year 1Password subscription via the &lt;a href=&#34;https://education.github.com/pack&#34;&gt;GitHub Student Developer Pack - GitHub Education&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As an alternative method, you can generate SSH keys using 1Password or import your SSH keys from your local file (e.g. ~/.ssh/id_rsa). &lt;/p&gt;
-&lt;p&gt;1Password will generate a public key automatically and store the public and private key-pair in your 1Password vault.&lt;/p&gt;
-&lt;p&gt;Then what you need to do is quite similar with a few more steps:
-As tested in 1Password 8 in July 2023, these instructions will be automatically prompted in the 1Password client after you generate or import SSH keys, setting up SSH keys with 1Password is quite straightforward.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Append the public key to ~/.ssh/authorized_keys or to upload your public key to GitHub.&lt;/li&gt;
-&lt;li&gt;Turn on the 1Password SSH agent.&lt;/li&gt;
-&lt;li&gt;Configure your SSH or Git client, similar to Method 1, but 1Password will automatically modify the configuration for you. (Be sure to backup your &lt;code&gt;~/.ssh/config&lt;/code&gt; and &lt;code&gt;~/gitconfig&lt;/code&gt; file before you let 1Password overwrite them.)&lt;/li&gt;
-&lt;li&gt;Run any &lt;code&gt;ssh&lt;/code&gt; or &lt;code&gt;git&lt;/code&gt; and authorize the SSH request prompted by 1Password.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Please refer to &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;official document&lt;/a&gt; for a detailed step-by-step documentation.&lt;/p&gt;
-&lt;h2&gt;References and further reading&lt;/h2&gt;
-&lt;p&gt;[1] &lt;a href=&#34;https://www.msi.umn.edu/support/faq/how-do-i-setup-ssh-keys&#34;&gt;How do I setup SSH keys? - Minnesota Supercomputing Institute&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[2] &lt;a href=&#34;https://developer.1password.com/docs/ssh/get-started&#34;&gt;SSH &amp;amp; Git - 1Password docs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[3] &lt;a href=&#34;https://developer.1password.com/docs/ssh/git-commit-signing&#34;&gt;Sign Git commits with SSH - 1Password docs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[4] &lt;a href=&#34;https://thenewstack.io/how-to-sign-git-commits-with-an-ssh-key/&#34;&gt;How to Sign git Commits with an SSH key - Jack Wallen&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
   
 

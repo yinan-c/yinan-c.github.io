@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>How to let your shell to remember your commands - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-02-01 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+<div class="post-ai">
+    <div class="ai-title">
+        <div class="ai-title-text">AI Summary by GPT-4</div>
+    </div>
+
+    <div class="ai-explanation ai-explanation-content">
+        This article provides recommendations on how to enable auto-completion and auto-suggestion features in shell environments to enhance productivity. For zsh users, it suggests installing zsh-autosuggestions via methods like Oh My Zsh, highlighting a minimal configuration example that includes the plugin in the .zshrc file. For bash users, it recommends ble.sh, a script that offers similar functionalities and can be tested and installed following the provided instructions. The article underscores the importance of these features in improving the command-line experience by remembering and suggesting commands, making it particularly useful for repetitive tasks like SSH connections.
+
+    </div>
+</div>
+
+
+
+<h1>How to let your shell to remember your commands</h1>
+<p>Whenever you got a new machine, it means endless porting configurations, compilation of codes and installation of packages to let it be usable for you.</p>
+<p>Recently, I got access to a new supercomputer for a limited amount of time, so I start using it without much configuration. Soon I found myself missing the convenience of auto-completion and auto-suggestion of my shell, which I got really used to in any other machines I used.</p>
+<p>What shell auto-completion and auto-suggestion do is to remember your commands and give you suggestions when you type in the first few letters of a command. When you find yourself typing the same commands over and over again (such as <code>ssh</code> to a specific server), you'll find it really useful.</p>
+<p>This is how the suggestions will look like (I'm using zsh-autosuggestions here):</p>
+<p><img src="https://yinan.me/pics/zsh.png" alt="" /></p>
+<p>So this article is mainly about giving recommendations for both zsh and bash users on how to let the shell to remember your commands.</p>
+<h2>1. zsh-autosuggestions for zsh</h2>
+<p>On my mac, zsh is the default shell,</p>
+<p>The plugin <code>zsh-autosuggestions</code> is the one I want to recommend here. As the name suggests, it gives you suggestions for commands when you type in a zsh shell, and you can simple press the right arrow key to accept the suggestion.</p>
+<p>To install it, you can follow the instructions on their <a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">github repo</a>. You can use Antigen, Oh My Zsh, Homebrew or manually install it.</p>
+<p>I use oh-my-zsh for managing my zsh configuration. Actually I adopt a minimal configuration of oh-my-zsh, which is just 2 plugins. These are the lines to configure oh-my-zsh in my <code>~/.zshrc</code>:</p>
+<pre><code class="language-bash">export ZSH=&quot;$HOME/.oh-my-zsh&quot;
+ZSH_THEME=&quot;alanpeabody&quot;
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+</code></pre>
+<p>As you can see to install <code>zsh-autosuggestions</code> you just need to add it to the <code>plugins</code> list, separated by a space, tab, or newline.</p>
+<p>There are definitely more to explore in oh-my-zsh, but I'm not going to talk about them in detail here.</p>
+<p>If you're interested in more configurations, you can check out the <a href="https://ohmyz.sh/">official website</a> or their <a href="https://github.com/ohmyzsh/ohmyzsh">github repo</a>.</p>
+<blockquote>
+<p>(PS. I also recommend <a href="https://github.com/sindresorhus/pure">pure</a> as a beautiful and minimal ZSH prompt theme, and it is developed and maintained by my favorite open source and mac apps developer Sindre Sorhus.)</p>
+</blockquote>
+<h2>2. ble.sh for bash</h2>
+<p>For some linux machines, bash is default shell. If you are using bash, I would recommend <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>.</p>
+<p>I was looking for a way to let my bash shell to remember my commands, and I found there is a <a href="https://github.com/ohmybash/oh-my-bash">oh-my-bash</a> for managing your bash configuration, but I couldn't find a easy-to-use auto-suggestion plugin that can be easily installed via oh-my-bash.</p>
+<p>Then I found <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>, you can try it first without installation.</p>
+<pre><code class="language-bash"># TRIAL without installation
+git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh
+source ble.sh/out/ble.sh
+</code></pre>
+<p>Then try typing in a few commands, you'll find it achives the same functionality as <code>zsh-autosuggestions</code>, it also give suggestions for commands that you never used before.</p>
+<p>If you like it, you can quickly install it via running the following command:</p>
+<pre><code class="language-bash"># Quick INSTALL to BASHRC
+
+git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh install PREFIX=~/.local
+echo 'source ~/.local/share/blesh/ble.sh' &gt;&gt; ~/.bashrc
+</code></pre>
+<p>I hope some of you will find this article useful, and I'm also looking forward to hearing your recommendations on other useful plugins or your configurations for your shell.</p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="my-defaults.html" class="nav-button" id="next-button">My App Defaults &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-02-01</span>
+  <span>Updated: 2024-02-01</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i48">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
