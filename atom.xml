@@ -16,17 +16,16 @@
     <link ref="alternate" href="https://yinan.me/shell-auto-suggestions.html" />
     <id>shell-auto-suggestions</id>
     <published>2024-02-01 17:09:21+00:00</published>
-    <updated>2024-02-01 17:22:55+00:00</updated>
+    <updated>2024-02-01 18:04:18+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Whenever you got a new machine, it means endless porting configurations, compilation of codes and installation of packages to let it be usable for you.&lt;/p&gt;
 &lt;p&gt;Recently, I got access to a new supercomputer for a limited amount of time, so I start using it without much configuration. Soon I found myself missing the convenience of auto-completion and auto-suggestion of my shell, which I got really used to in any other machines I used.&lt;/p&gt;
 &lt;p&gt;What shell auto-completion and auto-suggestion do is to remember your commands and give you suggestions when you type in the first few letters of a command. When you find yourself typing the same commands over and over again (such as &lt;code&gt;ssh&lt;/code&gt; to a specific server), you&#39;ll find it really useful.&lt;/p&gt;
 &lt;p&gt;This is how the suggestions will look like (I&#39;m using zsh-autosuggestions here):&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/zsh.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;So this article is mainly about giving recommendations for both zsh and bash users on how to let the shell to remember your commands.&lt;/p&gt;
+&lt;p&gt;So this article is mainly to give recommendations for both zsh and bash users on how to let the shell to remember your commands.&lt;/p&gt;
 &lt;h2&gt;1. zsh-autosuggestions for zsh&lt;/h2&gt;
-&lt;p&gt;On my mac, zsh is the default shell, &lt;/p&gt;
-&lt;p&gt;The plugin &lt;code&gt;zsh-autosuggestions&lt;/code&gt; is the one I want to recommend here. As the name suggests, it gives you suggestions for commands when you type in a zsh shell, and you can simple press the right arrow key to accept the suggestion.&lt;/p&gt;
+&lt;p&gt;On my mac, zsh is the default shell, the plugin &lt;code&gt;zsh-autosuggestions&lt;/code&gt; is the one I want to recommend here. As the name suggests, it gives you suggestions for commands when you type in a zsh shell, and you can simple press the right arrow key to accept the suggestion.&lt;/p&gt;
 &lt;p&gt;To install it, you can follow the instructions on their &lt;a href=&#34;https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md&#34;&gt;github repo&lt;/a&gt;. You can use Antigen, Oh My Zsh, Homebrew or manually install it.&lt;/p&gt;
 &lt;p&gt;I use oh-my-zsh for managing my zsh configuration. Actually I adopt a minimal configuration of oh-my-zsh, which is just 2 plugins. These are the lines to configure oh-my-zsh in my &lt;code&gt;~/.zshrc&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;bash
@@ -59,6 +58,54 @@ make -C ble.sh install PREFIX=~/.local
 echo &#39;source ~/.local/share/blesh/ble.sh&#39; &amp;gt;&amp;gt; ~/.bashrc
 ```&lt;/p&gt;
 &lt;p&gt;I hope some of you will find this article useful, and I&#39;m also looking forward to hearing your recommendations on other useful plugins or your configurations for your shell.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>如何让 Shell 记住常用命令</title>
+    <link ref="alternate" href="https://yinan.me/shell-auto-suggestions-zh.html" />
+    <id>shell-auto-suggestions-zh</id>
+    <published>2024-02-01 18:04:18+00:00</published>
+    <updated>2024-02-01 18:04:18+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;每当配置一台新的服务器时，迁移配置、编译代码和安装包，是我最一开始要做的事情。
+最近，我获得了一台新的超算，但给的时间有限，所以我几乎没有配置，登录上编译完软件包就开始使用了。然后，
+当我一次两次三次重复输入类似命令的时候，我就发现自己已然适应，甚至完全离不开命令自动补全带给我的便利了。&lt;/p&gt;
+&lt;p&gt;Shell 自动建议的功能是在你输入一条命令的前几个字母时，从命令行历史中给出补全建议。如果你经常输入相同或者类似的命令（例如，ssh到特定的服务器），那么这个功能会非常有用，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/zsh.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;因此，本文主要是为 zsh 和 bash 用户推荐让 Shell 记住常用历史命令的方法。&lt;/p&gt;
+&lt;h2&gt;1. ZSH 用户：zsh-autosuggestions&lt;/h2&gt;
+&lt;p&gt;在 Mac 上，zsh 是默认的 shell，我推荐使用 &lt;code&gt;zsh-autosuggestions&lt;/code&gt; 插件。如其名，它会在你输入 zsh 命令时自动给出建议，然后按右箭头键接受建议。&lt;/p&gt;
+&lt;p&gt;可以按照其 &lt;a href=&#34;(https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)&#34;&gt;github repo&lt;/a&gt; 上的说明进行安装，安装方式有 Antigen、Oh My Zsh、Homebrew 或手动安装。&lt;/p&gt;
+&lt;p&gt;我使用的是 oh-my-zsh 来管理 zsh 配置，这是我在 &lt;code&gt;~/.zshrc&lt;/code&gt; 中配置 oh-my-zsh 的代码，配置很简单，只有两个插件：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash
+export ZSH=&#34;$HOME/.oh-my-zsh&#34;
+ZSH_THEME=&#34;alanpeabody&#34;
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可以看到安装方式很简单，只需要把 &lt;code&gt;zsh-autosuggestions&lt;/code&gt; 加入到 &lt;code&gt;plugins&lt;/code&gt; 列表中，用空格、制表符或换行符分隔不同的插件即可。&lt;/p&gt;
+&lt;p&gt;当然，oh-my-zsh 还有很多其他可玩的地方，不管是主题还是插件，这里就不详细介绍了。如果你对更多配置感兴趣，可以查看 &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;官方网站&lt;/a&gt; 或他们的 &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;github repo&lt;/a&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（PS. 我还推荐 &lt;a href=&#34;https://github.com/sindresorhus/pure&#34;&gt;pure&lt;/a&gt; 作为一个漂亮而简洁的 ZSH 提示符主题，它是我最崇拜的著名开源和 Mac 应用程序开发者 Sindre Sorhus 开发和维护的。）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;2. BASH 用户：ble.sh&lt;/h2&gt;
+&lt;p&gt;对于一些 Linux 机器，bash 是默认的 shell。如果你使用 bash，我推荐 &lt;a href=&#34;https://github.com/akinomyoga/ble.sh&#34;&gt;ble.sh&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我在寻找让 bash 记住常用命令的方法时，发现了 &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;oh-my-bash&lt;/a&gt;，可以用来管理 bash 配置，但我没有找到一个可以通过 oh-my-bash 轻松安装的自动建议插件。&lt;/p&gt;
+&lt;p&gt;然后我发现了 ble.sh，他甚至提供了试用命令。&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;h1&gt;TRIAL without installation&lt;/h1&gt;
+&lt;p&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh
+source ble.sh/out/ble.sh
+```&lt;/p&gt;
+&lt;p&gt;然后尝试输入一些命令，你会发现它和 &lt;code&gt;zsh-autosuggestions&lt;/code&gt; 的基本功能是一样的，它还会给出你从未使用过的命令的建议。&lt;/p&gt;
+&lt;p&gt;如果你喜欢它，你可以通过运行以下命令快速安装：&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;h1&gt;Quick INSTALL to BASHRC&lt;/h1&gt;
+&lt;p&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh install PREFIX=~/.local
+echo &#39;source ~/.local/share/blesh/ble.sh&#39; &amp;gt;&amp;gt; ~/.bashrc
+```&lt;/p&gt;
+&lt;p&gt;希望本文对你有用，也期待听到你对其他插件或 shell 配置的建议。&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -657,32 +704,6 @@ The original version of PyBoke is created by &lt;a href=&#34;https://github.com/
 - &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
 for any purpose, even commercially.&lt;/p&gt;
 &lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>My Open-Source Projects</title>
-    <link ref="alternate" href="https://yinan.me/my-open-source.html" />
-    <id>my-open-source</id>
-    <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2023-09-07 15:03:42+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;&lt;a href=&#34;https://www.alfredapp.com/&#34;&gt;Alfred&lt;/a&gt; Workflows&lt;/h2&gt;
-&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-homebrew&#34;&gt;Easy Homebrew&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;An Alfred workflow for you to easy brew on Alfred -- Search, get details and run Homebrew commands.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-github-star&#34;&gt;GitHub Star&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;This workflow allows you to search through your GitHub stared repositories. Download from the official &lt;a href=&#34;https://alfred.app/workflows/yinanc/github-star/&#34;&gt;Alfred Workflow Gallery&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;&lt;a href=&#34;https://github.com/yinan-c/alfred-translate-it&#34;&gt;Translate It&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;An Alfred 5 workflow to translate text using OpenAI, DeepL, Google, Bing, Baidu and Youdao. This workflow also supports &lt;a href=&#34;https://www.alfredapp.com/universal-actions/&#34;&gt;Universal Actions&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Using ChatGPT to summarize your personalized RSS feeds.&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
   
 

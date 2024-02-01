@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
 
     
-  <title>How to let your shell to remember your commands - 1nan</title>
+  <title>如何让 Shell 记住常用命令 - 1nan</title>
 
 
     
@@ -49,59 +49,47 @@
     <main>
 
 
-<div class="post-ai">
-    <div class="ai-title">
-        <div class="ai-title-text">AI Summary by GPT-4</div>
-    </div>
-
-    <div class="ai-explanation ai-explanation-content">
-        This article provides recommendations on how to enable auto-completion and auto-suggestion features in shell environments to enhance productivity. For zsh users, it suggests installing zsh-autosuggestions via methods like Oh My Zsh, highlighting a minimal configuration example that includes the plugin in the .zshrc file. For bash users, it recommends ble.sh, a script that offers similar functionalities and can be tested and installed following the provided instructions. The article underscores the importance of these features in improving the command-line experience by remembering and suggesting commands, making it particularly useful for repetitive tasks like SSH connections.
-
-    </div>
-</div>
 
 
-
-<h1>How to let your shell to remember your commands</h1>
-<p>Whenever you got a new machine, it means endless porting configurations, compilation of codes and installation of packages to let it be usable for you.</p>
-<p>Recently, I got access to a new supercomputer for a limited amount of time, so I start using it without much configuration. Soon I found myself missing the convenience of auto-completion and auto-suggestion of my shell, which I got really used to in any other machines I used.</p>
-<p>What shell auto-completion and auto-suggestion do is to remember your commands and give you suggestions when you type in the first few letters of a command. When you find yourself typing the same commands over and over again (such as <code>ssh</code> to a specific server), you'll find it really useful.</p>
-<p>This is how the suggestions will look like (I'm using zsh-autosuggestions here):</p>
+<h1>如何让 Shell 记住常用命令</h1>
+<p>每当配置一台新的服务器时，迁移配置、编译代码和安装包，是我最一开始要做的事情。
+最近，我获得了一台新的超算，但给的时间有限，所以我几乎没有配置，登录上编译完软件包就开始使用了。然后，
+当我一次两次三次重复输入类似命令的时候，我就发现自己已然适应，甚至完全离不开命令自动补全带给我的便利了。</p>
+<p>Shell 自动建议的功能是在你输入一条命令的前几个字母时，从命令行历史中给出补全建议。如果你经常输入相同或者类似的命令（例如，ssh到特定的服务器），那么这个功能会非常有用，如下图所示：</p>
 <p><img src="https://yinan.me/pics/zsh.png" alt="" /></p>
-<p>So this article is mainly to give recommendations for both zsh and bash users on how to let the shell to remember your commands.</p>
-<h2>1. zsh-autosuggestions for zsh</h2>
-<p>On my mac, zsh is the default shell, the plugin <code>zsh-autosuggestions</code> is the one I want to recommend here. As the name suggests, it gives you suggestions for commands when you type in a zsh shell, and you can simple press the right arrow key to accept the suggestion.</p>
-<p>To install it, you can follow the instructions on their <a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">github repo</a>. You can use Antigen, Oh My Zsh, Homebrew or manually install it.</p>
-<p>I use oh-my-zsh for managing my zsh configuration. Actually I adopt a minimal configuration of oh-my-zsh, which is just 2 plugins. These are the lines to configure oh-my-zsh in my <code>~/.zshrc</code>:</p>
+<p>因此，本文主要是为 zsh 和 bash 用户推荐让 Shell 记住常用历史命令的方法。</p>
+<h2>1. ZSH 用户：zsh-autosuggestions</h2>
+<p>在 Mac 上，zsh 是默认的 shell，我推荐使用 <code>zsh-autosuggestions</code> 插件。如其名，它会在你输入 zsh 命令时自动给出建议，然后按右箭头键接受建议。</p>
+<p>可以按照其 <a href="(https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">github repo</a>) 上的说明进行安装，安装方式有 Antigen、Oh My Zsh、Homebrew 或手动安装。</p>
+<p>我使用的是 oh-my-zsh 来管理 zsh 配置，这是我在 <code>~/.zshrc</code> 中配置 oh-my-zsh 的代码，配置很简单，只有两个插件：</p>
 <pre><code class="language-bash">export ZSH=&quot;$HOME/.oh-my-zsh&quot;
 ZSH_THEME=&quot;alanpeabody&quot;
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 </code></pre>
-<p>As you can see to install <code>zsh-autosuggestions</code> you just need to add it to the <code>plugins</code> list, separated by a space, tab, or newline.</p>
-<p>There are definitely more to explore in oh-my-zsh, but I'm not going to talk about them in detail here.</p>
-<p>If you're interested in more configurations, you can check out the <a href="https://ohmyz.sh/">official website</a> or their <a href="https://github.com/ohmyzsh/ohmyzsh">github repo</a>.</p>
+<p>可以看到安装方式很简单，只需要把 <code>zsh-autosuggestions</code> 加入到 <code>plugins</code> 列表中，用空格、制表符或换行符分隔不同的插件即可。</p>
+<p>当然，oh-my-zsh 还有很多其他可玩的地方，不管是主题还是插件，这里就不详细介绍了。如果你对更多配置感兴趣，可以查看 <a href="https://ohmyz.sh/">官方网站</a> 或他们的 <a href="https://github.com/ohmyzsh/ohmyzsh">github repo</a>。</p>
 <blockquote>
-<p>(PS. I also recommend <a href="https://github.com/sindresorhus/pure">pure</a> as a beautiful and minimal ZSH prompt theme, and it is developed and maintained by my favorite open source and mac apps developer Sindre Sorhus.)</p>
+<p>（PS. 我还推荐 <a href="https://github.com/sindresorhus/pure">pure</a> 作为一个漂亮而简洁的 ZSH 提示符主题，它是我最崇拜的著名开源和 Mac 应用程序开发者 Sindre Sorhus 开发和维护的。）</p>
 </blockquote>
-<h2>2. ble.sh for bash</h2>
-<p>For some linux machines, bash is default shell. If you are using bash, I would recommend <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>.</p>
-<p>I was looking for a way to let my bash shell to remember my commands, and I found there is a <a href="https://github.com/ohmybash/oh-my-bash">oh-my-bash</a> for managing your bash configuration, but I couldn't find a easy-to-use auto-suggestion plugin that can be easily installed via oh-my-bash.</p>
-<p>Then I found <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>, you can try it first without installation.</p>
+<h2>2. BASH 用户：ble.sh</h2>
+<p>对于一些 Linux 机器，bash 是默认的 shell。如果你使用 bash，我推荐 <a href="https://github.com/akinomyoga/ble.sh">ble.sh</a>。</p>
+<p>我在寻找让 bash 记住常用命令的方法时，发现了 <a href="https://github.com/ohmybash/oh-my-bash">oh-my-bash</a>，可以用来管理 bash 配置，但我没有找到一个可以通过 oh-my-bash 轻松安装的自动建议插件。</p>
+<p>然后我发现了 ble.sh，他甚至提供了试用命令。</p>
 <pre><code class="language-bash"># TRIAL without installation
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh
 source ble.sh/out/ble.sh
 </code></pre>
-<p>Then try typing in a few commands, you'll find it achives the same functionality as <code>zsh-autosuggestions</code>, it also give suggestions for commands that you never used before.</p>
-<p>If you like it, you can quickly install it via running the following command:</p>
+<p>然后尝试输入一些命令，你会发现它和 <code>zsh-autosuggestions</code> 的基本功能是一样的，它还会给出你从未使用过的命令的建议。</p>
+<p>如果你喜欢它，你可以通过运行以下命令快速安装：</p>
 <pre><code class="language-bash"># Quick INSTALL to BASHRC
 
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX=~/.local
 echo 'source ~/.local/share/blesh/ble.sh' &gt;&gt; ~/.bashrc
 </code></pre>
-<p>I hope some of you will find this article useful, and I'm also looking forward to hearing your recommendations on other useful plugins or your configurations for your shell.</p>
+<p>希望本文对你有用，也期待听到你对其他插件或 shell 配置的建议。</p>
 
 
 
@@ -153,10 +141,10 @@ echo 'source ~/.local/share/blesh/ble.sh' &gt;&gt; ~/.bashrc
 
 
 
-    <a href="shell-auto-suggestions-zh.html" class="nav-button" id="prev-button">&lt; 如何让 Shell 记住常用命令</a>
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
 
 
-    <a href="my-defaults.html" class="nav-button" id="next-button">My App Defaults &gt;</a>
+    <a href="shell-auto-suggestions.html" class="nav-button" id="next-button">How to let your shell to remember your commands &gt;</a>
 
 
 
@@ -207,7 +195,7 @@ echo 'source ~/.local/share/blesh/ble.sh' &gt;&gt; ~/.bashrc
   <div id="footer-home-link">
     <a href="index.html">&lt; Home</a>
     
-    <a href="title-index.html#i48">&lt; Index</a>
+    <a href="title-index.html#ie5a682">&lt; Index</a>
     |
     <a href="random.html">Random &gt;</a>
     
