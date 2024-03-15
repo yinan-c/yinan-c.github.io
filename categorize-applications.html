@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>Organizing /Applications folder in macOS - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-03-15 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>Organizing /Applications folder in macOS</h1>
+<p>I struggle sometimes with hundreds of apps installed in my Applications apps.</p>
+<p>For frequently-used apps, Alfred is my best friend.
+For most of the time, I can open the app I want within a few keystrokes.</p>
+<p>But for other apps I use occationaly, it is hard to remember the name every time, so I can only skim through the Applications folder to find the app I need. But it's hard to get the functionality of each app just by looking through the icons and names, it is like find a needle in a haystack.</p>
+<p>Although you can always group or sort the apps to help you find what you need, like the tip shown <a href="https://eshop.macsales.com/blog/40569-quick-tip-arrange-your-mac-apps-by-category-in-finder/">here</a> to group them by default category, I still feel it's not enough for massive apps since the default categories are too broad.</p>
+<p>So I decided to categorize them further myself, similar idea to how iOS does it in the App Library.</p>
+<p>I came across this blog post by <a href="http://blog.hyperjeff.net/?p=44">Jeff</a> where he shared his way of categorizing the /Applications folder. As far as I appreciate the idea behind the post, there is some problems if you do exactly as he did as the time of writing.</p>
+<p>The reason is Apple would not allow you move around stock apps(see picture below).</p>
+<p><img src="https://yinan.me/pics/Error_move_settings.png" alt="" /></p>
+<p>Even some third-party apps might not work properly if you move them. For example, applescript like the following would break if you move iTerm away from /Applications folder (This is the applescript that you can change default terminal to iTerm in Alfred's preferences):</p>
+<pre><code>on alfred_script(q)
+	tell application &quot;iTerm&quot;
+		activate
+		tell current window
+			create tab with default profile
+			tell current session
+				write text q
+			end tell
+		end tell
+	end tell
+end alfred_script
+</code></pre>
+<p>Moreover, package installers(.pkg, not .dmg) would by default put the app to /Applications folder, and there might be problem if move them according to a comment in this <a href="https://superuser.com/questions/76094/organizing-the-mac-os-x-applications-directory">post</a>.</p>
+<p>All this tells us it is better to leave as it is in the /Applications folder. So a good way to deal with this is to create a new folder and put the aliases of all the apps in the new folder. I use '~/Applications', and create alias are as simple as just dragging the apps to the new folder. An easy way to start - You can borrow the categories from the default categories groups using the tips <a href="https://eshop.macsales.com/blog/40569-quick-tip-arrange-your-mac-apps-by-category-in-finder/">here</a>.</p>
+<p><img src="https://yinan.me/pics/group.png" alt="" /></p>
+<p>⌘ + J in the /Applications folder, group the apps by the default categories, and then move the apps in each group to different subfolders in the new folder. The groups might be too broad. Then you can start from there to modify the categories to your own preference.</p>
+<p>Okay, now app alias are in different subfolders, we have the confidence to find the non-frequently-used apps more easily. But what if there is a new app installed? For this, you can use Hazel or some automation tools (Automator, Keyboard Maestro,or other folder watcher) to script the process of creating alias and moving them to ~/Applications.</p>
+<p><img src="https://yinan.me/pics/Hazel_rule.png" alt="" /></p>
+<p>Now everytime there is a new app installed, Hazel will create an alias in the ~/Applications folder. Just like put it in app inbox, I can review the app and decide which category it belongs to or just toss it to keep the total number reasonable.</p>
+<p>I did this because it bothers me sometimes, when I want to find a specific app but I forgot the name, and finding it without hierarchy is difficult. At the end of the day, you can always delete the apps you don't use to limit the number of apps. Then the flat structure of the /Applications folder is not a problem anymore.</p>
+<p>If there aren't many apps at the first place or even there are that it does not bother you, there is no need to do this. Just as the saying goes, if it ain't broke, don't fix it.</p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="mac-apps.html" class="nav-button" id="next-button">推荐一些 macOS 应用 &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-03-15</span>
+  <span>Updated: 2024-03-15</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i4f">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
