@@ -16,9 +16,9 @@
     <link ref="alternate" href="https://yinan.me/categorize-applications.html" />
     <id>categorize-applications</id>
     <published>2024-03-15 15:48:39+00:00</published>
-    <updated>2024-03-15 15:48:39+00:00</updated>
+    <updated>2024-03-15 15:56:11+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;I struggle sometimes with hundreds of apps installed in my Applications apps.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I struggle sometimes with hundreds of apps installed in my Applications folder.&lt;/p&gt;
 &lt;p&gt;For frequently-used apps, Alfred is my best friend.
 For most of the time, I can open the app I want within a few keystrokes.&lt;/p&gt;
 &lt;p&gt;But for other apps I use occationaly, it is hard to remember the name every time, so I can only skim through the Applications folder to find the app I need. But it&#39;s hard to get the functionality of each app just by looking through the icons and names, it is like find a needle in a haystack. &lt;/p&gt;
