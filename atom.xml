@@ -12,6 +12,80 @@
 
   
   <entry>
+    <title>推荐一些 macOS 应用</title>
+    <link ref="alternate" href="https://yinan.me/mac-apps.html" />
+    <id>mac-apps</id>
+    <published>2024-03-15 10:56:04+00:00</published>
+    <updated>2024-03-15 11:07:19+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;想写这个很久了，列表保持更新，括号内是我之前使用过的同类替代品。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://alfredapp.com/&#34;&gt;Alfred&lt;/a&gt;（目前我最喜欢的应用，Raycast 也是一个非常好的免费替代品）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.keyboardmaestro.com/&#34;&gt;Keyboard Maestro&lt;/a&gt;（一个非常强大的自动化 App）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.corecode.io/macupdater/&#34;&gt;MacUpdater&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/us/app/velja/id1607635845?mt=12&#34;&gt;Velja&lt;/a&gt;（浏览器选择器，付费的有 &lt;a href=&#34;https://apps.apple.com/us/app/openin-4-advanced-link-handler/id1643649331?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Openin&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.popclip.app/&#34;&gt;Popclip&lt;/a&gt;（对选中文本操作，有各种 extension，每天用它打开 URL, Google, &lt;a href=&#34;https://brettterpstra.com/projects/searchlink/&#34;&gt;searchlink&lt;/a&gt;, 添加到 Omnifocus 等）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://brettterpstra.com/projects/searchlink/&#34;&gt;SearchLink&lt;/a&gt; (不能严格算是一个 App，添加 markdown 中的 url 时很有用，我是和 Popclip 一起使用)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://netnewswire.com/&#34;&gt;NetNewsWire&lt;/a&gt; (尝试过 Reeder，但我更喜欢 NNW)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;, &lt;a href=&#34;https://www.zotero.org/&#34;&gt;Zotero&lt;/a&gt;（文档和文献应用，Anybox 是一个不错的替代品）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://streaksapp.com/&#34;&gt;Streaks app&lt;/a&gt;（习惯养成，保持我的日常运转）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ji4n1ng/OpenInTerminal&#34;&gt;OpenInTerminal-Lite&lt;/a&gt; 和 OpenInEditor-Lite（位于 Finder工具栏上的应用，可在终端中打开特定目录）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://magicquit.com/&#34;&gt;MagicQuit&lt;/a&gt;、&lt;a href=&#34;https://swiftquit.com/&#34;&gt;SwiftQuit&lt;/a&gt;、&lt;a href=&#34;https://amicoapps.com/app/quitall/&#34;&gt;QuitAll&lt;/a&gt;、&lt;a href=&#34;https://marco.org/apps&#34;&gt;Quitter&lt;/a&gt;（自动关闭应用）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://Wins.cool&#34;&gt;Wins.cool&lt;/a&gt;, Lasso, emmetapp, Moom（窗口管理，替代品可以是 Rectangle）&lt;/li&gt;
+&lt;li&gt;MonitorControl（单独控制不同显示器的亮度）&lt;/li&gt;
+&lt;li&gt;Karabiner Elements（对我来说是必不可少的 key-binding 应用，比如 shift 切换中英文，CAPS LOCK remap）&lt;/li&gt;
+&lt;li&gt;Input Source Pro, SwitchKey, ShowyEdge（根据应用自动切换输入法，在屏幕边缘显示当前输入法）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.homerow.app/&#34;&gt;Homerow&lt;/a&gt; 和 &lt;a href=&#34;https://wooshy.app/&#34;&gt;Wooshy&lt;/a&gt;（用键盘代替鼠标操作）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bahoom.com/hyperswitch&#34;&gt;HyperSwitch&lt;/a&gt; 和 &lt;a href=&#34;https://bahoom.com/hyperdock&#34;&gt;HyperDock&lt;/a&gt;（最近更新支持 Sonoma，App/Window Switcher，还有 Hotkeys, Alt-Tab 和 Manico, Raycast 也能给不同应用设置快捷键）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/us/app/code-piper/id1669959741?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;CodePiper&lt;/a&gt;（自动从短信中复制2FA）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xiaogdgenuine/Doll&#34;&gt;Doll: A mac app to help monitor your app badges!&lt;/a&gt; (在菜单栏监控 Slack 和微信消息)&lt;/li&gt;
+&lt;li&gt;Dropover, dropzone, yoink（drag and drop stash）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://backupstatus.app/&#34;&gt;Backup Status app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://commandqapp.com/&#34;&gt;CommandQ&lt;/a&gt; 和 SlowerQuitApps（防止意外使用CommandQ，KM也可以写脚本做到这一点）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.irradiatedsoftware.com/labs/&#34;&gt;FinderMinder&lt;/a&gt;（固定 Finder 窗口大小）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hmarr/vitals&#34;&gt;Vitals&lt;/a&gt;, iStats Menus（菜单栏上显示不同 app CPU 使用率）&lt;/li&gt;
+&lt;li&gt;MediaMate（高颜值，显示当前播放歌曲）&lt;/li&gt;
+&lt;li&gt;Hazel（文件自动化）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/rapidmg/id6451349778?mt=12&#34;&gt;Rapidmg&lt;/a&gt; （一键安装dmg，无需拖动弹出等操作）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://espanso.org/&#34;&gt;Espanso&lt;/a&gt;（开源 Text expander）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stuntsoftware.com/reflex/&#34;&gt;Reflex&lt;/a&gt;（媒体键定向到 Spotify 和 Apple Music）&lt;/li&gt;
+&lt;li&gt;Onyx, HiDock（清理 mac，隐藏 Dock）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/subscriptions-track-expenses/id1577082754&#34;&gt;Subscriptions&lt;/a&gt;（订阅管理，可以和 App Store 联动）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ts1/BLEUnlock&#34;&gt;BLEUnlock&lt;/a&gt;（通过 iPhone、Apple Watch 来锁定和解锁 Mac。）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.irradiatedsoftware.com/labs/#shortcutdetective&#34;&gt;ShortcutDetective&lt;/a&gt;（停更了，但仍然能用）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/sofa-downtime-organizer/id1276554886&#34;&gt;Sofa&lt;/a&gt;, &lt;a href=&#34;https://apps.apple.com/gb/app/film-noir-for-trakt-just-watch/id1528417240&#34;&gt;FilmNoir&lt;/a&gt;, &lt;a href=&#34;https://apps.apple.com/gb/app/gametrack/id1136800740&#34;&gt;GameTrack&lt;/a&gt;（书影音记录）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.apptorium.com/screenfocus&#34;&gt;ScreenFocus App&lt;/a&gt; 和 &lt;a href=&#34;https://hazeover.com/&#34;&gt;Hazeover&lt;/a&gt;（使非聚焦的应用和显示器变暗）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cleanclip.cc/&#34;&gt;CleanClip&lt;/a&gt;, &lt;a href=&#34;https://apps.apple.com/gb/app/pastenow-instant-clipboard/id1552536109&#34;&gt;PasteNow&lt;/a&gt;（剪贴板管理器，我也经常使用 Alfred）&lt;/li&gt;
+&lt;li&gt;DaisyDisk（分析磁盘空间）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mowglii.com/itsycal/&#34;&gt;Itsycal&lt;/a&gt;（小巧的菜单栏日历应用）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getlater.app/&#34;&gt;Later&lt;/a&gt;（暂时保存当前应用和会话）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://goodsnooze.gumroad.com/l/macwhisper&#34;&gt;MacWhisper&lt;/a&gt;（最佳音频转文字应用）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marta.sh/&#34;&gt;Marta&lt;/a&gt;（双面板 Finder 替代品，另有 QSpace 和 Forklift）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://omnivore.app/&#34;&gt;Omnivore&lt;/a&gt;（开源的稍后阅读）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/us/app/stempel-create-new-files/id1638437641?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Stempel&lt;/a&gt;（在右键菜单中以不同格式/预设来创建新文件）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下是可以在 SetApp 中找到的应用，有些是订阅，大多数是一次性付费应用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Airbuddy（iOS Airpods 体验）&lt;/li&gt;
+&lt;li&gt;Timing App&lt;/li&gt;
+&lt;li&gt;Bartender&lt;/li&gt;
+&lt;li&gt;BusyCal&lt;/li&gt;
+&lt;li&gt;Canary Mail&lt;/li&gt;
+&lt;li&gt;Cleanshot X（替代品 Shottr）&lt;/li&gt;
+&lt;li&gt;Focus and Session（专注）&lt;/li&gt;
+&lt;li&gt;Time Out（为了眼睛健康）&lt;/li&gt;
+&lt;li&gt;HookMark（链接一切）&lt;/li&gt;
+&lt;li&gt;HoudahSpot（全盘全文搜索，我更多用 Alfred、Devonthink 和 Foxtrot）&lt;/li&gt;
+&lt;li&gt;Mission Control Plus&lt;/li&gt;
+&lt;li&gt;Numi，Soulver（计算器）&lt;/li&gt;
+&lt;li&gt;OneSwitch（我经常用来清洁电脑，替代品：OnlySwitch, KeyboardCleanTool）&lt;/li&gt;
+&lt;li&gt;SnippetsLab&lt;/li&gt;
+&lt;li&gt;Swish（触控板窗口管理）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;欢迎在评论中分享你的推荐。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link ref="alternate" href="https://yinan.me/hello-world.html" />
     <id>hello-world</id>
@@ -676,34 +750,6 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://eallion.com/ai-summary/&#34;&gt;博客 AI 摘要及优化 - 大大的小蜗牛&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://shuiba.co/third-party-comments-2023&#34;&gt;第三方评论之2023年版 - 水八口&lt;/a&gt; &lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>AI 总结 RSS Feeds</title>
-    <link ref="alternate" href="https://yinan.me/rss-gpt.html" />
-    <id>rss-gpt</id>
-    <published>2023-09-07 14:21:35+01:00</published>
-    <updated>2023-09-29 19:19:18+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;项目地址与配置教程&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;RSS-GPT 配置教程&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;信息爆炸的焦虑&lt;/h2&gt;
-&lt;p&gt;RSS 是我一直在用并且非常喜欢的信息获取方式，你可以把你喜欢的内容创造者或者大多网页上更新的内容聚合在一个地方集中阅读。但不加筛选，富含噪音的 RSS 在订阅中堆积也很让人疲惫不堪。每天几百几千条未读产生，如果强迫症和焦虑症患者强求 RSS inbox-zero 的话，久而久之会浪费很多的时间执着于清空未读上面，实属折磨。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Heavy Inbox&#34; src=&#34;https://yinan.me/pics/Inbox.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;并且即使你全部清空了阅读，多半情况下 inbox 空空，脑袋也空空，因为这时候你已经没有精力去消化，而是像短视频一样消费 RSS 内容，你只是得到了匆匆而过的信息，没有内化沉淀成知识，而代价却是时间，注意力和精力。&lt;/p&gt;
-&lt;h2&gt;RSS 过滤&lt;/h2&gt;
-&lt;p&gt;在这种情况下，摆脱 &lt;a href=&#34;https://en.wikipedia.org/wiki/Fear_of_missing_out&#34;&gt;FOMO - Fear of missing out&lt;/a&gt; 的心态是很重要的。一个非常有效的方法就是，对 RSS 进行关键词过滤，只保留自己真正感兴趣愿意花时间阅读的内容。&lt;/p&gt;
-&lt;p&gt;我目前知道有两个小工具可以做到 RSS 过滤，&lt;a href=&#34;https://siftrss.com&#34;&gt;SiftRSS&lt;/a&gt;, 另外还有一个 &lt;a href=&#34;https://feedless.org&#34;&gt;Feedless&lt;/a&gt;。我只用过前一个，体验很不错，可以根据 description，title 等建立不同的 filter。 可以看到很多人都在用，作者也一直为爱发电。&lt;/p&gt;
-&lt;h2&gt;RSS 翻译&lt;/h2&gt;
-&lt;p&gt;前段时间在看到了一个这样的项目 &lt;a href=&#34;https://github.com/tjsky/RSS-Translation/tree/main&#34;&gt;RSS-Translation&lt;/a&gt;, 作者写了非常详细的教程教你如何用 GitHub Actions，来自托管翻译 RSS 订阅源。原项目应该是&lt;a href=&#34;https://github.com/talengu/rss-translate&#34;&gt;这个&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;RSS 摘要&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;RSS-GPT&#34; src=&#34;https://yinan.me/pics/RSS-GPT.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;其实对我来说，相比较翻译，对 RSS 全文的中文总结更有价值，这样我可以快速了解到这篇文章的主要内容，来决定是否进一步精读。所以我最近写了这样一个工具，可以全文总结 RSS 订阅源，提取关键词，生成摘要附在原文之前，方便阅读。除了 AI 摘要，另外还有合并 RSS 订阅源，过滤订阅源的一些功能，可以详见 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;。如果想要自己配置自己喜欢的订阅源，可以 fork 我的项目，部署十分简单，只需要更改 config.ini，给 Repo GitHub Pages 权限，以及设置 WORK_TOKEN（Github Token to access GitHub repo and enable workflow）, U_NAME (Git commit user name), U_EMAIL (Git commmit user email), OPENAI_API_KEY 这四个 repo_secrets 即可。&lt;/p&gt;
-&lt;p&gt;我写了一篇详细的&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-zh.html&#34;&gt;指南&lt;/a&gt;，希望能帮助到大家。&lt;/p&gt;
-&lt;p&gt;这里也汇集几条我公开的 &lt;a href=&#34;https://yinan.me/RSS-GPT/&#34;&gt;RSS 源&lt;/a&gt;，欢迎大家订阅。&lt;/p&gt;</content>
   </entry>
   
 
