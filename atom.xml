@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/categorize-applications.html" />
     <id>categorize-applications</id>
     <published>2024-03-15 15:48:39+00:00</published>
-    <updated>2024-03-15 15:56:11+00:00</updated>
+    <updated>2024-03-17 21:59:01+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;I struggle sometimes with hundreds of apps installed in my Applications folder.&lt;/p&gt;
 &lt;p&gt;For frequently-used apps, Alfred is my best friend.
@@ -41,11 +41,13 @@ For most of the time, I can open the app I want within a few keystrokes.&lt;/p&g
 end alfred_script&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Moreover, package installers(.pkg, not .dmg) would by default put the app to /Applications folder, and there might be problem if move them according to a comment in this &lt;a href=&#34;https://superuser.com/questions/76094/organizing-the-mac-os-x-applications-directory&#34;&gt;post&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;All this tells us it is better to leave as it is in the /Applications folder. So a good way to deal with this is to create a new folder and put the aliases of all the apps in the new folder. I use &#39;~/Applications&#39;, and create alias are as simple as just dragging the apps to the new folder. An easy way to start - You can borrow the categories from the default categories groups using the tips &lt;a href=&#34;https://eshop.macsales.com/blog/40569-quick-tip-arrange-your-mac-apps-by-category-in-finder/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/group.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/finder_info.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;⌘ + J in the /Applications folder, group the apps by the default categories, and then move the apps in each group to different subfolders in the new folder. The groups might be too broad. Then you can start from there to modify the categories to your own preference.&lt;/p&gt;
-&lt;p&gt;Okay, now app alias are in different subfolders, we have the confidence to find the non-frequently-used apps more easily. But what if there is a new app installed? For this, you can use Hazel or some automation tools (Automator, Keyboard Maestro,or other folder watcher) to script the process of creating alias and moving them to ~/Applications. &lt;/p&gt;
+&lt;p&gt;Okay, now app alias are in different subfolders, we have the confidence to find the non-frequently-used apps more easily. But what if there is a new app installed? What if we want to remove an app? To keep the system running, an important thing is to keep the alias in the ~/Applications folder up-to-date.&lt;/p&gt;
+&lt;p&gt;For this, you can use Hazel or some automation tools (Automator, Keyboard Maestro, or other folder watcher) to script the process of creating alias and moving them to ~/Applications. Here is an example of how to do it with Hazel for the new app installed: &lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Hazel_rule.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Now everytime there is a new app installed, Hazel will create an alias in the ~/Applications folder. Just like put it in app inbox, I can review the app and decide which category it belongs to or just toss it to keep the total number reasonable.&lt;/p&gt;
+&lt;p&gt;Now everytime there is a new app installed, Hazel will create an alias in the ~/Applications folder. Just like put it in app inbox, I can review the app and decide which category it belongs to or just toss it to keep the total number reasonable. Unfortunately, with Hazel, I don&#39;t find a good way to automatically remove the correspdonding alias when the app is removed. But I have made a &lt;a href=&#34;https://yinan.me/pics/Update-alias-when-trashing-apps.kmmacros&#34;&gt;keyboard maestro macro&lt;/a&gt; to do this, inspired by this &lt;a href=&#34;https://forum.keyboardmaestro.com/t/solved-find-specific-files-inside-folders-and-sub-folders-and-then-copy-them/33042&#34;&gt;post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/km_macro.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I did this because it bothers me sometimes, when I want to find a specific app but I forgot the name, and finding it without hierarchy is difficult. At the end of the day, you can always delete the apps you don&#39;t use to limit the number of apps. Then the flat structure of the /Applications folder is not a problem anymore.&lt;/p&gt;
 &lt;p&gt;If there aren&#39;t many apps at the first place or even there are that it does not bother you, there is no need to do this. Just as the saying goes, if it ain&#39;t broke, don&#39;t fix it.&lt;/p&gt;</content>
   </entry>
