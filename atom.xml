@@ -12,27 +12,16 @@
 
   
   <entry>
-    <title>Avatars</title>
-    <link ref="alternate" href="https://yinan.me/Avatars.html" />
-    <id>Avatars</id>
-    <published>2024-03-26 15:00:27+00:00</published>
-    <updated>2024-03-26 15:10:55+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;我的 GitHub 和博客头像是这个，朋友都说跟我有点神似 :)&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;avatar&#34; src=&#34;https://yinan.me/pics/old_avatar.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;这其实是&lt;a href=&#34;https://notion-avatar.vercel.app/&#34;&gt;这个网站&lt;/a&gt;生成的 Notion 风格头像。&lt;/p&gt;
-&lt;p&gt;另外分享一个在刷推发现的 &lt;a href=&#34;https://txstc55.github.io/ugly-avatar/&#34;&gt;Ugly Avatar&lt;/a&gt;，我生成了这个用它作为我的 v2ex 账号头像。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;ugly-avatar&#34; src=&#34;https://yinan.me/pics/avatar.png&#34; /&gt;&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
     <title>About</title>
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
     <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2024-03-21 16:38:41+00:00</updated>
+    <updated>2024-03-26 16:47:27+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan.me/hello-world&#34;&gt;中文简介&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
 &lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
 &lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
@@ -60,6 +49,32 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Attribution&lt;/strong&gt; — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;No additional restrictions&lt;/strong&gt; — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/li&gt;
 &lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Friends</title>
+    <link ref="alternate" href="https://yinan.me/Friends.html" />
+    <id>Friends</id>
+    <published>2024-03-26 16:30:50+00:00</published>
+    <updated>2024-03-26 16:30:50+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;暂时空空如也。&lt;/p&gt;
+&lt;p&gt;最近开始考虑增加友链，先准备从我订阅的 RSS 中发送一些申请。&lt;/p&gt;
+&lt;p&gt;如果你有兴趣，也欢迎发&lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;邮件&lt;/a&gt;。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Avatars</title>
+    <link ref="alternate" href="https://yinan.me/Avatars.html" />
+    <id>Avatars</id>
+    <published>2024-03-26 15:00:27+00:00</published>
+    <updated>2024-03-26 15:10:55+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;我的 GitHub 和博客头像是这个，朋友都说跟我有点神似 :)&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;avatar&#34; src=&#34;https://yinan.me/pics/old_avatar.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这其实是&lt;a href=&#34;https://notion-avatar.vercel.app/&#34;&gt;这个网站&lt;/a&gt;生成的 Notion 风格头像。&lt;/p&gt;
+&lt;p&gt;另外分享一个在刷推发现的 &lt;a href=&#34;https://txstc55.github.io/ugly-avatar/&#34;&gt;Ugly Avatar&lt;/a&gt;，我生成了这个用它作为我的 v2ex 账号头像。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ugly-avatar&#34; src=&#34;https://yinan.me/pics/avatar.png&#34; /&gt;&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -528,193 +543,6 @@ base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If OpenAI releases more models in the future, I will choose the most suitable default model and update the code accordingly. If you have a better way to use AI or encounter any issues or spotted any errors, feel free to &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email me&lt;/a&gt;. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>RSS-GPT 使用指南</title>
-    <link ref="alternate" href="https://yinan.me/rss-gpt-manual-zh.html" />
-    <id>rss-gpt-manual-zh</id>
-    <published>2023-09-11 17:51:18+01:00</published>
-    <updated>2023-11-07 22:15:43+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;项目地址与功能介绍&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;yinan-c/RSS-GPT&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt.html&#34;&gt;RSS-GPT介绍&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan-c.github.io/rss-gpt-manual-en.html&#34;&gt;English manual&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;需要准备的东西&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub 账号&lt;/li&gt;
-&lt;li&gt;OpenAI API Key （可以在&lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;这里&lt;/a&gt;建立账号申请）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;1 GitHub Actions 部署&lt;/h2&gt;
-&lt;p&gt;大致原理是使用 GitHub Actions 定时运行 Python 脚本, 脚本调用 OpenAI API 生成总结附在 RSS 原文之前, 生成一个新的 xml 文件, 并自动 commit 到仓库中 docs/ 文件夹内。&lt;/p&gt;
-&lt;p&gt;文件夹内所有内容都将自动部署在 GitHub Pages 上, 这样就可以通过你的 Pages 地址访问到这个 xml 文件, 然后就可以在任何 RSS 阅读器中订阅。&lt;/p&gt;
-&lt;p&gt;如果你不想部署在 GitHub Pages, 应该也可以通过直接访问仓库中的 xml 原文件（地址以 &lt;code&gt;https://raw.githubusercontent.com&lt;/code&gt; 开头）来订阅, 比如说我这个仓库的 xml 文件地址是 &lt;a href=&#34;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml&#34;&gt;https://raw.githubusercontent.com/yinan-c/RSS-GPT/main/docs/brett-terpstra.xml&lt;/a&gt;。&lt;/p&gt;
-&lt;h3&gt;1.1 Fork项目&lt;/h3&gt;
-&lt;p&gt;进入项目 &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;RSS-GPT&lt;/a&gt;, 然后 fork 项目到自己的仓库。&lt;/p&gt;
-&lt;h3&gt;1.2 记录三个需要的参数&lt;/h3&gt;
-&lt;h4&gt;U_NAME&lt;/h4&gt;
-&lt;p&gt;就是 &lt;code&gt;git commit&lt;/code&gt; 用的用户名, 一般可以用你的 GitHub 用户名, 你的 GitHub 主页地址的最后一段就是你的用户名, 比如 https://github.com/yinan-c, 用户名就是 yinan-c。&lt;/p&gt;
-&lt;h4&gt;U_EMAIL&lt;/h4&gt;
-&lt;p&gt;就是 &lt;code&gt;git commit&lt;/code&gt; 用的邮箱, 是你注册 GitHub 时的邮箱, 可以在 &lt;a href=&#34;https://github.com/settings/emails&#34;&gt;GitHub 设置页面&lt;/a&gt;&lt;/p&gt;
-&lt;h4&gt;WORK_TOKEN&lt;/h4&gt;
-&lt;p&gt;因为项目涉及使用脚本操作仓库内容,所以需要给脚本修改仓库内文件的权限,需要申请一个 Repository Secret 令牌。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;点击 GitHub 主页右上角自己的头像, 点 &#34;Settings&#34; 进入设置页面&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;点击左侧菜单栏一列最下方的 “&amp;lt; &amp;gt; Developer settings&#34; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;点开左侧菜单栏下方的 “ 🔑 Personal access tokens&#34;, 选择 ”Tokens (classic)“, 点开左上角的 &#34;Generate new token&#34;, 选择第二项 &#34;Generate new token (classic)&#34; 生成一个新的 token。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;配置新建的token&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-set.png&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Note: RSS-GPT&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select scopes: 勾选前两栏 &#34;repo&#34; 和 &#34;workflow&#34; 内的所有选项&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Expiration: 选 &#34;No expiration&#34; (无期限)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;点击页面最下方的 &#34;Generate token&#34;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/token-copy.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;点击完后复制token, 注意一定要在此页面复制好, 离开这个页面你就再也看不到token了。错过就只能按照上面的步骤重新生成一个了&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;1.3 设置 Repository Secrets&lt;/h3&gt;
-&lt;p&gt;进入你 fork 的 repository, 点击上方菜单栏的 &#34;Settings&#34;, 然后点开左侧菜单栏的 &#34;Secrets and variables&#34;, 选择 &#34;Actions&#34;, 然后点击右上角的 &#34;New repository secret&#34;。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/secrets.png&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;给仓库分别添加 &lt;code&gt;U_NAME&lt;/code&gt;, &lt;code&gt;U_EMAIL&lt;/code&gt;, &lt;code&gt;WORK_TOKEN&lt;/code&gt;, &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; 4个 repo secrets, 一次只能添加一个&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Name: U_NAME, U_EMAIL, WORK_TOKEN, OPENAI_API_KEY&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Value: 分别为 U_NAME 上面所说的你的用户名, U_EMAIL 是上面所说的你的邮箱, WORK_TOKEN 是你刚刚复制的 token&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;点击 “Add secret“&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;1.4 给需要的权限&lt;/h3&gt;
-&lt;p&gt;开启 GitHub Actions 访问 Pages 的权限&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/pages.png&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;点击 “Settings” &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在左侧 “Code and automation” 下找到 “Pages” 点击进入&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将 Source 设置为 deploy from main branch /docs folder. 即从 main 分支的 docs 文件夹部署到 Pages 上。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;2 设置需要合并, 过滤, 总结的 RSS 源&lt;/h2&gt;
-&lt;p&gt;进入项目, 点击上方菜单栏的 &#34;Code&#34;, 点击进入 &#34;config.ini&#34; 文件, 点击右上角的铅笔图标, 编辑代码, 设置你需要的订阅源, 前两行的内容不要动。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[cfg]
-base = &#34;docs/&#34;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;然后在接下来的三行更改&lt;strong&gt;目标语言, 关键词数量, 和总结长度&lt;/strong&gt;。之后的代码是 feed-specific 的配置, 格式如下, 首先是3个必填项目:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;[source001]&lt;/code&gt;: 订阅序号, 从001开始增长, 注意请确保编号不要重复, 不然代码会报错&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;name = &#34;brett-terpstra&#34;&lt;/code&gt;: 生成订阅源的名称, 只允许包含英文字母(a-z A-Z)、数字(0-9)、(&lt;code&gt;-&lt;/code&gt;,&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;.&lt;/code&gt;,&lt;code&gt;~&lt;/code&gt;) 4个特殊字符&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;url = &#34;https://brett.trpstra.net/brettterpstra&#34;&lt;/code&gt;: 原始RSS订阅链接, 可以包含多条, 用逗号分隔&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;max_items = &#34;10&#34;&lt;/code&gt;: 两次刷新间隔之间需要总结的文章数量。比如你设置为10, 那么每次刷新时, 会把最新的10条文章进行总结。如果设置为0或者不设置, 则不会总结任何文章, 返回原始条目。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;接下来是关于过滤的可选配置: &lt;strong&gt;注意三个配置必须要同时设置或者同时不设置, 不能只设置其中一个或者两个, 否则会报错。&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;filter_apply = &#34;title&#34;&lt;/code&gt;: 过滤条件需要应用在 &#34;title&#34;（标题）, &#34;article&#34; （正文内容）or &#34;link&#34; （链接）&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_type = &#34;exclude&#34;&lt;/code&gt;: 过滤类型: ”include“（包含）,  “exclude“（不包含）, or ”regex match“（正则匹配）or ”regex not match“（正则不匹配）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;filter_rule = &#34;TextExpander&#34;&lt;/code&gt;: 过滤内容, 字符串或者正则表达式&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
-&lt;h2&gt;3.1 修改 main.py 中的仓库名称&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;(如果你在 1.1 中使用了默认仓库名称，或者你不想要修改 prompt, 可以跳过这一步)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;进入 “main.py&#34; 文件, 点击笔形图标, 编辑代码, 进入第 290 行,  修改 &#34;https://{U_NAME}.github.io/RSS-GPT&#34; 中的 RSS-GPT 为你的仓库名称。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;（可选）根据你的需求, 可以在 113 - 129 行修改 prompt, 让 GPT 生成更符合你需求的总结。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;点击最下边的 “Commit changes” 提交修改。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;4 开启并测试 GitHub Actions&lt;/h2&gt;
-&lt;p&gt;进入项目, 点击上方菜单栏的 &#34;Actions&#34;, 点击 “cron_job&#34;, 选择 “Run workflow&#34;&lt;/p&gt;
-&lt;p&gt;等待运行成功会显示绿色的勾, 运行失败会显示红色的叉。如果出现红叉, 一般都是你修改 ini 文件时, 什么地方写错了, 或者权限、Secrets 设置错误。请仔细检查。&lt;/p&gt;
-&lt;p&gt;如果前边没出现错误 (主要是运动 Actions 没出现红叉), 那么你可以在项目的介绍页看到你的订阅源。&lt;/p&gt;
-&lt;p&gt;每条项目的 &lt;code&gt;-&amp;gt;&lt;/code&gt; 左侧的是原始订阅链接, 右侧是转换后的链接。请确保你已经在第3步中设置了你自己的 GitHub Pages 地址。在任何 RSS 阅读器中订阅右侧的链接即可。&lt;/p&gt;
-&lt;h2&gt;一些额外的说明&lt;/h2&gt;
-&lt;h3&gt;关于 feed 刷新频率&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;默认设置是每2小时运行一次脚本, 如果有不同需要，请修改 &lt;code&gt;.github/workflows/cron_job.yml&lt;/code&gt; 文件第7行, 比如：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;- cron: &#39;0 */2 * * *&#39; # 每2小时运行一次
-   - cron: &#39;0 */1 * * *&#39; # 每1小时运行一次
-   - cron: &#39;0 0 * * *&#39; # 每天0点运行一次
-   - cron: &#39;*/30 * * * *&#39; # 每30分钟运行一次&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;更加具体的参数可以查看 &lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule&#34;&gt;crontab&lt;/a&gt; 的用法 或者&lt;a href=&#34;https://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt; 的文档。&lt;/p&gt;
-&lt;h3&gt;如果你不想要 AI 总结的功能&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;你仍然可以使用本脚本来过滤和合并多个订阅源，只需要在 1.3 不设置 OpenAI API Key，或者在 &lt;code&gt;config.ini&lt;/code&gt; 中不设置 &lt;code&gt;max_items&lt;/code&gt; 或者设置为 0 即可，这个脚本默认在 AI 调用失败时也能返回文章原始条目。 &lt;/li&gt;
-&lt;li&gt;如果你想要 AI 总结功能并且正确设置了 &lt;code&gt;config.ini&lt;/code&gt;，但是仍然返回原始条目或者久久不更新， 请检查&lt;code&gt;docs/&lt;/code&gt; 文件夹内的 &lt;code&gt;feed_name.log&lt;/code&gt; 文件中查看 OpenAI API 或者 feedparser 的错误信息。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;关于 OpenAI 总结的内容&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;我设定的 prompt 是让 AI 帮助提取 关键词 + 总结 并且让 AI 自动排版, 有些时候 AI 排版的效果并不是很好, 你也可以根据自己需要修改 &lt;code&gt;main.py&lt;/code&gt; 第 113 - 129 行的 prompt。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;AI 总结的内容基于 feed 中每条文章的描述，如果 RSS 本身提供全文，则会全文总结；如果 RSS 仅提供文章摘要，则总结基于摘要，目前脚本没有提供抓取原文全文的功能。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;关于 OpenAI API 的用量&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;关于 OpenAI API 的用量，为了尽可能保证费用尽可能低，本项目采取了以下默认措施：&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;所有非文本内容（图片，框架，HTML 标签等）在让 GPT 总结之前都会被移除，以节约 token 用量。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;根据文本长度选取不同的模型，而如果文本长度超过了 16k，&lt;code&gt;gpt-4-1106-preview&lt;/code&gt; 模型会被使用，否则默认使用 &lt;code&gt;GPT-3.5 Turbo&lt;/code&gt;。如果你想要使用不同的模型，可以在 &lt;code&gt;main.py&lt;/code&gt; 文件修改第 227 - 243 行中传入 &lt;code&gt;gpt_summary&lt;/code&gt; 函数的参数 &lt;code&gt;model=&#34;your_model&#34;&lt;/code&gt; 。请参考 &lt;a href=&#34;https://openai.com/pricing/&#34;&gt;OpenAI API Pricing&lt;/a&gt; 了解不同 OpenAI 模型的不同价格。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;脚本会读取 docs/ 文件夹中已存在的 xml 文件，已经存在的文章不会再次总结，所以不会重复消耗用量。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;关于仓库更新&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;我把仓库中手动修改和 workflow 自动提交修改放到了不同的分支，所以你可以直接在 &lt;code&gt;dev&lt;/code&gt; 分支中看到我最后一次手动修改的时间和内容，来决定是否拉取最新的修改。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果 OpenAI 之后发布了更多的模型，我会酌情选择最合适的默认模型，修改代码。如果你有更合理的使用 AI 的方案或者使用过程中有问题，或者发现本教程有错误，欢迎 &lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;email&lt;/a&gt; 交流。最后，如果你觉得本教程或本项目对你有帮助，欢迎 star &lt;a href=&#34;https://github.com/yinan-c/RSS-GPT&#34;&gt;本项目&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
