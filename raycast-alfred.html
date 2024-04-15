@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-04-15 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+<div class="post-ai">
+    <div class="ai-title">
+        <div class="ai-title-text">AI Summary by GPT-4</div>
+    </div>
+
+    <div class="ai-explanation ai-explanation-content">
+        这篇文章介绍了如何改进Raycast，使其可以通过单个Escape键快速退出，类似于Alfred的功能，并探讨了如何利用Deeplink同时发挥Raycast和Alfred的优势。通过使用Keyboard Maestro宏，可以将单个Escape键映射为多次按键，以便快速退出Raycast的多级菜单。文章还讨论了如何通过Deeplink设置，在Raycast和Alfred之间互相调用对方的功能，从而结合两者的强项，例如快速文件搜索、通知样式等，以提升整体的效率和用户体验。
+    </div>
+</div>
+
+
+
+<h1>如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred</h1>
+<p>这篇文章主要想分享两件事，一是如何让 Raycast 能像 Alfred 一样只用一个 Escape 键退出搜索窗口，而不是每次摁一次只能一级一级得退出，二是如何利用 Deeplink 来同时使用 Raycast 和 Alfred， 发挥各自的优势。</p>
+<h2>TLDR</h2>
+<p>利用这个 <a href="https://yinan.me/pics/remap_escape_in_Raycast.kmmacros">Keyboard Maestro macro</a> 实现在 Raycast 搜索窗口中 remap a single escape to multiple escape keys。</p>
+<h2>如果你还想听我唠叨</h2>
+<p>我不想讨论孰优孰劣，哪个是 mac 上最好用的 Launcher (LaunchBar:?)，也并不希望任何一个产品被挤压到退市，并且市场上良性竞争促使产品进步是对消费者有益的。</p>
+<p>在我的电脑上两个都装了（感谢最早让我深度体验 launcher 的 Raycast），但是目前为止还是主要在使用 Alfred，仅仅是因为能够一键呼出和退出搜索窗口，强大的 Universal Actions，更快地文件搜索和 Navigation（每次1对1老板都惊艳于我找文件的速度:D），并且我也写了几个 <a href="https://yinan.me/my-open-source.html">Alfred Workflow</a>。</p>
+<p>但是 Raycast 也有很多优点，就比如同一个功能，eject disks, 我更偏向于 Raycast 的 hud 通知，而不是 Alfred 的系统通知（因为经常开着勿扰模式），另外比如 Show Desktop 这个 Raycast 内置插件，我并没有在 Alfred 社区找到合适的方案。如果你想要主要使用 Raycast，但也有这个烦恼， 那么你可以通过 Keyboard Maestro 设置一键退出 Raycast，如果你想要同时使用两个 Launcher，那么你可以利用 Deeplink 来实现。我会分别在下面两节讨论。</p>
+<p><img src="https://yinan.me/pics/hud.png" alt="" /></p>
+<h3>设置一键退出 Raycast</h3>
+<p>Raycast 有多级菜单，每次按 Escape 键只能退出一级，这是他们产品的特有设计，但确实大大减慢了我使用 Launcher 的速度。要实现一键退出多级菜单，Raycast 内置 Command + Escape 来回到主菜单，但是不会退出窗口（搜索完，还想让你继续搜索？），你仍然需要再次按下 escape 键才能退出。</p>
+<p>之前用过 Keyboard Maestro 映射轻按 command + W 到 长按 command + W 来防止误关窗口，所以我想到了用 Keyboard Maestro 来实现映射一个 Escape 键到多个 Escape 键，关键问题在于如何识别 Raycast 的搜索窗口正在最前。好在已经有人在论坛上讨论过并且给出了<a href="https://forum.keyboardmaestro.com/t/solved-check-whether-raycast-is-running/29073/5">解决方案</a>，我稍微修改了一下，实现了 remap，<a href="https://yinan.me/pics/remap_escape_in_Raycast.kmmacros">下载地址在这儿</a>。</p>
+<h3>Deeplink: raycast:// 和 alfred:// 实现互相呼出</h3>
+<p>Raycast 和 Alfred 都支持 Deeplink，Raycast 中选中 command 摁下 Command + K，就可以看到 Copy Deeplink 的选项，然后你可以创建一个 Alfred Workflow 在打开这些 Raycast DeepLink 实现直接调用 Raycast command （并且整个过程 Raycast 窗口不会出现）</p>
+<p><img src="https://yinan.me/pics/raycastdeeplink.png" alt="" /></p>
+<p><img src="https://yinan.me/pics/alfredworkflow.png" alt="" /></p>
+<p>同样地，而如果你想要在 Raycast 或者 keyboard Maestro, Shortcuts 等其他地方调用 Alfred workflow，Alfred 提供了 External Actions 来实现通过 Deeplink 或者 AppleScript 调用 Alfred 的 workflow。在 Raycast 中设置 Quicklinks 打开这个 URL 即可以实现调用 Alfred Workflow。</p>
+<p><img src="https://yinan.me/pics/alfreddeeplink.gif" alt="" /></p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="anki-vocabulary.html" class="nav-button" id="next-button">划词制作 Anki 卡片 &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-04-15</span>
+  <span>Updated: 2024-04-15</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#ie5a682">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>

@@ -12,6 +12,32 @@
 
   
   <entry>
+    <title>如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred</title>
+    <link ref="alternate" href="https://yinan.me/raycast-alfred.html" />
+    <id>raycast-alfred</id>
+    <published>2024-04-15 12:47:09+01:00</published>
+    <updated>2024-04-15 12:47:09+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;这篇文章主要想分享两件事，一是如何让 Raycast 能像 Alfred 一样只用一个 Escape 键退出搜索窗口，而不是每次摁一次只能一级一级得退出，二是如何利用 Deeplink 来同时使用 Raycast 和 Alfred， 发挥各自的优势。&lt;/p&gt;
+&lt;h2&gt;TLDR&lt;/h2&gt;
+&lt;p&gt;利用这个 &lt;a href=&#34;https://yinan.me/pics/remap_escape_in_Raycast.kmmacros&#34;&gt;Keyboard Maestro macro&lt;/a&gt; 实现在 Raycast 搜索窗口中 remap a single escape to multiple escape keys。&lt;/p&gt;
+&lt;h2&gt;如果你还想听我唠叨&lt;/h2&gt;
+&lt;p&gt;我不想讨论孰优孰劣，哪个是 mac 上最好用的 Launcher (LaunchBar:?)，也并不希望任何一个产品被挤压到退市，并且市场上良性竞争促使产品进步是对消费者有益的。&lt;/p&gt;
+&lt;p&gt;在我的电脑上两个都装了（感谢最早让我深度体验 launcher 的 Raycast），但是目前为止还是主要在使用 Alfred，仅仅是因为能够一键呼出和退出搜索窗口，强大的 Universal Actions，更快地文件搜索和 Navigation（每次1对1老板都惊艳于我找文件的速度:D），并且我也写了几个 &lt;a href=&#34;https://yinan.me/my-open-source.html&#34;&gt;Alfred Workflow&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;但是 Raycast 也有很多优点，就比如同一个功能，eject disks, 我更偏向于 Raycast 的 hud 通知，而不是 Alfred 的系统通知（因为经常开着勿扰模式），另外比如 Show Desktop 这个 Raycast 内置插件，我并没有在 Alfred 社区找到合适的方案。如果你想要主要使用 Raycast，但也有这个烦恼， 那么你可以通过 Keyboard Maestro 设置一键退出 Raycast，如果你想要同时使用两个 Launcher，那么你可以利用 Deeplink 来实现。我会分别在下面两节讨论。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/hud.png&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;设置一键退出 Raycast&lt;/h3&gt;
+&lt;p&gt;Raycast 有多级菜单，每次按 Escape 键只能退出一级，这是他们产品的特有设计，但确实大大减慢了我使用 Launcher 的速度。要实现一键退出多级菜单，Raycast 内置 Command + Escape 来回到主菜单，但是不会退出窗口（搜索完，还想让你继续搜索？），你仍然需要再次按下 escape 键才能退出。&lt;/p&gt;
+&lt;p&gt;之前用过 Keyboard Maestro 映射轻按 command + W 到 长按 command + W 来防止误关窗口，所以我想到了用 Keyboard Maestro 来实现映射一个 Escape 键到多个 Escape 键，关键问题在于如何识别 Raycast 的搜索窗口正在最前。好在已经有人在论坛上讨论过并且给出了&lt;a href=&#34;https://forum.keyboardmaestro.com/t/solved-check-whether-raycast-is-running/29073/5&#34;&gt;解决方案&lt;/a&gt;，我稍微修改了一下，实现了 remap，&lt;a href=&#34;https://yinan.me/pics/remap_escape_in_Raycast.kmmacros&#34;&gt;下载地址在这儿&lt;/a&gt;。&lt;/p&gt;
+&lt;h3&gt;Deeplink: raycast:// 和 alfred:// 实现互相呼出&lt;/h3&gt;
+&lt;p&gt;Raycast 和 Alfred 都支持 Deeplink，Raycast 中选中 command 摁下 Command + K，就可以看到 Copy Deeplink 的选项，然后你可以创建一个 Alfred Workflow 在打开这些 Raycast DeepLink 实现直接调用 Raycast command （并且整个过程 Raycast 窗口不会出现）&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/raycastdeeplink.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/alfredworkflow.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;同样地，而如果你想要在 Raycast 或者 keyboard Maestro, Shortcuts 等其他地方调用 Alfred workflow，Alfred 提供了 External Actions 来实现通过 Deeplink 或者 AppleScript 调用 Alfred 的 workflow。在 Raycast 中设置 Quicklinks 打开这个 URL 即可以实现调用 Alfred Workflow。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/alfreddeeplink.gif&#34; /&gt;&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>划词制作 Anki 卡片</title>
     <link ref="alternate" href="https://yinan.me/anki-vocabulary.html" />
     <id>anki-vocabulary</id>
@@ -358,96 +384,6 @@ source ble.sh/out/ble.sh&lt;/code&gt;&lt;/p&gt;
 make -C ble.sh install PREFIX=~/.local
 echo &#39;source ~/.local/share/blesh/ble.sh&#39; &amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;希望本文对你有用，也期待听到你对其他插件或 shell 配置的建议。&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>My App Defaults</title>
-    <link ref="alternate" href="https://yinan.me/my-defaults.html" />
-    <id>my-defaults</id>
-    <published>2023-11-09 21:30:40+00:00</published>
-    <updated>2023-11-09 23:01:18+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Inspired by &lt;a href=&#34;https://listen.hemisphericviews.com/097&#34;&gt;Hemispheric Views 097 - Duel of the Defaults!&lt;/a&gt; and blog posts by &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;many&lt;/a&gt;. I would like to write my own defaults too.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;📮 &lt;strong&gt;Mail Server&lt;/strong&gt;: iCloud and Gmail&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📨 &lt;strong&gt;Mail Client&lt;/strong&gt;: iOS: &lt;a href=&#34;https://sparkmailapp.com/&#34;&gt;Spark&lt;/a&gt; and Mail.app and macOS: &lt;a href=&#34;https://canarymail.io/&#34;&gt;Canary Mail&lt;/a&gt; and Mail.app&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📝 &lt;strong&gt;Notes&lt;/strong&gt;: &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;✅ &lt;strong&gt;To-Do&lt;/strong&gt;: Previously &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things&lt;/a&gt;, now &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📷 &lt;strong&gt;iPhone Photo Shooting&lt;/strong&gt;: Camera.app&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🟦 &lt;strong&gt;Photos Management&lt;/strong&gt;: Photos.app&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📆 &lt;strong&gt;Calendar&lt;/strong&gt;: Calendar.app (Personal) and Outlook (Work)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📅 &lt;strong&gt;Calendar Backend&lt;/strong&gt;: iCloud (Personal) and Nexus365 (Work)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📁 &lt;strong&gt;Cloud File Storage&lt;/strong&gt;: iCloud Drive (Personal) and Google Drive (Work)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📖 &lt;strong&gt;RSS&lt;/strong&gt;: Previously &lt;a href=&#34;https://www.reederapp.com/&#34;&gt;Reeder&lt;/a&gt; with &lt;a href=&#34;https://www.freshrss.org/&#34;&gt;FreshRSS&lt;/a&gt;, Now &lt;a href=&#34;https://netnewswire.com/&#34;&gt;NetNewsWire&lt;/a&gt; iCloud account&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🙍🏻‍♂️ &lt;strong&gt;Contacts Management&lt;/strong&gt;: Contacts.app&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🌐 &lt;strong&gt;Browser&lt;/strong&gt;: Safari on iOS, and &lt;a href=&#34;https://arc.net/&#34;&gt;Arc&lt;/a&gt; on my Mac&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;💬 &lt;strong&gt;Chat&lt;/strong&gt;: &lt;a href=&#34;https://wechat.com/&#34;&gt;WeChat&lt;/a&gt;, &lt;a href=&#34;https://telegram.org/&#34;&gt;Telegram&lt;/a&gt;, &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://discord.com/&#34;&gt;Discord&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🔖 &lt;strong&gt;Bookmarks&lt;/strong&gt;: &lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📑 &lt;strong&gt;Read-it-Later&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt; and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📜 &lt;strong&gt;Word Processing&lt;/strong&gt;: Google Docs&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📈 &lt;strong&gt;Spreadsheets&lt;/strong&gt;: Google Sheets&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📊 &lt;strong&gt;Presentations&lt;/strong&gt;: Keynote.app, and PDF generated from Markdown using &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&lt;/a&gt; or &lt;a href=&#34;https://latex-project.org&#34;&gt;LaTeX&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🛒 &lt;strong&gt;Shopping List&lt;/strong&gt;: &lt;a href=&#34;https://www.omnigroup.com/omnifocus/&#34;&gt;OmniFocus&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🍴 &lt;strong&gt;Meal Planning (as Recipe Management)&lt;/strong&gt;: N/A, not that I don&#39;t eat/cook, but I don&#39;t have a meal planning system.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;💰 &lt;strong&gt;Budgeting and finance&lt;/strong&gt;: &lt;a href=&#34;https://apps.apple.com/gb/app/cookie-%E8%AE%B0%E8%B4%A6-money-manager/id1559943673&#34;&gt;Cookie&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;📰 &lt;strong&gt;News&lt;/strong&gt;: From podcast, RSS feeds and Twitter.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🎵 &lt;strong&gt;Music&lt;/strong&gt;: Apple Music, sometimes on &lt;a href=&#34;https://www.bilibili.com/&#34;&gt;Bilibili&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🎤 &lt;strong&gt;Podcast&lt;/strong&gt;: &lt;a href=&#34;https://apps.apple.com/gb/app/%E5%B0%8F%E5%AE%87%E5%AE%99-%E4%B8%80%E8%B5%B7%E5%90%AC%E6%92%AD%E5%AE%A2/id1488894313&#34;&gt;小宇宙&lt;/a&gt; for Chinese channels and Apple Podcasts for all others. I am also using &lt;a href=&#34;https://podwise.xyz/&#34;&gt;Podwise.xyz&lt;/a&gt; as an AI tool.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🔐 &lt;strong&gt;Password Management&lt;/strong&gt;: &lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;🧑‍💻 &lt;strong&gt;Code Editor&lt;/strong&gt;: &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
   
 
