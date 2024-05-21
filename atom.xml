@@ -12,6 +12,129 @@
 
   
   <entry>
+    <title>苹果端 Todo App 简单比较</title>
+    <link ref="alternate" href="https://yinan.me/todo-app.html" />
+    <id>todo-app</id>
+    <published>2024-05-22 00:32:57+01:00</published>
+    <updated>2024-05-22 00:42:13+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。&lt;/p&gt;
+&lt;h2&gt;Things&lt;/h2&gt;
+&lt;p&gt;先说说老朋友 Things，Logbook 显示我从2022年的7月开始用到了2023年的11月15日，等了一年半的 Things 4，始终没有等到。&lt;/p&gt;
+&lt;p&gt;不过 Things 3 还是一如既往美观简洁好用，可惜相比较 OmniFocus 缺了以下我觉得很有用的功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Filter/Smart List: Shortcuts 目前半残，如果我不能在组会前，看到在 PhD Area 完成了哪些项目我怎么给老板交差？&lt;/li&gt;
+&lt;li&gt;Review Perspective: OmniFocus 可以帮你 keep track review 列表，Things 只能手动 Review。&lt;/li&gt;
+&lt;li&gt;Automation: 在 OmniFocus 里可以写脚本把符合某些条件的 Todo 自动归类，或者 Tag。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;OmniFocus&lt;/h2&gt;
+&lt;p&gt;我是从 OmniFocus 4 更新（2023年底）之后才开始重度使用的，上面其实已经把我这半年多用 OmniFocus 的感受列的差不多了，唯独有一点我还希望能够加上的，就是 Kanban View。&lt;/p&gt;
+&lt;p&gt;我的任务通常会卡在某个节点比如说，计算中，或者等待回复，而不是简简单单的 0-1 两个状态，而 kanban 以及 Things 的 Heading 就很好地处理了这个问题。OmniFocus 虽然有 Nested Task，但是使用下来更像是子/母任务的从属关系，描述任务的状态我更多用的是 Tag，但是仍不如 Kanban 拖拽来的直观。&lt;/p&gt;
+&lt;p&gt;题外话，Things vs OmniFocus 的比较于我有点像 Anybox 和 DEVONthink 的比较，一个功能强大 buggy 不够美观，一个简洁漂亮，功能单一，能完成他该完成的。&lt;/p&gt;
+&lt;h2&gt;TickTick&lt;/h2&gt;
+&lt;p&gt;一度觉得很理想，有 Kanban，四象限，过滤器，还有经典的日历视图。
+除了没有 Area 的概念，Project 多了可能会很乱。
+但是为什么不让我在 iOS 端用国内滴答的账号？&lt;/p&gt;
+&lt;h2&gt;其他玩家&lt;/h2&gt;
+&lt;p&gt;我没有测试 Todoist，因为订阅费用实在太高，但是据说自然语言输入很好用。还有一些后来者：比如 GoodTask (in SetApp) 可以作为 Reminder 的强化版本。我没有考虑长期使用，所以这里不详细介绍了。&lt;/p&gt;
+&lt;p&gt;最后，Todo 只是帮助 prioritize 的工具，为了 Get Things Done。&lt;/p&gt;
+&lt;p&gt;切忌陷入&lt;a href=&#34;https://utgd.net/article/20657&#34;&gt;效率陷阱&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;切忌花在拖拽, Tag Todo 比实际完成 Todo 花的时间还要多。&lt;/p&gt;
+&lt;p&gt;切忌频繁更换工具，能用就不要动。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>About</title>
+    <link ref="alternate" href="https://yinan.me/about.html" />
+    <id>about</id>
+    <published>2023-06-19 17:35:38+01:00</published>
+    <updated>2024-04-30 17:07:59+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yinan.me/hello-world&#34;&gt;中文简介&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hi, I am Yinan, a PhD student in Physics. You can access this blog via &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; and &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
+&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
+&lt;h2&gt;About this blog&lt;/h2&gt;
+&lt;p&gt;This blog is created by a modified version of &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;PyBoke&lt;/a&gt;, where I added features like full text RSS, navigation buttons, and abstracts on the homepage.&lt;/p&gt;
+&lt;p&gt;The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This blog is fully open source. All the articles in Markdown format, together with the templates I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; and &lt;a href=&#34;https://pages.cloudflare.com&#34;&gt;Cloudflare Pages&lt;/a&gt;. You can also access the blog via &lt;a href=&#34;https://1nan.pages.dev/&#34;&gt;1nan.pages.dev&lt;/a&gt; or &lt;a href=&#34;https://yinan-c.github.io/&#34;&gt;yinan-c.github.io&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;What will I write here?&lt;/h2&gt;
+&lt;p&gt;I am interested in many things, including but not limited to: RSS, macOS softwares, Python ... As I browse the internet (mostly via RSS), interesting things will pop up and I am happy to share online here.&lt;/p&gt;
+&lt;h2&gt;Thanks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Matodon logo by Eugen Rochko &amp;amp; other Mastodon contributors - https://blog.joinmastodon.org/, AGPL, https://commons.wikimedia.org/w/index.php?curid=120470930&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;License&lt;/h1&gt;
+&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
+- &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
+- &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
+for any purpose, even commercially.&lt;/p&gt;
+&lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;
+&lt;p&gt;Under the following terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attribution&lt;/strong&gt; — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No additional restrictions&lt;/strong&gt; — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link ref="alternate" href="https://yinan.me/hello-world.html" />
+    <id>hello-world</id>
+    <published>2023-06-18 18:59:53+01:00</published>
+    <updated>2024-04-30 17:07:58+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
+&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。这个博客的域名是 &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; 和 &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;为什么写博客？&lt;/h2&gt;
+&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
+&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
+&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
+&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
+&lt;h2&gt;我会写些什么&lt;/h2&gt;
+&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
+&lt;h2&gt;博客用了什么&lt;/h2&gt;
+&lt;p&gt;本博客的文章用 Markdown 编写。
+采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 和 &lt;a href=&#34;https://pages.cloudflare.com&#34;&gt;Cloudflare Pages&lt;/a&gt; 发布。你也可以通过 &lt;a href=&#34;https://1nan.pages.dev/&#34;&gt;1nan.pages.dev&lt;/a&gt; 或 &lt;a href=&#34;https://yinan-c.github.io/&#34;&gt;yinan-c.github.io&lt;/a&gt; 访问。&lt;/p&gt;
+&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
+&lt;h2&gt;版权&lt;/h2&gt;
+&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。您可以自由地：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;共享&lt;/strong&gt; - 在任何媒介以任何形式复制、发行本作品 在任何用途下，甚至商业目的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;演绎&lt;/strong&gt; - 修改、转换或以本作品为基础进行创作 在任何用途下，甚至商业目的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利。&lt;/p&gt;
+&lt;p&gt;惟须遵守下列条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;署名&lt;/strong&gt; - 您必须给出 适当的署名 ，提供指向本许可协议的链接，同时 标明是否（对原始作品）作了修改 。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;没有附加限制&lt;/strong&gt; - 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Contact Me</title>
+    <link ref="alternate" href="https://yinan.me/contact.html" />
+    <id>contact</id>
+    <published>2023-07-08 20:53:50+01:00</published>
+    <updated>2024-04-30 11:32:48+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;mailto:hello@yinan.me&#34;&gt;Email&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/yinan-c&#34;&gt;yinan-c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
     <title>如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred</title>
     <link ref="alternate" href="https://yinan.me/raycast-alfred.html" />
     <id>raycast-alfred</id>
@@ -82,46 +205,6 @@
 &lt;li&gt;&lt;a href=&#34;https://www.laohuang.net/20171214/anki-definition-word-template/&#34;&gt;请找一个解释要配的上我这个单词 — 老黄老巢&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.antimoon.com/how/srs.htm&#34;&gt;Antimoon - How to Learn English effectively&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://sspai.com/post/87587&#34;&gt;5 个维度、6 个 App，帮你选出最适合自己的「背单词神器」&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>About</title>
-    <link ref="alternate" href="https://yinan.me/about.html" />
-    <id>about</id>
-    <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2024-03-26 16:47:27+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan.me/hello-world&#34;&gt;中文简介&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hi, I am Yinan, a PhD student in Physics.&lt;/p&gt;
-&lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
-&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
-&lt;h2&gt;About this blog&lt;/h2&gt;
-&lt;p&gt;This blog is created by a modified version of &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;PyBoke&lt;/a&gt;, where I added features like full text RSS, navigation buttons, and abstracts on the homepage.&lt;/p&gt;
-&lt;p&gt;The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This blog is fully open source. All the articles in Markdown format, together with the templates I use on this website can also be found in the &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I use the theme &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss&lt;/a&gt;, and publish the blog on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;What will I write here?&lt;/h2&gt;
-&lt;p&gt;I am interested in many things, including but not limited to: RSS, macOS softwares, Python ... As I browse the internet (mostly via RSS), interesting things will pop up and I am happy to share online here.&lt;/p&gt;
-&lt;h2&gt;Thanks&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Matodon logo by Eugen Rochko &amp;amp; other Mastodon contributors - https://blog.joinmastodon.org/, AGPL, https://commons.wikimedia.org/w/index.php?curid=120470930&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;License&lt;/h1&gt;
-&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt;. You are free to: 
-- &lt;strong&gt;Share&lt;/strong&gt; — copy and redistribute the material in any medium or format
-- &lt;strong&gt;Adapt&lt;/strong&gt; — remix, transform, and build upon the material
-for any purpose, even commercially.&lt;/p&gt;
-&lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;
-&lt;p&gt;Under the following terms:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Attribution&lt;/strong&gt; — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;No additional restrictions&lt;/strong&gt; — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
   
@@ -264,126 +347,6 @@ end alfred_script&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;Swish（触控板窗口管理）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;欢迎在评论中分享你的推荐。&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link ref="alternate" href="https://yinan.me/hello-world.html" />
-    <id>hello-world</id>
-    <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2024-02-01 22:51:50+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
-&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。&lt;/p&gt;
-&lt;h2&gt;为什么写博客？&lt;/h2&gt;
-&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
-&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
-&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
-&lt;h2&gt;我会写些什么&lt;/h2&gt;
-&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
-&lt;h2&gt;博客用了什么&lt;/h2&gt;
-&lt;p&gt;本博客的文章用 Markdown 编写。
-采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 发布。&lt;/p&gt;
-&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
-&lt;h2&gt;版权&lt;/h2&gt;
-&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。您可以自由地：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;共享&lt;/strong&gt; - 在任何媒介以任何形式复制、发行本作品 在任何用途下，甚至商业目的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;演绎&lt;/strong&gt; - 修改、转换或以本作品为基础进行创作 在任何用途下，甚至商业目的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利。&lt;/p&gt;
-&lt;p&gt;惟须遵守下列条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;署名&lt;/strong&gt; - 您必须给出 适当的署名 ，提供指向本许可协议的链接，同时 标明是否（对原始作品）作了修改 。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;没有附加限制&lt;/strong&gt; - 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>How to let your shell to remember your commands</title>
-    <link ref="alternate" href="https://yinan.me/shell-auto-suggestions.html" />
-    <id>shell-auto-suggestions</id>
-    <published>2024-02-01 17:09:21+00:00</published>
-    <updated>2024-02-01 22:26:17+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Whenever you got a new machine, there&#39;s always endless configurations porting, codes compilations and packages installations. It is crutial step to make the new machine meets your habits.&lt;/p&gt;
-&lt;p&gt;Recently, I got access to a new supercomputer for a limited amount of time, I started using it without much configuration. Soon I found myself missing the convenience of auto-suggestion for commands, which I got used to in prevously machines I&#39;ve wored on.&lt;/p&gt;
-&lt;p&gt;Auto-suggestion in your shell is basically a plugin/extension that remembers your commands history and provide suggestions when you type in the first few letters of a command. When you find yourself frequently using the same commands (such as &lt;code&gt;ssh&lt;/code&gt; to a specific server), it could be really useful.&lt;/p&gt;
-&lt;p&gt;This is how the suggestions will look like (I&#39;m using zsh-autosuggestions here):&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/zsh.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;So this article is mainly to give recommendations for both zsh and bash users on how to configure the shell to remember your commands.&lt;/p&gt;
-&lt;h2&gt;1. zsh-autosuggestions for zsh&lt;/h2&gt;
-&lt;p&gt;On my mac, zsh is the default shell, the plugin &lt;code&gt;zsh-autosuggestions&lt;/code&gt; is what I want to recommend here. It suggests commands when you type in a zsh shell, and you can simply press the right arrow key to accept the suggestion.&lt;/p&gt;
-&lt;p&gt;To install it, you can follow the instructions on their &lt;a href=&#34;https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md&#34;&gt;github repo&lt;/a&gt;. You can use Antigen, Oh My Zsh, Homebrew or manually install it.&lt;/p&gt;
-&lt;p&gt;I use oh-my-zsh for managing my zsh configurations. Actually I&#39;m using a rather minimal configuration of oh-my-zsh, which consists only 2 plugins. These are the lines to configure oh-my-zsh in my &lt;code&gt;~/.zshrc&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bash
-export ZSH=&#34;$HOME/.oh-my-zsh&#34;
-ZSH_THEME=&#34;alanpeabody&#34;
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh&lt;/code&gt;
-As you can see, to install &lt;code&gt;zsh-autosuggestions&lt;/code&gt; you just need to add it to the &lt;code&gt;plugins&lt;/code&gt; list, separated by a space, tab, or newline.&lt;/p&gt;
-&lt;p&gt;There are definitely more to explore in oh-my-zsh, but I&#39;m not going to talk about them in detail here. If you&#39;re interested in more configurations, you can always check out the &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;official website&lt;/a&gt; or their &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;(PS. I also recommend &lt;a href=&#34;https://github.com/sindresorhus/pure&#34;&gt;pure&lt;/a&gt; as a beautiful and minimal ZSH prompt theme, and it is developed and maintained by my favorite open source and mac apps developer Sindre Sorhus.)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;2. ble.sh for bash&lt;/h2&gt;
-&lt;p&gt;For some linux machines, bash is default shell. If you are using bash, I would recommend &lt;a href=&#34;https://github.com/akinomyoga/ble.sh&#34;&gt;ble.sh&lt;/a&gt;, which stands for Bash Line Editor.&lt;/p&gt;
-&lt;p&gt;I was looking for a way to let my bash shell to remember my commands, and I found there is a &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;oh-my-bash&lt;/a&gt; repo, which is the counterpart of oh-my-zsh, for managing your bash configuration. However, I couldn&#39;t find a easy-to-use auto-suggestion plugin that can be installed via oh-my-bash.&lt;/p&gt;
-&lt;p&gt;Then I found &lt;a href=&#34;https://github.com/akinomyoga/ble.sh&#34;&gt;ble.sh&lt;/a&gt;, and you can even try it first without installation.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-make -C ble.sh
-source ble.sh/out/ble.sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Then try typing in a few commands, you&#39;ll find it achieves the same functionality as &lt;code&gt;zsh-autosuggestions&lt;/code&gt;, it even gives suggestions on commands that you never used before.&lt;/p&gt;
-&lt;p&gt;If you like it, you can quickly install it via running the following command:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-make -C ble.sh install PREFIX=~/.local
-echo &#39;source ~/.local/share/blesh/ble.sh&#39; &amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;I hope some of you will find this article useful, and I&#39;m also looking forward to hearing your recommendations on other useful plugins or your shell configurations.&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>如何让 Shell 记住常用命令</title>
-    <link ref="alternate" href="https://yinan.me/shell-auto-suggestions-zh.html" />
-    <id>shell-auto-suggestions-zh</id>
-    <published>2024-02-01 18:04:18+00:00</published>
-    <updated>2024-02-01 22:26:17+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;每当配置一台新服务器时，迁移配置、编译代码和安装包，都是最一开始要做的事情。
-最近，我们组有了一台新的超算，但给的时间有限，于是我几乎没有配置，登录上编译完软件包就开始用了。然而，在我一而再再而三重复输入类似的命令后，我发现自己已然适应，甚至完全离不开命令自动补全带给我的便利了。&lt;/p&gt;
-&lt;p&gt;Shell 自动建议是在你输入一条命令的前几个字母时，从命令行历史中给出补全建议。如果你需要经常输入相同或类似的命令时（例如，ssh到特定的服务器），那么这个功能会非常有用，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/zsh.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;因此，本文主要是给 zsh 和 bash 用户推荐 Shell 记住常用历史命令的插件，以及如何安装和配置它们。&lt;/p&gt;
-&lt;h2&gt;1. ZSH 用户：zsh-autosuggestions&lt;/h2&gt;
-&lt;p&gt;在 Mac 上，zsh 是默认的 shell，我推荐使用 &lt;code&gt;zsh-autosuggestions&lt;/code&gt; 插件。如其名，它会在你输入 zsh 命令时自动给出建议，然后按右箭头键接受建议。&lt;/p&gt;
-&lt;p&gt;可以按照其 &lt;a href=&#34;(https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)&#34;&gt;github repo&lt;/a&gt; 上的说明进行安装，安装方式有 Antigen、Oh My Zsh、Homebrew 或手动安装。&lt;/p&gt;
-&lt;p&gt;我使用的是 oh-my-zsh 来管理 zsh 配置，这是我在 &lt;code&gt;~/.zshrc&lt;/code&gt; 中有关 oh-my-zsh 的代码，我目前使用得很简单，只有两个插件：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;export ZSH=&#34;$HOME/.oh-my-zsh&#34;
-ZSH_THEME=&#34;alanpeabody&#34;
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;可以看到安装方式十分简单，只需把 &lt;code&gt;zsh-autosuggestions&lt;/code&gt; 加入到 &lt;code&gt;plugins&lt;/code&gt; 列表中，用空格、制表符或换行符分隔不同的插件即可。&lt;/p&gt;
-&lt;p&gt;当然，oh-my-zsh 还有很多其他可玩的地方，不管是主题还是插件，这里就不详细介绍了。如果你对更多配置感兴趣，可以查看 &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;官方网站&lt;/a&gt; 或他们的 &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;github repo&lt;/a&gt;。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;（PS. 另外我还推荐 &lt;a href=&#34;https://github.com/sindresorhus/pure&#34;&gt;pure&lt;/a&gt; 作为一个漂亮而简洁的 ZSH 提示符主题，它也是我最崇拜的开源和 Mac 应用程序开发者 Sindre Sorhus 开发维护的。）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;2. BASH 用户：ble.sh&lt;/h2&gt;
-&lt;p&gt;对于一些 Linux 机器，bash 是默认的 shell。如果你使用 bash，我推荐 &lt;a href=&#34;https://github.com/akinomyoga/ble.sh&#34;&gt;ble.sh&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;我在寻找让 bash 记住常用命令的方法时，发现了 &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;oh-my-bash&lt;/a&gt;，和 oh my zsh 对应，它可以用来管理 bash 配置，但我没有找到一个可以通过它轻松安装的 auto suggestions 插件。&lt;/p&gt;
-&lt;p&gt;然后我发现了 ble.sh，它甚至提供了试用命令，你可以不用安装的情况下暂时使用它，只需运行以下命令：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-make -C ble.sh
-source ble.sh/out/ble.sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;当你尝试输入一些命令，你会发现它和 &lt;code&gt;zsh-autosuggestions&lt;/code&gt; 的基本功能是一样的，甚至会给出你从未使用过的命令的建议。&lt;/p&gt;
-&lt;p&gt;如果你喜欢它，当然也可以通过运行以下命令快速安装：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-make -C ble.sh install PREFIX=~/.local
-echo &#39;source ~/.local/share/blesh/ble.sh&#39; &amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;希望本文对你有用，也期待听到你对其他插件或 shell 配置的建议。&lt;/p&gt;</content>
   </entry>
   
 

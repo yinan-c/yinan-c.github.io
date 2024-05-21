@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>苹果端 Todo App 简单比较 - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-05-22 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>苹果端 Todo App 简单比较</h1>
+<p>继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。</p>
+<h2>Things</h2>
+<p>先说说老朋友 Things，Logbook 显示我从2022年的7月开始用到了2023年的11月15日，等了一年半的 Things 4，始终没有等到。</p>
+<p>不过 Things 3 还是一如既往美观简洁好用，可惜相比较 OmniFocus 缺了以下我觉得很有用的功能：</p>
+<ul>
+<li>Filter/Smart List: Shortcuts 目前半残，如果我不能在组会前，看到在 PhD Area 完成了哪些项目我怎么给老板交差？</li>
+<li>Review Perspective: OmniFocus 可以帮你 keep track review 列表，Things 只能手动 Review。</li>
+<li>Automation: 在 OmniFocus 里可以写脚本把符合某些条件的 Todo 自动归类，或者 Tag。</li>
+</ul>
+<h2>OmniFocus</h2>
+<p>我是从 OmniFocus 4 更新（2023年底）之后才开始重度使用的，上面其实已经把我这半年多用 OmniFocus 的感受列的差不多了，唯独有一点我还希望能够加上的，就是 Kanban View。</p>
+<p>我的任务通常会卡在某个节点比如说，计算中，或者等待回复，而不是简简单单的 0-1 两个状态，而 kanban 以及 Things 的 Heading 就很好地处理了这个问题。OmniFocus 虽然有 Nested Task，但是使用下来更像是子/母任务的从属关系，描述任务的状态我更多用的是 Tag，但是仍不如 Kanban 拖拽来的直观。</p>
+<p>题外话，Things vs OmniFocus 的比较于我有点像 Anybox 和 DEVONthink 的比较，一个功能强大 buggy 不够美观，一个简洁漂亮，功能单一，能完成他该完成的。</p>
+<h2>TickTick</h2>
+<p>一度觉得很理想，有 Kanban，四象限，过滤器，还有经典的日历视图。
+除了没有 Area 的概念，Project 多了可能会很乱。
+但是为什么不让我在 iOS 端用国内滴答的账号？</p>
+<h2>其他玩家</h2>
+<p>我没有测试 Todoist，因为订阅费用实在太高，但是据说自然语言输入很好用。还有一些后来者：比如 GoodTask (in SetApp) 可以作为 Reminder 的强化版本。我没有考虑长期使用，所以这里不详细介绍了。</p>
+<p>最后，Todo 只是帮助 prioritize 的工具，为了 Get Things Done。</p>
+<p>切忌陷入<a href="https://utgd.net/article/20657">效率陷阱</a>。</p>
+<p>切忌花在拖拽, Tag Todo 比实际完成 Todo 花的时间还要多。</p>
+<p>切忌频繁更换工具，能用就不要动。</p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="raycast-alfred.html" class="nav-button" id="next-button">如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-05-22</span>
+  <span>Updated: 2024-05-22</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#ie88bb9">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
