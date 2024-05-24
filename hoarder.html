@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>Trying Out Hoarder - The Self-Hosted Bookmark Manager - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-05-24 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>Trying Out Hoarder - The Self-Hosted Bookmark Manager</h1>
+<p>Trying out <a href="https://github.com/hoarder-app/hoarder">Hoarder</a> app today, to see whether it would competes Anybox as my main bookmark manager. I do like self-hosting services, and I like hoarding stuff 🤭.</p>
+<p>At first sight, it feels like a complete app I can put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images.</p>
+<p>I really like the ability to have AI tagging for links and images so that I don't have to manually organize them. And the full text search is something Anybox doesn't have yet. While I write this article, May 2024, it is still under review in the <a href="https://anybox.canny.io/feature-requests/p/full-text-search">canny page of Anybox</a>.</p>
+<p>However, there are some features missing before it can become my main bookmark manager.</p>
+<ul>
+<li><a href="https://github.com/hoarder-app/hoarder/issues/43">REST API</a> - for easily exporting data like links, tags, and for an Alfred workflow.<blockquote>
+<p>For now, it provides a CLI tool, but I am installing the app on my homeserver instead of my laptop. I will have to ssh to use the CLI, not ideal. A REST API would be good for remotely managing data.</p>
+</blockquote>
+</li>
+<li>Easy data export<blockquote>
+<p>I don't seem to find a very good way to export data easily, for example screenshots, local cache, links.</p>
+</blockquote>
+</li>
+<li>Offline archiving<blockquote>
+<p>For now, Hoarder supports plain text caching and screenshots. It would be good to see other formats supported (Planned, as of May 2024)</p>
+</blockquote>
+</li>
+<li><a href="https://github.com/hoarder-app/hoarder/issues/172">Local scrapper</a> to fetch content after user login for some sites.<blockquote>
+<p>What I like about Anybox is its integration with <a href="https://github.com/gildas-lormeau/SingleFile">SingleFile extension</a>. It can directly save the .html downloaded to Anybox via API, so that any content behind paywall will also be downloaded.
+(It actually addresses the pity that SingleFile metadata only contains the first part of the full domain - it will only show something like https://github.com, when you directly download a  html with SingleFile metadata to DEVONthink)</p>
+</blockquote>
+</li>
+</ul>
+<p>Other features could be useful:</p>
+<ul>
+<li>RSS subscription link<blockquote>
+<p>Like what <a href="https://github.com/sissbruecker/linkding">linkding</a> and <a href="https://wallabag.org/">wallabag</a> provides. I am currently relying on RSS to sync my read-it-later from wallabag to DEVONthink.</p>
+</blockquote>
+</li>
+</ul>
+<p>To conclude, it will not replace Anybox with Hoarder for now. But it is a very young and promising open-source app with rapid iteration, someday it might will.</p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="todo-app.html" class="nav-button" id="next-button">苹果端 Todo App 简单比较 &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-05-24</span>
+  <span>Updated: 2024-05-24</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i54">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>

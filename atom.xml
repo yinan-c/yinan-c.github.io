@@ -12,6 +12,44 @@
 
   
   <entry>
+    <title>Trying Out Hoarder - The Self-Hosted Bookmark Manager</title>
+    <link ref="alternate" href="https://yinan.me/hoarder.html" />
+    <id>hoarder</id>
+    <published>2024-05-24 18:56:37+01:00</published>
+    <updated>2024-05-24 19:00:21+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;Trying out &lt;a href=&#34;https://github.com/hoarder-app/hoarder&#34;&gt;Hoarder&lt;/a&gt; app today, to see whether it would competes Anybox as my main bookmark manager. I do like self-hosting services, and I like hoarding stuff 🤭.&lt;/p&gt;
+&lt;p&gt;At first sight, it feels like a complete app I can put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images.&lt;/p&gt;
+&lt;p&gt;I really like the ability to have AI tagging for links and images so that I don&#39;t have to manually organize them. And the full text search is something Anybox doesn&#39;t have yet. While I write this article, May 2024, it is still under review in the &lt;a href=&#34;https://anybox.canny.io/feature-requests/p/full-text-search&#34;&gt;canny page of Anybox&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, there are some features missing before it can become my main bookmark manager. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - for easily exporting data like links, tags, and for an Alfred workflow.&lt;blockquote&gt;
+&lt;p&gt;For now, it provides a CLI tool, but I am installing the app on my homeserver instead of my laptop. I will have to ssh to use the CLI, not ideal. A REST API would be good for remotely managing data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Easy data export&lt;blockquote&gt;
+&lt;p&gt;I don&#39;t seem to find a very good way to export data easily, for example screenshots, local cache, links.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Offline archiving&lt;blockquote&gt;
+&lt;p&gt;For now, Hoarder supports plain text caching and screenshots. It would be good to see other formats supported (Planned, as of May 2024)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/172&#34;&gt;Local scrapper&lt;/a&gt; to fetch content after user login for some sites.&lt;blockquote&gt;
+&lt;p&gt;What I like about Anybox is its integration with &lt;a href=&#34;https://github.com/gildas-lormeau/SingleFile&#34;&gt;SingleFile extension&lt;/a&gt;. It can directly save the .html downloaded to Anybox via API, so that any content behind paywall will also be downloaded. 
+(It actually addresses the pity that SingleFile metadata only contains the first part of the full domain - it will only show something like https://github.com, when you directly download a  html with SingleFile metadata to DEVONthink)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other features could be useful:
+- RSS subscription link&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Like what &lt;a href=&#34;https://github.com/sissbruecker/linkding&#34;&gt;linkding&lt;/a&gt; and &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; provides. I am currently relying on RSS to sync my read-it-later from wallabag to DEVONthink.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To conclude, it will not replace Anybox with Hoarder for now. But it is a very young and promising open-source app with rapid iteration, someday it might will.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>苹果端 Todo App 简单比较</title>
     <link ref="alternate" href="https://yinan.me/todo-app.html" />
     <id>todo-app</id>
@@ -281,80 +319,6 @@ end alfred_script&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/km_macro.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I did this because it bothers me sometimes, when I want to find a specific app but I forgot the name, and finding it without hierarchy is difficult. At the end of the day, you can always delete the apps you don&#39;t use to limit the number of apps. Then the flat structure of the /Applications folder is not a problem anymore.&lt;/p&gt;
 &lt;p&gt;If there aren&#39;t many apps at the first place or even there are that it does not bother you, there is no need to do this. Just as the saying goes, if it ain&#39;t broke, don&#39;t fix it.&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>推荐一些 macOS 应用</title>
-    <link ref="alternate" href="https://yinan.me/mac-apps.html" />
-    <id>mac-apps</id>
-    <published>2024-03-15 10:56:04+00:00</published>
-    <updated>2024-03-15 11:07:19+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;想写这个很久了，列表保持更新，括号内是我之前使用过的同类替代品。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://alfredapp.com/&#34;&gt;Alfred&lt;/a&gt;（目前我最喜欢的应用，Raycast 也是一个非常好的免费替代品）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.keyboardmaestro.com/&#34;&gt;Keyboard Maestro&lt;/a&gt;（一个非常强大的自动化 App）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.corecode.io/macupdater/&#34;&gt;MacUpdater&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/us/app/velja/id1607635845?mt=12&#34;&gt;Velja&lt;/a&gt;（浏览器选择器，付费的有 &lt;a href=&#34;https://apps.apple.com/us/app/openin-4-advanced-link-handler/id1643649331?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Openin&lt;/a&gt;）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.popclip.app/&#34;&gt;Popclip&lt;/a&gt;（对选中文本操作，有各种 extension，每天用它打开 URL, Google, &lt;a href=&#34;https://brettterpstra.com/projects/searchlink/&#34;&gt;searchlink&lt;/a&gt;, 添加到 Omnifocus 等）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://brettterpstra.com/projects/searchlink/&#34;&gt;SearchLink&lt;/a&gt; (不能严格算是一个 App，添加 markdown 中的 url 时很有用，我是和 Popclip 一起使用)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://netnewswire.com/&#34;&gt;NetNewsWire&lt;/a&gt; (尝试过 Reeder，但我更喜欢 NNW)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt;, &lt;a href=&#34;https://www.zotero.org/&#34;&gt;Zotero&lt;/a&gt;（文档和文献应用，Anybox 是一个不错的替代品）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://streaksapp.com/&#34;&gt;Streaks app&lt;/a&gt;（习惯养成，保持我的日常运转）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Ji4n1ng/OpenInTerminal&#34;&gt;OpenInTerminal-Lite&lt;/a&gt; 和 OpenInEditor-Lite（位于 Finder工具栏上的应用，可在终端中打开特定目录）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://magicquit.com/&#34;&gt;MagicQuit&lt;/a&gt;、&lt;a href=&#34;https://swiftquit.com/&#34;&gt;SwiftQuit&lt;/a&gt;、&lt;a href=&#34;https://amicoapps.com/app/quitall/&#34;&gt;QuitAll&lt;/a&gt;、&lt;a href=&#34;https://marco.org/apps&#34;&gt;Quitter&lt;/a&gt;（自动关闭应用）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://Wins.cool&#34;&gt;Wins.cool&lt;/a&gt;, Lasso, emmetapp, Moom（窗口管理，替代品可以是 Rectangle）&lt;/li&gt;
-&lt;li&gt;MonitorControl（单独控制不同显示器的亮度）&lt;/li&gt;
-&lt;li&gt;Karabiner Elements（对我来说是必不可少的 key-binding 应用，比如 shift 切换中英文，CAPS LOCK remap）&lt;/li&gt;
-&lt;li&gt;Input Source Pro, SwitchKey, ShowyEdge（根据应用自动切换输入法，在屏幕边缘显示当前输入法）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.homerow.app/&#34;&gt;Homerow&lt;/a&gt; 和 &lt;a href=&#34;https://wooshy.app/&#34;&gt;Wooshy&lt;/a&gt;（用键盘代替鼠标操作）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://bahoom.com/hyperswitch&#34;&gt;HyperSwitch&lt;/a&gt; 和 &lt;a href=&#34;https://bahoom.com/hyperdock&#34;&gt;HyperDock&lt;/a&gt;（最近更新支持 Sonoma，App/Window Switcher，还有 Hotkeys, Alt-Tab 和 Manico, Raycast 也能给不同应用设置快捷键）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/us/app/code-piper/id1669959741?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;CodePiper&lt;/a&gt;（自动从短信中复制2FA）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/xiaogdgenuine/Doll&#34;&gt;Doll: A mac app to help monitor your app badges!&lt;/a&gt; (在菜单栏监控 Slack 和微信消息)&lt;/li&gt;
-&lt;li&gt;Dropover, dropzone, yoink（drag and drop stash）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://backupstatus.app/&#34;&gt;Backup Status app&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://commandqapp.com/&#34;&gt;CommandQ&lt;/a&gt; 和 SlowerQuitApps（防止意外使用CommandQ，KM也可以写脚本做到这一点）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.irradiatedsoftware.com/labs/&#34;&gt;FinderMinder&lt;/a&gt;（固定 Finder 窗口大小）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hmarr/vitals&#34;&gt;Vitals&lt;/a&gt;, iStats Menus（菜单栏上显示不同 app CPU 使用率）&lt;/li&gt;
-&lt;li&gt;MediaMate（高颜值，显示当前播放歌曲）&lt;/li&gt;
-&lt;li&gt;Hazel（文件自动化）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/rapidmg/id6451349778?mt=12&#34;&gt;Rapidmg&lt;/a&gt; （一键安装dmg，无需拖动弹出等操作）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://espanso.org/&#34;&gt;Espanso&lt;/a&gt;（开源 Text expander）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://stuntsoftware.com/reflex/&#34;&gt;Reflex&lt;/a&gt;（媒体键定向到 Spotify 和 Apple Music）&lt;/li&gt;
-&lt;li&gt;Onyx, HiDock（清理 mac，隐藏 Dock）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/subscriptions-track-expenses/id1577082754&#34;&gt;Subscriptions&lt;/a&gt;（订阅管理，可以和 App Store 联动）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ts1/BLEUnlock&#34;&gt;BLEUnlock&lt;/a&gt;（通过 iPhone、Apple Watch 来锁定和解锁 Mac。）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.irradiatedsoftware.com/labs/#shortcutdetective&#34;&gt;ShortcutDetective&lt;/a&gt;（停更了，但仍然能用）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/sofa-downtime-organizer/id1276554886&#34;&gt;Sofa&lt;/a&gt;, &lt;a href=&#34;https://apps.apple.com/gb/app/film-noir-for-trakt-just-watch/id1528417240&#34;&gt;FilmNoir&lt;/a&gt;, &lt;a href=&#34;https://apps.apple.com/gb/app/gametrack/id1136800740&#34;&gt;GameTrack&lt;/a&gt;（书影音记录）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.apptorium.com/screenfocus&#34;&gt;ScreenFocus App&lt;/a&gt; 和 &lt;a href=&#34;https://hazeover.com/&#34;&gt;Hazeover&lt;/a&gt;（使非聚焦的应用和显示器变暗）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cleanclip.cc/&#34;&gt;CleanClip&lt;/a&gt;, &lt;a href=&#34;https://apps.apple.com/gb/app/pastenow-instant-clipboard/id1552536109&#34;&gt;PasteNow&lt;/a&gt;（剪贴板管理器，我也经常使用 Alfred）&lt;/li&gt;
-&lt;li&gt;DaisyDisk（分析磁盘空间）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.mowglii.com/itsycal/&#34;&gt;Itsycal&lt;/a&gt;（小巧的菜单栏日历应用）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getlater.app/&#34;&gt;Later&lt;/a&gt;（暂时保存当前应用和会话）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://goodsnooze.gumroad.com/l/macwhisper&#34;&gt;MacWhisper&lt;/a&gt;（最佳音频转文字应用）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marta.sh/&#34;&gt;Marta&lt;/a&gt;（双面板 Finder 替代品，另有 QSpace 和 Forklift）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://omnivore.app/&#34;&gt;Omnivore&lt;/a&gt;（开源的稍后阅读）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/us/app/stempel-create-new-files/id1638437641?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Stempel&lt;/a&gt;（在右键菜单中以不同格式/预设来创建新文件）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以下是可以在 SetApp 中找到的应用，有些是订阅，大多数是一次性付费应用。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Airbuddy（iOS Airpods 体验）&lt;/li&gt;
-&lt;li&gt;Timing App&lt;/li&gt;
-&lt;li&gt;Bartender&lt;/li&gt;
-&lt;li&gt;BusyCal&lt;/li&gt;
-&lt;li&gt;Canary Mail&lt;/li&gt;
-&lt;li&gt;Cleanshot X（替代品 Shottr）&lt;/li&gt;
-&lt;li&gt;Focus and Session（专注）&lt;/li&gt;
-&lt;li&gt;Time Out（为了眼睛健康）&lt;/li&gt;
-&lt;li&gt;HookMark（链接一切）&lt;/li&gt;
-&lt;li&gt;HoudahSpot（全盘全文搜索，我更多用 Alfred、Devonthink 和 Foxtrot）&lt;/li&gt;
-&lt;li&gt;Mission Control Plus&lt;/li&gt;
-&lt;li&gt;Numi，Soulver（计算器）&lt;/li&gt;
-&lt;li&gt;OneSwitch（我经常用来清洁电脑，替代品：OnlySwitch, KeyboardCleanTool）&lt;/li&gt;
-&lt;li&gt;SnippetsLab&lt;/li&gt;
-&lt;li&gt;Swish（触控板窗口管理）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;欢迎在评论中分享你的推荐。&lt;/p&gt;</content>
   </entry>
   
 
