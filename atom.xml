@@ -12,11 +12,11 @@
 
   
   <entry>
-    <title>Trying Out Hoarder - The Self-Hosted Bookmark Manager</title>
+    <title>Hoarder - The Self-Hosted Bookmark Manager</title>
     <link ref="alternate" href="https://yinan.me/hoarder.html" />
     <id>hoarder</id>
     <published>2024-05-24 18:56:37+01:00</published>
-    <updated>2024-05-24 19:00:21+01:00</updated>
+    <updated>2024-05-24 19:04:45+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Trying out &lt;a href=&#34;https://github.com/hoarder-app/hoarder&#34;&gt;Hoarder&lt;/a&gt; app today, to see whether it would competes Anybox as my main bookmark manager. I do like self-hosting services, and I like hoarding stuff 🤭.&lt;/p&gt;
 &lt;p&gt;At first sight, it feels like a complete app I can put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images.&lt;/p&gt;
