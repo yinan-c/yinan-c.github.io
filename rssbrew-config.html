@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>RSSBrew beta 简单介绍和使用指南 - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-06-02 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>RSSBrew beta 简单介绍和使用指南</h1>
+<p><a href="https://github.com/yinan-c/rssbrew">RSSBrew</a> 是一个 RSS 处理和管理的工具。简单来说就是通过处理用户添加 original feed，系统后台获取原文章，根据用户设置进行一系列处理，把处理后的文章重新聚合生成一个新的 processed feed，然后用户订阅这个 processed feed 即可。</p>
+<p>目前拥有以下功能：</p>
+<ol>
+<li>可以应用于文章，标题，URL 的过滤条件和过滤组，可用来过滤文章是否进入最终的 feed 或者是否用生成摘要。</li>
+<li>聚合多个 feed，生成一个新的 feed。</li>
+<li>使用 AI 对用户过滤后的文章单独生成摘要，附在原文前，可自定义 prompt。</li>
+<li>周报日报功能，可以将一天或者一周的文章聚合成一个文章。</li>
+</ol>
+<p>安装教程请参考 <a href="https://github.com/yinan-c/rssbrew/blob/main/INSTALL.md">INSTALL.md</a>。安装位置需要 docker engine，需要有公网 ip 的服务器，推荐使用 vps。一个域名（可选），如果没有域名，可以使用 ip:port（默认8000） 的形式访问。</p>
+<blockquote>
+<p>由于最近加了 huey 作为任务队列，所以不通过 docker-compose 安装的方法暂时没有更新，目前推荐 docker-compose 安装。</p>
+</blockquote>
+<p>如果需要配置域名访问，推荐使用 caddy 或者 nginx 作为反代，这里就不做详细介绍了。
+注意需要把部署的域名加入到 <code>.env</code> 的变量 DEPLOYMNET_URL 中才能正常通过自定义域名访问。如果没有，请把 ip:port 加入到 DEPLOYMNET_URL 中，不需要加 http:// 等协议头。</p>
+<h2>使用说明</h2>
+<p>有用户反馈想要使用说明，由于目前文档没有写好，这里简单写一下如何使用。访问应用后有四个配置项，分别是 original feeds, processed feeds, tags, app setting。因为测试阶段短时间内文档不会完成，所以我这里尽可能写的详细，请根据需要的功能跳转到对应的段落阅读。</p>
+<h3>App setting</h3>
+<p>App setting 用来配置 auth code，设置后需要在访问时在订阅源地址后面加上 <code>?auth=your_auth_code</code> 才能访问。</p>
+<p>original feeds 用来添加原始的，需要处理的 atom 或者 xml feed，可以配置 url, 以及可选配置名称和 tag。 Tag 是用来方便分类管理 original feeds 的。</p>
+<p>processed feeds 是处理后的 feed，在列表栏从左到右是名称，每次更新周期需要总结的文章数，订阅链接，以及包含了多少个 original feeds。</p>
+<p><img src="https://yinan.me/pics/processed_feed.png" alt="processed_feed" /></p>
+<p>点击名称进入 processed feed 的配置页面，可以配置过滤条件，过滤组，摘要和 日周报的生成。</p>
+<p><img src="https://yinan.me/pics/processed_feed_config.png" alt="processed_feed_config" /></p>
+<h3>聚合功能</h3>
+<p>前两项名称和 Feeds 是必须的，feeds 是多选框，用来添加已有的 original feeds，最终会把所有选中的 feeds 聚合到这个 processed feed 中。有了这两个配置，理论上就可以用上聚合功能订阅了，接下里所有的配置都是可选的。</p>
+<p>Feed group relational operator (过滤组关系) 会在后面过滤组中详细介绍。目前先不用管。</p>
+<h3>Summarization options AI 摘要功能</h3>
+<p>在 summarization options 中，可以配置每次更新（测试阶段默认是每 5 分钟，在 docker-compose.yml 中通过 cron 变量可以把周期调大一点）总结的文章数，为 0 就是不用 AI 总结功能。可以选择语言，model, 自定义 prompt。默认 prompt 会给一条一句话总结和一个稍长的总结。默认效果如下：</p>
+<p><img src="https://yinan.me/pics/AI_summary_rssbrew.png" alt="ai_summary" /></p>
+<p>Summary group relational operator (过滤组关系) 同上，会在后面过滤组中详细介绍。目前先不用管。</p>
+<h3>Digest options 日周报功能</h3>
+<p>Toggle digest 是开关，开启后会生成日报或者周报。默认是关闭的。如果开启，可以配置 daily/weekly。Last digest 的时间会在后台自动生成周日报时更新，</p>
+<p>留空即在下一次更新时自动生成 digest，后面系统会根据这个时间是否需要生成新的 digest。一般情况下，这个项不需要管，如果需要测试用手动生成周日报的功能，可以把时间调到一周前或者一日前。</p>
+<p>勾选 toggle digest 之后，可以配置周日报格式，主要由三大部分构成：</p>
+<ol>
+<li>周/日报目录。</li>
+</ol>
+<p>目录就是一个简单的标题-链接的列表，可以一眼扫过一周更新的条目，如上显示。如果在 summarizaiton options 中开启了 AI 摘要功能并且用了默认的 prompt，除了标题和链接，还会有 AI 一句话总结。</p>
+<ol start="2">
+<li>条目详细内容</li>
+</ol>
+<p>如上图所示，紧跟着目录是 details，可以自选包含 AI 生成的摘要（需要在 summarization options 中开启 AI 摘要功能）和原文章内容。</p>
+<ol start="3">
+<li>AI 分析你的周/日报。</li>
+</ol>
+<p>勾选 use ai digest, 可以配置 digest model (推荐使用 gpt-4 或者 4o, 我测试下来 3.5 turbo 偶尔会出现总结不全的情况) 和自定义 prompt。下面 send full articles 是指你是否想要 AI 总结周日报的文章全文，如果不勾选，为了节约 token，和防止条目过多过长，只会让他发送每篇文章的标题 url 和摘要（摘要需要在 summarization options 中开启 AI 摘要功能）。</p>
+<p>这是一个在 telegram channel rss 生成周报的效果：</p>
+<p><img src="https://yinan.me/pics/digest_telegram.png" alt="digest_telegram" /></p>
+<p>以上三大部分关于周日报内容的配置都在 what to include in digest 中, 也就是 toc, one-line summary, summary, ai digest。</p>
+<p>另外，在 toggle digest 后面有一个选项 toggle entries。如果有些 feed 你只想看每周每天扫一遍周/日报，不想要看到其他的原文章条目更新，让你的未读堆积。你可以取消勾选 Toggle entries 来隐藏原文章条目，不要怕错过，他们会在日报周报中出现。</p>
+<h3>过滤和过滤组</h3>
+<p>我们还没有讨论到过滤，如果配置了以上的内容， processed feed 会把所有的 original feeds 聚合到一起，生成一个新的 feed。但是这个 feed 会包含所有的原文章，并且不管是什么文章，都会进入周日报，进入更新的 entries, 或者发给 AI 生成摘要，如果想要更加个人化的信息源，比如说监控关键词，比如说让 AI 长文总结，短文不总结，这需要过滤功能。</p>
+<p>为了实现高级的过滤，RSSBrew 用了两层过滤条件。也即 过滤组-过滤器。过滤组包含过滤器，负责管理组内所有过滤器的关系（任意条件 any /所有条件 all/无一条件 none = not any）满足以及过滤器的用途（用来完全屏蔽文章或者，不屏蔽文章只是过滤他是否总结，你还能看到这个条目，这个条目不需要总结了）。过滤器是具体的过滤条件，比如说标题/内容/url 包含某个关键词，或者文章长度大于某个值。</p>
+<p>多个过滤组之间还可以共同作用，他们之间的关系就是由上面提到的过滤组关系来决定的。比如说你有两个过滤组 A B 都是用来 Feed Filter(用来完全屏蔽文章) 的， 且他们之间是 any 的关系。分别由两个 and 过滤器构成，那么就可以实现高级的过滤运算逻辑比如：</p>
+<p>A or B = (A-1 and A-2) or (B-1 and B-2)</p>
+<p>当然如果你只是想要最简单的过滤，只需要一个过滤组，一个过滤器就可以了。即使这样你也可以通过配置 regex 让单层过滤器实现很多功能。</p>
+<h2>后期 plan 和功能</h2>
+<ol>
+<li>前端报错信息，目前很多报错只是记录在后台，没有返回给前端。出错了 debug 时需要查看 logs 日志。</li>
+<li>tag folder 功能完善,更好的分类管理</li>
+<li>opml 的批量导入导出</li>
+<li>全文获取</li>
+<li>json feed 支持</li>
+<li>完善文档</li>
+</ol>
+<p>不过目前正忙着写毕业论文和找工作，所以短期内这些功能都没有 ETA。但等忙完毕业论文会把这个项目完善，也会一直维护更新。欢迎在 <a href="https://t.me/rssbrew">telegram 交流群</a> 和 GitHub issue 中里提出建议和需求。</p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="hoarder.html" class="nav-button" id="next-button">Hoarder - The Self-Hosted Bookmark Manager &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-06-02</span>
+  <span>Updated: 2024-06-02</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i52">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
