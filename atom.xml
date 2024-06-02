@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/rssbrew-config.html" />
     <id>rssbrew-config</id>
     <published>2024-06-02 18:22:45+01:00</published>
-    <updated>2024-06-02 18:54:05+01:00</updated>
+    <updated>2024-06-02 19:56:31+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;&lt;a href=&#34;https://github.com/yinan-c/rssbrew&#34;&gt;RSSBrew&lt;/a&gt; 是一个 RSS 处理和管理的工具。简单来说就是通过处理用户添加 original feed，系统后台获取原文章，根据用户设置进行一系列处理，把处理后的文章重新聚合生成一个新的 processed feed，然后用户订阅这个 processed feed 即可。&lt;/p&gt;
 &lt;p&gt;目前拥有以下功能：&lt;/p&gt;
@@ -49,6 +49,8 @@
 &lt;p&gt;&lt;img alt=&#34;ai_summary&#34; src=&#34;https://yinan.me/pics/AI_summary_rssbrew.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Summary group relational operator (过滤组关系) 同上，会在后面过滤组中详细介绍。目前先不用管。&lt;/p&gt;
 &lt;h3&gt;Digest options 日周报功能&lt;/h3&gt;
+&lt;p&gt;这是一个在 telegram channel rss 生成周报的效果：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;digest_telegram&#34; src=&#34;https://yinan.me/pics/digest_telegram.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Toggle digest 是开关，开启后会生成日报或者周报。默认是关闭的。如果开启，可以配置 daily/weekly。Last digest 的时间会在后台自动生成周日报时更新，&lt;/p&gt;
 &lt;p&gt;留空即在下一次更新时自动生成 digest，后面系统会根据这个时间是否需要生成新的 digest。一般情况下，这个项不需要管，如果需要测试用手动生成周日报的功能，可以把时间调到一周前或者一日前。&lt;/p&gt;
 &lt;p&gt;勾选 toggle digest 之后，可以配置周日报格式，主要由三大部分构成：&lt;/p&gt;
@@ -69,9 +71,7 @@
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;勾选 use ai digest, 可以配置 digest model (推荐使用 gpt-4 或者 4o, 我测试下来 3.5 turbo 偶尔会出现总结不全的情况) 和自定义 prompt。下面 send full articles 是指你是否想要 AI 总结周日报的文章全文，如果不勾选，为了节约 token，和防止条目过多过长，只会发送给 AI 每篇文章的标题 url 和摘要（摘要需要在 summarization options 中开启 AI 摘要功能）。&lt;/p&gt;
-&lt;p&gt;这是一个在 telegram channel rss 生成周报的效果：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt=&#34;digest_telegram&#34; src=&#34;https://yinan.me/pics/digest_telegram.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;以上三大部分关于周日报内容的配置都在 what to include in digest 中, 也就是 toc, one-line summary, summary, ai digest。&lt;/p&gt;
 &lt;p&gt;另外，在 toggle digest 后面有一个选项 toggle entries。如果有些 feed 你只想看每周每天扫一遍周/日报，不想要看到其他的原文章条目更新，让你的未读堆积。你可以取消勾选 Toggle entries 来隐藏原文章条目，不要怕错过，他们会在日报周报中出现。&lt;/p&gt;
 &lt;h3&gt;过滤和过滤组&lt;/h3&gt;
