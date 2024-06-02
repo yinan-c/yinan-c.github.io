@@ -69,7 +69,7 @@
 <h2>使用说明</h2>
 <p>有用户反馈想要使用说明，由于目前文档没有写好，这里简单写一下如何使用。访问应用后有四个配置项，分别是 original feeds, processed feeds, tags, app setting。因为测试阶段短时间内文档不会完成，所以我这里尽可能写的详细，请根据需要的功能跳转到对应的段落阅读。</p>
 <h3>App setting</h3>
-<p>App setting 用来配置 auth code，设置后需要在访问时在订阅源地址后面加上 <code>?auth=your_auth_code</code> 才能访问。</p>
+<p>App setting 用来配置 auth code，设置后需要在访问时在订阅源地址后面加上 <code>?key=your_auth_code</code> 才能访问。</p>
 <p>original feeds 用来添加原始的，需要处理的 atom 或者 xml feed，可以配置 url, 以及可选配置名称和 tag。 Tag 是用来方便分类管理 original feeds 的。</p>
 <p>processed feeds 是处理后的 feed，在列表栏从左到右是名称，每次更新周期需要总结的文章数，订阅链接，以及包含了多少个 original feeds。</p>
 <p><img src="https://yinan.me/pics/processed_feed.png" alt="processed_feed" /></p>
@@ -89,16 +89,24 @@
 <ol>
 <li>周/日报目录。</li>
 </ol>
+<blockquote>
 <p>目录就是一个简单的标题-链接的列表，可以一眼扫过一周更新的条目，如上显示。如果在 summarizaiton options 中开启了 AI 摘要功能并且用了默认的 prompt，除了标题和链接，还会有 AI 一句话总结。</p>
+</blockquote>
 <ol start="2">
 <li>条目详细内容</li>
 </ol>
+<blockquote>
 <p>如上图所示，紧跟着目录是 details，可以自选包含 AI 生成的摘要（需要在 summarization options 中开启 AI 摘要功能）和原文章内容。</p>
+</blockquote>
 <ol start="3">
 <li>AI 分析你的周/日报。</li>
 </ol>
+<blockquote>
 <p>勾选 use ai digest, 可以配置 digest model (推荐使用 gpt-4 或者 4o, 我测试下来 3.5 turbo 偶尔会出现总结不全的情况) 和自定义 prompt。下面 send full articles 是指你是否想要 AI 总结周日报的文章全文，如果不勾选，为了节约 token，和防止条目过多过长，只会让他发送每篇文章的标题 url 和摘要（摘要需要在 summarization options 中开启 AI 摘要功能）。</p>
+</blockquote>
+<blockquote>
 <p>这是一个在 telegram channel rss 生成周报的效果：</p>
+</blockquote>
 <p><img src="https://yinan.me/pics/digest_telegram.png" alt="digest_telegram" /></p>
 <p>以上三大部分关于周日报内容的配置都在 what to include in digest 中, 也就是 toc, one-line summary, summary, ai digest。</p>
 <p>另外，在 toggle digest 后面有一个选项 toggle entries。如果有些 feed 你只想看每周每天扫一遍周/日报，不想要看到其他的原文章条目更新，让你的未读堆积。你可以取消勾选 Toggle entries 来隐藏原文章条目，不要怕错过，他们会在日报周报中出现。</p>
