@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/rssbrew-config.html" />
     <id>rssbrew-config</id>
     <published>2024-06-02 18:22:45+01:00</published>
-    <updated>2024-06-02 18:46:27+01:00</updated>
+    <updated>2024-06-02 18:50:04+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;&lt;a href=&#34;https://github.com/yinan-c/rssbrew&#34;&gt;RSSBrew&lt;/a&gt; 是一个 RSS 处理和管理的工具。简单来说就是通过处理用户添加 original feed，系统后台获取原文章，根据用户设置进行一系列处理，把处理后的文章重新聚合生成一个新的 processed feed，然后用户订阅这个 processed feed 即可。&lt;/p&gt;
 &lt;p&gt;目前拥有以下功能：&lt;/p&gt;
@@ -68,7 +68,7 @@
 &lt;li&gt;AI 分析你的周/日报。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;p&gt;勾选 use ai digest, 可以配置 digest model (推荐使用 gpt-4 或者 4o, 我测试下来 3.5 turbo 偶尔会出现总结不全的情况) 和自定义 prompt。下面 send full articles 是指你是否想要 AI 总结周日报的文章全文，如果不勾选，为了节约 token，和防止条目过多过长，只会让他发送每篇文章的标题 url 和摘要（摘要需要在 summarization options 中开启 AI 摘要功能）。&lt;/p&gt;
+&lt;p&gt;勾选 use ai digest, 可以配置 digest model (推荐使用 gpt-4 或者 4o, 我测试下来 3.5 turbo 偶尔会出现总结不全的情况) 和自定义 prompt。下面 send full articles 是指你是否想要 AI 总结周日报的文章全文，如果不勾选，为了节约 token，和防止条目过多过长，只会发送给 AI 每篇文章的标题 url 和摘要（摘要需要在 summarization options 中开启 AI 摘要功能）。&lt;/p&gt;
 &lt;p&gt;这是一个在 telegram channel rss 生成周报的效果：&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img alt=&#34;digest_telegram&#34; src=&#34;https://yinan.me/pics/digest_telegram.png&#34; /&gt;&lt;/p&gt;
