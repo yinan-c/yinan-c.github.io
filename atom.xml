@@ -12,13 +12,13 @@
 
   
   <entry>
-    <title>This message is used to verify that this feed (feedId:41446022334078981) belongs to me (userId:63216204740061184). Join me in enjoying the next generation information browser https://follow.is</title>
+    <title>Follow 认证</title>
     <link ref="alternate" href="https://yinan.me/follow.html" />
     <id>follow</id>
     <published>2024-10-05 16:50:51+01:00</published>
-    <updated>2024-10-05 16:50:51+01:00</updated>
+    <updated>2024-10-05 16:54:36+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"></content>
+    <content type="html">&lt;p&gt;This message is used to verify that this feed (feedId:41446022334078981) belongs to me (userId:63216204740061184). Join me in enjoying the next generation information browser https://follow.is.&lt;/p&gt;</content>
   </entry>
   
   <entry>
