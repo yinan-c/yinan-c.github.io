@@ -12,6 +12,16 @@
 
   
   <entry>
+    <title>This message is used to verify that this feed (feedId:41446022334078981) belongs to me (userId:63216204740061184). Join me in enjoying the next generation information browser https://follow.is</title>
+    <link ref="alternate" href="https://yinan.me/follow.html" />
+    <id>follow</id>
+    <published>2024-10-05 16:50:51+01:00</published>
+    <updated>2024-10-05 16:50:51+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html"></content>
+  </entry>
+  
+  <entry>
     <title>RSSBrew beta 简单介绍和使用指南</title>
     <link ref="alternate" href="https://yinan.me/rssbrew-config.html" />
     <id>rssbrew-config</id>
@@ -345,20 +355,6 @@ for any purpose, even commercially.&lt;/p&gt;
     <content type="html">&lt;p&gt;暂时空空如也。&lt;/p&gt;
 &lt;p&gt;最近开始考虑增加友链，先准备从我订阅的 RSS 中发送一些申请。&lt;/p&gt;
 &lt;p&gt;如果你有兴趣，也欢迎发&lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;邮件&lt;/a&gt;。&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Avatars</title>
-    <link ref="alternate" href="https://yinan.me/Avatars.html" />
-    <id>Avatars</id>
-    <published>2024-03-26 15:00:27+00:00</published>
-    <updated>2024-03-26 15:10:55+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;我的 GitHub 和博客头像是这个，朋友都说跟我有点神似 :)&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;avatar&#34; src=&#34;https://yinan.me/pics/old_avatar.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;这其实是&lt;a href=&#34;https://notion-avatar.vercel.app/&#34;&gt;这个网站&lt;/a&gt;生成的 Notion 风格头像。&lt;/p&gt;
-&lt;p&gt;另外分享一个在刷推发现的 &lt;a href=&#34;https://txstc55.github.io/ugly-avatar/&#34;&gt;Ugly Avatar&lt;/a&gt;，我生成了这个用它作为我的 v2ex 账号头像。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;ugly-avatar&#34; src=&#34;https://yinan.me/pics/avatar.png&#34; /&gt;&lt;/p&gt;</content>
   </entry>
   
 
