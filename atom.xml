@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/hoarder-zh.html" />
     <id>hoarder-zh</id>
     <published>2024-11-07 14:48:52+00:00</published>
-    <updated>2024-11-07 14:51:04+00:00</updated>
+    <updated>2024-11-07 14:57:21+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;对于书签管理，我目前的工作流是这样的：自建 &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; 保存稍后读，&lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; 管理书签并通过 Alfred 快速调用，然后用 &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt; 本地归档 wallabag 的稍候读和 Anybox 的书签，方便全文搜索。为了实现自动化，我还写了&lt;a href=&#34;https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py&#34;&gt;一个脚本&lt;/a&gt;，可以自动把 Anybox 的新链接同步到 DEVONthink（这个脚本是在 &lt;a href=&#34;https://alfred.app/workflows/anybox/anybox/&#34;&gt;Anybox alfredworkflow&lt;/a&gt; 基础上改进的）。&lt;/p&gt;
 &lt;p&gt;这套流程一直运行得挺顺畅，但我还是有两点不太满意：&lt;/p&gt;
@@ -34,8 +34,8 @@
 &lt;p&gt;第一印象相当不错，感觉是个成熟的产品：有 iOS 应用支持分享菜单，有 Chrome 扩展方便保存，还能存笔记和图片。AI 自动标签功能，可自定义 prompt，能帮我省去手动整理的麻烦。&lt;/p&gt;
 &lt;p&gt;不过要完全替代 Anybox，还需要补齐以下几个功能：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - 用于数据导出和开发 Alfred 插件&lt;blockquote&gt;
-&lt;p&gt;目前只提供命令行工具，但我的应用部署在家庭服务器上，每次都要 SSH 连接太麻烦了。有个 REST API 会方便很多。&lt;/p&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - 用于数据自动化导入/导出和开发 Alfred 插件&lt;blockquote&gt;
+&lt;p&gt;目前只提供命令行工具， REST API 会在&lt;a href=&#34;https://docs.hoarder.app/api/&#34;&gt;0.18.0 下一个版本支持&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/75&#34;&gt;便捷的数据导出和备份&lt;/a&gt;&lt;blockquote&gt;
@@ -43,7 +43,7 @@
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;离线归档&lt;blockquote&gt;
-&lt;p&gt;现在只支持纯文本缓存和截图。据说后续会支持更多格式（截止2024年5月，已再规划中）。
+&lt;p&gt;现在只支持纯文本缓存和截图。据说后续会支持更多格式（截止2024年5月，已在规划中）。
   更新：到2024年11月，已经支持用 &lt;a href=&#34;https://github.com/Y2Z/monolith&#34;&gt;monolith&lt;/a&gt; 实现完整网页存档，解决了链接失效的问题。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
@@ -66,7 +66,7 @@
     <link ref="alternate" href="https://yinan.me/hoarder.html" />
     <id>hoarder</id>
     <published>2024-05-24 18:56:37+01:00</published>
-    <updated>2024-11-07 14:48:53+00:00</updated>
+    <updated>2024-11-07 14:57:21+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;Currently, I am using &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; for read-it-later, &lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; for bookmarking and quick retrival via Alfred, and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt; for archiving the booksmarks from wallabag and Anybox to better support full text searching (I wrote &lt;a href=&#34;https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py&#34;&gt;a script&lt;/a&gt; that checks the Anybox API for new links and save them to DEVONthink, which is modified from the &lt;a href=&#34;https://alfred.app/workflows/anybox/anybox/&#34;&gt;Anybox alfredworkflow&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This workflow has been robust and reliable for me, but I am always looking for better selfhosted tools to improve my workflow. There are two things currently missing:&lt;/p&gt;
@@ -83,7 +83,8 @@
 &lt;p&gt;However, there are some features missing before it can become my main bookmark manager. &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - for easily exporting data like links, tags, and for an Alfred workflow.&lt;blockquote&gt;
-&lt;p&gt;For now, it provides a CLI tool, but I am installing the app on my homeserver instead of my laptop. I will have to ssh to use the CLI, not ideal. A REST API would be good for remotely managing data.&lt;/p&gt;
+&lt;p&gt;For now, it provides a CLI tool, but I am installing the app on my homeserver instead of my laptop. I will have to ssh to use the CLI, not ideal. A REST API would be good for remotely managing data.
+As of Nov 2024, it will be supported in the next version &lt;a href=&#34;https://docs.hoarder.app/api/&#34;&gt;0.18.0&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/75&#34;&gt;Easy data export and backup&lt;/a&gt;&lt;blockquote&gt;
