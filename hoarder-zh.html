@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>Hoarder - 自托管 AI 书签管理软件 - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-11-07 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>Hoarder - 自托管 AI 书签管理软件</h1>
+<p>对于书签管理，我目前的工作流是这样的：自建 <a href="https://wallabag.org/">wallabag</a> 保存稍后读，<a href="https://anybox.app/">Anybox</a> 管理书签并通过 Alfred 快速调用，然后用 <a href="https://www.devontechnologies.com/apps/devonthink">DEVONthink</a> 本地归档 wallabag 的稍候读和 Anybox 的书签，方便全文搜索。为了实现自动化，我还写了<a href="https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py">一个脚本</a>，可以自动把 Anybox 的新链接同步到 DEVONthink（这个脚本是在 <a href="https://alfred.app/workflows/anybox/anybox/">Anybox alfredworkflow</a> 基础上改进的）。</p>
+<p>这套流程一直运行得挺顺畅，但我还是有两点不太满意：</p>
+<blockquote>
+<ol>
+<li>Anybox 缺少全文搜索功能。截至2024年11月，这个呼声很高的功能还停留在<a href="https://anybox.canny.io/feature-requests/p/full-text-search">Under Review</a>阶段。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>书签整理不够智能。虽然 Anybox 的收件箱理念不错，从收件箱再整理到文件夹、标签，还能依赖 Smart Folder 功能帮忙分类管理，但每周要把他们手动打标签或者移入文件夹还是太麻烦了。在保存了海量书签后，我还是更习惯用搜索（可惜又没有全文搜索）。所以目前我还是倾向于在 Anybox 和 Wallabag 不整理，只有收件和存档两个状态，存档之后依赖 DEVONthink 的全文搜索 + Smart Rules 再自动分类整理。</li>
+</ol>
+</blockquote>
+<p>最近发现了一个新项目 <a href="https://github.com/hoarder-app/hoarder">Hoarder</a>，主打 AI 自动打标签，准备体验一下，看看能不能取代或者补充 Anybox。（作为一个爱好 self hosted 和囤积资料的人，Hoarder 这个名字就很对我胃口 🤭）</p>
+<p>第一印象相当不错，感觉是个成熟的产品：有 iOS 应用支持分享菜单，有 Chrome 扩展方便保存，还能存笔记和图片。AI 自动标签功能，可自定义 prompt，能帮我省去手动整理的麻烦。</p>
+<p>不过要完全替代 Anybox，还需要补齐以下几个功能：</p>
+<ul>
+<li><a href="https://github.com/hoarder-app/hoarder/issues/43">REST API</a> - 用于数据导出和开发 Alfred 插件<blockquote>
+<p>目前只提供命令行工具，但我的应用部署在家庭服务器上，每次都要 SSH 连接太麻烦了。有个 REST API 会方便很多。</p>
+</blockquote>
+</li>
+<li><a href="https://github.com/hoarder-app/hoarder/issues/75">便捷的数据导出和备份</a><blockquote>
+<p>截图、本地缓存、链接等数据的导出功能还不完善。</p>
+</blockquote>
+</li>
+<li>离线归档<blockquote>
+<p>现在只支持纯文本缓存和截图。据说后续会支持更多格式（截止2024年5月，已再规划中）。
+更新：到2024年11月，已经支持用 <a href="https://github.com/Y2Z/monolith">monolith</a> 实现完整网页存档，解决了链接失效的问题。</p>
+</blockquote>
+</li>
+<li><a href="https://github.com/hoarder-app/hoarder/issues/172">本地网页抓取</a><blockquote>
+<p>Anybox 和 <a href="https://github.com/gildas-lormeau/SingleFile">SingleFile 扩展</a> 的配合就很完美，可以把登录后的或者付费墙后的内容直接通过 API 保存下来。
+（另外，这样还解决了 SingleFile 元数据只保存域名前缀的问题 - 直接用 SingleFile 下载到 DEVONthink 时只能看到类似 https://github.com 这样不完整的地址）</p>
+</blockquote>
+</li>
+</ul>
+<p>还有一些锦上添花的功能建议：</p>
+<ul>
+<li>RSS 订阅功能<blockquote>
+<p><a href="https://github.com/sissbruecker/linkding">linkding</a> 和 <a href="https://wallabag.org/">wallabag</a> 都有这个功能。我现在就使用 RSS 把 wallabag 的内容同步到 DEVONthink，和用 <a href="https://github.com/cdhigh/kindleear">kindleear</a> 订阅 wallabag RSS 每天晚上推送稍候读到 Kindle。</p>
+</blockquote>
+</li>
+</ul>
+<p>Hoarder 虽然暂时还不能完全替代我现有的工具链，但作为一个活跃开发的开源项目，发展势头很好，值得持续关注。</p>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="nas.html" class="nav-button" id="next-button">整了个 NAS &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-11-07</span>
+  <span>Updated: 2024-11-07</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#i48">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
