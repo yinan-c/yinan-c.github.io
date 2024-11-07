@@ -12,13 +12,63 @@
 
   
   <entry>
+    <title>Hoarder - 自托管 AI 书签管理软件</title>
+    <link ref="alternate" href="https://yinan.me/hoarder-zh.html" />
+    <id>hoarder-zh</id>
+    <published>2024-11-07 14:48:52+00:00</published>
+    <updated>2024-11-07 14:51:04+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;对于书签管理，我目前的工作流是这样的：自建 &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; 保存稍后读，&lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; 管理书签并通过 Alfred 快速调用，然后用 &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt; 本地归档 wallabag 的稍候读和 Anybox 的书签，方便全文搜索。为了实现自动化，我还写了&lt;a href=&#34;https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py&#34;&gt;一个脚本&lt;/a&gt;，可以自动把 Anybox 的新链接同步到 DEVONthink（这个脚本是在 &lt;a href=&#34;https://alfred.app/workflows/anybox/anybox/&#34;&gt;Anybox alfredworkflow&lt;/a&gt; 基础上改进的）。&lt;/p&gt;
+&lt;p&gt;这套流程一直运行得挺顺畅，但我还是有两点不太满意：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Anybox 缺少全文搜索功能。截至2024年11月，这个呼声很高的功能还停留在&lt;a href=&#34;https://anybox.canny.io/feature-requests/p/full-text-search&#34;&gt;Under Review&lt;/a&gt;阶段。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;书签整理不够智能。虽然 Anybox 的收件箱理念不错，从收件箱再整理到文件夹、标签，还能依赖 Smart Folder 功能帮忙分类管理，但每周要把他们手动打标签或者移入文件夹还是太麻烦了。在保存了海量书签后，我还是更习惯用搜索（可惜又没有全文搜索）。所以目前我还是倾向于在 Anybox 和 Wallabag 不整理，只有收件和存档两个状态，存档之后依赖 DEVONthink 的全文搜索 + Smart Rules 再自动分类整理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近发现了一个新项目 &lt;a href=&#34;https://github.com/hoarder-app/hoarder&#34;&gt;Hoarder&lt;/a&gt;，主打 AI 自动打标签，准备体验一下，看看能不能取代或者补充 Anybox。（作为一个爱好 self hosted 和囤积资料的人，Hoarder 这个名字就很对我胃口 🤭）&lt;/p&gt;
+&lt;p&gt;第一印象相当不错，感觉是个成熟的产品：有 iOS 应用支持分享菜单，有 Chrome 扩展方便保存，还能存笔记和图片。AI 自动标签功能，可自定义 prompt，能帮我省去手动整理的麻烦。&lt;/p&gt;
+&lt;p&gt;不过要完全替代 Anybox，还需要补齐以下几个功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - 用于数据导出和开发 Alfred 插件&lt;blockquote&gt;
+&lt;p&gt;目前只提供命令行工具，但我的应用部署在家庭服务器上，每次都要 SSH 连接太麻烦了。有个 REST API 会方便很多。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/75&#34;&gt;便捷的数据导出和备份&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;截图、本地缓存、链接等数据的导出功能还不完善。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;离线归档&lt;blockquote&gt;
+&lt;p&gt;现在只支持纯文本缓存和截图。据说后续会支持更多格式（截止2024年5月，已再规划中）。
+  更新：到2024年11月，已经支持用 &lt;a href=&#34;https://github.com/Y2Z/monolith&#34;&gt;monolith&lt;/a&gt; 实现完整网页存档，解决了链接失效的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/172&#34;&gt;本地网页抓取&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;Anybox 和 &lt;a href=&#34;https://github.com/gildas-lormeau/SingleFile&#34;&gt;SingleFile 扩展&lt;/a&gt; 的配合就很完美，可以把登录后的或者付费墙后的内容直接通过 API 保存下来。
+（另外，这样还解决了 SingleFile 元数据只保存域名前缀的问题 - 直接用 SingleFile 下载到 DEVONthink 时只能看到类似 https://github.com 这样不完整的地址）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有一些锦上添花的功能建议：
+- RSS 订阅功能&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sissbruecker/linkding&#34;&gt;linkding&lt;/a&gt; 和 &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; 都有这个功能。我现在就使用 RSS 把 wallabag 的内容同步到 DEVONthink，和用 &lt;a href=&#34;https://github.com/cdhigh/kindleear&#34;&gt;kindleear&lt;/a&gt; 订阅 wallabag RSS 每天晚上推送稍候读到 Kindle。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hoarder 虽然暂时还不能完全替代我现有的工具链，但作为一个活跃开发的开源项目，发展势头很好，值得持续关注。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>Hoarder - The Self-Hosted Bookmark Manager</title>
     <link ref="alternate" href="https://yinan.me/hoarder.html" />
     <id>hoarder</id>
     <published>2024-05-24 18:56:37+01:00</published>
-    <updated>2024-11-07 14:29:17+00:00</updated>
+    <updated>2024-11-07 14:48:53+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Currently, I am using &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; for read-it-later, &lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; for bookmarking and quick retrival via Alfred, and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt; for archiving the booksmarks from wallabag and Anybox (I wrote &lt;a href=&#34;https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py&#34;&gt;a script&lt;/a&gt; that checks the Anybox API for new links and save them to DEVONthink, which is modified from the &lt;a href=&#34;https://alfred.app/workflows/anybox/anybox/&#34;&gt;Anybox alfredworkflow&lt;/a&gt;).&lt;/p&gt;
+    <content type="html">&lt;p&gt;Currently, I am using &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; for read-it-later, &lt;a href=&#34;https://anybox.app/&#34;&gt;Anybox&lt;/a&gt; for bookmarking and quick retrival via Alfred, and &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;&gt;DEVONthink&lt;/a&gt; for archiving the booksmarks from wallabag and Anybox to better support full text searching (I wrote &lt;a href=&#34;https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py&#34;&gt;a script&lt;/a&gt; that checks the Anybox API for new links and save them to DEVONthink, which is modified from the &lt;a href=&#34;https://alfred.app/workflows/anybox/anybox/&#34;&gt;Anybox alfredworkflow&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This workflow has been robust and reliable for me, but I am always looking for better selfhosted tools to improve my workflow. There are two things currently missing:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -341,54 +391,6 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/alfredworkflow.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;同样地，而如果你想要在 Raycast 或者 keyboard Maestro, Shortcuts 等其他地方调用 Alfred workflow，Alfred 提供了 External Actions 来实现通过 Deeplink 或者 AppleScript 调用 Alfred 的 workflow。在 Raycast 中设置 Quicklinks 打开这个 URL 即可以实现调用 Alfred Workflow。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/alfred-deeplink.gif&#34; /&gt;&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>划词制作 Anki 卡片</title>
-    <link ref="alternate" href="https://yinan.me/anki-vocabulary.html" />
-    <id>anki-vocabulary</id>
-    <published>2024-03-29 18:08:52+00:00</published>
-    <updated>2024-03-29 18:20:23+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;最近在研究背单词（奈何来英国几年了，才发现单词才是短板，惭愧），一方面我在尝试不同的背单词软件，另一方面也在折腾划词生成 Anki 卡片，来建立自己的生词库。&lt;/p&gt;
-&lt;p&gt;关于背单词软件，建议大家看少数派的这篇文章以及底下的评论，&lt;a href=&#34;https://sspai.com/post/87587&#34;&gt;5 个维度、6 个 App，帮你选出最适合自己的「背单词神器」&lt;/a&gt;。或者可以网上找一些 Anki 卡片组，推荐两个制作精良的卡片组。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/1104981491&#34;&gt;4000 Essential English Words (all books) [en-en] - AnkiWeb&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/1498738333&#34;&gt;English Synonyms and Antonyms Workbooks - AnkiWeb&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文主要介绍如何用划词工具制作 Anki 卡片，模板教程主要是根据&lt;a href=&#34;https://www.laohuang.net/20171214/anki-definition-word-template/&#34;&gt;老黄老巢&lt;/a&gt;的教程基础上进行了一些修改。&lt;/p&gt;
-&lt;h2&gt;达到的效果&lt;/h2&gt;
-&lt;p&gt;最终在浏览器用 ODH 划词翻译之后选择恰当的意思，可以将当前句子（附带可点击的 URL）以及对应的英，中文意思（默认先显示英语释义，点击后显示中文释义）添加到 Anki 中，并且制成 Defination-Word 和 Word-Defination 两种卡片。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;word-def&#34; src=&#34;https://yinan.me/pics/word-defination.gif&#34; /&gt;
-&lt;img alt=&#34;def-word&#34; src=&#34;https://yinan.me/pics/defination-word.gif&#34; /&gt;&lt;/p&gt;
-&lt;h2&gt;需要的软件&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Anki and AnkiConnect 插件&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/online-dictionary-helper/lppjdajkacanlmpbbcdkccjkdbpllajb?hl=en-GB&#34;&gt;Online Dictionary Helper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://yinan.me/pics/Antimoon.apkg&#34;&gt;模板下载&lt;/a&gt;，在&lt;a href=&#34;https://arc.net/l/quote/oqpbgclk&#34;&gt;原4.0模板&lt;/a&gt; 的基础上略有修改&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;配置 ODH&lt;/h2&gt;
-&lt;p&gt;在此，我仅仅分享一下合适我的配置：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;我不需要全部的意思，只需要符合当前语境的意思，所以选择了 Consice 而不是 Glossary or Collins&lt;/li&gt;
-&lt;li&gt;我需要中文在我点击的时候显示出来，所以我选择了 Collins EN-CN 字典&lt;/li&gt;
-&lt;li&gt;URL： 在我想看原文上下文的时候点击 Sentence 部分即可跳转&lt;/li&gt;
-&lt;li&gt;add-dw: 这一项不为0代表同时添加 Definition-Word 卡片&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;odh&#34; src=&#34;https://yinan.me/pics/odh.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;具体每个配置的详细意思可以参考这篇博客，&lt;a href=&#34;https://arc.net/l/quote/oqpbgclk&#34;&gt;Antimoon 划词助手兼容模板 3.0 - 老黄老巢&lt;/a&gt; 或者项目的 &lt;a href=&#34;https://github.com/ninja33/ODH&#34;&gt;GitHub 主页&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;修改卡片显示项目(可选)&lt;/h2&gt;
-&lt;p&gt;上面提到我在老黄老巢的模板上进行了一些修改（比如把 glossary 改成 consice 只显示一种释义，比如增加 URL 和默认隐藏中文释义），主要是为了适应我的需求，你也可以根据你的使用习惯在 Card-type 中进行修改卡片模板。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/card-type.png&#34; /&gt;&lt;/p&gt;
-&lt;h2&gt;Further Reading&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ninja33/ODH&#34;&gt;https://github.com/ninja33/ODH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1zW411a7Dz/?p=1&#34;&gt;背单词软件Anki之Antimoon特色模板教程(definition-word卡片自动生成)_哔哩哔哩_bilibili&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://arc.net/l/quote/oqpbgclk&#34;&gt;Antimoon 划词助手兼容模板 3.0 - 老黄老巢&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.laohuang.net/20171214/anki-definition-word-template/&#34;&gt;请找一个解释要配的上我这个单词 — 老黄老巢&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.antimoon.com/how/srs.htm&#34;&gt;Antimoon - How to Learn English effectively&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sspai.com/post/87587&#34;&gt;5 个维度、6 个 App，帮你选出最适合自己的「背单词神器」&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
   
 
