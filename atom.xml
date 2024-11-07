@@ -16,10 +16,10 @@
     <link ref="alternate" href="https://yinan.me/nas.html" />
     <id>nas</id>
     <published>2024-10-15 23:53:20+01:00</published>
-    <updated>2024-10-15 23:56:33+01:00</updated>
+    <updated>2024-11-07 14:08:37+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;最近整了个 &lt;a href=&#34;https://x.com/yinan_ch/status/1840031881254797353&#34;&gt;DS423+&lt;/a&gt; 来代替之前的老旧 MacBook Pro + 一块外接硬盘的 NAS/homeserver 方案。&lt;/p&gt;
-&lt;p&gt;我买了四块盘。 1、2 8TB 希捷盘做了 RAID1 冗余，其余两块略大的盘 Basic（希捷12TB 和 16 TB），另有两块 NVMe SSD 作为存储池跑 Docker，放告诉存储。几天用下来，发现 NAS 有几个好处，&lt;/p&gt;
+&lt;p&gt;我买了四块盘。 1、2 8TB 希捷盘做了 RAID1 冗余，其余两块略大的盘 Basic（希捷12TB 和 16 TB），另有两块 NVMe SSD 作为存储池跑 Docker，放高速存储。几天用下来，发现 NAS 有几个好处，&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;数据从冷数据变成了 24 小时在线的热数据，可以随时访问编辑，而不用插硬盘挂个线。而且，终于把散落在各个硬盘的数据整合在了一起，之前一份数据为了访问方便可能存到了好几块外接硬盘上，而 NAS 提供了个中心化的存储方案。另外据我所知，Btrfs 格式支持 deduplication， 重复数据只存一份，不会浪费空间。&lt;/li&gt;
@@ -45,6 +45,45 @@
 &lt;p&gt;另外再提一嘴数据安全，虽然 Raid 有冗余，但是冗余不是备份！遵循 &lt;a href=&#34;https://en.wikipedia.org/wiki/Backup&#34;&gt;3-2-1 原则&lt;/a&gt;定期备份数据到云端是很有必要的，防止硬盘损坏，天灾人祸等意外情况。后面会写一篇文章分享一下我的备份方案。&lt;/p&gt;
 &lt;p&gt;最后给我的 NAS 上个照片。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;DS423+&#34; src=&#34;https://yinan.me/pics/nas.jpeg&#34; /&gt;&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    <title>Hoarder - The Self-Hosted Bookmark Manager</title>
+    <link ref="alternate" href="https://yinan.me/hoarder.html" />
+    <id>hoarder</id>
+    <published>2024-05-24 18:56:37+01:00</published>
+    <updated>2024-11-07 14:08:37+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;Trying out &lt;a href=&#34;https://github.com/hoarder-app/hoarder&#34;&gt;Hoarder&lt;/a&gt; app today, to see whether it would competes Anybox as my main bookmark manager. I do like self-hosting services, and I like hoarding stuff 🤭.&lt;/p&gt;
+&lt;p&gt;At first sight, it feels like a complete app I can put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images.&lt;/p&gt;
+&lt;p&gt;I really like the ability to have AI tagging for links and images so that I don&#39;t have to manually organize them. And the full text search is something Anybox doesn&#39;t have yet. While I write this article, May 2024, it is still under review in the &lt;a href=&#34;https://anybox.canny.io/feature-requests/p/full-text-search&#34;&gt;canny page of Anybox&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, there are some features missing before it can become my main bookmark manager. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - for easily exporting data like links, tags, and for an Alfred workflow.&lt;blockquote&gt;
+&lt;p&gt;For now, it provides a CLI tool, but I am installing the app on my homeserver instead of my laptop. I will have to ssh to use the CLI, not ideal. A REST API would be good for remotely managing data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/75&#34;&gt;Easy data export and backup&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;I don&#39;t seem to find a very good way to export data easily, for example screenshots, local cache, links.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Offline archiving&lt;blockquote&gt;
+&lt;p&gt;For now, Hoarder supports plain text caching and screenshots. It would be good to see other formats supported (Planned, as of May 2024)
+  update: As of Nov 2024, it supports full page archival (using &lt;a href=&#34;https://github.com/Y2Z/monolith&#34;&gt;monolith&lt;/a&gt;) to protect against link rot.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/172&#34;&gt;Local scrapper&lt;/a&gt; to fetch content after user login for some sites.&lt;blockquote&gt;
+&lt;p&gt;What I like about Anybox is its integration with &lt;a href=&#34;https://github.com/gildas-lormeau/SingleFile&#34;&gt;SingleFile extension&lt;/a&gt;. It can directly save the .html downloaded to Anybox via API, so that any content behind paywall will also be downloaded. 
+(It actually addresses the pity that SingleFile metadata only contains the first part of the full domain - it will only show something like https://github.com, when you directly download a  html with SingleFile metadata to DEVONthink)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other features could be useful:
+- RSS subscription link&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Like what &lt;a href=&#34;https://github.com/sissbruecker/linkding&#34;&gt;linkding&lt;/a&gt; and &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; provides. I am currently relying on RSS to sync my read-it-later from wallabag to DEVONthink.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To conclude, it will not replace Anybox with Hoarder for now. But it is a very young and promising open-source app with rapid iteration, someday it might will.&lt;/p&gt;</content>
   </entry>
   
   <entry>
@@ -136,44 +175,6 @@
 &lt;li&gt;完善文档&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;不过目前正忙着写毕业论文和找工作，所以短期内这些功能都没有 ETA。但等忙完毕业论文会把这个项目完善，也会一直维护更新。欢迎在 &lt;a href=&#34;https://t.me/rssbrew&#34;&gt;telegram 交流群&lt;/a&gt; 和 GitHub issue 中里提出建议和需求。&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Hoarder - The Self-Hosted Bookmark Manager</title>
-    <link ref="alternate" href="https://yinan.me/hoarder.html" />
-    <id>hoarder</id>
-    <published>2024-05-24 18:56:37+01:00</published>
-    <updated>2024-05-24 19:04:45+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;Trying out &lt;a href=&#34;https://github.com/hoarder-app/hoarder&#34;&gt;Hoarder&lt;/a&gt; app today, to see whether it would competes Anybox as my main bookmark manager. I do like self-hosting services, and I like hoarding stuff 🤭.&lt;/p&gt;
-&lt;p&gt;At first sight, it feels like a complete app I can put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images.&lt;/p&gt;
-&lt;p&gt;I really like the ability to have AI tagging for links and images so that I don&#39;t have to manually organize them. And the full text search is something Anybox doesn&#39;t have yet. While I write this article, May 2024, it is still under review in the &lt;a href=&#34;https://anybox.canny.io/feature-requests/p/full-text-search&#34;&gt;canny page of Anybox&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;However, there are some features missing before it can become my main bookmark manager. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/43&#34;&gt;REST API&lt;/a&gt; - for easily exporting data like links, tags, and for an Alfred workflow.&lt;blockquote&gt;
-&lt;p&gt;For now, it provides a CLI tool, but I am installing the app on my homeserver instead of my laptop. I will have to ssh to use the CLI, not ideal. A REST API would be good for remotely managing data.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;Easy data export&lt;blockquote&gt;
-&lt;p&gt;I don&#39;t seem to find a very good way to export data easily, for example screenshots, local cache, links.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;Offline archiving&lt;blockquote&gt;
-&lt;p&gt;For now, Hoarder supports plain text caching and screenshots. It would be good to see other formats supported (Planned, as of May 2024)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hoarder-app/hoarder/issues/172&#34;&gt;Local scrapper&lt;/a&gt; to fetch content after user login for some sites.&lt;blockquote&gt;
-&lt;p&gt;What I like about Anybox is its integration with &lt;a href=&#34;https://github.com/gildas-lormeau/SingleFile&#34;&gt;SingleFile extension&lt;/a&gt;. It can directly save the .html downloaded to Anybox via API, so that any content behind paywall will also be downloaded. 
-(It actually addresses the pity that SingleFile metadata only contains the first part of the full domain - it will only show something like https://github.com, when you directly download a  html with SingleFile metadata to DEVONthink)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Other features could be useful:
-- RSS subscription link&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Like what &lt;a href=&#34;https://github.com/sissbruecker/linkding&#34;&gt;linkding&lt;/a&gt; and &lt;a href=&#34;https://wallabag.org/&#34;&gt;wallabag&lt;/a&gt; provides. I am currently relying on RSS to sync my read-it-later from wallabag to DEVONthink.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;To conclude, it will not replace Anybox with Hoarder for now. But it is a very young and promising open-source app with rapid iteration, someday it might will.&lt;/p&gt;</content>
   </entry>
   
   <entry>
