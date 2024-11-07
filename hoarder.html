@@ -52,9 +52,16 @@
 
 
 <h1>Hoarder - The Self-Hosted Bookmark Manager</h1>
-<p>Trying out <a href="https://github.com/hoarder-app/hoarder">Hoarder</a> app today, to see whether it would competes Anybox as my main bookmark manager. I do like self-hosting services, and I like hoarding stuff 🤭.</p>
-<p>At first sight, it feels like a complete app I can put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images.</p>
-<p>I really like the ability to have AI tagging for links and images so that I don't have to manually organize them. And the full text search is something Anybox doesn't have yet. While I write this article, May 2024, it is still under review in the <a href="https://anybox.canny.io/feature-requests/p/full-text-search">canny page of Anybox</a>.</p>
+<p>Currently, I am using <a href="https://wallabag.org/">wallabag</a> for read-it-later, <a href="https://anybox.app/">Anybox</a> for bookmarking and quick retrival via Alfred, and <a href="https://www.devontechnologies.com/apps/devonthink">DEVONthink</a> for archiving the booksmarks from wallabag and Anybox (I wrote <a href="https://github.com/yinan-c/Anybox-sync-Devonthink/blob/main/anybox_to_devonthink.py">a script</a> that checks the Anybox API for new links and save them to DEVONthink, which is modified from the <a href="https://alfred.app/workflows/anybox/anybox/">Anybox alfredworkflow</a>).</p>
+<p>This workflow has been robust and reliable for me, but I am always looking for better selfhosted tools to improve my workflow. There are two things currently missing:</p>
+<ol>
+<li><p>Full text search is something Anybox doesn't have yet. While I write this article, May 2024, it is still under review in the <a href="https://anybox.canny.io/feature-requests/p/full-text-search">canny page of Anybox</a>.</p>
+</li>
+<li><p>Organizing bookmarks. I have a lot of bookmarks. I appreciate the Inbox ideology of Anybox, and the implementation of folders+tags+smart folders, but I still rely a lot on searching instead of mannually organizing (and again anybox is not providing full text search yet). It might help if there is an automatic organization feature like AI tagging or Smart Rules in DEVONthink.</p>
+</li>
+</ol>
+<p>So, trying out <a href="https://github.com/hoarder-app/hoarder">Hoarder</a> app today. I would like to see whether it would compete Anybox as my main bookmark manager. Also I do like self-hosting services, and hoarding stuff 🤭.</p>
+<p>At first sight, it feels like a complete app that I can directly put in production, it has a iOS app with share sheet support, chrome extension for easily save from browser, it saves note and images. And I really like the ability to have AI tagging for links and images so that I don't have to manually organize them.</p>
 <p>However, there are some features missing before it can become my main bookmark manager.</p>
 <ul>
 <li><a href="https://github.com/hoarder-app/hoarder/issues/43">REST API</a> - for easily exporting data like links, tags, and for an Alfred workflow.<blockquote>
@@ -79,11 +86,11 @@ update: As of Nov 2024, it supports full page archival (using <a href="https://g
 <p>Other features could be useful:</p>
 <ul>
 <li>RSS subscription link<blockquote>
-<p>Like what <a href="https://github.com/sissbruecker/linkding">linkding</a> and <a href="https://wallabag.org/">wallabag</a> provides. I am currently relying on RSS to sync my read-it-later from wallabag to DEVONthink.</p>
+<p>Like what <a href="https://github.com/sissbruecker/linkding">linkding</a> and <a href="https://wallabag.org/">wallabag</a> provides. I am currently relying on RSS to sync my read-it-later from wallabag to DEVONthink and to my kindle with <a href="https://github.com/cdhigh/kindleear">kindleear</a>.</p>
 </blockquote>
 </li>
 </ul>
-<p>To conclude, it will not replace Anybox with Hoarder for now. But it is a very young and promising open-source app with rapid iteration, someday it might will.</p>
+<p>To conclude, I will not replace Anybox/wallabag with Hoarder for now. But it is a very young and promising open-source app with rapid iteration, someday it might will.</p>
 
 
 
