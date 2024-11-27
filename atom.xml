@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/ticktick.html" />
     <id>ticktick</id>
     <published>2024-11-27 03:36:13+00:00</published>
-    <updated>2024-11-27 04:07:06+00:00</updated>
+    <updated>2024-11-27 12:03:25+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;半年之前写过一篇&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;苹果端 Todo App 简单比较&lt;/a&gt;，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。&lt;/p&gt;
 &lt;p&gt;我是从 2022 年开始使用 Things3，2023年底换了 OmniFocus 4，一年后的今天我选择试一下滴答清单，所以这篇文章大多是关于 OmniFocus 和滴答清单的比较，会少量提到一下和 Things 的比较。&lt;/p&gt;
@@ -59,7 +59,7 @@
 &lt;li&gt;不会显示最近修改的任务列表，但是对于每一个任务有任务动态，还有垃圾箱，防止误删除。&lt;/li&gt;
 &lt;li&gt;mac 软件的第三方支持：&lt;/li&gt;
 &lt;li&gt;Raycast: OmniFocus 没有，滴答很好用；Alfred: OmniFous &amp;gt; 滴答。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.popclip.app/extensions/x/htd93q&#34;&gt;Popclip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Popclip for &lt;a href=&#34;https://www.popclip.app/extensions/x/htd93q&#34;&gt;TickTick/滴答&lt;/a&gt;, &lt;a href=&#34;https://www.popclip.app/extensions/x/2xsjgt&#34;&gt;Things&lt;/a&gt; and &lt;a href=&#34;https://www.popclip.app/extensions/x/69vkqz&#34;&gt;OmniFocus&lt;/a&gt; 都有。&lt;/li&gt;
 &lt;li&gt;Chrome 插件，TickTick 会更加强大一点, OmniFocus 只有一个第三方的添加。&lt;/li&gt;
 &lt;li&gt;全局添加：OmniFocus 有 Services - Add to OmniFocus 和 Share menu 两项。滴答和 Things 都是快捷键唤出一个类似于 spotlight 的窗口添加，things 和 OmniFocus 会有对当前窗口的 context 自动填充。&lt;/li&gt;
 &lt;li&gt;API 与自动化: &lt;ul&gt;
