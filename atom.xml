@@ -16,12 +16,12 @@
     <link ref="alternate" href="https://yinan.me/ticktick.html" />
     <id>ticktick</id>
     <published>2024-11-27 03:36:13+00:00</published>
-    <updated>2024-11-27 03:51:35+00:00</updated>
+    <updated>2024-11-27 04:07:06+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;半年之前写过一篇&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;苹果端 Todo App 简单比较&lt;/a&gt;，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。&lt;/p&gt;
 &lt;p&gt;我是从 2022 年开始使用 Things3，2023年底换了 OmniFocus 4，一年后的今天我选择试一下滴答清单，所以这篇文章大多是关于 OmniFocus 和滴答清单的比较，会少量提到一下和 Things 的比较。&lt;/p&gt;
 &lt;p&gt;（P.S.: 现在 Things3 正在黑五7折优惠）&lt;/p&gt;
-&lt;h2&gt;为什么要换&lt;/h2&gt;
+&lt;h2&gt;1 为什么要换&lt;/h2&gt;
 &lt;p&gt;更换工具折腾是很大的时间精力和金钱成本，尤其是 TODO 和笔记，更何况我之前还写了把 Things/OmniFocus 的任务导出的脚本，换一个工具意味着重新来过。&lt;/p&gt;
 &lt;p&gt;但这一年 OmniFocus 确实也有让我体验不佳不点
 - 数据量大了会很卡，之前清理过一次了，我目前大概 2000 多个条目（包括已完成）不管是手机还是电脑端都不够流畅。
@@ -30,7 +30,7 @@
 &lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Omnifocus-random.png&#34; /&gt;
 - 最主要的是产品的使用逻辑和我不对付，Things/滴答都有一个今日视图，给任务安排一个时间，他就会出现在那天的今日视图中，当然也可以通过 perspective 建立一个筛选过的今日视图（比如说筛选出&lt;code&gt;正在进行&lt;/code&gt;标签或者有 defer/deadline date 是今日以及以前的任务。但我发现我就会滥用截止日期，过期的多了最后会导致对截止日期过期不敏感了，再加上杂乱的界面，会感觉失去重点和优先级，反而完成不了要紧事。&lt;/p&gt;
 &lt;p&gt;当然 OmniFocus 也有很多特别出彩的地方，比如说自定义 perspective（里面的条件很丰富），review 功能，插件自动化，Focus View（配合新窗口）等。具体可以见我之前的&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;文章&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;滴答 vs OmniFocus&lt;/h2&gt;
+&lt;h2&gt;2 滴答 vs OmniFocus&lt;/h2&gt;
 &lt;p&gt;以下是我在会员免费期体验到的，有些功能可能免费版没有，另外限于时间，体验内容肯定不够完全。&lt;/p&gt;
 &lt;h3&gt;优点：&lt;/h3&gt;
 &lt;ul&gt;
@@ -45,7 +45,7 @@
 &lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/things-heading.png&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;缺点&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;虽然可以筛选，但是不能专注到某一个 project 所以 completed 不能看到某一个 project/area 的logbook&lt;/li&gt;
+&lt;li&gt;虽然可以筛选，但是不能专注到某一个 project/area。&lt;/li&gt;
 &lt;li&gt;筛选可选项不如 OmniFocus 多，比如说没有办法实现根据创建时间/修改时间的筛选排序，这样很容易创建了就忘了，就连 Things 都能通过&lt;a href=&#34;https://www.icloud.com/shortcuts/967cbbc1c61546e4a869da6b35b59060&#34;&gt;捷径实现&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;数据存储备份：OmniFocus 和 Things 似乎都是本地数据库+本地多副本备份+云端同步的方式，OmniFocus 支持手动打开 .ofocus-backup 回溯到某一个版本，然后支持本地覆盖云端/云端覆盖本地。滴答清单的数据好像都在云端存储，本地甚至不会显示出项目内所有已完成的任务（所以会在你搜不到东西的时候，有在云端中搜索的选项）&lt;/li&gt;
 &lt;li&gt;数据导出：滴答只支持任务导出到 csv，官方 API 只能导出未完成任务。OmniFocus 支持随意筛选项目后，导出 csv 和 .ofocus 文件。&lt;/li&gt;
@@ -69,21 +69,21 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;滴答的其他功能&lt;/h2&gt;
+&lt;h2&gt;3 滴答的其他功能&lt;/h2&gt;
 &lt;p&gt;除了基本的 tasks，滴答还提供番茄钟和习惯打卡，不过目前我没有找到合适的导出这两部分数据的方案，所以没有深度试。&lt;/p&gt;
-&lt;h2&gt;迁移工作&lt;/h2&gt;
+&lt;h2&gt;4 迁移工作&lt;/h2&gt;
 &lt;p&gt;Things 到滴答的迁移好像挺顺滑的（没有深度试），如果是反过来目前 Things 官方没有支持，只能自己从 API 或者导出的 csv 里面想办法。&lt;/p&gt;
 &lt;p&gt;OmniFocus 到滴答导入过程需要在 OmniFocus 选中任务再导出 csv，而且导入之后会丢失创建和放弃任务的时间点(后者应该是 OmniFocus 的锅，因为同样的问题在你归档旧的已放弃任务的时候也会出现，会重新变成未完成状态并且丢失放弃时间戳)。&lt;/p&gt;
 &lt;p&gt;我之前写过&lt;a href=&#34;https://github.com/yinan-c/Omnifocus-export-markdown&#34;&gt;OmniFocus&lt;/a&gt; 以及 &lt;a href=&#34;https://github.com/yinan-c/things2md&#34;&gt;Things&lt;/a&gt; 导出 markdown 的脚本，也可以用已完成项目按时间规律生成回顾/周报的功能，也可以把所有的任务分项目导出 markdown。配合 git 还可以追踪项目的变化情况。&lt;/p&gt;
 &lt;p&gt;迁移之后，花了点时间用各种 API 实现了导出所有未完成/部分完成任务，增量缓存 json，保存 markdown，再输出为 RSS。
 其实折腾这么多就是为了能够把数据主动权在自己手里，如果平台/工具倒闭了（希望不要）至少自己还有数据能有退路再保留一份纯文本供自己阅读。&lt;/p&gt;
-&lt;h2&gt;最后留下两局话吧&lt;/h2&gt;
+&lt;h2&gt;5 最后的话&lt;/h2&gt;
 &lt;p&gt;关于 GTD（Get Things Done），完成事情是最终目的，折腾上花费的时间不如直接去完成你列表上的项目。这里引用一句话，&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The most important lever a leader has to create focus is to simplify the priority list. by [Rohan](https://alearningaday.blog/2024/11/21/creating-focus/.&lt;/p&gt;
+&lt;p&gt;The most important lever a leader has to create focus is to simplify the priority list. by &lt;a href=&#34;https://alearningaday.blog/2024/11/21/creating-focus/&#34;&gt;Rohan&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;关于工具，适合自己才是最好的。所以尽量秉承那句话 If it ain&#39;t broken, don&#39;t fix it.&lt;/p&gt;
-&lt;h2&gt;相关&lt;/h2&gt;
+&lt;h2&gt;6 相关&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://juejin.cn/post/7376484708547870731&#34;&gt;滴答清单/TickTick 官方API尝试&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
