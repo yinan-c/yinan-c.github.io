@@ -12,6 +12,82 @@
 
   
   <entry>
+    <title>清单清单体验</title>
+    <link ref="alternate" href="https://yinan.me/ticktick.html" />
+    <id>ticktick</id>
+    <published>2024-11-27 03:36:13+00:00</published>
+    <updated>2024-11-27 03:39:01+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;半年之前写过一篇&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;苹果端 Todo App 简单比较&lt;/a&gt;，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。&lt;/p&gt;
+&lt;p&gt;我是从 2022 年开始使用 Things3，2023年底换了 OmniFocus 4，一年后的今天我选择试一下滴答清单，所以这篇文章大多是关于 OmniFocus 和滴答清单的比较，会少量提到一下和 Things 的比较。&lt;/p&gt;
+&lt;p&gt;（P.S.: 现在 Things3 正在黑五7折优惠）&lt;/p&gt;
+&lt;h2&gt;为什么要换&lt;/h2&gt;
+&lt;p&gt;更换工具折腾是很大的时间精力和金钱成本，尤其是 TODO 和笔记，更何况我之前还写了把 Things/OmniFocus 的任务导出的脚本，换一个工具意味着重新来过。&lt;/p&gt;
+&lt;p&gt;但这一年 OmniFocus 确实也有让我体验不佳不点
+- 数据量大了会很卡，之前清理过一次了，我目前大概 2000 多个条目（包括已完成）不管是手机还是电脑端都不够流畅。
+- 不够美观。见仁见智，我更喜欢 Things 的界面。
+- OmniFocus 不像 Things 或者滴答清单那么，任务/项目完成了之后就完全从列表内隔离开，而是继续保持原有的结构在穿插在其他未完成的任务/项目中，导致界面很杂乱，虽然也可以通过改变视图为显示剩余，但这样又失去了结构，总之项目结构和整洁度二者只能去其一。
+&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/Omnifocus-random.png&#34; /&gt;
+- 最主要的是产品的使用逻辑和我不对付，Things/滴答都有一个今日视图，给任务安排一个时间，他就会出现在那天的今日视图中，当然也可以通过 perspective 建立一个筛选过的今日视图（比如说筛选出&lt;code&gt;正在进行&lt;/code&gt;标签或者有 defer/deadline date 是今日以及以前的任务。但我发现我就会滥用截止日期，过期的多了最后会导致对截止日期过期不敏感了，再加上杂乱的界面，会感觉失去重点和优先级，反而完成不了要紧事。&lt;/p&gt;
+&lt;p&gt;当然 OmniFocus 也有很多特别出彩的地方，比如说自定义 perspective（里面的条件很丰富），review 功能，插件自动化，Focus View（配合新窗口）等。具体可以见我之前的&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;文章&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;滴答 vs OmniFocus&lt;/h2&gt;
+&lt;p&gt;以下是我在会员免费期体验到的，有些功能可能免费版没有，另外限于时间，体验内容肯定不够完全。&lt;/p&gt;
+&lt;h3&gt;优点：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;外观：美观介于 OmniFocus 和 Things 之间。这两者的笔记一栏是长方形选中框的的下延展，随着笔记内容变多而变大，things 是纯文本格式， OmniFocus 是富文本，但是似乎只能通过粘贴保留格式，输入是纯文本格式，而且 OmniFocus 还挺卡的。滴答清单每一条任务展开之后占据右侧1/3窗口，完全可以当作一页纸来写（所以官方提供了转化为笔记的功能吧），还可以对内容进行加粗高亮，富文本。&lt;/li&gt;
+&lt;li&gt;操作和 Things 差不多顺滑，就是鼠标拖动支持的有点别扭（默认鼠标是选中文本，得选中左边的三条杠小图标才能拖动），目前来看键盘快捷键支持不如 Things 和 OmniFocus。&lt;/li&gt;
+&lt;li&gt;归档和完成的任务与开放项目隔离，眼不见为净。OmniFocus 所有都显示的话会很乱，见上图。但是我又需要看到能看到项目的结构，滴答正好通过最右边栏任务的详细页面做到了两个的平衡，也就是中间栏隔离，右侧栏保留结构（Things 的 Logbook 完全就没有原来的项目结构了，或者说 Things 本身除了 Heading 和任务内的检查事项就没有父子结构的概念，除非 Heading 整个被标记完成，才能在 Logbook 内还原 Heading 结构。&lt;/li&gt;
+&lt;li&gt;粘贴的链接可以自动识别并填充标题。&lt;/li&gt;
+&lt;li&gt;原生看板，OmniFocus 需要用插件配合标签，Things 只有一个只读的&lt;a href=&#34;https://apps.apple.com/gb/app/kanbanview/id1507458952&#34;&gt;第三方软件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;完备的日历页面和任务+时间线的安排功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/ticktick.png&#34; /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/things-heading.png&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;缺点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;虽然可以筛选，但是不能专注到某一个 project 所以 completed 不能看到某一个 project/area 的logbook&lt;/li&gt;
+&lt;li&gt;筛选可选项不如 OmniFocus 多，比如说没有办法实现根据创建时间/修改时间的筛选排序，这样很容易创建了就忘了，就连 Things 都能通过&lt;a href=&#34;https://www.icloud.com/shortcuts/967cbbc1c61546e4a869da6b35b59060&#34;&gt;捷径实现&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;数据存储备份：OmniFocus 和 Things 似乎都是本地数据库+本地多副本备份+云端同步的方式，OmniFocus 支持手动打开 .ofocus-backup 回溯到某一个版本，然后支持本地覆盖云端/云端覆盖本地。滴答清单的数据好像都在云端存储，本地甚至不会显示出项目内所有已完成的任务（所以会在你搜不到东西的时候，有在云端中搜索的选项）&lt;/li&gt;
+&lt;li&gt;数据导出：滴答只支持任务导出到 csv，官方 API 只能导出未完成任务。OmniFocus 支持随意筛选项目后，导出 csv 和 .ofocus 文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;其他有好有坏，见仁见智&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;使用逻辑：&lt;/li&gt;
+&lt;li&gt;OmniFocus 不同项目有区分，所以你可以很明显的看到项目的下一个任务（Next Available）是什么。&lt;/li&gt;
+&lt;li&gt;滴答只有一个安排日期，OmniFocus 和 Things 都有两个日期，一个安排日期，一个截止日期。&lt;/li&gt;
+&lt;li&gt;在 OmniFocus 中清单和任务没有太大的界限，可以互相拖动转换，Things 中任务可以被拖到 Area（也就是文件夹）下一层和项目平行，但是不能互相转换，Heading 可以转为项目，滴答清单自由度最低，任务，清单，文件夹，三种层级严格，任务 &amp;lt; 清单 &amp;lt; 文件夹，不能互相转换，除了任务可以有最多五层和其他任务的嵌套。但是拖动操作很不方便。&lt;/li&gt;
+&lt;li&gt;不会显示最近修改的任务列表，但是对于每一个任务有任务动态，还有垃圾箱，防止误删除。&lt;/li&gt;
+&lt;li&gt;mac 软件的第三方支持：&lt;/li&gt;
+&lt;li&gt;Raycast: OmniFocus 没有，滴答很好用；Alfred: OmniFous &amp;gt; 滴答。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.popclip.app/extensions/x/htd93q&#34;&gt;Popclip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chrome 插件，TickTick 会更加强大一点, OmniFocus 只有一个第三方的添加。&lt;/li&gt;
+&lt;li&gt;全局添加：OmniFocus 有 Services - Add to OmniFocus 和 Share menu 两项。滴答和 Things 都是快捷键唤出一个类似于 spotlight 的窗口添加，things 和 OmniFocus 会有对当前窗口的 context 自动填充。&lt;/li&gt;
+&lt;li&gt;API 与自动化: &lt;ul&gt;
+&lt;li&gt;Things 有 &lt;a href=&#34;https://culturedcode.com/things/support/articles/2803573/&#34;&gt;URL scheme&lt;/a&gt;, &lt;a href=&#34;https://culturedcode.com/things/support/articles/2803572/&#34;&gt;Applescript&lt;/a&gt;, &lt;a href=&#34;https://github.com/thingsapi/things.py&#34;&gt;第三方 python api&lt;/a&gt;还有官方提供的&lt;a href=&#34;https://culturedcode.com/things/support/articles/2955145/&#34;&gt;捷径库&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;OmniFocus 有 Applescript 和 Javascript 来实现插件。而且可以通过直接读取 sqlite 数据库自动批量的导出数据，之前根据此写过一个&lt;a href=&#34;https://github.com/yinan-c/Omnifocus-export-markdown&#34;&gt;导出到 markdown 的脚本&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;滴答和 TickTick 有 &lt;a href=&#34;https://developer.dida365.com/docs#/openapi&#34;&gt;OpenAPI&lt;/a&gt; 非官方 &lt;a href=&#34;https://github.com/lazeroffmichael/ticktick-py&#34;&gt;ticktick-py&lt;/a&gt; (可能需要自行修改所有域名到 dida365.com) 等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;滴答的其他功能&lt;/h2&gt;
+&lt;p&gt;除了基本的 tasks，滴答还提供番茄钟和习惯打卡，不过目前我没有找到合适的导出这两部分数据的方案，所以没有深度试。&lt;/p&gt;
+&lt;h2&gt;迁移工作&lt;/h2&gt;
+&lt;p&gt;Things 到滴答的迁移好像挺顺滑的（没有深度试），如果是反过来目前 Things 官方没有支持，只能自己从 API 或者导出的 csv 里面想办法。&lt;/p&gt;
+&lt;p&gt;OmniFocus 到滴答导入过程需要在 OmniFocus 选中任务再导出 csv，而且导入之后会丢失创建和放弃任务的时间点(后者应该是 OmniFocus 的锅，因为同样的问题在你归档旧的已放弃任务的时候也会出现，会重新变成未完成状态并且丢失放弃时间戳)。&lt;/p&gt;
+&lt;p&gt;我之前写过&lt;a href=&#34;https://github.com/yinan-c/Omnifocus-export-markdown&#34;&gt;OmniFocus&lt;/a&gt; 以及 &lt;a href=&#34;https://github.com/yinan-c/things2md&#34;&gt;Things&lt;/a&gt; 导出 markdown 的脚本，也可以用已完成项目按时间规律生成回顾/周报的功能，也可以把所有的任务分项目导出 markdown。配合 git 还可以追踪项目的变化情况。&lt;/p&gt;
+&lt;p&gt;迁移之后，花了点时间用各种 API 实现了导出所有未完成/部分完成任务，增量缓存 json，保存 markdown，再输出为 RSS。
+其实折腾这么多就是为了能够把数据主动权在自己手里，如果平台/工具倒闭了（希望不要）至少自己还有数据能有退路再保留一份纯文本供自己阅读。&lt;/p&gt;
+&lt;h2&gt;最后留下两局话吧&lt;/h2&gt;
+&lt;p&gt;关于 GTD（Get Things Done），完成事情是最终目的，折腾上花费的时间不如直接去完成你列表上的项目。这里引用一句话，&lt;/p&gt;
+&lt;h1&gt;TODO Focus is priority by&lt;/h1&gt;
+&lt;p&gt;关于工具，适合自己才是最好的。所以尽量秉承那句话 If it ain&#39;t broken, don&#39;t fix it.&lt;/p&gt;
+&lt;h2&gt;相关&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.cn/post/7376484708547870731&#34;&gt;滴答清单/TickTick 官方API尝试&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
     <title>Hoarder - 自托管 AI 书签管理软件</title>
     <link ref="alternate" href="https://yinan.me/hoarder-zh.html" />
     <id>hoarder-zh</id>
@@ -366,32 +442,6 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;mailto:hello@yinan.me&#34;&gt;Email&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/yinan-c&#34;&gt;yinan-c&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred</title>
-    <link ref="alternate" href="https://yinan.me/raycast-alfred.html" />
-    <id>raycast-alfred</id>
-    <published>2024-04-15 12:47:09+01:00</published>
-    <updated>2024-04-15 12:57:11+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;这篇文章主要想分享两件事，一是如何让 Raycast 能像 Alfred 一样只用一个 Escape 键退出搜索窗口，而不是每次摁一次只能一级一级得退出，二是如何利用 Deeplink 来同时使用 Raycast 和 Alfred， 发挥各自的优势。&lt;/p&gt;
-&lt;h2&gt;TLDR&lt;/h2&gt;
-&lt;p&gt;利用这个 &lt;a href=&#34;https://yinan.me/pics/remap_escape_in_Raycast.kmmacros&#34;&gt;Keyboard Maestro macro&lt;/a&gt; 实现在 Raycast 搜索窗口中 remap a single escape to multiple escape keys。&lt;/p&gt;
-&lt;h2&gt;如果你还想听我唠叨&lt;/h2&gt;
-&lt;p&gt;我不想讨论孰优孰劣，哪个是 mac 上最好用的 Launcher (LaunchBar:?)，也并不希望任何一个产品被挤压到退市，并且市场上良性竞争促使产品进步是对消费者有益的。&lt;/p&gt;
-&lt;p&gt;在我的电脑上两个都装了（感谢最早让我深度体验 launcher 的 Raycast），但是目前为止还是主要在使用 Alfred，仅仅是因为能够一键呼出和退出搜索窗口，强大的 Universal Actions，更快地文件搜索和 Navigation（每次1对1老板都惊艳于我找文件的速度:D），并且我也写了几个 &lt;a href=&#34;https://yinan.me/my-open-source.html&#34;&gt;Alfred Workflow&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;但是 Raycast 也有很多优点，就比如同一个功能，eject disks, 我更偏向于 Raycast 的 hud 通知，而不是 Alfred 的系统通知（因为经常开着勿扰模式），另外比如 Show Desktop 这个 Raycast 内置插件，我并没有在 Alfred 社区找到合适的方案。如果你想要主要使用 Raycast，但也有这个烦恼， 那么你可以通过 Keyboard Maestro 设置一键退出 Raycast，如果你想要同时使用两个 Launcher，那么你可以利用 Deeplink 来实现。我会分别在下面两节讨论。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/hud.png&#34; /&gt;&lt;/p&gt;
-&lt;h3&gt;设置一键退出 Raycast&lt;/h3&gt;
-&lt;p&gt;Raycast 有多级菜单，每次按 Escape 键只能退出一级，这是他们产品的特有设计，但确实大大减慢了我使用 Launcher 的速度。要实现一键退出多级菜单，Raycast 内置 Command + Escape 来回到主菜单，但是不会退出窗口（搜索完，还想让你继续搜索？），你仍然需要再次按下 escape 键才能退出。&lt;/p&gt;
-&lt;p&gt;之前用过 Keyboard Maestro 映射轻按 command + W 到 长按 command + W 来防止误关窗口，所以我想到了用 Keyboard Maestro 来实现映射一个 Escape 键到多个 Escape 键，关键问题在于如何识别 Raycast 的搜索窗口正在最前。好在已经有人在论坛上讨论过并且给出了&lt;a href=&#34;https://forum.keyboardmaestro.com/t/solved-check-whether-raycast-is-running/29073/5&#34;&gt;解决方案&lt;/a&gt;，我稍微修改了一下，实现了 remap，&lt;a href=&#34;https://yinan.me/pics/remap_escape_in_Raycast.kmmacros&#34;&gt;下载地址在这儿&lt;/a&gt;。&lt;/p&gt;
-&lt;h3&gt;Deeplink: raycast:// 和 alfred:// 实现互相呼出&lt;/h3&gt;
-&lt;p&gt;Raycast 和 Alfred 都支持 Deeplink，Raycast 中选中 command 摁下 Command + K，就可以看到 Copy Deeplink 的选项，然后你可以创建一个 Alfred Workflow 在打开这些 Raycast DeepLink 实现直接调用 Raycast command （并且整个过程 Raycast 窗口不会出现）&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/raycastdeeplink.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/alfredworkflow.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;同样地，而如果你想要在 Raycast 或者 keyboard Maestro, Shortcuts 等其他地方调用 Alfred workflow，Alfred 提供了 External Actions 来实现通过 Deeplink 或者 AppleScript 调用 Alfred 的 workflow。在 Raycast 中设置 Quicklinks 打开这个 URL 即可以实现调用 Alfred Workflow。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/alfred-deeplink.gif&#34; /&gt;&lt;/p&gt;</content>
   </entry>
   
 

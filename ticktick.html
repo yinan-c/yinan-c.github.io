@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>清单清单体验 - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-11-27 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>清单清单体验</h1>
+<p>半年之前写过一篇<a href="https://yinan.me/todo-app.html">苹果端 Todo App 简单比较</a>，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。</p>
+<p>我是从 2022 年开始使用 Things3，2023年底换了 OmniFocus 4，一年后的今天我选择试一下滴答清单，所以这篇文章大多是关于 OmniFocus 和滴答清单的比较，会少量提到一下和 Things 的比较。</p>
+<p>（P.S.: 现在 Things3 正在黑五7折优惠）</p>
+<h2>为什么要换</h2>
+<p>更换工具折腾是很大的时间精力和金钱成本，尤其是 TODO 和笔记，更何况我之前还写了把 Things/OmniFocus 的任务导出的脚本，换一个工具意味着重新来过。</p>
+<p>但这一年 OmniFocus 确实也有让我体验不佳不点</p>
+<ul>
+<li>数据量大了会很卡，之前清理过一次了，我目前大概 2000 多个条目（包括已完成）不管是手机还是电脑端都不够流畅。</li>
+<li>不够美观。见仁见智，我更喜欢 Things 的界面。</li>
+<li>OmniFocus 不像 Things 或者滴答清单那么，任务/项目完成了之后就完全从列表内隔离开，而是继续保持原有的结构在穿插在其他未完成的任务/项目中，导致界面很杂乱，虽然也可以通过改变视图为显示剩余，但这样又失去了结构，总之项目结构和整洁度二者只能去其一。
+<img src="https://yinan.me/pics/Omnifocus-random.png" alt="" /></li>
+<li>最主要的是产品的使用逻辑和我不对付，Things/滴答都有一个今日视图，给任务安排一个时间，他就会出现在那天的今日视图中，当然也可以通过 perspective 建立一个筛选过的今日视图（比如说筛选出<code>正在进行</code>标签或者有 defer/deadline date 是今日以及以前的任务。但我发现我就会滥用截止日期，过期的多了最后会导致对截止日期过期不敏感了，再加上杂乱的界面，会感觉失去重点和优先级，反而完成不了要紧事。</li>
+</ul>
+<p>当然 OmniFocus 也有很多特别出彩的地方，比如说自定义 perspective（里面的条件很丰富），review 功能，插件自动化，Focus View（配合新窗口）等。具体可以见我之前的<a href="https://yinan.me/todo-app.html">文章</a>。</p>
+<h2>滴答 vs OmniFocus</h2>
+<p>以下是我在会员免费期体验到的，有些功能可能免费版没有，另外限于时间，体验内容肯定不够完全。</p>
+<h3>优点：</h3>
+<ul>
+<li>外观：美观介于 OmniFocus 和 Things 之间。这两者的笔记一栏是长方形选中框的的下延展，随着笔记内容变多而变大，things 是纯文本格式， OmniFocus 是富文本，但是似乎只能通过粘贴保留格式，输入是纯文本格式，而且 OmniFocus 还挺卡的。滴答清单每一条任务展开之后占据右侧1/3窗口，完全可以当作一页纸来写（所以官方提供了转化为笔记的功能吧），还可以对内容进行加粗高亮，富文本。</li>
+<li>操作和 Things 差不多顺滑，就是鼠标拖动支持的有点别扭（默认鼠标是选中文本，得选中左边的三条杠小图标才能拖动），目前来看键盘快捷键支持不如 Things 和 OmniFocus。</li>
+<li>归档和完成的任务与开放项目隔离，眼不见为净。OmniFocus 所有都显示的话会很乱，见上图。但是我又需要看到能看到项目的结构，滴答正好通过最右边栏任务的详细页面做到了两个的平衡，也就是中间栏隔离，右侧栏保留结构（Things 的 Logbook 完全就没有原来的项目结构了，或者说 Things 本身除了 Heading 和任务内的检查事项就没有父子结构的概念，除非 Heading 整个被标记完成，才能在 Logbook 内还原 Heading 结构。</li>
+<li>粘贴的链接可以自动识别并填充标题。</li>
+<li>原生看板，OmniFocus 需要用插件配合标签，Things 只有一个只读的<a href="https://apps.apple.com/gb/app/kanbanview/id1507458952">第三方软件</a></li>
+<li>完备的日历页面和任务+时间线的安排功能</li>
+</ul>
+<p><img src="https://yinan.me/pics/ticktick.png" alt="" />
+<img src="https://yinan.me/pics/things-heading.png" alt="" /></p>
+<h3>缺点</h3>
+<ul>
+<li>虽然可以筛选，但是不能专注到某一个 project 所以 completed 不能看到某一个 project/area 的logbook</li>
+<li>筛选可选项不如 OmniFocus 多，比如说没有办法实现根据创建时间/修改时间的筛选排序，这样很容易创建了就忘了，就连 Things 都能通过<a href="https://www.icloud.com/shortcuts/967cbbc1c61546e4a869da6b35b59060">捷径实现</a>。</li>
+<li>数据存储备份：OmniFocus 和 Things 似乎都是本地数据库+本地多副本备份+云端同步的方式，OmniFocus 支持手动打开 .ofocus-backup 回溯到某一个版本，然后支持本地覆盖云端/云端覆盖本地。滴答清单的数据好像都在云端存储，本地甚至不会显示出项目内所有已完成的任务（所以会在你搜不到东西的时候，有在云端中搜索的选项）</li>
+<li>数据导出：滴答只支持任务导出到 csv，官方 API 只能导出未完成任务。OmniFocus 支持随意筛选项目后，导出 csv 和 .ofocus 文件。</li>
+</ul>
+<h3>其他有好有坏，见仁见智</h3>
+<ul>
+<li>使用逻辑：<ul>
+<li>OmniFocus 不同项目有区分，所以你可以很明显的看到项目的下一个任务（Next Available）是什么。</li>
+<li>滴答只有一个安排日期，OmniFocus 和 Things 都有两个日期，一个安排日期，一个截止日期。</li>
+<li>在 OmniFocus 中清单和任务没有太大的界限，可以互相拖动转换，Things 中任务可以被拖到 Area（也就是文件夹）下一层和项目平行，但是不能互相转换，Heading 可以转为项目，滴答清单自由度最低，任务，清单，文件夹，三种层级严格，任务 &lt; 清单 &lt; 文件夹，不能互相转换，除了任务可以有最多五层和其他任务的嵌套。但是拖动操作很不方便。</li>
+</ul>
+</li>
+<li>不会显示最近修改的任务列表，但是对于每一个任务有任务动态，还有垃圾箱，防止误删除。</li>
+<li>mac 软件的第三方支持：<ul>
+<li>Raycast: OmniFocus 没有，滴答很好用；Alfred: OmniFous &gt; 滴答。</li>
+<li><a href="https://www.popclip.app/extensions/x/htd93q">Popclip</a></li>
+<li>Chrome 插件，TickTick 会更加强大一点, OmniFocus 只有一个第三方的添加。</li>
+<li>全局添加：OmniFocus 有 Services - Add to OmniFocus 和 Share menu 两项。滴答和 Things 都是快捷键唤出一个类似于 spotlight 的窗口添加，things 和 OmniFocus 会有对当前窗口的 context 自动填充。</li>
+<li>API 与自动化:<ul>
+<li>Things 有 <a href="https://culturedcode.com/things/support/articles/2803573/">URL scheme</a>, <a href="https://culturedcode.com/things/support/articles/2803572/">Applescript</a>, <a href="https://github.com/thingsapi/things.py">第三方 python api</a>还有官方提供的<a href="https://culturedcode.com/things/support/articles/2955145/">捷径库</a>.</li>
+<li>OmniFocus 有 Applescript 和 Javascript 来实现插件。而且可以通过直接读取 sqlite 数据库自动批量的导出数据，之前根据此写过一个<a href="https://github.com/yinan-c/Omnifocus-export-markdown">导出到 markdown 的脚本</a>。</li>
+<li>滴答和 TickTick 有 <a href="https://developer.dida365.com/docs#/openapi">OpenAPI</a> 非官方 <a href="https://github.com/lazeroffmichael/ticktick-py">ticktick-py</a> (可能需要自行修改所有域名到 dida365.com) 等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>滴答的其他功能</h2>
+<p>除了基本的 tasks，滴答还提供番茄钟和习惯打卡，不过目前我没有找到合适的导出这两部分数据的方案，所以没有深度试。</p>
+<h2>迁移工作</h2>
+<p>Things 到滴答的迁移好像挺顺滑的（没有深度试），如果是反过来目前 Things 官方没有支持，只能自己从 API 或者导出的 csv 里面想办法。</p>
+<p>OmniFocus 到滴答导入过程需要在 OmniFocus 选中任务再导出 csv，而且导入之后会丢失创建和放弃任务的时间点(后者应该是 OmniFocus 的锅，因为同样的问题在你归档旧的已放弃任务的时候也会出现，会重新变成未完成状态并且丢失放弃时间戳)。</p>
+<p>我之前写过<a href="https://github.com/yinan-c/Omnifocus-export-markdown">OmniFocus</a> 以及 <a href="https://github.com/yinan-c/things2md">Things</a> 导出 markdown 的脚本，也可以用已完成项目按时间规律生成回顾/周报的功能，也可以把所有的任务分项目导出 markdown。配合 git 还可以追踪项目的变化情况。</p>
+<p>迁移之后，花了点时间用各种 API 实现了导出所有未完成/部分完成任务，增量缓存 json，保存 markdown，再输出为 RSS。
+其实折腾这么多就是为了能够把数据主动权在自己手里，如果平台/工具倒闭了（希望不要）至少自己还有数据能有退路再保留一份纯文本供自己阅读。</p>
+<h2>最后留下两局话吧</h2>
+<p>关于 GTD（Get Things Done），完成事情是最终目的，折腾上花费的时间不如直接去完成你列表上的项目。这里引用一句话，</p>
+<h1>TODO Focus is priority by</h1>
+<p>关于工具，适合自己才是最好的。所以尽量秉承那句话 If it ain't broken, don't fix it.</p>
+<h2>相关</h2>
+<ul>
+<li><a href="https://juejin.cn/post/7376484708547870731">滴答清单/TickTick 官方API尝试</a></li>
+</ul>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="hoarder-zh.html" class="nav-button" id="next-button">Hoarder - 自托管 AI 书签管理软件 &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-11-27</span>
+  <span>Updated: 2024-11-27</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#ie6b885">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
