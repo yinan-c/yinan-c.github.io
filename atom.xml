@@ -12,11 +12,11 @@
 
   
   <entry>
-    <title>清单清单体验</title>
+    <title>滴答清单体验</title>
     <link ref="alternate" href="https://yinan.me/ticktick.html" />
     <id>ticktick</id>
     <published>2024-11-27 03:36:13+00:00</published>
-    <updated>2024-11-27 03:39:01+00:00</updated>
+    <updated>2024-11-27 03:51:35+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;半年之前写过一篇&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;苹果端 Todo App 简单比较&lt;/a&gt;，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。&lt;/p&gt;
 &lt;p&gt;我是从 2022 年开始使用 Things3，2023年底换了 OmniFocus 4，一年后的今天我选择试一下滴答清单，所以这篇文章大多是关于 OmniFocus 和滴答清单的比较，会少量提到一下和 Things 的比较。&lt;/p&gt;
@@ -79,7 +79,9 @@
 其实折腾这么多就是为了能够把数据主动权在自己手里，如果平台/工具倒闭了（希望不要）至少自己还有数据能有退路再保留一份纯文本供自己阅读。&lt;/p&gt;
 &lt;h2&gt;最后留下两局话吧&lt;/h2&gt;
 &lt;p&gt;关于 GTD（Get Things Done），完成事情是最终目的，折腾上花费的时间不如直接去完成你列表上的项目。这里引用一句话，&lt;/p&gt;
-&lt;h1&gt;TODO Focus is priority by&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The most important lever a leader has to create focus is to simplify the priority list. by [Rohan](https://alearningaday.blog/2024/11/21/creating-focus/.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;关于工具，适合自己才是最好的。所以尽量秉承那句话 If it ain&#39;t broken, don&#39;t fix it.&lt;/p&gt;
 &lt;h2&gt;相关&lt;/h2&gt;
 &lt;ul&gt;
