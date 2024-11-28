@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/rssbrew-public.html" />
     <id>rssbrew-public</id>
     <published>2024-11-28 16:53:50+00:00</published>
-    <updated>2024-11-28 16:53:50+00:00</updated>
+    <updated>2024-11-28 16:58:22+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;最近修了几个小 bug，把 images 上传到了 &lt;a href=&#34;https://hub.docker.com/r/yinanc/rssbrew/tags&#34;&gt;docker-hub&lt;/a&gt;，也做了个 &lt;a href=&#34;https://demo.rssbrew.com&#34;&gt;demo 站点&lt;/a&gt;，账号密码 admin, changeme （当然公开使用的，也不要真的去 change）。为了让大家更方便体验 RSSbrew 的功能，我从自己的订阅里面挑选了几个 AI 处理过的订阅源，供大家订阅试用：&lt;/p&gt;
 &lt;ul&gt;
@@ -26,9 +26,9 @@
 &lt;/ul&gt;
 &lt;p&gt;在任意阅读器里直接订阅，大概长这样&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/2024/11/28/r3yiwj-0.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/2024/11/28/r538wb-0.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;分别用到了 RSSbrew 的内容过滤，订阅源合并，AI 总结文章，生成周报的功能。欢迎大家到&lt;a href=&#34;https://github.com/yinan-c/rssbrew&#34;&gt;项目主页&lt;/a&gt;点个⭐，也欢迎大家提交 bug/feature request。&lt;/p&gt;
-&lt;p&gt;RSSbrew 可以通过自定义 prompt 做到一些简单的翻译，如果需要更专业的 RSS 翻译功能，推荐大家使用 versun 的&lt;a href=&#34;https://rsstranslator.com&#34;&gt;RSS Translator&lt;/a&gt;，当然也可以两个一起用！&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/2024/11/28/re054q-0.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;分别用到了 RSSbrew 的内容过滤，订阅源合并，AI 总结文章，生成周报的功能。欢迎大家到&lt;a href=&#34;https://github.com/yinan-c/rssbrew&#34;&gt;项目主页&lt;/a&gt;点个⭐，也欢迎大家提交 bug/feature request。关于如何配置请参阅我的&lt;a href=&#34;https://yinan.me/rssbrew-config&#34;&gt;另外一篇文章&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RSSbrew 可以通过自定义 prompt 做到一些简单的翻译，如果需要更专业的 RSS 翻译功能，推荐大家使用 versun 的&lt;a href=&#34;https://rsstranslator.com&#34;&gt;RSS Translator&lt;/a&gt;，也是用 Django 做的。当然也可以两个一起用！&lt;/p&gt;
 &lt;h2&gt;Disclaimer&lt;/h2&gt;
 &lt;p&gt;所有公开订阅源均由 RSSbrew 处理后生成，原始内容来源于以下站点的 RSS 订阅源。
 - &lt;a href=&#34;https://36kr.com&#34;&gt;36氪&lt;/a&gt;
