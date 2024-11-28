@@ -12,6 +12,32 @@
 
   
   <entry>
+    <title>RSSbrew 公开订阅源</title>
+    <link ref="alternate" href="https://yinan.me/rssbrew-public.html" />
+    <id>rssbrew-public</id>
+    <published>2024-11-28 16:53:50+00:00</published>
+    <updated>2024-11-28 16:53:50+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;最近修了几个小 bug，把 images 上传到了 &lt;a href=&#34;https://hub.docker.com/r/yinanc/rssbrew/tags&#34;&gt;docker-hub&lt;/a&gt;，也做了个 &lt;a href=&#34;https://demo.rssbrew.com&#34;&gt;demo 站点&lt;/a&gt;，账号密码 admin, changeme （当然公开使用的，也不要真的去 change）。为了让大家更方便体验 RSSbrew 的功能，我从自己的订阅里面挑选了几个 AI 处理过的订阅源，供大家订阅试用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://public.rssbrew.com/feeds/Paul%20Graham/&#34;&gt;Paul Graham&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://public.rssbrew.com/feeds/36kr-AI/&#34;&gt;36 Kr AI 相关&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://public.rssbrew.com/feeds/HN%20comments/&#34;&gt;Hacker News 最佳评论周报&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在任意阅读器里直接订阅，大概长这样&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/2024/11/28/r3yiwj-0.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/2024/11/28/r538wb-0.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;分别用到了 RSSbrew 的内容过滤，订阅源合并，AI 总结文章，生成周报的功能。欢迎大家到&lt;a href=&#34;https://github.com/yinan-c/rssbrew&#34;&gt;项目主页&lt;/a&gt;点个⭐，也欢迎大家提交 bug/feature request。&lt;/p&gt;
+&lt;p&gt;RSSbrew 可以通过自定义 prompt 做到一些简单的翻译，如果需要更专业的 RSS 翻译功能，推荐大家使用 versun 的&lt;a href=&#34;https://rsstranslator.com&#34;&gt;RSS Translator&lt;/a&gt;，当然也可以两个一起用！&lt;/p&gt;
+&lt;h2&gt;Disclaimer&lt;/h2&gt;
+&lt;p&gt;所有公开订阅源均由 RSSbrew 处理后生成，原始内容来源于以下站点的 RSS 订阅源。
+- &lt;a href=&#34;https://36kr.com&#34;&gt;36氪&lt;/a&gt;
+- &lt;a href=&#34;https://paulgraham.com/&#34;&gt;Paul Graham&lt;/a&gt;
+- &lt;a href=&#34;https://hnrss.org&#34;&gt;Hacker News RSS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;公开订阅源仅用于 RSSbrew 功能演示，内容版权归各站点/原作者所有。如有侵权，请联系删除。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>弃用 memos</title>
     <link ref="alternate" href="https://yinan.me/memos.html" />
     <id>memos</id>
@@ -416,44 +442,6 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attribution&lt;/strong&gt; — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;No additional restrictions&lt;/strong&gt; — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link ref="alternate" href="https://yinan.me/hello-world.html" />
-    <id>hello-world</id>
-    <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2024-04-30 17:07:58+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
-&lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。这个博客的域名是 &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; 和 &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;为什么写博客？&lt;/h2&gt;
-&lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
-&lt;p&gt;博客作为一个自己的 digital 小岛，我认为非常适合将这些见闻想法汇集。平时阅读很多文章，浏览很多新闻信息，但是大多很快就忘了，它们只是作为信息从我脑中漂过，而不是作为知识想法被我内化。组织语言记录是对这些繁杂信息的整理消化，“再创作”，也是一次自我反思。从这个意义上看，写博客或许可以帮助我学习知识，内化想法，同时可以提升表达想法的能力。&lt;/p&gt;
-&lt;p&gt;我个人非常欣赏 Blog 这种“链接孤岛“的想法，同时也非常认同 open web 的愿景，觉得有价值的信息是应该被分享的，至少值得被记录下来。但是我不喜欢中心化的平台，更不用说 under sensorship 的那些，不喜欢被算法推荐的信息来源，我喜欢把数据自托管，所谓的 self-hosted。&lt;/p&gt;
-&lt;p&gt;另外还有一个原因，阅读确实会让人有表达的冲动。我从小就不擅长写文章，但我在初中时仍是写了几篇中短篇小说，高中时候也会在月考作文里写写短篇，偶尔还能拿高分，就是因为当时看了很多各式各样的小说，当时的我很有表达，模仿的欲望。而现在写文章能力已经大大退步了，所以写博客权当给自己练练手，希望我能坚持。&lt;/p&gt;
-&lt;h2&gt;我会写些什么&lt;/h2&gt;
-&lt;p&gt;我平时喜欢折腾软件，写写脚本（因为平时科研工作有太多重复作业了），喜欢打游戏，每天刷刷 RSS，听听播客，听音乐看剧。在日常冲浪中，任何我觉得有意思，有分享意义的东西，都可能会发布在这里。又也许会把之前的一些想法笔记整理出来，发在这里。&lt;/p&gt;
-&lt;h2&gt;博客用了什么&lt;/h2&gt;
-&lt;p&gt;本博客的文章用 Markdown 编写。
-采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 和 &lt;a href=&#34;https://pages.cloudflare.com&#34;&gt;Cloudflare Pages&lt;/a&gt; 发布。你也可以通过 &lt;a href=&#34;https://1nan.pages.dev/&#34;&gt;1nan.pages.dev&lt;/a&gt; 或 &lt;a href=&#34;https://yinan-c.github.io/&#34;&gt;yinan-c.github.io&lt;/a&gt; 访问。&lt;/p&gt;
-&lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
-&lt;h2&gt;版权&lt;/h2&gt;
-&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34;&gt;CC BY 4.0&lt;/a&gt; 协议。您可以自由地：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;共享&lt;/strong&gt; - 在任何媒介以任何形式复制、发行本作品 在任何用途下，甚至商业目的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;演绎&lt;/strong&gt; - 修改、转换或以本作品为基础进行创作 在任何用途下，甚至商业目的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利。&lt;/p&gt;
-&lt;p&gt;惟须遵守下列条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;署名&lt;/strong&gt; - 您必须给出 适当的署名 ，提供指向本许可协议的链接，同时 标明是否（对原始作品）作了修改 。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;没有附加限制&lt;/strong&gt; - 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
   

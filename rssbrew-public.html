@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
 
     
-  <title>弃用 memos - 1nan</title>
+  <title>RSSbrew 公开订阅源 - 1nan</title>
 
 
     
@@ -51,24 +51,26 @@
 
 
 
-<h1>弃用 memos</h1>
-<p>之前在博客中顶栏有一个 memos 的链接，现在还能<a href="https://memos.yinan.me">访问</a>，解析到我部署的 memos instance。但我最终还是停用了。</p>
-<p>原因如下：</p>
-<ol>
-<li>经过 v0.22.0，memos API 有个较大的变动，很多开发者（甚至我自己也在写一个 Alfred workflow 都不能再用了），我觉得软硬件即使是大升级，也不应该有 &quot;Break&quot; Changes，当然你也可以选择不升级。</li>
-<li>官方没有提供数据库导出到纯文本的方案基本，我之前基本是靠在 DEVONthink 中订阅 RSS 来实现导出的，而之前 private note 无法通过 RSS 订阅，为此我还在本地也部署了一个内网访问的 memos instance。</li>
-<li>功能增减太过频繁，最新版本似乎连 RSS 也没有了。</li>
-</ol>
-<p>以上类似的想法，写过一条更为啰唆点的 <a href="https://memos.yinan.me/m/dRyEhke4qYwMBB8az2Nvqu">memos</a>。</p>
-<p>虽然作为开源项目，memos 不可谓是不成功的，况且用户也不能像要求商业项目那样去让开源项目维护者。但因为这是一个笔记应用，而笔记最重要的是通用性和稳定性（也就是能在任何一台电脑，任何一个应用内都能看到）。</p>
-<p>关于这个，Obisidian 的 CEO 写过 <a href="https://stephango.com/file-over-app">File Over App</a>。</p>
-<p>考虑到这些我还是乖乖用回<a href="https://meganesulli.com/blog/sync-obsidian-vault-iphone-ipad/">纯文本 + Git</a> 的方案，用 Obsidian 编辑。最近也在试用一个叫作 <a href="https://github.com/blinko-space/blinko">blinko</a> 的应用，和 memos 很像，但是主打 AI 搜索+对话。</p>
-<p>离开笔记应用不是没有成本的，转移就是一个，memos 仅有数据库保存方式，转移起来还挺麻烦 (again, file over app!)。我现在用以下方式，</p>
-<ol>
-<li>Obsidian 有一个 memos sync 的插件，可以直接导入每日笔记。</li>
-<li>Blinko 可以从 memos 数据库文件导入。</li>
-<li>直接读取数据库文件，想办法导出纯文本。</li>
-</ol>
+<h1>RSSbrew 公开订阅源</h1>
+<p>最近修了几个小 bug，把 images 上传到了 <a href="https://hub.docker.com/r/yinanc/rssbrew/tags">docker-hub</a>，也做了个 <a href="https://demo.rssbrew.com">demo 站点</a>，账号密码 admin, changeme （当然公开使用的，也不要真的去 change）。为了让大家更方便体验 RSSbrew 的功能，我从自己的订阅里面挑选了几个 AI 处理过的订阅源，供大家订阅试用：</p>
+<ul>
+<li><a href="https://public.rssbrew.com/feeds/Paul%20Graham/">Paul Graham</a></li>
+<li><a href="https://public.rssbrew.com/feeds/36kr-AI/">36 Kr AI 相关</a></li>
+<li><a href="https://public.rssbrew.com/feeds/HN%20comments/">Hacker News 最佳评论周报</a></li>
+</ul>
+<p>在任意阅读器里直接订阅，大概长这样</p>
+<p><img src="https://img.1991997.xyz/i/2024/11/28/r3yiwj-0.png" alt="" /></p>
+<p><img src="https://img.1991997.xyz/i/2024/11/28/r538wb-0.png" alt="" /></p>
+<p>分别用到了 RSSbrew 的内容过滤，订阅源合并，AI 总结文章，生成周报的功能。欢迎大家到<a href="https://github.com/yinan-c/rssbrew">项目主页</a>点个⭐，也欢迎大家提交 bug/feature request。</p>
+<p>RSSbrew 可以通过自定义 prompt 做到一些简单的翻译，如果需要更专业的 RSS 翻译功能，推荐大家使用 versun 的<a href="https://rsstranslator.com">RSS Translator</a>，当然也可以两个一起用！</p>
+<h2>Disclaimer</h2>
+<p>所有公开订阅源均由 RSSbrew 处理后生成，原始内容来源于以下站点的 RSS 订阅源。</p>
+<ul>
+<li><a href="https://36kr.com">36氪</a></li>
+<li><a href="https://paulgraham.com/">Paul Graham</a></li>
+<li><a href="https://hnrss.org">Hacker News RSS</a></li>
+</ul>
+<p>公开订阅源仅用于 RSSbrew 功能演示，内容版权归各站点/原作者所有。如有侵权，请联系删除。</p>
 
 
 
@@ -120,10 +122,10 @@
 
 
 
-    <a href="rssbrew-public.html" class="nav-button" id="prev-button">&lt; RSSbrew 公开订阅源</a>
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
 
 
-    <a href="ticktick.html" class="nav-button" id="next-button">滴答清单体验 &gt;</a>
+    <a href="memos.html" class="nav-button" id="next-button">弃用 memos &gt;</a>
 
 
 
@@ -174,7 +176,7 @@
   <div id="footer-home-link">
     <a href="index.html">&lt; Home</a>
     
-    <a href="title-index.html#ie5bc83">&lt; Index</a>
+    <a href="title-index.html#i52">&lt; Index</a>
     |
     <a href="random.html">Random &gt;</a>
     
