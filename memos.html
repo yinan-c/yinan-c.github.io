@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" /> 
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    
+  <title>弃用 memos - 1nan</title>
+
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  </style>
+
+
+  </head>
+  <body>
+    
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2024-11-28 </span>
+    </div>
+
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        
+    </div>
+</div>
+
+
+    <main>
+
+
+
+
+<h1>弃用 memos</h1>
+<p>之前在博客中顶栏有一个 memos 的链接，现在还能<a href="https://memos.yinan.me">访问</a>，解析到我部署的 memos instance。但我最终还是停用了。</p>
+<p>原因如下：</p>
+<ol>
+<li>经过 v0.22.0，memos API 有个较大的变动，很多开发者（甚至我自己也在写一个 Alfred workflow 都不能再用了），我觉得软硬件即使是大升级，也不应该有 &quot;Break&quot; Changes，当然你也可以选择不升级。</li>
+<li>官方没有提供数据库导出到纯文本的方案基本，我之前基本是靠在 DEVONthink 中订阅 RSS 来实现导出的，而之前 private note 无法通过 RSS 订阅，为此我还在本地也部署了一个内网访问的 memos instance。</li>
+<li>功能增减太过频繁，最新版本似乎连 RSS 也没有了。</li>
+</ol>
+<p>以上类似的想法，写过一条更为啰唆点的 <a href="https://memos.yinan.me/m/dRyEhke4qYwMBB8az2Nvqu">memos</a>。</p>
+<p>虽然作为开源项目，memos 不可谓是不成功的，况且用户也不能像要求商业项目那样去让开源项目维护者。但因为这是一个笔记应用，而笔记最重要的是通用性和稳定性（也就是能在任何一台电脑，任何一个应用内都能看到）。</p>
+<p>关于这个，Obisidian 的 CEO 写过 <a href="https://stephango.com/file-over-app">File Over App</a>。</p>
+<p>考虑到这些我还是乖乖用回<a href="https://meganesulli.com/blog/sync-obsidian-vault-iphone-ipad/">纯文本 + Git</a> 的方案，用 Obsidian 编辑。最近也在试用一个叫作 <a href="https://github.com/blinko-space/blinko">blinko</a> 的应用，和 memos 很像，但是主打 AI 搜索+对话。</p>
+<p>离开笔记应用不是没有成本的，转移就是一个，memos 仅有数据库保存方式，转移起来还挺麻烦 (again, file over app!)。我现在用以下方式，</p>
+<ol>
+<li>Obsidian 有一个 memos sync 的插件，可以直接导入每日笔记。</li>
+<li>Blinko 可以从 memos 数据库文件导入。</li>
+<li>直接读取数据库文件，想办法导出纯文本。</li>
+</ol>
+
+
+
+<style>
+.nav-button {
+  padding: 10px 20px;
+  background-color: #F2F2F2; /* Light grey */
+  border: none;
+  color: black; /* Change text color to black for visibility against transparent background */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 48%; /* Set the width to approximately half the page */
+  white-space: normal; /* Allow text to wrap onto a new line */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+  }
+}
+
+.nav-button a {
+  color: inherit; /* Inherit text color from parent element */
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #EAEAEA; /* Dark grey on hover */ 
+}
+
+#prev-button {
+  float: left;
+  text-align: left;
+}
+
+#next-button {
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+
+
+    <a href="ticktick.html" class="nav-button" id="next-button">滴答清单体验 &gt;</a>
+
+
+
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+(function() {
+    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
+    var giscusFrame;
+    function updateGiscus() {
+        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (dmmq.matches) {
+            // Dark theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        } else {
+            // Light theme
+            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        }
+    }
+    setTimeout(updateGiscus, 1000); // leave time for giscus to load
+    dmmq.addEventListener('change', updateGiscus);
+})();
+</script>
+
+</main>
+    
+
+<div id="updated-at">
+  <span>Created: 2024-11-28</span>
+  <span>Updated: 2024-11-28</span>
+</div>
+
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="title-index.html#ie5bc83">&lt; Index</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © 2023 - 2024 <a href = "https://yinan.me/">Yinan</a>
+    
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="Creative Commons Licence" width="45" style="vertical-align: text-top;" ></a>
+    · Powered by <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · Subscribe via <a href="atom.xml"> RSS <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="15" height="15" style="vertical-align: text-top;"></a>
+  </p>
+</div>
+
+  </body>
+
+  
+</html>
