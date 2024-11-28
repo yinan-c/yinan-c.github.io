@@ -12,18 +12,42 @@
 
   
   <entry>
+    <title>弃用 memos</title>
+    <link ref="alternate" href="https://yinan.me/memos.html" />
+    <id>memos</id>
+    <published>2024-11-28 13:35:14+00:00</published>
+    <updated>2024-11-28 13:36:38+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;之前在博客中顶栏有一个 memos 的链接，现在还能&lt;a href=&#34;https://memos.yinan.me&#34;&gt;访问&lt;/a&gt;，解析到我部署的 memos instance。但我最终还是停用了。&lt;/p&gt;
+&lt;p&gt;原因如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;经过 v0.22.0，memos API 有个较大的变动，很多开发者（甚至我自己也在写一个 Alfred workflow 都不能再用了），我觉得软硬件即使是大升级，也不应该有 &#34;Break&#34; Changes，当然你也可以选择不升级。&lt;/li&gt;
+&lt;li&gt;官方没有提供数据库导出到纯文本的方案基本，我之前基本是靠在 DEVONthink 中订阅 RSS 来实现导出的，而之前 private note 无法通过 RSS 订阅，为此我还在本地也部署了一个内网访问的 memos instance。&lt;/li&gt;
+&lt;li&gt;功能增减太过频繁，最新版本似乎连 RSS 也没有了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以上类似的想法，写过一条更为啰唆点的 &lt;a href=&#34;https://memos.yinan.me/m/dRyEhke4qYwMBB8az2Nvqu&#34;&gt;memos&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;虽然作为开源项目，memos 不可谓是不成功的，况且用户也不能像要求商业项目那样去让开源项目维护者。但因为这是一个笔记应用，而笔记最重要的是通用性和稳定性（也就是能在任何一台电脑，任何一个应用内都能看到）。&lt;/p&gt;
+&lt;p&gt;关于这个，Obisidian 的 CEO 写过 &lt;a href=&#34;https://stephango.com/file-over-app&#34;&gt;File Over App&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;考虑到这些我还是乖乖用回&lt;a href=&#34;https://meganesulli.com/blog/sync-obsidian-vault-iphone-ipad/&#34;&gt;纯文本 + Git&lt;/a&gt; 的方案，用 Obsidian 编辑。最近也在试用一个叫作 &lt;a href=&#34;https://github.com/blinko-space/blinko&#34;&gt;blinko&lt;/a&gt; 的应用，和 memos 很像，但是主打 AI 搜索+对话。&lt;/p&gt;
+&lt;p&gt;离开笔记应用不是没有成本的，转移就是一个，memos 仅有数据库保存方式，转移起来还挺麻烦 (again, file over app!)。我现在用以下方式，
+1. Obsidian 有一个 memos sync 的插件，可以直接导入每日笔记。
+2. Blinko 可以从 memos 数据库文件导入。
+3. 直接读取数据库文件，想办法导出纯文本。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>滴答清单体验</title>
     <link ref="alternate" href="https://yinan.me/ticktick.html" />
     <id>ticktick</id>
     <published>2024-11-27 03:36:13+00:00</published>
-    <updated>2024-11-27 12:03:25+00:00</updated>
+    <updated>2024-11-28 13:35:14+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;半年之前写过一篇&lt;a href=&#34;https://yinan.me/todo-app.html&#34;&gt;苹果端 Todo App 简单比较&lt;/a&gt;，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。&lt;/p&gt;
 &lt;p&gt;我是从 2022 年开始使用 Things3，2023年底换了 OmniFocus 4，一年后的今天我选择试一下滴答清单，所以这篇文章大多是关于 OmniFocus 和滴答清单的比较，会少量提到一下和 Things 的比较。&lt;/p&gt;
 &lt;p&gt;（P.S.: 现在 Things3 正在黑五7折优惠）&lt;/p&gt;
 &lt;h2&gt;1 为什么要换&lt;/h2&gt;
 &lt;p&gt;更换工具折腾是很大的时间精力和金钱成本，尤其是 TODO 和笔记，更何况我之前还写了把 Things/OmniFocus 的任务导出的脚本，换一个工具意味着重新来过。&lt;/p&gt;
-&lt;p&gt;但这一年 OmniFocus 确实也有让我体验不佳不点
+&lt;p&gt;但这一年 OmniFocus 确实也有让我体验不佳的点：
 - 数据量大了会很卡，之前清理过一次了，我目前大概 2000 多个条目（包括已完成）不管是手机还是电脑端都不够流畅。
 - 不够美观。见仁见智，我更喜欢 Things 的界面。
 - OmniFocus 不像 Things 或者滴答清单那么，任务/项目完成了之后就完全从列表内隔离开，而是继续保持原有的结构在穿插在其他未完成的任务/项目中，导致界面很杂乱，虽然也可以通过改变视图为显示剩余，但这样又失去了结构，总之项目结构和整洁度二者只能去其一。
@@ -430,19 +454,6 @@ for any purpose, even commercially.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;署名&lt;/strong&gt; - 您必须给出 适当的署名 ，提供指向本许可协议的链接，同时 标明是否（对原始作品）作了修改 。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;没有附加限制&lt;/strong&gt; - 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Contact Me</title>
-    <link ref="alternate" href="https://yinan.me/contact.html" />
-    <id>contact</id>
-    <published>2023-07-08 20:53:50+01:00</published>
-    <updated>2024-04-30 11:32:48+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;mailto:hello@yinan.me&#34;&gt;Email&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/yinan-c&#34;&gt;yinan-c&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
   
