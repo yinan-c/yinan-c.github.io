@@ -16,22 +16,21 @@
     <link ref="alternate" href="https://yinan.me/marking-my-trace.html" />
     <id>marking-my-trace</id>
     <published>2025-02-26 14:02:19+00:00</published>
-    <updated>2025-02-26 14:03:43+00:00</updated>
+    <updated>2025-02-26 14:09:40+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;p&gt;我之前在&lt;a href=&#34;https://mastodon.social/@yinan/113533540585152064&#34;&gt;推特&lt;/a&gt;上分享过，用 RSS+Hoarder/DEVONthink 存档来记录我在互联网上的足迹。这篇文章我来推荐几个记录生活足迹的软件/方法。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lrpl17-0.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;不知道有没有人跟我有一样的记录习惯，事件记录，时间记录，地点记录。比如说在什么时间去了那些有趣的地方，可能是一个咖啡店，一个饭店，一次远足，甚至是记录日常健身跑路。&lt;/p&gt;
-&lt;p&gt;最简单的方案就是用日历，日历事件本身具有时间地点的属性，既可以用作提前安排行程事项，也可以用作记录已经历的行程和地点。&lt;/p&gt;
-&lt;p&gt;在这个基础上，苹果商店就能找到一些一键记录时间戳/地点然后同步到日历的&lt;a href=&#34;https://apps.apple.com/gb/app/where-when/id1568813475&#34;&gt;软件&lt;/a&gt;，关键词 &lt;a href=&#34;https://apps.apple.com/gb/app/where-when/id6503927025&#34;&gt;where when&lt;/a&gt;。如果你用 Things 3 来做事项管理，Cultruedcode 官方就提供了&lt;a href=&#34;https://culturedcode.com/things/support/articles/2955145/#sdtgg&#34;&gt;Save My Location&lt;/a&gt;的捷径。&lt;/p&gt;
-&lt;p&gt;另外还有一个比较有意思的软件，&lt;a href=&#34;https://apps.apple.com/gb/app/what3words-navigation-maps/id657878530&#34;&gt;what3words&lt;/a&gt;，这是一个以三个常见的单词组合来编码地理位置的系统，将地球表面划分为三米见方的网格，每一格对应专属的三个词语。例如，英国首相官邸唐宁街10号正门所在位置对应的三个词语为slurs.this.shark[1]。据说还支持各种不同的语言，有兴趣的朋友可以看一下 wiki，并下载来试用一下，这个软件在登录账号后也可以用来保存地理位置。&lt;/p&gt;
-&lt;h2&gt;最推荐的&lt;/h2&gt;
-&lt;h3&gt;世界迷雾&lt;/h3&gt;
+&lt;p&gt;不知道有没有人跟我有一样的记录习惯，事件记录，时间记录，地点记录。比如说在什么时间去了那些有趣的地方，可能是一个咖啡店，一个饭店，一次远足，甚至是记录日常健身跑步。&lt;/p&gt;
+&lt;p&gt;最简单的方案就是用日历，日历事件本身具有时间地点的属性，既可以用作提前安排行程事项，也可以用作记录过去的行程和地点。&lt;/p&gt;
+&lt;p&gt;在这个基础上，苹果商店就能找到一些一键记录时间戳/地点然后同步到日历的&lt;a href=&#34;https://apps.apple.com/gb/app/where-when/id1568813475&#34;&gt;软件&lt;/a&gt;，关键词 &lt;a href=&#34;https://apps.apple.com/gb/app/where-when/id6503927025&#34;&gt;where when&lt;/a&gt;。如果你用 Things 3 来做事项管理，Cultruedcode 官方就提供了 [Save My Location] (https://culturedcode.com/things/support/articles/2955145/#sdtgg)的捷径。&lt;/p&gt;
+&lt;p&gt;另外还有一个比较有意思的软件，&lt;a href=&#34;https://apps.apple.com/gb/app/what3words-navigation-maps/id657878530&#34;&gt;what3words&lt;/a&gt;，这是一个以三个常见的单词组合来编码地理位置的系统，将地球表面划分为三米见方的网格，每一格对应专属的三个词语。例如，英国首相官邸唐宁街10号正门所在位置对应的三个词语为slurs.this.shark[1]。据说还支持各种不同的语言，有兴趣的朋友可以看一下 &lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E4%B8%89%E8%AF%8D%E5%9C%B0%E5%9D%80&#34;&gt;wiki&lt;/a&gt;，并下载来试用一下，这个软件需要登录账号才能保存地理位置。&lt;/p&gt;
+&lt;h2&gt;世界迷雾&lt;/h2&gt;
 &lt;p&gt;世界迷雾大概就是把探索世界当成一个游戏，有等级，成就和迷雾护照的概念，你每探索一个新的地方，你脚下的地图颜色就会被点亮，然后记录一个探索的百分比。很有意思的一款软件，但是没有时间的概念，只有点亮和未点亮的区别。（让我想起了小时候玩 QQ 宠物也有类似小企鹅赛博旅游，点亮全国全世界地图）。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lwljcl-0.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;如果你使用世界迷雾，这里推荐两个辅助工具，&lt;a href=&#34;https://fogmachine.8bits.io/&#34;&gt;fog machine&lt;/a&gt; 可以用来擦除修改和绘制足迹，也有时光机支持定时给迷雾定期保存快照，连起来播放之后就有点像塞尔达传说的足迹模式。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://fog.vicc.wang/eraser.html&#34;&gt;迷雾资料库 - Vicc&lt;/a&gt;，这个我没有怎么用过，据说可以导入国内的铁路轨迹，想要了解更多的可以去微信公众号搜索。&lt;/p&gt;
 &lt;p&gt;如果你觉得世界迷雾太贵了，还有平替 &lt;a href=&#34;https://apps.apple.com/gb/app/mapcred/id6444250747&#34;&gt;Mapcred&lt;/a&gt; 和&lt;a href=&#34;https://apps.apple.com/gb/app/footprint-record-lifes-path/id1225520399&#34;&gt;一生足迹&lt;/a&gt;。Mapcred 我试过很费电，一生足迹没怎么用过，不做评价。&lt;/p&gt;
-&lt;h3&gt;Rond&lt;/h3&gt;
+&lt;h2&gt;Rond&lt;/h2&gt;
 &lt;p&gt;Rond 跟世界迷雾的理念不一样，他不会记录你的详细轨迹，而更像是我一开始说的那样，如果你在一个地方待了一段时间，它会标记这段时间和地点，在不同的标记时间段期间他还会根据时间、路程的变化，推测出之间的交通方式。&lt;/p&gt;
 &lt;p&gt;数据主要以两种形式展示，一是以时间轴的形式将你一天的形成串联起来，你还可以在一块时间段上标记你的心情（联动 Apple Health），记录笔记，大标签等等，功能丰富，更新勤快，而且开发者非常 nice，回复反馈及时。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/26/mavjvj-0.jpeg&#34; /&gt;&lt;/p&gt;
