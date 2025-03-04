@@ -12,6 +12,29 @@
 
   
   <entry>
+    <title>Cross Posting from Mastondon</title>
+    <link ref="alternate" href="https://yinan.me/cross-posting.html" />
+    <id>cross-posting</id>
+    <published>2025-03-04 23:12:50+00:00</published>
+    <updated>2025-03-04 23:12:50+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;These are the current methods I am using to do Crossing Posting.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;From Mastodon to Bluesky: &lt;a href=&#34;https://skymoth.app&#34;&gt;https://skymoth.app/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Log in both accounts and you&#39;re ready to post toots.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;From Mastodon to X (Formerly Twitter): &lt;a href=&#34;https://github.com/yinan-c/Mastodon-to-Twitter-Sync&#34;&gt;yinan-c/Mastodon-to-Twitter-Sync&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You&#39;ll need to configure both Twitter and Mastodon API for this. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Unfortunately I did not find a good way to sync old Tweets to mastodon account in mastodon.social. Let me know if you do find something for this.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>记录足迹</title>
     <link ref="alternate" href="https://yinan.me/marking-my-trace.html" />
     <id>marking-my-trace</id>
@@ -365,16 +388,6 @@ As of Nov 2024, it will be supported in the next version &lt;a href=&#34;https:/
 &lt;p&gt;另外再提一嘴数据安全，虽然 Raid 有冗余，但是冗余不是备份！遵循 &lt;a href=&#34;https://en.wikipedia.org/wiki/Backup&#34;&gt;3-2-1 原则&lt;/a&gt;定期备份数据到云端是很有必要的，防止硬盘损坏，天灾人祸等意外情况。后面会写一篇文章分享一下我的备份方案。&lt;/p&gt;
 &lt;p&gt;最后给我的 NAS 上个照片。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;DS423+&#34; src=&#34;https://yinan.me/pics/nas.jpeg&#34; /&gt;&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Follow 认证</title>
-    <link ref="alternate" href="https://yinan.me/follow.html" />
-    <id>follow</id>
-    <published>2024-10-05 16:50:51+01:00</published>
-    <updated>2024-10-05 16:54:36+01:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;This message is used to verify that this feed (feedId:41446022334078981) belongs to me (userId:63216204740061184). Join me in enjoying the next generation information browser https://follow.is.&lt;/p&gt;</content>
   </entry>
   
 
