@@ -195,9 +195,9 @@
 <style>
 .nav-button {
   padding: 10px 20px;
-  background-color: #F2F2F2; /* Light grey */
-  border: none;
-  color: black; /* Change text color to black for visibility against transparent background */
+  background-color: var(--nc-bg-2); /* Use theme variable */
+  border: 1px solid var(--nc-bg-3); /* Add border with theme variable */
+  color: var(--nc-tx-1); /* Use theme variable for text */
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -224,7 +224,7 @@
 }
 
 .nav-button:hover {
-  background-color: #EAEAEA; /* Dark grey on hover */ 
+  background-color: var(--nc-bg-3); /* Use theme variable for hover */
 }
 
 #prev-button {
@@ -259,27 +259,52 @@
         data-reactions-enabled="1"
         data-emit-metadata="1"
         data-input-position="top"
+        data-theme="preferred_color_scheme"
         data-lang="en"
         crossorigin="anonymous"
         async>
 </script>
 <script>
-(function() {
-    var dmmq = window.matchMedia('(prefers-color-scheme: dark)');
-    var giscusFrame;
-    function updateGiscus() {
-        if (!giscusFrame) giscusFrame = document.querySelector('iframe.giscus-frame');
-        if (dmmq.matches) {
-            // Dark theme
-            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
-        } else {
-            // Light theme
-            giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update Giscus theme
+    function updateGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        
+        iframe.contentWindow.postMessage({ 
+            giscus: { 
+                setConfig: { 
+                    theme: theme 
+                } 
+            } 
+        }, 'https://giscus.app');
+    }
+    
+    // Initial update based on current theme
+    function initialGiscusSetup() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            updateGiscusTheme('dark');
+        } else if (savedTheme === 'light') {
+            updateGiscusTheme('light');
         }
     }
-    setTimeout(updateGiscus, 1000); // leave time for giscus to load
-    dmmq.addEventListener('change', updateGiscus);
-})();
+    
+    // Set a timeout to ensure Giscus has loaded
+    setTimeout(initialGiscusSetup, 1000);
+    
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Get the updated theme after toggle
+            setTimeout(() => {
+                const currentTheme = localStorage.getItem('theme');
+                updateGiscusTheme(currentTheme);
+            }, 100);
+        });
+    }
+});
 </script>
 
 </main>
