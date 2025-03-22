@@ -147,59 +147,62 @@
 
 
 <style>
+/* 创建一个容器来包含两个按钮 */
+.nav-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* 按钮之间的间距 */
+  margin: 15px 0;
+}
+
 .nav-button {
   padding: 10px 20px;
-  background-color: var(--nc-bg-2); /* Use theme variable */
-  border: 1px solid var(--nc-bg-3); /* Add border with theme variable */
-  color: var(--nc-tx-1); /* Use theme variable for text */
-  text-align: center;
+  background-color: var(--nc-bg-2); /* 使用主题变量 */
+  border: 1px solid var(--nc-bg-3); /* 添加带主题变量的边框 */
+  color: var(--nc-tx-1); /* 使用主题变量的文本 */
   text-decoration: none;
-  display: inline-block;
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中内容 */
   font-size: 14px;
-  margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
   border-radius: 5px;
-  width: 48%; /* Set the width to approximately half the page */
-  white-space: normal; /* Allow text to wrap onto a new line */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  flex: 1; /* 平均分配空间 */
+  box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
 }
-
 
 @media (max-width: 600px) {
   .nav-button {
-    font-size: 12px;  /* 在小屏幕上减小字体大小 */
+    font-size: 12px; /* 在小屏幕上减小字体大小 */
   }
 }
 
-.nav-button a {
-  color: inherit; /* Inherit text color from parent element */
-  text-decoration: none;
-}
-
 .nav-button:hover {
-  background-color: var(--nc-bg-3); /* Use theme variable for hover */
+  background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
 }
 
 #prev-button {
-  float: left;
+  justify-content: flex-start; /* 左对齐文本 */
   text-align: left;
 }
 
 #next-button {
-  float: right;
+  justify-content: flex-end; /* 右对齐文本 */
   text-align: right;
 }
 </style>
 
+<!-- 使用新的容器包裹按钮 -->
+<div class="nav-buttons-container">
 
-
+  
     <a href="marking-my-trace.html" class="nav-button" id="prev-button">&lt; 记录足迹</a>
-
-
+  
+  
     <a href="memos.html" class="nav-button" id="next-button">弃用 memos &gt;</a>
+  
 
-
+</div>
 
 <br>
 
