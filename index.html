@@ -32,15 +32,237 @@
   <h1>1nan</h1>
 </header>
 
+<!-- 搜索弹窗 -->
+<div id="search-modal" class="search-modal">
+  <div class="search-modal-content">
+    <!-- macOS风格关闭按钮 -->
+    <div class="macos-close-button">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#FF6057"/>
+        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div id="search"></div>
+  </div>
+</div>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 初始化 PagefindUI，但不立即显示
+    const searchInstance = new PagefindUI({ 
+      element: "#search", 
+      showSubResults: true,
+      autofocus: true
+    });
+    
+    // 获取元素
+    const searchButton = document.getElementById('search-button');
+    const searchModal = document.getElementById('search-modal');
+    const closeButton = document.querySelector('.macos-close-button');
+    
+    // 点击搜索按钮打开弹窗
+    searchButton.addEventListener('click', function() {
+      searchModal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      // 聚焦到搜索框
+      setTimeout(() => {
+        const searchInput = document.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }, 100);
+    });
+    
+    // 点击关闭按钮关闭弹窗
+    closeButton.addEventListener('click', function() {
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    });
+    
+    // 点击弹窗外部关闭弹窗
+    window.addEventListener('click', function(event) {
+      if (event.target === searchModal) {
+        searchModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+    
+    // ESC 键关闭弹窗
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && searchModal.style.display === 'flex') {
+        searchModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+    
+    // 修复搜索图标和文字重叠问题，并自定义搜索框样式
+    setTimeout(() => {
+      const searchForm = document.querySelector('.pagefind-ui__form');
+      if (searchForm) {
+        // 调整搜索框内的样式
+        const searchInput = searchForm.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.style.paddingLeft = '40px'; // 增加左侧内边距，为图标留出空间
+          searchInput.style.borderRadius = '10px'; // 增大圆角
+          searchInput.style.border = '2px solid #e0e0e0'; // 更明显的边框
+          searchInput.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)'; // 轻微阴影
+        }
+        
+        // 确保图标位置正确
+        const searchIcon = searchForm.querySelector('.pagefind-ui__search-icon');
+        if (searchIcon) {
+          searchIcon.style.position = 'absolute';
+          searchIcon.style.left = '15px';
+          searchIcon.style.top = '50%';
+          searchIcon.style.transform = 'translateY(-50%)';
+          searchIcon.style.pointerEvents = 'none'; // 防止图标干扰点击
+        }
+      }
+    }, 200); // 给一点时间让 PagefindUI 完全渲染
+  });
+</script>
+
+<style>
+  /* 搜索按钮样式 - 圆形带边框 */
+  .search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: text-top;
+    transition: all 0.2s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #e9e9e9;
+    transform: scale(1.05);
+  }
+  
+  .search-button svg {
+    color: #555;
+    width: 15px;
+    height: 15px;
+  }
+  
+  /* 弹窗样式 */
+  .search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  
+  .search-modal-content {
+    position: relative;
+    background-color: white;
+    padding: 40px 30px 30px;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* macOS风格关闭按钮 */
+  .macos-close-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .macos-close-button:hover svg path {
+    stroke: rgba(0,0,0,0.8);
+  }
+  
+  /* 当弹窗打开时禁止背景滚动 */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  /* 自定义 Pagefind UI 样式 */
+  .search-modal-content .pagefind-ui__search-input {
+    font-size: 16px;
+    padding: 12px 15px 12px 45px; /* 增加内边距 */
+    border-radius: 10px; /* 大圆角 */
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+  
+  .search-modal-content .pagefind-ui__search-input:focus {
+    border-color: #aaa;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  
+  .search-modal-content .pagefind-ui__search-clear {
+    right: 15px; /* 确保清除按钮位置正确 */
+  }
+  
+  /* 确保搜索表单是相对定位，这样图标可以绝对定位 */
+  .search-modal-content .pagefind-ui__form {
+    position: relative;
+  }
+  
+  /* 调整搜索图标位置 */
+  .search-modal-content .pagefind-ui__search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* 美化搜索结果 */
+  .search-modal-content .pagefind-ui__results {
+    margin-top: 20px;
+  }
+  
+  .search-modal-content .pagefind-ui__result {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  .search-modal-content .pagefind-ui__result:hover {
+    background-color: #f9f9f9;
+  }
+</style>
+
 <div id="links" style="text-align: center;">
   <a href="https://github.com/yinan-c"><img src="pics/github-mark.png" alt="GitHub" width="25" height="25" style="vertical-align: text-top;"> </a> &nbsp;&nbsp;&nbsp;
   <a href="https://twitter.com/yinan_ch"><img src="pics/twitter.png" alt="Twitter" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://mastodon.social/@yinan"><img src="pics/mastodon.png" alt="Mastodon" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
   <a href="contact.html"><img src="pics/email.png" alt="Email" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
   <a href="atom.xml"><img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
+  <!-- 搜索按钮 - 圆形带边框 -->
+  <button id="search-button" class="search-button" aria-label="搜索">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
 </div>
-
-
 <h3>Archives</h3>
 <p>
   <div id="archives">
@@ -50,7 +272,6 @@
     <a href="Friends.html">Friends</a>
   </div>
 </p>
-
 <h3>Recent</h3>
 <ul>
   
@@ -136,7 +357,6 @@ At first sight, it feels like a complete app I can put in production, it has a i
   </li>
   
 </ul>
-
 <h3>About</h3>
 <ul>
   <div id="about">
@@ -145,7 +365,6 @@ At first sight, it feels like a complete app I can put in production, it has a i
     <li><a href="RSS-GPT/index.html">Hosted RSS feeds</a></li>
   </div>
 </ul>
-
 </main>
     
 <div id="footer" class="index-footer">
