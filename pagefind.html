@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
 
     
-  <title>On &#34;You don&#39;t need to work on hard problems&#34; - 1nan</title>
+  <title>Pagefind - 1nan</title>
 
 
     
@@ -32,7 +32,7 @@
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
     <div id="header-created-at">
-        <span style="font-size: 0.5 em; color: #888;">2025-03-05 </span>
+        <span style="font-size: 0.5 em; color: #888;">2025-03-22 </span>
     </div>
 
     <div id="header-home-link" style="font-size: 0.5 em;">
@@ -51,10 +51,23 @@
 
 
 
-<h1>On &quot;You don't need to work on hard problems&quot;</h1>
-<p><a href="https://www.benkuhn.net/hard/">You don't need to work on hard problems - Ben Kuhn</a></p>
-<p>I just came across this interesting article. I have to agree on how the problems  (and how you are evaluated) in school set deliberately to be linear or 1 dimensional. While in real world, problems tend to be multi-dimensional, which relies on both so-called soft skills and hard skills. However, it is also exactly the same reason that there is no other place than school, that you'll been evaluated in a fair, straight-forward way.</p>
-<p>I am not saying that you don't need to work hard in school. However, what school really taught us was really far beyond solving hard problems.</p>
+<h1>Pagefind</h1>
+<p>I found <a href="https://pagefind.app/">Pagefind</a> as a full text search for static sites.</p>
+<blockquote>
+<p>Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.</p>
+</blockquote>
+<p>So I added a small search button on the homepage and asked Claude to modify the style a bit. The best thing about this tool is that it is also a static index, meaning you don't have to keep the index server running in the back ground, once the index is generated, and the following snippet added to a page of your choice:</p>
+<pre><code>&lt;link href=&quot;/pagefind/pagefind-ui.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src=&quot;/pagefind/pagefind-ui.js&quot;&gt;&lt;/script&gt;
+&lt;div id=&quot;search&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    window.addEventListener('DOMContentLoaded', (event) =&gt; {
+        new PagefindUI({ element: &quot;#search&quot;, showSubResults: true });
+    });
+&lt;/script&gt;
+</code></pre>
+<p>You're good to go, it works perfectly with GitHub pages (what I'm using currently) or any other website framework such as Hugo. Alternatively, you can use it as a web server to host your static pages (add a --serve flag in the end, maybe it can update the index while new pages were generated).</p>
+<p>Try it out in my <a href="https://yinan.me">blog</a>!</p>
 
 
 
@@ -106,10 +119,10 @@
 
 
 
-    <a href="pagefind.html" class="nav-button" id="prev-button">&lt; Pagefind</a>
+  <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
 
 
-    <a href="cross-posting.html" class="nav-button" id="next-button">Cross-post from Mastondon to X and Bluesky &gt;</a>
+    <a href="on-you-dont-need-to-solve-hard-problems.html" class="nav-button" id="next-button">On &#34;You don&#39;t need to work on hard problems&#34; &gt;</a>
 
 
 
@@ -152,15 +165,15 @@
     
 
 <div id="updated-at">
-  <span>Created: 2025-03-05</span>
-  <span>Updated: 2025-03-05</span>
+  <span>Created: 2025-03-22</span>
+  <span>Updated: 2025-03-22</span>
 </div>
 
 <div id="footer">
   <div id="footer-home-link">
     <a href="index.html">&lt; Home</a>
     
-    <a href="title-index.html#i4f">&lt; Index</a>
+    <a href="title-index.html#i50">&lt; Index</a>
     |
     <a href="random.html">Random &gt;</a>
     
