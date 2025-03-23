@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
     <published>2023-06-19 17:35:38+01:00</published>
-    <updated>2025-03-23 00:04:51+00:00</updated>
+    <updated>2025-03-23 11:18:38+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://yinan.me/hello-world&#34;&gt;中文简介&lt;/a&gt;&lt;/li&gt;
@@ -39,7 +39,7 @@
 &lt;li&gt;Matodon logo by Eugen Rochko &amp;amp; other Mastodon contributors - https://blog.joinmastodon.org/, AGPL, https://commons.wikimedia.org/w/index.php?curid=120470930&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;License&lt;/h1&gt;
-&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY NC 4.0&lt;/a&gt;. You are free to:
+&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY-NC 4.0&lt;/a&gt;. You are free to:
 - Share — copy and redistribute the material in any medium or format
 - Adapt — remix, transform, and build upon the material&lt;/p&gt;
 &lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;
@@ -54,7 +54,7 @@
     <link ref="alternate" href="https://yinan.me/hello-world.html" />
     <id>hello-world</id>
     <published>2023-06-18 18:59:53+01:00</published>
-    <updated>2025-03-23 00:04:51+00:00</updated>
+    <updated>2025-03-23 11:18:38+00:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
 &lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。这个博客的域名是 &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; 和 &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;。&lt;/p&gt;
@@ -70,7 +70,7 @@
 采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 和 &lt;a href=&#34;https://pages.cloudflare.com&#34;&gt;Cloudflare Pages&lt;/a&gt; 发布。你也可以通过 &lt;a href=&#34;https://1nan.pages.dev/&#34;&gt;1nan.pages.dev&lt;/a&gt; 或 &lt;a href=&#34;https://yinan-c.github.io/&#34;&gt;yinan-c.github.io&lt;/a&gt; 访问。&lt;/p&gt;
 &lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
 &lt;h2&gt;版权&lt;/h2&gt;
-&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY NC 4.0&lt;/a&gt; 协议。您可以自由地：
+&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY-NC 4.0&lt;/a&gt; 协议。您可以自由地：
 - 共享 — 在任何媒介以任何形式复制、发行本作品
 - 演绎 — 修改、转换或以本作品为基础进行创作&lt;/p&gt;
 &lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利。&lt;/p&gt;
