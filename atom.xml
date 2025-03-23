@@ -92,16 +92,16 @@
 &lt;p&gt;Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;So I added a small search button on the homepage and asked Claude to modify the style a bit. The best thing about this tool is that it is also a static index, meaning you don&#39;t have to keep the index server running in the back ground, once the index is generated, and the following snippet added to a page of your choice:&lt;/p&gt;
-&lt;p&gt;```
-&lt;link href=&#34;/pagefind/pagefind-ui.css&#34; rel=&#34;stylesheet&#34;&gt;&lt;/p&gt;
-&lt;script src=&#34;/pagefind/pagefind-ui.js&#34;&gt;&lt;/script&gt;
-&lt;div id=&#34;search&#34;&gt;&lt;/div&gt;
-&lt;script&gt;
-    window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
-        new PagefindUI({ element: &#34;#search&#34;, showSubResults: true });
+&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;/pagefind/pagefind-ui.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt;
+&amp;lt;script src=&amp;quot;/pagefind/pagefind-ui.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;div id=&amp;quot;search&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script&amp;gt;
+    window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&amp;gt; {
+        new PagefindUI({ element: &amp;quot;#search&amp;quot;, showSubResults: true });
     });
-&lt;/script&gt;
-&lt;p&gt;```&lt;/p&gt;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;You&#39;re good to go, it works perfectly with GitHub pages (what I&#39;m using currently) or any other website framework such as Hugo. Alternatively, you can use it as a web server to host your static pages (add a --serve flag in the end, maybe it can update the index while new pages were generated).&lt;/p&gt;
 &lt;p&gt;Try it out in my &lt;a href=&#34;https://yinan.me&#34;&gt;blog&lt;/a&gt;!&lt;/p&gt;</content>
   </entry>
