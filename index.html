@@ -103,10 +103,13 @@
 <header>
   <h1>1nan</h1>
 </header>
-<!-- 搜索弹窗 -->
+
+<!-- Include search modal component -->
+<!-- search.html -->
+<!-- Search Modal -->
 <div id="search-modal" class="search-modal">
   <div class="search-modal-content">
-    <!-- macOS风格关闭按钮 -->
+    <!-- macOS style close button -->
     <div class="macos-close-button">
       <svg viewBox="0 0 24 24" width="24" height="24">
         <circle cx="12" cy="12" r="10" fill="#FF6057"/>
@@ -117,75 +120,9 @@
   </div>
 </div>
 
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="/pagefind/pagefind-ui.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 初始化 PagefindUI，但不立即显示
-    const searchInstance = new PagefindUI({
-      element: "#search",
-      showSubResults: true,
-      autofocus: true
-    });
-    // 获取元素
-    const searchButton = document.getElementById('search-button');
-    const searchModal = document.getElementById('search-modal');
-    const closeButton = document.querySelector('.macos-close-button');
-    // 点击搜索按钮打开弹窗
-    searchButton.addEventListener('click', function() {
-      searchModal.style.display = 'flex';
-      document.body.classList.add('modal-open');
-      // 聚焦到搜索框
-      setTimeout(() => {
-        const searchInput = document.querySelector('.pagefind-ui__search-input');
-        if (searchInput) {
-          searchInput.focus();
-        }
-      }, 100);
-    });
-    // 点击关闭按钮关闭弹窗
-    closeButton.addEventListener('click', function() {
-      searchModal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-    });
-    // 点击弹窗外部关闭弹窗
-    window.addEventListener('click', function(event) {
-      if (event.target === searchModal) {
-        searchModal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-      }
-    });
-    // ESC 键关闭弹窗
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && searchModal.style.display === 'flex') {
-        searchModal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-      }
-    });
-    // 修复搜索图标和文字重叠问题，并自定义搜索框样式
-    setTimeout(() => {
-      const searchForm = document.querySelector('.pagefind-ui__form');
-      if (searchForm) {
-        // 调整搜索框内的样式
-        const searchInput = searchForm.querySelector('.pagefind-ui__search-input');
-        if (searchInput) {
-          searchInput.style.paddingLeft = '40px'; // 增加左侧内边距，为图标留出空间
-        }
-        // 确保图标位置正确
-        const searchIcon = searchForm.querySelector('.pagefind-ui__search-icon');
-        if (searchIcon) {
-          searchIcon.style.position = 'absolute';
-          searchIcon.style.left = '15px';
-          searchIcon.style.top = '50%';
-          searchIcon.style.transform = 'translateY(-50%)';
-          searchIcon.style.pointerEvents = 'none'; // 防止图标干扰点击
-        }
-      }
-    }, 200); // 给一点时间让 PagefindUI 完全渲染
-  });
-</script>
+<!-- Search Styles -->
 <style>
-  /* Pagefind UI 变量 */
+  /* Pagefind UI variables */
   :root {
     --pagefind-ui-scale: 1;
     --pagefind-ui-primary: var(--nc-lk-1);
@@ -199,7 +136,7 @@
     --pagefind-ui-font: var(--nc-font-sans);
   }
 
-  /* 搜索按钮样式 - 圆形带边框 */
+  /* Search button style - rounded with border */
   .search-button {
     display: inline-flex;
     align-items: center;
@@ -222,7 +159,7 @@
     width: 15px;
     height: 15px;
   }
-  /* 弹窗样式 */
+  /* Modal styles */
   .search-modal {
     display: none;
     position: fixed;
@@ -248,7 +185,7 @@
     overflow-y: auto;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   }
-  /* macOS风格关闭按钮 */
+  /* macOS style close button */
   .macos-close-button {
     position: absolute;
     top: 15px;
@@ -261,15 +198,15 @@
   .macos-close-button:hover svg path {
     stroke: rgba(0,0,0,0.8);
   }
-  /* 当弹窗打开时禁止背景滚动 */
+  /* Prevent background scrolling when modal is open */
   body.modal-open {
     overflow: hidden;
   }
-  /* 自定义 Pagefind UI 样式 */
+  /* Custom Pagefind UI styles */
   .search-modal-content .pagefind-ui__search-input {
     font-size: 16px;
-    padding: 12px 15px 12px 45px; /* 增加内边距 */
-    border-radius: 10px; /* 大圆角 */
+    padding: 12px 15px 12px 45px; /* Increased padding */
+    border-radius: 10px; /* Rounded corners */
     border: 2px solid var(--nc-bg-3);
     background-color: var(--nc-bg-1);
     color: var(--nc-tx-1);
@@ -281,13 +218,13 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   }
   .search-modal-content .pagefind-ui__search-clear {
-    right: 15px; /* 确保清除按钮位置正确 */
+    right: 15px; /* Ensure clear button position is correct */
   }
-  /* 确保搜索表单是相对定位，这样图标可以绝对定位 */
+  /* Make search form relative positioning for absolute icon positioning */
   .search-modal-content .pagefind-ui__form {
     position: relative;
   }
-  /* 调整搜索图标位置 */
+  /* Adjust search icon position */
   .search-modal-content .pagefind-ui__search-icon {
     position: absolute;
     left: 15px;
@@ -295,7 +232,7 @@
     transform: translateY(-50%);
     pointer-events: none;
   }
-  /* 美化搜索结果 */
+  /* Beautify search results */
   .search-modal-content .pagefind-ui__results {
     margin-top: 20px;
   }
@@ -308,14 +245,93 @@
     background-color: var(--nc-bg-2);
   }
 </style>
+
+<!-- Search Scripts -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PagefindUI, but don't show immediately
+    const searchInstance = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      autofocus: true
+    });
+    
+    // Get elements
+    const searchButtons = document.querySelectorAll('.search-trigger');
+    const searchModal = document.getElementById('search-modal');
+    const closeButton = document.querySelector('.macos-close-button');
+    
+    // Add click event to all search triggers
+    searchButtons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        searchModal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+        // Focus on search input
+        setTimeout(() => {
+          const searchInput = document.querySelector('.pagefind-ui__search-input');
+          if (searchInput) {
+            searchInput.focus();
+          }
+        }, 100);
+      });
+    });
+    
+    // Click close button to close modal
+    closeButton.addEventListener('click', function() {
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    });
+    
+    // Click outside modal to close
+    window.addEventListener('click', function(event) {
+      if (event.target === searchModal) {
+        searchModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+    
+    // ESC key to close modal
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && searchModal.style.display === 'flex') {
+        searchModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+    
+    // Fix search icon and text overlap issue, and customize search box style
+    setTimeout(() => {
+      const searchForm = document.querySelector('.pagefind-ui__form');
+      if (searchForm) {
+        // Adjust search box style
+        const searchInput = searchForm.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.style.paddingLeft = '40px'; // Increase left padding for icon
+        }
+        // Ensure icon position is correct
+        const searchIcon = searchForm.querySelector('.pagefind-ui__search-icon');
+        if (searchIcon) {
+          searchIcon.style.position = 'absolute';
+          searchIcon.style.left = '15px';
+          searchIcon.style.top = '50%';
+          searchIcon.style.transform = 'translateY(-50%)';
+          searchIcon.style.pointerEvents = 'none'; // Prevent icon from interfering with clicks
+        }
+      }
+    }, 200); // Give time for PagefindUI to fully render
+  });
+</script>
+
 <div id="links" style="text-align: center;">
   <a href="https://github.com/yinan-c"><img src="pics/github-mark.png" alt="GitHub" width="25" height="25" style="vertical-align: text-top;"> </a> &nbsp;&nbsp;&nbsp;
   <a href="https://twitter.com/yinan_ch"><img src="pics/twitter.png" alt="Twitter" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://mastodon.social/@yinan"><img src="pics/mastodon.png" alt="Mastodon" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
   <a href="contact.html"><img src="pics/email.png" alt="Email" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
   <a href="atom.xml"><img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
-  <!-- 搜索按钮 - 圆形带边框 -->
-  <button id="search-button" class="search-button" aria-label="搜索">
+  <!-- Search button - kept in original position -->
+  <button id="search-button" class="search-button search-trigger" aria-label="搜索">
     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>

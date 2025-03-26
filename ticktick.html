@@ -101,26 +101,241 @@
     </div>
     
     
-
 <div style="display: flex; justify-content: space-between; align-items: center;">
     <div id="header-created-at">
         <span style="font-size: 0.5 em; color: #888;">2024-11-27 </span>
     </div>
-
     <div id="header-home-link" style="font-size: 0.5 em;">
         <a href="index.html">&lt; Home</a>
         
         <a href="years.html">&lt; Timeline</a>
         |
         <a href="random.html">Random &gt;</a>
+        <a href="#" class="search-trigger">Search &gt;</a>
         
     </div>
 </div>
 
-
     <main>
+<!-- Include search modal component -->
+<!-- search.html -->
+<!-- Search Modal -->
+<div id="search-modal" class="search-modal">
+  <div class="search-modal-content">
+    <!-- macOS style close button -->
+    <div class="macos-close-button">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#FF6057"/>
+        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div id="search"></div>
+  </div>
+</div>
 
+<!-- Search Styles -->
+<style>
+  /* Pagefind UI variables */
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--nc-lk-1);
+    --pagefind-ui-text: var(--nc-tx-1);
+    --pagefind-ui-background: var(--nc-bg-1);
+    --pagefind-ui-border: var(--nc-bg-3);
+    --pagefind-ui-tag: var(--nc-bg-2);
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: var(--nc-font-sans);
+  }
 
+  /* Search button style - rounded with border */
+  .search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background-color: var(--nc-bg-2);
+    border: 1px solid var(--nc-bg-3);
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: text-top;
+    transition: all 0.2s ease;
+  }
+  .search-button:hover {
+    transform: scale(1.05);
+  }
+  .search-button svg {
+    color: var(--nc-tx-1);
+    width: 15px;
+    height: 15px;
+  }
+  /* Modal styles */
+  .search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  .search-modal-content {
+    position: relative;
+    background-color: var(--nc-bg-1);
+    color: var(--nc-tx-1);
+    padding: 40px 30px 30px;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+  /* macOS style close button */
+  .macos-close-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .macos-close-button:hover svg path {
+    stroke: rgba(0,0,0,0.8);
+  }
+  /* Prevent background scrolling when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
+  /* Custom Pagefind UI styles */
+  .search-modal-content .pagefind-ui__search-input {
+    font-size: 16px;
+    padding: 12px 15px 12px 45px; /* Increased padding */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid var(--nc-bg-3);
+    background-color: var(--nc-bg-1);
+    color: var(--nc-tx-1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+  .search-modal-content .pagefind-ui__search-input:focus {
+    border-color: var(--nc-bg-3);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  .search-modal-content .pagefind-ui__search-clear {
+    right: 15px; /* Ensure clear button position is correct */
+  }
+  /* Make search form relative positioning for absolute icon positioning */
+  .search-modal-content .pagefind-ui__form {
+    position: relative;
+  }
+  /* Adjust search icon position */
+  .search-modal-content .pagefind-ui__search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  /* Beautify search results */
+  .search-modal-content .pagefind-ui__results {
+    margin-top: 20px;
+  }
+  .search-modal-content .pagefind-ui__result {
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+  }
+  .search-modal-content .pagefind-ui__result:hover {
+    background-color: var(--nc-bg-2);
+  }
+</style>
+
+<!-- Search Scripts -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PagefindUI, but don't show immediately
+    const searchInstance = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      autofocus: true
+    });
+    
+    // Get elements
+    const searchButtons = document.querySelectorAll('.search-trigger');
+    const searchModal = document.getElementById('search-modal');
+    const closeButton = document.querySelector('.macos-close-button');
+    
+    // Add click event to all search triggers
+    searchButtons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        searchModal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+        // Focus on search input
+        setTimeout(() => {
+          const searchInput = document.querySelector('.pagefind-ui__search-input');
+          if (searchInput) {
+            searchInput.focus();
+          }
+        }, 100);
+      });
+    });
+    
+    // Click close button to close modal
+    closeButton.addEventListener('click', function() {
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    });
+    
+    // Click outside modal to close
+    window.addEventListener('click', function(event) {
+      if (event.target === searchModal) {
+        searchModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+    
+    // ESC key to close modal
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && searchModal.style.display === 'flex') {
+        searchModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+    
+    // Fix search icon and text overlap issue, and customize search box style
+    setTimeout(() => {
+      const searchForm = document.querySelector('.pagefind-ui__form');
+      if (searchForm) {
+        // Adjust search box style
+        const searchInput = searchForm.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.style.paddingLeft = '40px'; // Increase left padding for icon
+        }
+        // Ensure icon position is correct
+        const searchIcon = searchForm.querySelector('.pagefind-ui__search-icon');
+        if (searchIcon) {
+          searchIcon.style.position = 'absolute';
+          searchIcon.style.left = '15px';
+          searchIcon.style.top = '50%';
+          searchIcon.style.transform = 'translateY(-50%)';
+          searchIcon.style.pointerEvents = 'none'; // Prevent icon from interfering with clicks
+        }
+      }
+    }, 200); // Give time for PagefindUI to fully render
+  });
+</script>
 
 
 <h1>滴答清单体验</h1>
@@ -200,8 +415,6 @@
 <li><a href="https://juejin.cn/post/7376484708547870731">滴答清单/TickTick 官方API尝试</a></li>
 </ul>
 
-
-
 <style>
 /* 创建一个容器来包含两个按钮 */
 .nav-buttons-container {
@@ -210,7 +423,6 @@
   gap: 10px; /* 按钮之间的间距 */
   margin: 15px 0;
 }
-
 .nav-button {
   padding: 10px 20px;
   background-color: var(--nc-bg-2); /* 使用主题变量 */
@@ -226,28 +438,23 @@
   flex: 1; /* 平均分配空间 */
   box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
 }
-
 @media (max-width: 600px) {
   .nav-button {
     font-size: 12px; /* 在小屏幕上减小字体大小 */
   }
 }
-
 .nav-button:hover {
   background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
 }
-
 #prev-button {
   justify-content: flex-start; /* 左对齐文本 */
   text-align: left;
 }
-
 #next-button {
   justify-content: flex-end; /* 右对齐文本 */
   text-align: right;
 }
 </style>
-
 <!-- 使用新的容器包裹按钮 -->
 <div class="nav-buttons-container">
 
@@ -259,9 +466,7 @@
   
 
 </div>
-
 <br>
-
 <script src="https://giscus.app/client.js"
         data-repo="yinan-c/pages-comment"
         data-repo-id="R_kgDOKTPNKg"
@@ -283,16 +488,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateGiscusTheme(theme) {
         const iframe = document.querySelector('iframe.giscus-frame');
         if (!iframe) return;
-        
-        iframe.contentWindow.postMessage({ 
-            giscus: { 
-                setConfig: { 
-                    theme: theme 
-                } 
-            } 
+        iframe.contentWindow.postMessage({
+            giscus: {
+                setConfig: {
+                    theme: theme
+                }
+            }
         }, 'https://giscus.app');
     }
-    
     // Initial update based on current theme
     function initialGiscusSetup() {
         const savedTheme = localStorage.getItem('theme');
@@ -302,10 +505,8 @@ document.addEventListener('DOMContentLoaded', function() {
             updateGiscusTheme('light');
         }
     }
-    
     // Set a timeout to ensure Giscus has loaded
     setTimeout(initialGiscusSetup, 1000);
-    
     // Listen for theme changes
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
@@ -319,22 +520,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-
 </main>
     
-
 <div id="updated-at">
   <span>Created: 2024-11-27</span>
   <span>Updated: 2024-11-28</span>
 </div>
-
 <div id="footer">
   <div id="footer-home-link">
     <a href="index.html">&lt; Home</a>
     
-    <a href="title-index.html#ie6bbb4">&lt; Index</a>
+    <a href="years.html#ie6bbb4">&lt; Timeline</a>
     |
     <a href="random.html">Random &gt;</a>
+    <a href="#" class="search-trigger">Search &gt;</a>
     
   </div>
   <p id="footer-body">
