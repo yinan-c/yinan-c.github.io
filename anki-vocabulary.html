@@ -118,24 +118,86 @@
 
     <main>
 <!-- Include search modal component -->
-<!-- search.html -->
-<!-- Search Modal -->
+<!-- search_modal.html -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
 <div id="search-modal" class="search-modal">
   <div class="search-modal-content">
-    <!-- macOS style close button -->
+    <!-- macOS-style close button -->
     <div class="macos-close-button">
       <svg viewBox="0 0 24 24" width="24" height="24">
-        <circle cx="12" cy="12" r="10" fill="#FF6057"/>
-        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="10" fill="#FF6057"></circle>
+        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"></path>
       </svg>
     </div>
     <div id="search"></div>
   </div>
 </div>
 
-<!-- Search Styles -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PagefindUI for the search modal
+    const searchInstance = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      autofocus: true
+    });
+
+    // Function to open the search modal
+    function openSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      setTimeout(() => {
+        const searchInput = document.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }, 100);
+    }
+
+    // Function to close the search modal
+    function closeSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    // Bind click event for all elements that should trigger the search modal
+    document.querySelectorAll('.search-trigger, #search-button, #search-text').forEach(function(trigger) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        openSearchModal();
+      });
+    });
+    // Close modal when clicking the close button
+    const closeButton = document.querySelector('.macos-close-button');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeSearchModal);
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.target === searchModal) {
+        closeSearchModal();
+      }
+    });
+
+    // Close modal when pressing the ESC key
+    document.addEventListener('keydown', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.key === 'Escape' && searchModal && searchModal.style.display === 'flex') {
+        closeSearchModal();
+      }
+    });
+  });
+</script>
+
 <style>
-  /* Pagefind UI variables */
+  /* Pagefind UI CSS Variables */
   :root {
     --pagefind-ui-scale: 1;
     --pagefind-ui-primary: var(--nc-lk-1);
@@ -149,30 +211,7 @@
     --pagefind-ui-font: var(--nc-font-sans);
   }
 
-  /* Search button style - rounded with border */
-  .search-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    background-color: var(--nc-bg-2);
-    border: 1px solid var(--nc-bg-3);
-    border-radius: 50%;
-    cursor: pointer;
-    vertical-align: text-top;
-    transition: all 0.2s ease;
-  }
-  .search-button:hover {
-    transform: scale(1.05);
-  }
-  .search-button svg {
-    color: var(--nc-tx-1);
-    width: 15px;
-    height: 15px;
-  }
-  /* Modal styles */
+  /* Search Modal Styling */
   .search-modal {
     display: none;
     position: fixed;
@@ -198,7 +237,6 @@
     overflow-y: auto;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   }
-  /* macOS style close button */
   .macos-close-button {
     position: absolute;
     top: 15px;
@@ -208,134 +246,11 @@
     cursor: pointer;
     z-index: 10;
   }
-  .macos-close-button:hover svg path {
-    stroke: rgba(0,0,0,0.8);
-  }
-  /* Prevent background scrolling when modal is open */
   body.modal-open {
     overflow: hidden;
   }
-  /* Custom Pagefind UI styles */
-  .search-modal-content .pagefind-ui__search-input {
-    font-size: 16px;
-    padding: 12px 15px 12px 45px; /* Increased padding */
-    border-radius: 10px; /* Rounded corners */
-    border: 2px solid var(--nc-bg-3);
-    background-color: var(--nc-bg-1);
-    color: var(--nc-tx-1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: all 0.2s ease;
-  }
-  .search-modal-content .pagefind-ui__search-input:focus {
-    border-color: var(--nc-bg-3);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  }
-  .search-modal-content .pagefind-ui__search-clear {
-    right: 15px; /* Ensure clear button position is correct */
-  }
-  /* Make search form relative positioning for absolute icon positioning */
-  .search-modal-content .pagefind-ui__form {
-    position: relative;
-  }
-  /* Adjust search icon position */
-  .search-modal-content .pagefind-ui__search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-  /* Beautify search results */
-  .search-modal-content .pagefind-ui__results {
-    margin-top: 20px;
-  }
-  .search-modal-content .pagefind-ui__result {
-    padding: 15px;
-    margin-bottom: 10px;
-    transition: background-color 0.2s;
-  }
-  .search-modal-content .pagefind-ui__result:hover {
-    background-color: var(--nc-bg-2);
-  }
 </style>
 
-<!-- Search Scripts -->
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="/pagefind/pagefind-ui.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize PagefindUI, but don't show immediately
-    const searchInstance = new PagefindUI({
-      element: "#search",
-      showSubResults: true,
-      autofocus: true
-    });
-    
-    // Get elements
-    const searchButtons = document.querySelectorAll('.search-trigger');
-    const searchModal = document.getElementById('search-modal');
-    const closeButton = document.querySelector('.macos-close-button');
-    
-    // Add click event to all search triggers
-    searchButtons.forEach(function(button) {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        searchModal.style.display = 'flex';
-        document.body.classList.add('modal-open');
-        // Focus on search input
-        setTimeout(() => {
-          const searchInput = document.querySelector('.pagefind-ui__search-input');
-          if (searchInput) {
-            searchInput.focus();
-          }
-        }, 100);
-      });
-    });
-    
-    // Click close button to close modal
-    closeButton.addEventListener('click', function() {
-      searchModal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-    });
-    
-    // Click outside modal to close
-    window.addEventListener('click', function(event) {
-      if (event.target === searchModal) {
-        searchModal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-      }
-    });
-    
-    // ESC key to close modal
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && searchModal.style.display === 'flex') {
-        searchModal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-      }
-    });
-    
-    // Fix search icon and text overlap issue, and customize search box style
-    setTimeout(() => {
-      const searchForm = document.querySelector('.pagefind-ui__form');
-      if (searchForm) {
-        // Adjust search box style
-        const searchInput = searchForm.querySelector('.pagefind-ui__search-input');
-        if (searchInput) {
-          searchInput.style.paddingLeft = '40px'; // Increase left padding for icon
-        }
-        // Ensure icon position is correct
-        const searchIcon = searchForm.querySelector('.pagefind-ui__search-icon');
-        if (searchIcon) {
-          searchIcon.style.position = 'absolute';
-          searchIcon.style.left = '15px';
-          searchIcon.style.top = '50%';
-          searchIcon.style.transform = 'translateY(-50%)';
-          searchIcon.style.pointerEvents = 'none'; // Prevent icon from interfering with clicks
-        }
-      }
-    }, 200); // Give time for PagefindUI to fully render
-  });
-</script>
 
 
 <h1>划词制作 Anki 卡片</h1>
