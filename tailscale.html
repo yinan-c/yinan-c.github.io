@@ -11,16 +11,24 @@
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="style.css" />
     
-    <title>1nan</title>
+  <title>Tailscale 访问内网特定端口 - 1nan</title>
+
     
+  <style>
+  img {
     
-    <style>
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-    }
-    </style>
+    max-width: 100% !important;
     
+    height: auto !important;
+  }
+  @media (max-width: 600px) {
+  #header-created-at span,
+  #header-home-link {
+    font-size: 0.8rem;
+  }
+  }
+  </style>
+
     <style>
       /* 主题切换按钮样式 */
       .theme-toggle-button {
@@ -99,12 +107,23 @@
     </div>
     
     
-    <main>
-<header>
-  <h1>1nan</h1>
-</header>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2025-06-30 </span>
+    </div>
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        <a href="#" class="search-trigger">Search &gt;</a>
+        
+    </div>
+</div>
 
-<!-- Include the search modal partial -->
+    <main>
+<!-- Include search modal component -->
 <!-- search_modal.html -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
@@ -239,156 +258,205 @@
 </style>
 
 
-<div id="links" style="text-align: center;">
-  <a href="https://github.com/yinan-c"><img src="pics/github-mark.png" alt="GitHub" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
-  <a href="https://twitter.com/yinan_ch"><img src="pics/twitter.png" alt="Twitter" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
-  <a href="https://mastodon.social/@yinan"><img src="pics/mastodon.png" alt="Mastodon" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
-  <a href="contact.html"><img src="pics/email.png" alt="Email" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
-  <a href="atom.xml"><img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png" alt="RSS" width="25" height="25" style="vertical-align: text-top;"></a>&nbsp;&nbsp;&nbsp;
-  <!-- Search button trigger -->
-  <button id="search-button" class="search-button" aria-label="Search">
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-  </button>
-</div>
+
+<h1>Tailscale 访问内网特定端口</h1>
+<p>搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公网 ip（VM 提供公网 ipv4 在套餐内），如果要开通则需额外付5英镑每月。</p>
+<p>原本一些运行在 nas 上的服务通过 OpenVPN 提供自组网内访问，但是考虑到安全问题，我并没有把 VPS 加入自组网，如果确实需要访问 nas 中的特定服务则通过路由器端口映射和防火墙提供给 VPS 访问。没有了公网 ip 之后，无法将服务端口映射开放，只能另寻其他解决方案。</p>
+<h2>Tailscale 的安全配置</h2>
+<p>之前在用 OpenVPN 的时候，也尝试过 Tailscale、Netbird 等自组网，现在为了让 VPS 也能访问到 nas 上的特定服务就必须要把 VPS 也加入到 Tailscale 网络，但是我又不想要 VPS 能够访问 Tailscale 网内的所有设备所有服务，就需要限制 VPS 只允许访问内网特定设备的特定端口 - 通过设定 ACL 规则。</p>
+<p>这里贴出我的部分配置方案，去除了默认 grants 中允许所有连接的配置，加上了两条规则，仅允许 VPS 访问 NAS 的13333端口以及其他所有设备和 nas 互联。</p>
+<pre><code>{
+	// Define the tags which can be applied to devices and by which users.
+	&quot;tagOwners&quot;: {
+		&quot;tag:nas&quot;: [&quot;autogroup:admin&quot;],
+		&quot;tag:vps&quot;: [&quot;autogroup:admin&quot;],
+	},
+
+	// Define grants that govern access for users, groups, autogroups, tags,
+	// Tailscale IP addresses, and subnet ranges.
+	//&quot;grants&quot;: [
+	// Allow all connections.
+	// Comment this section out if you want to define specific restrictions.
+	//	{&quot;src&quot;: [&quot;*&quot;], &quot;dst&quot;: [&quot;*&quot;], &quot;ip&quot;: [&quot;*&quot;]},
+	//],
+
+	// Define users and devices that can use Tailscale SSH.
+	&quot;ssh&quot;: [
+		// Allow all users to SSH into their own devices in check mode.
+		// Comment this section out if you want to define specific restrictions.
+		{
+			&quot;action&quot;: &quot;check&quot;,
+			&quot;src&quot;:    [&quot;autogroup:member&quot;],
+			&quot;dst&quot;:    [&quot;autogroup:self&quot;],
+			&quot;users&quot;:  [&quot;autogroup:nonroot&quot;, &quot;root&quot;],
+		},
+	],
+	// 定义访问控制规则
+	&quot;acls&quot;: [
+		// 规则一：允许所有设备互相访问所有端口。
+		// &quot;autogroup:member&quot; 代表 Tailscale 网络中的所有用户及其设备。
+		{
+			&quot;action&quot;: &quot;accept&quot;,
+			&quot;src&quot;:    [&quot;autogroup:member&quot;],
+			&quot;dst&quot;:    [&quot;autogroup:member:*&quot;, &quot;tag:nas:*&quot;],
+		},
+
+		// 规则二：仅允许 VPS 访问 NAS 的13333端口。
+		{
+			&quot;action&quot;: &quot;accept&quot;,
+			&quot;src&quot;:    [&quot;tag:vps&quot;],
+			&quot;dst&quot;:    [&quot;tag:nas:13333&quot;],
+		},
+	],
+
+	// (可选) 添加测试以验证规则是否按预期工作
+
+	&quot;tests&quot;: [
+		{
+			&quot;src&quot;:    &quot;tag:vps&quot;,
+			&quot;accept&quot;: [&quot;tag:nas:13333&quot;], // 应该允许访问 13333 端口
+			&quot;deny&quot;:   [&quot;tag:nas:5000&quot;], // 应该拒绝访问 5000 端口
+		}
+	],
+}
+</code></pre>
+<p>配置完成后，如果测试成功则会正常保存配置文件，接下来回到管理设备页面为 nas 和 vps 分别打上标签即可。</p>
+<p>另外我发现群晖使用 tailscale 的时候似乎无法通过 tailscale ip 来 ping 内网内的其他设备。</p>
+<pre><code>sudo ping 100.xx.xx.xxx # 这条会失败
+
+sudo tailscale ping 100.xx.xx.xx # tailscale ping 却能成功
+pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
+</code></pre>
+<p>似乎和<a href="https://github.com/tailscale/tailscale/issues/1995">这个 bug</a> 有关。</p>
 
 <style>
-  .search-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    background-color: var(--nc-bg-2);
-    border: 1px solid var(--nc-bg-3);
-    border-radius: 50%;
-    cursor: pointer;
-    vertical-align: text-top;
-    transition: all 0.2s ease;
+/* 创建一个容器来包含两个按钮 */
+.nav-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* 按钮之间的间距 */
+  margin: 15px 0;
+}
+.nav-button {
+  padding: 10px 20px;
+  background-color: var(--nc-bg-2); /* 使用主题变量 */
+  border: 1px solid var(--nc-bg-3); /* 添加带主题变量的边框 */
+  color: var(--nc-tx-1); /* 使用主题变量的文本 */
+  text-decoration: none;
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中内容 */
+  font-size: 14px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  flex: 1; /* 平均分配空间 */
+  box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
+}
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px; /* 在小屏幕上减小字体大小 */
   }
-  .search-button:hover {
-    transform: scale(1.05);
-  }
-  .search-button svg {
-    color: var(--nc-tx-1);
-    width: 15px;
-    height: 15px;
-  }
+}
+.nav-button:hover {
+  background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
+}
+#prev-button {
+  justify-content: flex-start; /* 左对齐文本 */
+  text-align: left;
+}
+#next-button {
+  justify-content: flex-end; /* 右对齐文本 */
+  text-align: right;
+}
 </style>
-<h3>Archives</h3>
-<div id="archives">
-  <a href="title-index.html">Title-Index</a>
-  <a href="years.html">Timeline</a>
-  <a href="random.html">Random</a>
-  <a href="Friends.html">Friends</a>
+<!-- 使用新的容器包裹按钮 -->
+<div class="nav-buttons-container">
+
+  
+    <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+  
+  
+    <a href="pagefind.html" class="nav-button" id="next-button">Pagefind &gt;</a>
+  
+
 </div>
-
-<h3>Recent</h3>
-<ul>
-  
-  <li>
-    <a href="tailscale.html">Tailscale 访问内网特定端口</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2025-06-30</span>
-    <p style="clear: both;">搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公...</p>
-  </li>
-  
-  <li>
-    <a href="pagefind.html">Pagefind</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2025-03-22</span>
-    <p style="clear: both;">I found Pagefind as a full text search for static sites.
-
-Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.
-
-So I added...</p>
-  </li>
-  
-  <li>
-    <a href="on-you-dont-need-to-solve-hard-problems.html">On &#34;You don&#39;t need to work on hard problems&#34;</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2025-03-05</span>
-    <p style="clear: both;">https://www.benkuhn.net/hard/
-I just came across this interesting article. I have to agree on how the problems  (and how you are evaluated) in school set deliberately to be linear or 1 dimensional. While in real world, problems tend to be multi-dimensional...</p>
-  </li>
-  
-  <li>
-    <a href="cross-posting.html">Cross-post from Mastondon to X and Bluesky</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2025-03-04</span>
-    <p style="clear: both;">These are the current methods I am using to do Crossing Posting.
-
-From Mastodon to Bluesky: https://skymoth.app/.
-
-
-Log in both accounts and you&#39;re ready to post toots.
-
-
-From Mastodon to X (Formerly Twitter): yinan-c/Mastodon-to-Twitter-Sync
-
-
-You&#39;ll need...</p>
-  </li>
-  
-  <li>
-    <a href="marking-my-trace.html">记录足迹</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2025-02-26</span>
-    <p style="clear: both;">我之前在推特上分享过，用 RSS+Hoarder/DEVONthink 存档来记录我在互联网上的足迹。这篇文章我来推荐几个记录生活足迹的软件/方法。
-
-不知道有没有人跟我有一样的记录习惯，事件记录，时间记录...</p>
-  </li>
-  
-  <li>
-    <a href="rssbrew-public.html">RSSbrew 公开订阅源</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2024-11-28</span>
-    <p style="clear: both;">最近修了几个小 bug，把 images 上传到了 docker-hub，也做了个 demo 站点，账号密码 admin, changeme （当然公开使用的，也不要真的去 change）。为了让大家更方便体验 RSSbrew 的功能，我从自己的订阅里...</p>
-  </li>
-  
-  <li>
-    <a href="memos.html">弃用 memos</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2024-11-28</span>
-    <p style="clear: both;">之前在博客中顶栏有一个 memos 的链接，现在还能访问 https://memos.yinan.me，解析到我部署的 memos instance。但我最终还是停用了。
-原因如下：
-
-
-经过 v0.22.0，memos API 有个较大的变动，很多开发者（甚...</p>
-  </li>
-  
-  <li>
-    <a href="ticktick.html">滴答清单体验</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2024-11-27</span>
-    <p style="clear: both;">半年之前写过一篇苹果端 Todo App 简单比较，主要是分析了 Things 和 OmniFocus 的优缺点，当时没有深度体验滴答清单（海外版称 TickTick），所以今天补上。
-我是从 2022 年开始使用 Things3，2023年底换...</p>
-  </li>
-  
-  <li>
-    <a href="hoarder-zh.html">Hoarder - 自托管 AI 书签管理软件</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2024-11-07</span>
-    <p style="clear: both;">对于书签管理，我目前的工作流是这样的：自建 wallabag 保存稍后读，Anybox 管理书签并通过 Alfred 快速调用，然后用 DEVONthink 本地归档 wallabag 的稍候读和 Anybox 的书签，方便全文搜索。为了实现自...</p>
-  </li>
-  
-  <li>
-    <a href="nas.html">整了个 NAS</a>
-    <span style="float: right; font-size: 0.8em; color: #888;">2024-10-15</span>
-    <p style="clear: both;">最近整了个 DS423+ 来代替之前的老旧 MacBook Pro + 一块外接硬盘的 NAS/homeserver 方案。
-我买了四块盘。 1、2 8TB 希捷盘做了 RAID1 冗余，其余两块略大的盘 Basic（希捷12TB 和 16 TB），另有两块 NVMe SSD 作...</p>
-  </li>
-  
-</ul>
-
-<h3>About</h3>
-<ul id="about">
-  <li><a href="about.html">About me</a></li>
-  <li><a href="my-open-source.html">My open-source projects</a></li>
-  <li><a href="RSS-GPT/index.html">Hosted RSS feeds</a></li>
-</ul>
+<br>
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update Giscus theme
+    function updateGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({
+            giscus: {
+                setConfig: {
+                    theme: theme
+                }
+            }
+        }, 'https://giscus.app');
+    }
+    // Initial update based on current theme
+    function initialGiscusSetup() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            updateGiscusTheme('dark');
+        } else if (savedTheme === 'light') {
+            updateGiscusTheme('light');
+        }
+    }
+    // Set a timeout to ensure Giscus has loaded
+    setTimeout(initialGiscusSetup, 1000);
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Get the updated theme after toggle
+            setTimeout(() => {
+                const currentTheme = localStorage.getItem('theme');
+                updateGiscusTheme(currentTheme);
+            }, 100);
+        });
+    }
+});
+</script>
 </main>
     
-<div id="footer" class="index-footer">
+<div id="updated-at">
+  <span>Created: 2025-06-30</span>
+  <span>Updated: 2025-06-30</span>
+</div>
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="years.html#i54">&lt; Timeline</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    <a href="#" class="search-trigger">Search &gt;</a>
+    
+  </div>
   <p id="footer-body">
-    © <a href="https://yinan.me/">Yinan</a>
+    
+    © <a href = "https://yinan.me/">Yinan</a>
     · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
     · <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
-    · <a href="atom.xml">RSS</a>
+    · <a href="atom.xml"> RSS </a>
+    
   </p>
 </div>
 

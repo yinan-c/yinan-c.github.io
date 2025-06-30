@@ -12,6 +12,85 @@
 
   
   <entry>
+    <title>Tailscale 访问内网特定端口</title>
+    <link ref="alternate" href="https://yinan.me/tailscale.html" />
+    <id>tailscale</id>
+    <published>2025-06-30 15:26:44+01:00</published>
+    <updated>2025-06-30 15:32:10+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公网 ip（VM 提供公网 ipv4 在套餐内），如果要开通则需额外付5英镑每月。&lt;/p&gt;
+&lt;p&gt;原本一些运行在 nas 上的服务通过 OpenVPN 提供自组网内访问，但是考虑到安全问题，我并没有把 VPS 加入自组网，如果确实需要访问 nas 中的特定服务则通过路由器端口映射和防火墙提供给 VPS 访问。没有了公网 ip 之后，无法将服务端口映射开放，只能另寻其他解决方案。&lt;/p&gt;
+&lt;h2&gt;Tailscale 的安全配置&lt;/h2&gt;
+&lt;p&gt;之前在用 OpenVPN 的时候，也尝试过 Tailscale、Netbird 等自组网，现在为了让 VPS 也能访问到 nas 上的特定服务就必须要把 VPS 也加入到 Tailscale 网络，但是我又不想要 VPS 能够访问 Tailscale 网内的所有设备所有服务，就需要限制 VPS 只允许访问内网特定设备的特定端口 - 通过设定 ACL 规则。&lt;/p&gt;
+&lt;p&gt;这里贴出我的部分配置方案，去除了默认 grants 中允许所有连接的配置，加上了两条规则，仅允许 VPS 访问 NAS 的13333端口以及其他所有设备和 nas 互联。&lt;/p&gt;
+&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt;{
+    // Define the tags which can be applied to devices and by which users.
+    &amp;quot;tagOwners&amp;quot;: {
+        &amp;quot;tag:nas&amp;quot;: [&amp;quot;autogroup:admin&amp;quot;],
+        &amp;quot;tag:vps&amp;quot;: [&amp;quot;autogroup:admin&amp;quot;],
+    },
+
+    // Define grants that govern access for users, groups, autogroups, tags,
+    // Tailscale IP addresses, and subnet ranges.
+    //&amp;quot;grants&amp;quot;: [
+    // Allow all connections.
+    // Comment this section out if you want to define specific restrictions.
+    //  {&amp;quot;src&amp;quot;: [&amp;quot;*&amp;quot;], &amp;quot;dst&amp;quot;: [&amp;quot;*&amp;quot;], &amp;quot;ip&amp;quot;: [&amp;quot;*&amp;quot;]},
+    //],
+
+    // Define users and devices that can use Tailscale SSH.
+    &amp;quot;ssh&amp;quot;: [
+        // Allow all users to SSH into their own devices in check mode.
+        // Comment this section out if you want to define specific restrictions.
+        {
+            &amp;quot;action&amp;quot;: &amp;quot;check&amp;quot;,
+            &amp;quot;src&amp;quot;:    [&amp;quot;autogroup:member&amp;quot;],
+            &amp;quot;dst&amp;quot;:    [&amp;quot;autogroup:self&amp;quot;],
+            &amp;quot;users&amp;quot;:  [&amp;quot;autogroup:nonroot&amp;quot;, &amp;quot;root&amp;quot;],
+        },
+    ],
+    // 定义访问控制规则
+    &amp;quot;acls&amp;quot;: [
+        // 规则一：允许所有设备互相访问所有端口。
+        // &amp;quot;autogroup:member&amp;quot; 代表 Tailscale 网络中的所有用户及其设备。
+        {
+            &amp;quot;action&amp;quot;: &amp;quot;accept&amp;quot;,
+            &amp;quot;src&amp;quot;:    [&amp;quot;autogroup:member&amp;quot;],
+            &amp;quot;dst&amp;quot;:    [&amp;quot;autogroup:member:*&amp;quot;, &amp;quot;tag:nas:*&amp;quot;],
+        },
+
+        // 规则二：仅允许 VPS 访问 NAS 的13333端口。
+        {
+            &amp;quot;action&amp;quot;: &amp;quot;accept&amp;quot;,
+            &amp;quot;src&amp;quot;:    [&amp;quot;tag:vps&amp;quot;],
+            &amp;quot;dst&amp;quot;:    [&amp;quot;tag:nas:13333&amp;quot;],
+        },
+    ],
+
+    // (可选) 添加测试以验证规则是否按预期工作
+
+    &amp;quot;tests&amp;quot;: [
+        {
+            &amp;quot;src&amp;quot;:    &amp;quot;tag:vps&amp;quot;,
+            &amp;quot;accept&amp;quot;: [&amp;quot;tag:nas:13333&amp;quot;], // 应该允许访问 13333 端口
+            &amp;quot;deny&amp;quot;:   [&amp;quot;tag:nas:5000&amp;quot;], // 应该拒绝访问 5000 端口
+        }
+    ],
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配置完成后，如果测试成功则会正常保存配置文件，接下来回到管理设备页面为 nas 和 vps 分别打上标签即可。&lt;/p&gt;
+&lt;p&gt;另外我发现群晖使用 tailscale 的时候似乎无法通过 tailscale ip 来 ping 内网内的其他设备。&lt;/p&gt;
+&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt;sudo ping 100.xx.xx.xxx # 这条会失败
+
+sudo tailscale ping 100.xx.xx.xx # tailscale ping 却能成功
+pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;似乎和&lt;a href=&#34;https://github.com/tailscale/tailscale/issues/1995&#34;&gt;这个 bug&lt;/a&gt; 有关。&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
     <title>About</title>
     <link ref="alternate" href="https://yinan.me/about.html" />
     <id>about</id>
@@ -258,30 +337,6 @@
 - &lt;a href=&#34;https://paulgraham.com/&#34;&gt;Paul Graham&lt;/a&gt;
 - &lt;a href=&#34;https://hnrss.org&#34;&gt;Hacker News RSS&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;公开订阅源仅用于 RSSbrew 功能演示，内容版权归各站点/原作者所有。如有侵权，请联系删除。&lt;/p&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>弃用 memos</title>
-    <link ref="alternate" href="https://yinan.me/memos.html" />
-    <id>memos</id>
-    <published>2024-11-28 13:35:14+00:00</published>
-    <updated>2024-11-28 13:36:38+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;之前在博客中顶栏有一个 memos 的链接，现在还能&lt;a href=&#34;https://memos.yinan.me&#34;&gt;访问&lt;/a&gt;，解析到我部署的 memos instance。但我最终还是停用了。&lt;/p&gt;
-&lt;p&gt;原因如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;经过 v0.22.0，memos API 有个较大的变动，很多开发者（甚至我自己也在写一个 Alfred workflow 都不能再用了），我觉得软硬件即使是大升级，也不应该有 &#34;Break&#34; Changes，当然你也可以选择不升级。&lt;/li&gt;
-&lt;li&gt;官方没有提供数据库导出到纯文本的方案基本，我之前基本是靠在 DEVONthink 中订阅 RSS 来实现导出的，而之前 private note 无法通过 RSS 订阅，为此我还在本地也部署了一个内网访问的 memos instance。&lt;/li&gt;
-&lt;li&gt;功能增减太过频繁，最新版本似乎连 RSS 也没有了。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以上类似的想法，写过一条更为啰唆点的 &lt;a href=&#34;https://memos.yinan.me/m/dRyEhke4qYwMBB8az2Nvqu&#34;&gt;memos&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;虽然作为开源项目，memos 不可谓是不成功的，况且用户也不能像要求商业项目那样去让开源项目维护者。但因为这是一个笔记应用，而笔记最重要的是通用性和稳定性（也就是能在任何一台电脑，任何一个应用内都能看到）。&lt;/p&gt;
-&lt;p&gt;关于这个，Obisidian 的 CEO 写过 &lt;a href=&#34;https://stephango.com/file-over-app&#34;&gt;File Over App&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;考虑到这些我还是乖乖用回&lt;a href=&#34;https://meganesulli.com/blog/sync-obsidian-vault-iphone-ipad/&#34;&gt;纯文本 + Git&lt;/a&gt; 的方案，用 Obsidian 编辑。最近也在试用一个叫作 &lt;a href=&#34;https://github.com/blinko-space/blinko&#34;&gt;blinko&lt;/a&gt; 的应用，和 memos 很像，但是主打 AI 搜索+对话。&lt;/p&gt;
-&lt;p&gt;离开笔记应用不是没有成本的，转移就是一个，memos 仅有数据库保存方式，转移起来还挺麻烦 (again, file over app!)。我现在用以下方式，
-1. Obsidian 有一个 memos sync 的插件，可以直接导入每日笔记。
-2. Blinko 可以从 memos 数据库文件导入。
-3. 直接读取数据库文件，想办法导出纯文本。&lt;/p&gt;</content>
   </entry>
   
 
