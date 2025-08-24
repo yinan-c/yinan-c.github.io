@@ -11,16 +11,24 @@
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="style.css" />
     
-  <title>Timeline - 1nan</title>
+  <title>推荐几个 Safari 扩展/插件 - 1nan</title>
 
     
-    <style>
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-    }
-    </style>
+  <style>
+  img {
     
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  @media (max-width: 600px) {
+  #header-created-at span,
+  #header-home-link {
+    font-size: 0.8rem;
+  }
+  }
+  </style>
+
     <style>
       /* 主题切换按钮样式 */
       .theme-toggle-button {
@@ -99,20 +107,23 @@
     </div>
     
     
-    <main>
-<header>
-  <h3>Timeline - 1nan</h3>
-</header>
-<div id="footer-home-link">
-  <a href="index.html">&lt; Home</a>
-  <a href="title-index.html">&lt; Title-Index</a>
-  |
-  <a href="random.html">Random &gt;</a>
-  <!-- New Search text trigger -->
-  <a href="#" id="search-text">Search &gt;</a>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2025-08-24 </span>
+    </div>
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        <a href="#" class="search-trigger">Search &gt;</a>
+        
+    </div>
 </div>
 
-<!-- Include the search modal partial -->
+    <main>
+<!-- Include search modal component -->
 <!-- search_modal.html -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
@@ -248,89 +259,167 @@
 
 
 
-  <h3>2025</h3>
-  <ul id="years-index">
-    
-      <li>08-24 <a href="safari-extensions.html">推荐几个 Safari 扩展/插件</a></li>
-    
-      <li>06-30 <a href="tailscale.html">Tailscale 访问内网特定端口</a></li>
-    
-      <li>03-22 <a href="pagefind.html">Pagefind</a></li>
-    
-      <li>03-05 <a href="on-you-dont-need-to-solve-hard-problems.html">On &#34;You don&#39;t need to work on hard problems&#34;</a></li>
-    
-      <li>03-04 <a href="cross-posting.html">Cross-post from Mastondon to X and Bluesky</a></li>
-    
-      <li>02-26 <a href="marking-my-trace.html">记录足迹</a></li>
-    
-  </ul>
+<h1>推荐几个 Safari 扩展/插件</h1>
+<p>前几天升级了 macOS Tahoe 之后，开始逐步从 Chrome 转移到 Safari。这里推荐几个扩展，会持续更新。由于扩展必须上架 App Store，开发者必须交 99刀的年费，所以很多扩展即使是开源的也不一定是免费的。很多插件在手机上的体验也很好。</p>
+<h2>General</h2>
+<ol>
+<li><strong>密码管理和 Passkeys</strong>：推荐把 Passkeys 存在自带的 Passwords AppAu to Autofill，只要是支持 Passkey 的网站（比如说 GitHub, Google）都可以像 Safari 登陆 AppleID 一样指纹登陆，在 Safari 上 Apple Passwords 体验胜过了 1Passwords。</li>
+<li><strong>Tampermonkey 油猴（篡改猴）免费替代：<a href="https://apps.apple.com/gb/app/userscripts/id1463298887">Userscript</a></strong>。可以从 <a href="https://greasyfork.org/">Greasyfork</a> 导入脚本，体验和油猴基本无差。</li>
+<li><strong><a href="https://apps.apple.com/us/app/onetab/id1540160809?mt=12&amp;uo=4&amp;at=10l4tL&amp;ct=searchlink">OneTab</a></strong>: 一键暂存打开的 Tab。Chrome 上就在用，不过 Safari 的 Tab 管理似乎做得比 Chrome 好。</li>
+<li><strong><a href="https://apps.apple.com/gb/app/keyword-search/id1558453954">Keyword Search</a></strong>: 在地址栏通过 <code>pplx</code>, <code>gpt</code>, <code>a</code> 等自定义关键词快捷搜索 perplexity，chatgpt，amazon 等。在手机上使用的意义更大些，可以节省不用下很多 web 套壳 app，电脑上用 Alfred/Raycast 的 websearch/quicklinks 可能就够了。</li>
+<li><strong><a href="https://apps.apple.com/us/app/super-agent-for-safari/id1568262835?uo=4&amp;at=10l4tL&amp;ct=searchlink">Superagent for Safari</a></strong>: 自动帮你点击 Cookies 选项，手机上免费用 3 次。</li>
+<li><strong><a href="https://apps.apple.com/us/app/wipr-2/id1662217862?uo=4&amp;at=10l4tL&amp;ct=searchlink">Wipr 2</a></strong>: Safari 最强去广告！</li>
+<li><strong><a href="https://apps.apple.com/us/app/rsshub-radar/id1610744717?uo=4&amp;at=10l4tL&amp;ct=searchlink">RSSHub Radar</a></strong>: 找到当前页面 RSSHub 订阅链接。</li>
+<li><strong><a href="https://apps.apple.com/us/app/any-font-for-safari-fontflex/id1597034898?uo=4&amp;at=10l4tL&amp;ct=searchlink">Fontflex</a></strong>: 自定义 Safari 的字体和字号，有当年 QQ 空间那味儿了。</li>
+<li><strong><a href="https://apps.apple.com/us/app/singlefile-for-safari/id6444322545?uo=4&amp;at=10l4tL&amp;ct=searchlink">SingleFile</a></strong>: 离线保存网页-&gt; HTML，配合 Karakeep 或者 Anybox API，可以保存书签的同时，下载一份网页存档。另外如果你用 Karakeep（原 Hoarder）推荐 karakeeper for karakeep.</li>
+<li>各种 Speed player 插件或者脚本，有很多，微调视频播放速度。</li>
+<li><strong><a href="https://apps.apple.com/us/app/banish-block-login-popups/id1639049780?mt=12&amp;uo=4&amp;at=10l4tL&amp;ct=searchlink">Banish - Block Login Popups</a></strong>：去除烦人的 'Open in App' 和登陆弹窗。</li>
+<li><strong><a href="https://apps.apple.com/us/app/vimkey/id1585682577?uo=4&amp;at=10l4tL&amp;ct=searchlink">Vimkey</a></strong>: 如果你习惯 vim 的话可以 hjkl 控制 Safari</li>
+</ol>
+<h2>YouTube 相关</h2>
+<ol>
+<li><strong><a href="https://apps.apple.com/us/app/untrap-for-youtube/id1637438059?uo=4&amp;at=10l4tL&amp;ct=searchlink">Untrap for YouTube</a></strong>: 隐藏短视频</li>
+<li><strong><a href="https://apps.apple.com/us/app/dearrow-for-youtube/id6451469297?uo=4&amp;at=10l4tL&amp;ct=searchlink">DeArrow for YouTube</a></strong>: 修改视频缩略图为视频中的一帧，修改夸张的标题，去除标题中 emoji 等。</li>
+<li><strong><a href="https://apps.apple.com/us/app/socialfocus-hide-distractions/id1661093205?uo=4&amp;at=10l4tL&amp;ct=searchlink">SocialFocus</a></strong>: 类似功能，微调各种社交网页，限制使用社交网页。</li>
+<li><strong><a href="https://apps.apple.com/us/app/sponsorblock-for-safari/id1573461917?uo=4&amp;at=10l4tL&amp;ct=searchlink">SponsorBlock for YouTube</a></strong>: 跳过 &quot;This video is sponsored by xxx&quot;。</li>
+<li><strong><a href="https://apps.apple.com/us/app/vinegar-tube-cleaner/id1591303229?uo=4&amp;at=10l4tL&amp;ct=searchlink">Vineger</a> and <a href="https://apps.apple.com/us/app/baking-soda-tube-cleaner/id1601151613?uo=4&amp;at=10l4tL&amp;ct=searchlink">Baking Soda</a></strong>: 改变视频播放框，没有怎么体验到他的好处，不过也放在这了。</li>
+</ol>
+<h2>其他有名的扩展</h2>
+<ol>
+<li><strong><a href="https://apps.apple.com/us/app/stopthemadness/id1376402589?mt=12&amp;uo=4&amp;at=10l4tL&amp;ct=searchlink">Stop the Madness</a></strong>: reddit 上很火的插件，光看他的设置列表就知道功能强大了，奈何 12 刀，没买。</li>
+</ol>
+<p>另外 Alfred 有很多 Safari 相关的插件，比如说搜索 tab 历史记录，改变 Profile，这里就不多做介绍了。</p>
+<p><a href="https://alfred.app/search/?q=safari">https://alfred.app/search/?q=safari</a></p>
+<p>欢迎大家留言推荐更多好用的 Safari 扩展。下回考虑写个在用的油猴脚本。</p>
 
-  <h3>2024</h3>
-  <ul id="years-index">
-    
-      <li>11-28 <a href="rssbrew-public.html">RSSbrew 公开订阅源</a></li>
-    
-      <li>11-28 <a href="memos.html">弃用 memos</a></li>
-    
-      <li>11-27 <a href="ticktick.html">滴答清单体验</a></li>
-    
-      <li>11-07 <a href="hoarder-zh.html">Hoarder - 自托管 AI 书签管理软件</a></li>
-    
-      <li>10-15 <a href="nas.html">整了个 NAS</a></li>
-    
-      <li>06-02 <a href="rssbrew-config.html">RSSBrew beta 简单介绍和使用指南</a></li>
-    
-      <li>05-24 <a href="hoarder.html">Hoarder - The Self-Hosted Bookmark Manager</a></li>
-    
-      <li>05-22 <a href="todo-app.html">苹果端 Todo App 简单比较</a></li>
-    
-      <li>04-15 <a href="raycast-alfred.html">如何只用一个 Escape 键退出 Raycast - Get the Best of Both Worlds with Raycast and Alfred</a></li>
-    
-      <li>03-29 <a href="anki-vocabulary.html">划词制作 Anki 卡片</a></li>
-    
-      <li>03-26 <a href="Avatars.html">Avatars</a></li>
-    
-      <li>03-15 <a href="categorize-applications.html">Organizing /Applications folder in macOS</a></li>
-    
-      <li>03-15 <a href="mac-apps.html">推荐一些 macOS 应用</a></li>
-    
-      <li>02-01 <a href="shell-auto-suggestions-zh.html">如何让 Shell 记住常用命令</a></li>
-    
-      <li>02-01 <a href="shell-auto-suggestions.html">How to let your shell to remember your commands</a></li>
-    
-  </ul>
+<style>
+/* 创建一个容器来包含两个按钮 */
+.nav-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* 按钮之间的间距 */
+  margin: 15px 0;
+}
+.nav-button {
+  padding: 10px 20px;
+  background-color: var(--nc-bg-2); /* 使用主题变量 */
+  border: 1px solid var(--nc-bg-3); /* 添加带主题变量的边框 */
+  color: var(--nc-tx-1); /* 使用主题变量的文本 */
+  text-decoration: none;
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中内容 */
+  font-size: 14px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  flex: 1; /* 平均分配空间 */
+  box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
+}
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px; /* 在小屏幕上减小字体大小 */
+  }
+}
+.nav-button:hover {
+  background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
+}
+#prev-button {
+  justify-content: flex-start; /* 左对齐文本 */
+  text-align: left;
+}
+#next-button {
+  justify-content: flex-end; /* 右对齐文本 */
+  text-align: right;
+}
+</style>
+<!-- 使用新的容器包裹按钮 -->
+<div class="nav-buttons-container">
 
-  <h3>2023</h3>
-  <ul id="years-index">
-    
-      <li>11-09 <a href="my-defaults.html">My App Defaults</a></li>
-    
-      <li>11-02 <a href="zheteng.html">折腾</a></li>
-    
-      <li>09-20 <a href="separating-tasks-and-lists.html">Separating tasks and non-actionable items</a></li>
-    
-      <li>09-11 <a href="rss-gpt-manual-en.html">RSS-GPT Configuration</a></li>
-    
-      <li>09-11 <a href="rss-gpt-manual-zh.html">RSS-GPT 使用指南</a></li>
-    
-      <li>09-07 <a href="rss-gpt.html">AI 总结 RSS Feeds</a></li>
-    
-      <li>07-01 <a href="ssh-keys.html">Setup SSH keys for GitHub and remote servers</a></li>
-    
-      <li>06-18 <a href="hello-world.html">Hello World</a></li>
-    
-      <li>06-16 <a href="globus-endpoint.html">Setting up Globus endpoint for your servers</a></li>
-    
-  </ul>
+  
+    <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+  
+  
+    <a href="tailscale.html" class="nav-button" id="next-button">Tailscale 访问内网特定端口 &gt;</a>
+  
 
+</div>
+<br>
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update Giscus theme
+    function updateGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({
+            giscus: {
+                setConfig: {
+                    theme: theme
+                }
+            }
+        }, 'https://giscus.app');
+    }
+    // Initial update based on current theme
+    function initialGiscusSetup() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            updateGiscusTheme('dark');
+        } else if (savedTheme === 'light') {
+            updateGiscusTheme('light');
+        }
+    }
+    // Set a timeout to ensure Giscus has loaded
+    setTimeout(initialGiscusSetup, 1000);
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Get the updated theme after toggle
+            setTimeout(() => {
+                const currentTheme = localStorage.getItem('theme');
+                updateGiscusTheme(currentTheme);
+            }, 100);
+        });
+    }
+});
+</script>
 </main>
     
-<div id="footer" class="index-footer">
+<div id="updated-at">
+  <span>Created: 2025-08-24</span>
+  <span>Updated: 2025-08-24</span>
+</div>
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="years.html#ie68ea8">&lt; Timeline</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    <a href="#" class="search-trigger">Search &gt;</a>
+    
+  </div>
   <p id="footer-body">
-    © <a href="https://yinan.me/">Yinan</a>
+    
+    © <a href = "https://yinan.me/">Yinan</a>
     · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
     · <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
-    · <a href="atom.xml">RSS</a>
+    · <a href="atom.xml"> RSS </a>
+    
   </p>
 </div>
 
