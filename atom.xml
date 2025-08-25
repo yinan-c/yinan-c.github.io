@@ -15,14 +15,14 @@
     <title>推荐几个 Safari 扩展/插件</title>
     <link ref="alternate" href="https://yinan.me/safari-extensions.html" />
     <id>safari-extensions</id>
-    <published>2025-08-24 20:25:29+01:00</published>
-    <updated>2025-08-25 14:57:23+01:00</updated>
+    <published>2025-08-25 18:46:18+01:00</published>
+    <updated>2025-08-25 18:48:52+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html"><![CDATA[&lt;p&gt;前几天升级了 macOS Tahoe 之后，开始逐步从 Chrome 转移到 Safari。这里推荐几个扩展，会持续更新。由于扩展必须上架 App Store，开发者必须交 99刀的年费，所以很多扩展即使是开源的也不一定是免费的。很多插件在手机上的体验也很好。&lt;/p&gt;
 &lt;h2&gt;General&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;密码管理和 Passkeys&lt;/strong&gt;：推荐把 Passkeys 存在自带的 Passwords App 打开自动填充，只要是支持 Passkey 的网站（比如说 GitHub, Google）都可以像 Safari 登陆 AppleID 一样指纹登陆，在 Safari 上 Apple Passwords 体验胜过了 1Passwords。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/tampermonkey/id6738342400&#34;&gt;Tampermonkey&lt;/a&gt; 油猴（篡改猴）免费替代：&lt;a href=&#34;https://apps.apple.com/gb/app/userscripts/id1463298887&#34;&gt;Userscripts&lt;/a&gt;&lt;/strong&gt;。可以从 &lt;a href=&#34;https://greasyfork.org/&#34;&gt;Greasyfork&lt;/a&gt; 导入脚本，~体验和油猴基本无差。~  Update: 刚试了一下导入后的脚本有很多在 Userscripts 还是用不了，最终还是买了 Tampermonkey。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/tampermonkey/id6738342400&#34;&gt;Tampermonkey&lt;/a&gt; 油猴（篡改猴）免费替代：&lt;a href=&#34;https://apps.apple.com/gb/app/userscripts/id1463298887&#34;&gt;Userscripts&lt;/a&gt;&lt;/strong&gt;。可以从 &lt;a href=&#34;https://greasyfork.org/&#34;&gt;Greasyfork&lt;/a&gt; 导入脚本，&lt;del&gt;体验和油猴基本无差。&lt;/del&gt;  Update: 刚试了一下导入后的脚本有很多在 Userscripts 还是用不了，最终还是买了 Tampermonkey。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/onetab/id1540160809?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;OneTab&lt;/a&gt;&lt;/strong&gt;: 一键暂存打开的 Tab。Chrome 上就在用，不过 Safari 的 Tab 管理似乎做得比 Chrome 好。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/keyword-search/id1558453954&#34;&gt;Keyword Search&lt;/a&gt;&lt;/strong&gt;: 在地址栏通过 &lt;code&gt;pplx&lt;/code&gt;, &lt;code&gt;gpt&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt; 等自定义关键词快捷搜索 perplexity，chatgpt，amazon 等。在手机上使用的意义更大些，可以不用下很多 web 套壳 app，电脑上用 Alfred/Raycast 的 websearch/quicklinks 可能就够了。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/super-agent-for-safari/id1568262835?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Superagent for Safari&lt;/a&gt;&lt;/strong&gt;: 自动帮你点击 Cookies 选项，手机上免费用 3 次。&lt;/li&gt;
