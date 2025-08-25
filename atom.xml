@@ -16,13 +16,13 @@
     <link ref="alternate" href="https://yinan.me/safari-extensions.html" />
     <id>safari-extensions</id>
     <published>2025-08-24 20:25:29+01:00</published>
-    <updated>2025-08-25 09:21:16+01:00</updated>
+    <updated>2025-08-25 14:57:23+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;前几天升级了 macOS Tahoe 之后，开始逐步从 Chrome 转移到 Safari。这里推荐几个扩展，会持续更新。由于扩展必须上架 App Store，开发者必须交 99刀的年费，所以很多扩展即使是开源的也不一定是免费的。很多插件在手机上的体验也很好。&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;前几天升级了 macOS Tahoe 之后，开始逐步从 Chrome 转移到 Safari。这里推荐几个扩展，会持续更新。由于扩展必须上架 App Store，开发者必须交 99刀的年费，所以很多扩展即使是开源的也不一定是免费的。很多插件在手机上的体验也很好。&lt;/p&gt;
 &lt;h2&gt;General&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;密码管理和 Passkeys&lt;/strong&gt;：推荐把 Passkeys 存在自带的 Passwords App 打开自动填充，只要是支持 Passkey 的网站（比如说 GitHub, Google）都可以像 Safari 登陆 AppleID 一样指纹登陆，在 Safari 上 Apple Passwords 体验胜过了 1Passwords。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tampermonkey 油猴（篡改猴）免费替代：&lt;a href=&#34;https://apps.apple.com/gb/app/userscripts/id1463298887&#34;&gt;Userscript&lt;/a&gt;&lt;/strong&gt;。可以从 &lt;a href=&#34;https://greasyfork.org/&#34;&gt;Greasyfork&lt;/a&gt; 导入脚本，体验和油猴基本无差。   &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/tampermonkey/id6738342400&#34;&gt;Tampermonkey&lt;/a&gt; 油猴（篡改猴）免费替代：&lt;a href=&#34;https://apps.apple.com/gb/app/userscripts/id1463298887&#34;&gt;Userscripts&lt;/a&gt;&lt;/strong&gt;。可以从 &lt;a href=&#34;https://greasyfork.org/&#34;&gt;Greasyfork&lt;/a&gt; 导入脚本，~体验和油猴基本无差。~  Update: 刚试了一下导入后的脚本有很多在 Userscripts 还是用不了，最终还是买了 Tampermonkey。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/onetab/id1540160809?mt=12&amp;amp;uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;OneTab&lt;/a&gt;&lt;/strong&gt;: 一键暂存打开的 Tab。Chrome 上就在用，不过 Safari 的 Tab 管理似乎做得比 Chrome 好。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/keyword-search/id1558453954&#34;&gt;Keyword Search&lt;/a&gt;&lt;/strong&gt;: 在地址栏通过 &lt;code&gt;pplx&lt;/code&gt;, &lt;code&gt;gpt&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt; 等自定义关键词快捷搜索 perplexity，chatgpt，amazon 等。在手机上使用的意义更大些，可以不用下很多 web 套壳 app，电脑上用 Alfred/Raycast 的 websearch/quicklinks 可能就够了。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/super-agent-for-safari/id1568262835?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Superagent for Safari&lt;/a&gt;&lt;/strong&gt;: 自动帮你点击 Cookies 选项，手机上免费用 3 次。&lt;/li&gt;
@@ -39,7 +39,7 @@
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/untrap-for-youtube/id1637438059?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Untrap for YouTube&lt;/a&gt;&lt;/strong&gt;: 隐藏短视频。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/dearrow-for-youtube/id6451469297?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;DeArrow for YouTube&lt;/a&gt;&lt;/strong&gt;: 修改视频缩略图为视频中的一帧，修改夸张的标题，去除标题中 emoji 等。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/socialfocus-hide-distractions/id1661093205?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;SocialFocus&lt;/a&gt;&lt;/strong&gt;: 类似功能，微调各种社交网页，限制使用社交网页。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/sponsorblock-for-safari/id1573461917?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;SponsorBlock for YouTube&lt;/a&gt;&lt;/strong&gt;: 跳过 &#34;This video is sponsored by xxx&#34;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/sponsorblock-for-safari/id1573461917?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;SponsorBlock for YouTube&lt;/a&gt;&lt;/strong&gt;: 跳过 &amp;quot;This video is sponsored by xxx&amp;quot;。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://apps.apple.com/us/app/vinegar-tube-cleaner/id1591303229?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Vineger&lt;/a&gt; and &lt;a href=&#34;https://apps.apple.com/us/app/baking-soda-tube-cleaner/id1601151613?uo=4&amp;amp;at=10l4tL&amp;amp;ct=searchlink&#34;&gt;Baking Soda&lt;/a&gt;&lt;/strong&gt;: 改变视频播放框，没有怎么体验到他的好处，不过也放在这了。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;其他有名的扩展&lt;/h2&gt;
@@ -48,7 +48,8 @@
 &lt;/ol&gt;
 &lt;p&gt;另外 Alfred 有很多 Safari 相关的插件，比如说搜索 tab 历史记录，切换 Profile，这里就不多做介绍了。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://alfred.app/search/?q=safari&#34;&gt;https://alfred.app/search/?q=safari&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;欢迎大家留言推荐更多好用的 Safari 扩展。下回考虑写个在用的油猴脚本。&lt;/p&gt;</content>
+&lt;p&gt;欢迎大家留言推荐更多好用的 Safari 扩展。下回考虑写个在用的油猴脚本。&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -58,76 +59,75 @@
     <published>2025-06-30 15:26:44+01:00</published>
     <updated>2025-06-30 15:32:10+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公网 ip（VM 提供公网 ipv4 在套餐内），如果要开通则需额外付5英镑每月。&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公网 ip（VM 提供公网 ipv4 在套餐内），如果要开通则需额外付5英镑每月。&lt;/p&gt;
 &lt;p&gt;原本一些运行在 nas 上的服务通过 OpenVPN 提供自组网内访问，但是考虑到安全问题，我并没有把 VPS 加入自组网，如果确实需要访问 nas 中的特定服务则通过路由器端口映射和防火墙提供给 VPS 访问。没有了公网 ip 之后，无法将服务端口映射开放，只能另寻其他解决方案。&lt;/p&gt;
 &lt;h2&gt;Tailscale 的安全配置&lt;/h2&gt;
 &lt;p&gt;之前在用 OpenVPN 的时候，也尝试过 Tailscale、Netbird 等自组网，现在为了让 VPS 也能访问到 nas 上的特定服务就必须要把 VPS 也加入到 Tailscale 网络，但是我又不想要 VPS 能够访问 Tailscale 网内的所有设备所有服务，就需要限制 VPS 只允许访问内网特定设备的特定端口 - 通过设定 ACL 规则。&lt;/p&gt;
 &lt;p&gt;这里贴出我的部分配置方案，去除了默认 grants 中允许所有连接的配置，加上了两条规则，仅允许 VPS 访问 NAS 的13333端口以及其他所有设备和 nas 互联。&lt;/p&gt;
-&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt;{
-    // Define the tags which can be applied to devices and by which users.
-    &amp;quot;tagOwners&amp;quot;: {
-        &amp;quot;tag:nas&amp;quot;: [&amp;quot;autogroup:admin&amp;quot;],
-        &amp;quot;tag:vps&amp;quot;: [&amp;quot;autogroup:admin&amp;quot;],
-    },
+&lt;pre&gt;&lt;code&gt;{
+	// Define the tags which can be applied to devices and by which users.
+	&amp;quot;tagOwners&amp;quot;: {
+		&amp;quot;tag:nas&amp;quot;: [&amp;quot;autogroup:admin&amp;quot;],
+		&amp;quot;tag:vps&amp;quot;: [&amp;quot;autogroup:admin&amp;quot;],
+	},
 
-    // Define grants that govern access for users, groups, autogroups, tags,
-    // Tailscale IP addresses, and subnet ranges.
-    //&amp;quot;grants&amp;quot;: [
-    // Allow all connections.
-    // Comment this section out if you want to define specific restrictions.
-    //  {&amp;quot;src&amp;quot;: [&amp;quot;*&amp;quot;], &amp;quot;dst&amp;quot;: [&amp;quot;*&amp;quot;], &amp;quot;ip&amp;quot;: [&amp;quot;*&amp;quot;]},
-    //],
+	// Define grants that govern access for users, groups, autogroups, tags,
+	// Tailscale IP addresses, and subnet ranges.
+	//&amp;quot;grants&amp;quot;: [
+	// Allow all connections.
+	// Comment this section out if you want to define specific restrictions.
+	//	{&amp;quot;src&amp;quot;: [&amp;quot;*&amp;quot;], &amp;quot;dst&amp;quot;: [&amp;quot;*&amp;quot;], &amp;quot;ip&amp;quot;: [&amp;quot;*&amp;quot;]},
+	//],
 
-    // Define users and devices that can use Tailscale SSH.
-    &amp;quot;ssh&amp;quot;: [
-        // Allow all users to SSH into their own devices in check mode.
-        // Comment this section out if you want to define specific restrictions.
-        {
-            &amp;quot;action&amp;quot;: &amp;quot;check&amp;quot;,
-            &amp;quot;src&amp;quot;:    [&amp;quot;autogroup:member&amp;quot;],
-            &amp;quot;dst&amp;quot;:    [&amp;quot;autogroup:self&amp;quot;],
-            &amp;quot;users&amp;quot;:  [&amp;quot;autogroup:nonroot&amp;quot;, &amp;quot;root&amp;quot;],
-        },
-    ],
-    // 定义访问控制规则
-    &amp;quot;acls&amp;quot;: [
-        // 规则一：允许所有设备互相访问所有端口。
-        // &amp;quot;autogroup:member&amp;quot; 代表 Tailscale 网络中的所有用户及其设备。
-        {
-            &amp;quot;action&amp;quot;: &amp;quot;accept&amp;quot;,
-            &amp;quot;src&amp;quot;:    [&amp;quot;autogroup:member&amp;quot;],
-            &amp;quot;dst&amp;quot;:    [&amp;quot;autogroup:member:*&amp;quot;, &amp;quot;tag:nas:*&amp;quot;],
-        },
+	// Define users and devices that can use Tailscale SSH.
+	&amp;quot;ssh&amp;quot;: [
+		// Allow all users to SSH into their own devices in check mode.
+		// Comment this section out if you want to define specific restrictions.
+		{
+			&amp;quot;action&amp;quot;: &amp;quot;check&amp;quot;,
+			&amp;quot;src&amp;quot;:    [&amp;quot;autogroup:member&amp;quot;],
+			&amp;quot;dst&amp;quot;:    [&amp;quot;autogroup:self&amp;quot;],
+			&amp;quot;users&amp;quot;:  [&amp;quot;autogroup:nonroot&amp;quot;, &amp;quot;root&amp;quot;],
+		},
+	],
+	// 定义访问控制规则
+	&amp;quot;acls&amp;quot;: [
+		// 规则一：允许所有设备互相访问所有端口。
+		// &amp;quot;autogroup:member&amp;quot; 代表 Tailscale 网络中的所有用户及其设备。
+		{
+			&amp;quot;action&amp;quot;: &amp;quot;accept&amp;quot;,
+			&amp;quot;src&amp;quot;:    [&amp;quot;autogroup:member&amp;quot;],
+			&amp;quot;dst&amp;quot;:    [&amp;quot;autogroup:member:*&amp;quot;, &amp;quot;tag:nas:*&amp;quot;],
+		},
 
-        // 规则二：仅允许 VPS 访问 NAS 的13333端口。
-        {
-            &amp;quot;action&amp;quot;: &amp;quot;accept&amp;quot;,
-            &amp;quot;src&amp;quot;:    [&amp;quot;tag:vps&amp;quot;],
-            &amp;quot;dst&amp;quot;:    [&amp;quot;tag:nas:13333&amp;quot;],
-        },
-    ],
+		// 规则二：仅允许 VPS 访问 NAS 的13333端口。
+		{
+			&amp;quot;action&amp;quot;: &amp;quot;accept&amp;quot;,
+			&amp;quot;src&amp;quot;:    [&amp;quot;tag:vps&amp;quot;],
+			&amp;quot;dst&amp;quot;:    [&amp;quot;tag:nas:13333&amp;quot;],
+		},
+	],
 
-    // (可选) 添加测试以验证规则是否按预期工作
+	// (可选) 添加测试以验证规则是否按预期工作
 
-    &amp;quot;tests&amp;quot;: [
-        {
-            &amp;quot;src&amp;quot;:    &amp;quot;tag:vps&amp;quot;,
-            &amp;quot;accept&amp;quot;: [&amp;quot;tag:nas:13333&amp;quot;], // 应该允许访问 13333 端口
-            &amp;quot;deny&amp;quot;:   [&amp;quot;tag:nas:5000&amp;quot;], // 应该拒绝访问 5000 端口
-        }
-    ],
+	&amp;quot;tests&amp;quot;: [
+		{
+			&amp;quot;src&amp;quot;:    &amp;quot;tag:vps&amp;quot;,
+			&amp;quot;accept&amp;quot;: [&amp;quot;tag:nas:13333&amp;quot;], // 应该允许访问 13333 端口
+			&amp;quot;deny&amp;quot;:   [&amp;quot;tag:nas:5000&amp;quot;], // 应该拒绝访问 5000 端口
+		}
+	],
 }
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;配置完成后，如果测试成功则会正常保存配置文件，接下来回到管理设备页面为 nas 和 vps 分别打上标签即可。&lt;/p&gt;
 &lt;p&gt;另外我发现群晖使用 tailscale 的时候似乎无法通过 tailscale ip 来 ping 内网内的其他设备。&lt;/p&gt;
-&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt;sudo ping 100.xx.xx.xxx # 这条会失败
+&lt;pre&gt;&lt;code&gt;sudo ping 100.xx.xx.xxx # 这条会失败
 
 sudo tailscale ping 100.xx.xx.xx # tailscale ping 却能成功
 pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;似乎和&lt;a href=&#34;https://github.com/tailscale/tailscale/issues/1995&#34;&gt;这个 bug&lt;/a&gt; 有关。&lt;/p&gt;</content>
+&lt;p&gt;似乎和&lt;a href=&#34;https://github.com/tailscale/tailscale/issues/1995&#34;&gt;这个 bug&lt;/a&gt; 有关。&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -137,13 +137,13 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2023-06-19 17:35:38+01:00</published>
     <updated>2025-03-23 11:18:38+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;ul&gt;
+    <content type="html"><![CDATA[&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://yinan.me/hello-world&#34;&gt;中文简介&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Hi, I am Yinan, a PhD student in Physics. You can access this blog via &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; and &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Since I started my PhD, I have been reading and learning a lot, by writing down tons of notes and worklogs. Most of my notes are Markdown files stored in an app called &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time. &lt;/p&gt;
-&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke. &lt;/p&gt;
+&lt;p&gt;Since almost all of my notes are going digital now, it is not a bad idea to put them online. Also, I have been writing short articles in Chinese since very young, but hadn&#39;t had the chance to collect and share them with others. I have been thinking about starting a blog for a long time.&lt;/p&gt;
+&lt;p&gt;Now, I finally decided to start one, thanks to a great tool &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt;, which makes it very easy to create a blog using Markdown files. I know other tools like WordPress and Hugo that can do the same thing, but I like the simplicity of PyBoke.&lt;/p&gt;
 &lt;h2&gt;About this blog&lt;/h2&gt;
 &lt;p&gt;This blog is created by a modified version of &lt;a href=&#34;https://github.com/yinan-c/pyboke&#34;&gt;PyBoke&lt;/a&gt;, where I added features like full text RSS, navigation buttons, and abstracts on the homepage.&lt;/p&gt;
 &lt;p&gt;The original version of PyBoke is created by &lt;a href=&#34;https://github.com/ahui2016&#34;&gt;ahui2016&lt;/a&gt;.&lt;/p&gt;
@@ -155,17 +155,22 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;ul&gt;
 &lt;li&gt;Twitter logo icons created by &lt;a href=&#34;https://www.flaticon.com/free-icon/twitter_3670151&#34;&gt;Md Tanvirul Haque - Flaticon&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Email icon from &lt;a href=&#34;https://www.freepnglogos.com/images/email-13765.html&#34;&gt;freepnglogos.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Matodon logo by Eugen Rochko &amp;amp; other Mastodon contributors - https://blog.joinmastodon.org/, AGPL, https://commons.wikimedia.org/w/index.php?curid=120470930&lt;/li&gt;
+&lt;li&gt;Matodon logo by Eugen Rochko &amp;amp;amp; other Mastodon contributors - https://blog.joinmastodon.org/, AGPL, https://commons.wikimedia.org/w/index.php?curid=120470930&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;License&lt;/h1&gt;
-&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY-NC 4.0&lt;/a&gt;. You are free to:
-- Share — copy and redistribute the material in any medium or format
-- Adapt — remix, transform, and build upon the material&lt;/p&gt;
+&lt;p&gt;The articles I write are licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY-NC 4.0&lt;/a&gt;. You are free to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Share — copy and redistribute the material in any medium or format&lt;/li&gt;
+&lt;li&gt;Adapt — remix, transform, and build upon the material&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;
-&lt;p&gt;Under the following terms:
-- Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-- NonCommercial — You may not use the material for commercial purposes .
-- No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/p&gt;</content>
+&lt;p&gt;Under the following terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/li&gt;
+&lt;li&gt;NonCommercial — You may not use the material for commercial purposes .&lt;/li&gt;
+&lt;li&gt;No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -175,7 +180,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2023-06-18 18:59:53+01:00</published>
     <updated>2025-03-23 11:18:38+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
+    <content type="html"><![CDATA[&lt;h2&gt;我是谁?&lt;/h2&gt;
 &lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。这个博客的域名是 &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; 和 &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;。&lt;/p&gt;
 &lt;h2&gt;为什么写博客？&lt;/h2&gt;
 &lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
@@ -189,14 +194,19 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 采用了开源方案 &lt;a href=&#34;https://github.com/ahui2016/pyboke&#34;&gt;PyBoke&lt;/a&gt; 生成静态网站，自己在此基础上加了点&lt;a href=&#34;https://github.com/yinan-c/pyboke/&#34;&gt;其他功能&lt;/a&gt;，例如首页显示摘要，文章底部翻页，full text RSS 格式。使用的是 &lt;a href=&#34;https://newcss.net/&#34;&gt;newcss 主题&lt;/a&gt;，再通过 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 和 &lt;a href=&#34;https://pages.cloudflare.com&#34;&gt;Cloudflare Pages&lt;/a&gt; 发布。你也可以通过 &lt;a href=&#34;https://1nan.pages.dev/&#34;&gt;1nan.pages.dev&lt;/a&gt; 或 &lt;a href=&#34;https://yinan-c.github.io/&#34;&gt;yinan-c.github.io&lt;/a&gt; 访问。&lt;/p&gt;
 &lt;p&gt;本博客所有源 markdown 文件，以及模板开源，托管在 &lt;a href=&#34;https://github.com/yinan-c/blog&#34;&gt;GitHub&lt;/a&gt; 上。&lt;/p&gt;
 &lt;h2&gt;版权&lt;/h2&gt;
-&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY-NC 4.0&lt;/a&gt; 协议。您可以自由地：
-- 共享 — 在任何媒介以任何形式复制、发行本作品
-- 演绎 — 修改、转换或以本作品为基础进行创作&lt;/p&gt;
+&lt;p&gt;本博客所有文章采用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;CC BY-NC 4.0&lt;/a&gt; 协议。您可以自由地：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;共享 — 在任何媒介以任何形式复制、发行本作品&lt;/li&gt;
+&lt;li&gt;演绎 — 修改、转换或以本作品为基础进行创作&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;只要你遵守许可协议条款，许可人就无法收回你的这些权利。&lt;/p&gt;
-&lt;p&gt;惟须遵守下列条件：
-- 署名 — 您必须给出 适当的署名 ，提供指向本许可协议的链接，同时 标明是否（对原始作品）作了修改 。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。
-- 非商业性使用 — 您不得将本作品用于 商业目的 。
-- 没有附加限制 — 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/p&gt;</content>
+&lt;p&gt;惟须遵守下列条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;署名 — 您必须给出 适当的署名 ，提供指向本许可协议的链接，同时 标明是否（对原始作品）作了修改 。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。&lt;/li&gt;
+&lt;li&gt;非商业性使用 — 您不得将本作品用于 商业目的 。&lt;/li&gt;
+&lt;li&gt;没有附加限制 — 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -206,12 +216,12 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-03-22 22:05:54+00:00</published>
     <updated>2025-03-22 22:14:00+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;I found &lt;a href=&#34;https://pagefind.app/&#34;&gt;Pagefind&lt;/a&gt; as a full text search for static sites.&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;I found &lt;a href=&#34;https://pagefind.app/&#34;&gt;Pagefind&lt;/a&gt; as a full text search for static sites.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;So I added a small search button on the homepage and asked Claude to modify the style a bit. The best thing about this tool is that it is also a static index, meaning you don&#39;t have to keep the index server running in the back ground, once the index is generated, and the following snippet added to a page of your choice:&lt;/p&gt;
-&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;/pagefind/pagefind-ui.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;/pagefind/pagefind-ui.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt;
 &amp;lt;script src=&amp;quot;/pagefind/pagefind-ui.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;div id=&amp;quot;search&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
 &amp;lt;script&amp;gt;
@@ -220,9 +230,9 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     });
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;You&#39;re good to go, it works perfectly with GitHub pages (what I&#39;m using currently) or any other website framework such as Hugo. Alternatively, you can use it as a web server to host your static pages (add a --serve flag in the end, maybe it can update the index while new pages were generated).&lt;/p&gt;
-&lt;p&gt;Try it out in my &lt;a href=&#34;https://yinan.me&#34;&gt;blog&lt;/a&gt;!&lt;/p&gt;</content>
+&lt;p&gt;Try it out in my &lt;a href=&#34;https://yinan.me&#34;&gt;blog&lt;/a&gt;!&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -232,9 +242,10 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-03-05 15:09:38+00:00</published>
     <updated>2025-03-05 15:18:43+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;&lt;a href=&#34;https://www.benkuhn.net/hard/&#34;&gt;You don&#39;t need to work on hard problems - Ben Kuhn&lt;/a&gt;&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;&lt;a href=&#34;https://www.benkuhn.net/hard/&#34;&gt;You don&#39;t need to work on hard problems - Ben Kuhn&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I just came across this interesting article. I have to agree on how the problems  (and how you are evaluated) in school set deliberately to be linear or 1 dimensional. While in real world, problems tend to be multi-dimensional, which relies on both so-called soft skills and hard skills. However, it is also exactly the same reason that there is no other place than school, that you&#39;ll been evaluated in a fair, straight-forward way.&lt;/p&gt;
-&lt;p&gt;I am not saying that you don&#39;t need to work hard in school. However, what school really taught us was really far beyond solving hard problems.&lt;/p&gt;</content>
+&lt;p&gt;I am not saying that you don&#39;t need to work hard in school. However, what school really taught us was really far beyond solving hard problems.&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -244,7 +255,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-03-04 23:12:50+00:00</published>
     <updated>2025-03-04 23:18:05+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;These are the current methods I am using to do Crossing Posting.&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;These are the current methods I am using to do Crossing Posting.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;From Mastodon to Bluesky: &lt;a href=&#34;https://skymoth.app&#34;&gt;https://skymoth.app/&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -255,9 +266,10 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;li&gt;From Mastodon to X (Formerly Twitter): &lt;a href=&#34;https://github.com/yinan-c/Mastodon-to-Twitter-Sync&#34;&gt;yinan-c/Mastodon-to-Twitter-Sync&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You&#39;ll need to configure both Twitter and Mastodon API for this. &lt;/p&gt;
+&lt;p&gt;You&#39;ll need to configure both Twitter and Mastodon API for this.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Unfortunately I did not find a good way to sync old Tweets to mastodon account in mastodon.social. Let me know if you do find something for this.&lt;/p&gt;</content>
+&lt;p&gt;Unfortunately I did not find a good way to sync old Tweets to mastodon account in mastodon.social. Let me know if you do find something for this.&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -267,15 +279,15 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-02-26 14:02:19+00:00</published>
     <updated>2025-02-26 15:33:07+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;我之前在&lt;a href=&#34;https://mastodon.social/@yinan/113533540585152064&#34;&gt;推特&lt;/a&gt;上分享过，用 RSS+Hoarder/DEVONthink 存档来记录我在互联网上的足迹。这篇文章我来推荐几个记录生活足迹的软件/方法。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lrpl17-0.png&#34; /&gt;&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;我之前在&lt;a href=&#34;https://mastodon.social/@yinan/113533540585152064&#34;&gt;推特&lt;/a&gt;上分享过，用 RSS+Hoarder/DEVONthink 存档来记录我在互联网上的足迹。这篇文章我来推荐几个记录生活足迹的软件/方法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lrpl17-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;不知道有没有人跟我有一样的记录习惯，事件记录，时间记录，地点记录。比如说在什么时间去了那些有趣的地方，可能是一个咖啡店，一个饭店，一次远足，甚至是记录日常健身跑步。&lt;/p&gt;
 &lt;p&gt;最简单的方案就是用日历，日历事件本身具有时间地点的属性，既可以用作提前安排行程事项，也可以用作记录过去的行程和地点。&lt;/p&gt;
 &lt;p&gt;在这个基础上，苹果商店就能找到一些一键记录时间戳/地点然后同步到日历的&lt;a href=&#34;https://apps.apple.com/gb/app/where-when/id1568813475&#34;&gt;软件&lt;/a&gt;，关键词 &lt;a href=&#34;https://apps.apple.com/gb/app/where-when/id6503927025&#34;&gt;where when&lt;/a&gt;。如果你用 Things 3 来做事项管理，Culturedcode 官方就提供了 &lt;a href=&#34;https://culturedcode.com/things/support/articles/2955145/#sdtgg&#34;&gt;Save My Location&lt;/a&gt;的捷径。&lt;/p&gt;
 &lt;p&gt;另外还有一个比较有意思的软件，&lt;a href=&#34;https://apps.apple.com/gb/app/what3words-navigation-maps/id657878530&#34;&gt;what3words&lt;/a&gt;，这是一个以三个常见的单词组合来编码地理位置的系统，将地球表面划分为三米见方的网格，每一格对应专属的三个词语。例如，英国首相官邸唐宁街10号正门所在位置对应的三个词语为slurs.this.shark[1]。据说还支持各种不同的语言，有兴趣的朋友可以看一下 &lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E4%B8%89%E8%AF%8D%E5%9C%B0%E5%9D%80&#34;&gt;wiki&lt;/a&gt;，并下载来试用一下，这个软件需要登录账号才能保存地理位置。&lt;/p&gt;
 &lt;h2&gt;世界迷雾&lt;/h2&gt;
 &lt;p&gt;世界迷雾大概就是把探索世界当成一个游戏，有等级，成就和迷雾护照的概念，你每探索一个新的地方，你脚下的地图颜色就会被点亮，然后记录一个探索的百分比。很有意思的一款软件，但是没有时间的概念，只有点亮和未点亮的区别。（让我想起了小时候玩 QQ 宠物也有类似小企鹅赛博旅游，点亮全国全世界地图）。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lwljcl-0.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lwljcl-0.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;如果你使用世界迷雾，这里推荐两个辅助工具，&lt;a href=&#34;https://fogmachine.8bits.io/&#34;&gt;fog machine&lt;/a&gt; 可以用来擦除修改和绘制足迹，也有时光机支持定时给迷雾定期保存快照，连起来播放之后就有点像塞尔达传说的足迹模式。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://fog.vicc.wang/eraser.html&#34;&gt;迷雾资料库 - Vicc&lt;/a&gt;，这个我没有怎么用过，据说可以导入国内的铁路轨迹，想要了解更多的可以去微信公众号搜索。&lt;/p&gt;
 &lt;p&gt;如果你觉得世界迷雾太贵了，还有平替 &lt;a href=&#34;https://apps.apple.com/gb/app/mapcred/id6444250747&#34;&gt;Mapcred&lt;/a&gt; 和&lt;a href=&#34;https://apps.apple.com/gb/app/footprint-record-lifes-path/id1225520399&#34;&gt;一生足迹&lt;/a&gt;。Mapcred 我试过很费电，一生足迹没怎么用过，不做评价。&lt;/p&gt;
@@ -283,7 +295,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;Rond 跟世界迷雾的理念不一样，他不会记录你的详细轨迹，而更像是我一开始说的那样，如果你在一个地方待了一段时间，它会标记这段时间和地点，在不同的标记时间段期间他还会根据时间、路程的变化，推测出之间的交通方式。&lt;/p&gt;
 &lt;p&gt;数据主要以两种形式展示，一是以时间轴的形式将你一天的形成串联起来，你还可以在一块时间段上标记你的心情（联动 Apple Health），你还可以记录笔记，打标签等等。&lt;/p&gt;
 &lt;p&gt;二是统计饼图，有日周月年的不同统计区间。有点像 &lt;a href=&#34;https://apps.apple.com/gb/app/life-cycle-track-your-time/id1064955217&#34;&gt;Life Cycle&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/26/nemfck-0.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.1991997.xyz/i/0/2025/02/26/nemfck-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;除了显示数据，它还可以像世界迷雾一样在地图上显示你去过的地方，只不过不是连续的轨迹，而是一个一个的图钉📌，一个图钉代表时间轴上的一个时间段。App 内还会统计你去过的所有国家/城市，以及各个城市的图钉数量热力图，它还支持根据不同的活动导出到不同的日历中。总之功能丰富，玩法很多，而且开发者非常 nice，更新勤快，回复反馈及时，非常推荐。&lt;/p&gt;
 &lt;h2&gt;关于电量使用&lt;/h2&gt;
 &lt;p&gt;两个软件都会要求始终获取 GPS，但是实测下来 fog of world 一天只会用掉 5% 的电量，当然你如果一直待在一个地方也可以把 fog of world 暂时关闭来省电。而 Rond 则更为省电，大概只有 1-2% 的电量消耗。&lt;/p&gt;
@@ -292,7 +304,8 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;h2&gt;推荐阅读&lt;/h2&gt;
 &lt;p&gt;[1]&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E4%B8%89%E8%AF%8D%E5%9C%B0%E5%9D%80&#34;&gt;三词地址 - Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[2]&lt;a href=&#34;https://sspai.com/post/85505&#34;&gt;不用世界迷雾，还有这些工具来处理足迹&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[3]&lt;a href=&#34;https://sspai.com/post/85355&#34;&gt;App+1 | Rond 与世界迷雾：现实世界的塞尔达传说地图册&lt;/a&gt;&lt;/p&gt;</content>
+&lt;p&gt;[3]&lt;a href=&#34;https://sspai.com/post/85355&#34;&gt;App+1 | Rond 与世界迷雾：现实世界的塞尔达传说地图册&lt;/a&gt;&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -302,7 +315,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2024-05-22 00:32:57+01:00</published>
     <updated>2025-02-24 17:36:32+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。&lt;/p&gt;
+    <content type="html"><![CDATA[&lt;p&gt;继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。&lt;/p&gt;
 &lt;h2&gt;Things&lt;/h2&gt;
 &lt;p&gt;先说说老朋友 Things，Logbook 显示我从2022年的7月开始用到了2023年的11月15日，等了一年半的 Things 4，始终没有等到。&lt;/p&gt;
 &lt;p&gt;不过 Things 3 还是一如既往美观简洁好用，可惜相比较 OmniFocus 缺了以下我觉得很有用的功能：&lt;/p&gt;
@@ -316,9 +329,11 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;我的任务通常会卡在某个节点比如说，计算中，或者等待回复，而不是简简单单的 0-1 两个状态，而 kanban 以及 Things 的 Heading 就很好地处理了这个问题。OmniFocus 虽然有 Nested Task，但是使用下来更像是子/母任务的从属关系，描述任务的状态我更多用的是标签，但是仍不如 Kanban 拖拽来的直观。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;EDIT: 用 Tagging 作为 Kanban 的坏处在于它不是 exclusive 的，把任务从一个标签拖拽到另一个会让它同时打上两个标签，作为 Kanban 显然不理想。好在&lt;a href=&#34;https://discourse.omnigroup.com/t/sub-tag-exclusivity/41773/5&#34;&gt;论坛&lt;/a&gt;里有人提到用 Command + 拖拽就可以实现转移标签。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;另外，如果需要一个 Kanban board based on Tagging，可以看一下&lt;a href=&#34;https://omni-automation.com/omnifocus/plug-in-kanban-board.html&#34;&gt;这个插件&lt;/a&gt;，试用了一下还不错，从脚本上实现 exclusive tagging，把不同 board 的按钮放在工具栏也能实现在不同标签(Board)之间转移任务。比如说我现在的工具栏和 kanban 长这样：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://yinan.me/pics/kanban.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/kanban.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;题外话，Things vs OmniFocus 的比较于我有点像 Anybox 和 DEVONthink 的比较，一个简洁漂亮，功能单一，能完成他该完成的，一个功能强大，有点 buggy，不够美观，上手难度偏高。&lt;/p&gt;
 &lt;h2&gt;TickTick&lt;/h2&gt;
 &lt;p&gt;一度觉得很理想，有 Kanban，四象限，过滤器，还有经典的日历视图。
@@ -330,13 +345,14 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;Update on 2025-02-24:&lt;/p&gt;
 &lt;p&gt;用了滴答几个月了，我的感觉是一个不错的有潜力的 todo app，虽然操作逻辑上不如 things 顺畅（比如说清单不能多选删除），但是胜在做好了功能和美观易用易上手的平衡点，且价格亲民。缺点是用户生态不如前两个软件，导致 &lt;a href=&#34;https://developer.dida365.com/docs#/openapi&#34;&gt;API&lt;/a&gt; 开发和其他软件的插件支持不多，且我最想要的按照创建时间排序根本没有，只能自己写了个脚本通过 API 手动获取。&lt;/p&gt;
 &lt;p&gt;还有一个很大的槽点就是官方备份导出是一份 csv，恢复备份的时候不能像 Things 和 OmniFocus 一样整个覆盖数据库，回到某一个时刻的状态，而是在你原有数据上增量恢复，除非你在恢复前手动清空你的账号（注意清单不能批量删除，只能一条一条右键-删除）。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://img.1991997.xyz/i/0/2025/02/24/spmyc2-0.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.1991997.xyz/i/0/2025/02/24/spmyc2-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h2&gt;其他玩家&lt;/h2&gt;
 &lt;p&gt;我没有测试 Todoist，因为订阅费用实在太高，但是据说自然语言输入很好用。还有一些后来者：比如 GoodTask (in SetApp) 可以作为 Reminder 的强化版本。我没有考虑长期使用，所以这里不详细介绍了。&lt;/p&gt;
 &lt;p&gt;最后，Todo 只是帮助 prioritize 和 focus 的工具，为了 Get Things Done，一张纸也可以做到这样。所以没有最好的 Todo App, 只有最适合你的。&lt;/p&gt;
 &lt;p&gt;切忌陷入&lt;a href=&#34;https://utgd.net/article/20657&#34;&gt;效率陷阱&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;切忌花在拖拽, Tag Todo 比实际完成 Todo 花的时间还要多。&lt;/p&gt;
-&lt;p&gt;切忌频繁更换工具，能用就不要动。&lt;/p&gt;</content>
+&lt;p&gt;切忌频繁更换工具，能用就不要动。&lt;/p&gt;
+]]></content>
   </entry>
   
   <entry>
@@ -346,11 +362,12 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2024-03-26 16:30:50+00:00</published>
     <updated>2025-02-22 15:01:10+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://anotherdayu.com&#34;&gt;大宇/Dayu&lt;/a&gt; &lt;/li&gt;
+    <content type="html"><![CDATA[&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://anotherdayu.com&#34;&gt;大宇/Dayu&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最近开始考虑增加友链，先准备从我订阅的 RSS 中发送一些申请。&lt;/p&gt;
-&lt;p&gt;如果你有兴趣，也欢迎发&lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;邮件&lt;/a&gt;。&lt;/p&gt;</content>
+&lt;p&gt;如果你有兴趣，也欢迎发&lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;邮件&lt;/a&gt;。&lt;/p&gt;
+]]></content>
   </entry>
   
 
