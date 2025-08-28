@@ -18,7 +18,7 @@
     <published>2025-08-25 18:46:18+01:00</published>
     <updated>2025-08-25 18:48:52+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;前几天升级了 macOS Tahoe 之后，开始逐步从 Chrome 转移到 Safari。这里推荐几个扩展，会持续更新。由于扩展必须上架 App Store，开发者必须交 99刀的年费，所以很多扩展即使是开源的也不一定是免费的。很多插件在手机上的体验也很好。&lt;/p&gt;
+    <content type="html">&lt;p&gt;前几天升级了 macOS Tahoe 之后，开始逐步从 Chrome 转移到 Safari。这里推荐几个扩展，会持续更新。由于扩展必须上架 App Store，开发者必须交 99刀的年费，所以很多扩展即使是开源的也不一定是免费的。很多插件在手机上的体验也很好。&lt;/p&gt;
 &lt;h2&gt;General&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;密码管理和 Passkeys&lt;/strong&gt;：推荐把 Passkeys 存在自带的 Passwords App 打开自动填充，只要是支持 Passkey 的网站（比如说 GitHub, Google）都可以像 Safari 登陆 AppleID 一样指纹登陆，在 Safari 上 Apple Passwords 体验胜过了 1Passwords。&lt;/li&gt;
@@ -49,7 +49,7 @@
 &lt;p&gt;另外 Alfred 有很多 Safari 相关的插件，比如说搜索 tab 历史记录，切换 Profile，这里就不多做介绍了。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://alfred.app/search/?q=safari&#34;&gt;https://alfred.app/search/?q=safari&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;欢迎大家留言推荐更多好用的 Safari 扩展。下回考虑写个在用的油猴脚本。&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -59,7 +59,7 @@
     <published>2025-06-30 15:26:44+01:00</published>
     <updated>2025-06-30 15:32:10+01:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公网 ip（VM 提供公网 ipv4 在套餐内），如果要开通则需额外付5英镑每月。&lt;/p&gt;
+    <content type="html">&lt;p&gt;搬家之后，家里的宽带从原来的 Virgin Media 1000 Mbps 下行100 Mbps 上行换到了 Hyperoptic 1000 Mbps 上下对等的光纤，价格都在37英镑每月，原以为是一次各方面的升级，结果却发现 Hyperoptic 并没有提供公网 ip（VM 提供公网 ipv4 在套餐内），如果要开通则需额外付5英镑每月。&lt;/p&gt;
 &lt;p&gt;原本一些运行在 nas 上的服务通过 OpenVPN 提供自组网内访问，但是考虑到安全问题，我并没有把 VPS 加入自组网，如果确实需要访问 nas 中的特定服务则通过路由器端口映射和防火墙提供给 VPS 访问。没有了公网 ip 之后，无法将服务端口映射开放，只能另寻其他解决方案。&lt;/p&gt;
 &lt;h2&gt;Tailscale 的安全配置&lt;/h2&gt;
 &lt;p&gt;之前在用 OpenVPN 的时候，也尝试过 Tailscale、Netbird 等自组网，现在为了让 VPS 也能访问到 nas 上的特定服务就必须要把 VPS 也加入到 Tailscale 网络，但是我又不想要 VPS 能够访问 Tailscale 网内的所有设备所有服务，就需要限制 VPS 只允许访问内网特定设备的特定端口 - 通过设定 ACL 规则。&lt;/p&gt;
@@ -127,7 +127,7 @@ sudo tailscale ping 100.xx.xx.xx # tailscale ping 却能成功
 pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;似乎和&lt;a href=&#34;https://github.com/tailscale/tailscale/issues/1995&#34;&gt;这个 bug&lt;/a&gt; 有关。&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -137,7 +137,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2023-06-19 17:35:38+01:00</published>
     <updated>2025-03-23 11:18:38+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;ul&gt;
+    <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://yinan.me/hello-world&#34;&gt;中文简介&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Hi, I am Yinan, a PhD student in Physics. You can access this blog via &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; and &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;.&lt;/p&gt;
@@ -170,7 +170,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;li&gt;NonCommercial — You may not use the material for commercial purposes .&lt;/li&gt;
 &lt;li&gt;No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/li&gt;
 &lt;/ul&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -180,7 +180,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2023-06-18 18:59:53+01:00</published>
     <updated>2025-03-23 11:18:38+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;h2&gt;我是谁?&lt;/h2&gt;
+    <content type="html">&lt;h2&gt;我是谁?&lt;/h2&gt;
 &lt;p&gt;我叫Yinan，目前在英国读博，物理专业。本科在中科大，也是学的物理。这个博客的域名是 &lt;a href=&#34;https://yinan.me/&#34;&gt;yinan.me&lt;/a&gt; 和 &lt;a href=&#34;https://yinan.ch/&#34;&gt;yinan.ch&lt;/a&gt;。&lt;/p&gt;
 &lt;h2&gt;为什么写博客？&lt;/h2&gt;
 &lt;p&gt;回想过去的25年，虽然有记录，写笔记的爱好，但是我还没有正经得把自己的所见所思整理，更没有发布。开始读博以后，有意识的把工作记录和日常见闻记录成文档，碎碎念积少成多，也就成为我在这个世界上来过的一点点证明。&lt;/p&gt;
@@ -206,7 +206,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;li&gt;非商业性使用 — 您不得将本作品用于 商业目的 。&lt;/li&gt;
 &lt;li&gt;没有附加限制 — 您不得适用法律术语或者 技术措施 从而限制其他人做许可协议允许的事情。&lt;/li&gt;
 &lt;/ul&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -216,7 +216,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-03-22 22:05:54+00:00</published>
     <updated>2025-03-22 22:14:00+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;I found &lt;a href=&#34;https://pagefind.app/&#34;&gt;Pagefind&lt;/a&gt; as a full text search for static sites.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I found &lt;a href=&#34;https://pagefind.app/&#34;&gt;Pagefind&lt;/a&gt; as a full text search for static sites.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -232,7 +232,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You&#39;re good to go, it works perfectly with GitHub pages (what I&#39;m using currently) or any other website framework such as Hugo. Alternatively, you can use it as a web server to host your static pages (add a --serve flag in the end, maybe it can update the index while new pages were generated).&lt;/p&gt;
 &lt;p&gt;Try it out in my &lt;a href=&#34;https://yinan.me&#34;&gt;blog&lt;/a&gt;!&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -242,10 +242,10 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-03-05 15:09:38+00:00</published>
     <updated>2025-03-05 15:18:43+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;&lt;a href=&#34;https://www.benkuhn.net/hard/&#34;&gt;You don&#39;t need to work on hard problems - Ben Kuhn&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&#34;https://www.benkuhn.net/hard/&#34;&gt;You don&#39;t need to work on hard problems - Ben Kuhn&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I just came across this interesting article. I have to agree on how the problems  (and how you are evaluated) in school set deliberately to be linear or 1 dimensional. While in real world, problems tend to be multi-dimensional, which relies on both so-called soft skills and hard skills. However, it is also exactly the same reason that there is no other place than school, that you&#39;ll been evaluated in a fair, straight-forward way.&lt;/p&gt;
 &lt;p&gt;I am not saying that you don&#39;t need to work hard in school. However, what school really taught us was really far beyond solving hard problems.&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -255,7 +255,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-03-04 23:12:50+00:00</published>
     <updated>2025-03-04 23:18:05+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;These are the current methods I am using to do Crossing Posting.&lt;/p&gt;
+    <content type="html">&lt;p&gt;These are the current methods I am using to do Crossing Posting.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;From Mastodon to Bluesky: &lt;a href=&#34;https://skymoth.app&#34;&gt;https://skymoth.app/&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -269,7 +269,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;You&#39;ll need to configure both Twitter and Mastodon API for this.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Unfortunately I did not find a good way to sync old Tweets to mastodon account in mastodon.social. Let me know if you do find something for this.&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -279,7 +279,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2025-02-26 14:02:19+00:00</published>
     <updated>2025-02-26 15:33:07+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;我之前在&lt;a href=&#34;https://mastodon.social/@yinan/113533540585152064&#34;&gt;推特&lt;/a&gt;上分享过，用 RSS+Hoarder/DEVONthink 存档来记录我在互联网上的足迹。这篇文章我来推荐几个记录生活足迹的软件/方法。&lt;/p&gt;
+    <content type="html">&lt;p&gt;我之前在&lt;a href=&#34;https://mastodon.social/@yinan/113533540585152064&#34;&gt;推特&lt;/a&gt;上分享过，用 RSS+Hoarder/DEVONthink 存档来记录我在互联网上的足迹。这篇文章我来推荐几个记录生活足迹的软件/方法。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.1991997.xyz/i/0/2025/02/26/lrpl17-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;不知道有没有人跟我有一样的记录习惯，事件记录，时间记录，地点记录。比如说在什么时间去了那些有趣的地方，可能是一个咖啡店，一个饭店，一次远足，甚至是记录日常健身跑步。&lt;/p&gt;
 &lt;p&gt;最简单的方案就是用日历，日历事件本身具有时间地点的属性，既可以用作提前安排行程事项，也可以用作记录过去的行程和地点。&lt;/p&gt;
@@ -305,7 +305,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;[1]&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E4%B8%89%E8%AF%8D%E5%9C%B0%E5%9D%80&#34;&gt;三词地址 - Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[2]&lt;a href=&#34;https://sspai.com/post/85505&#34;&gt;不用世界迷雾，还有这些工具来处理足迹&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[3]&lt;a href=&#34;https://sspai.com/post/85355&#34;&gt;App+1 | Rond 与世界迷雾：现实世界的塞尔达传说地图册&lt;/a&gt;&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -315,7 +315,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2024-05-22 00:32:57+01:00</published>
     <updated>2025-02-24 17:36:32+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;p&gt;继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。&lt;/p&gt;
+    <content type="html">&lt;p&gt;继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。&lt;/p&gt;
 &lt;h2&gt;Things&lt;/h2&gt;
 &lt;p&gt;先说说老朋友 Things，Logbook 显示我从2022年的7月开始用到了2023年的11月15日，等了一年半的 Things 4，始终没有等到。&lt;/p&gt;
 &lt;p&gt;不过 Things 3 还是一如既往美观简洁好用，可惜相比较 OmniFocus 缺了以下我觉得很有用的功能：&lt;/p&gt;
@@ -352,7 +352,7 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;切忌陷入&lt;a href=&#34;https://utgd.net/article/20657&#34;&gt;效率陷阱&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;切忌花在拖拽, Tag Todo 比实际完成 Todo 花的时间还要多。&lt;/p&gt;
 &lt;p&gt;切忌频繁更换工具，能用就不要动。&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
   <entry>
@@ -362,12 +362,12 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
     <published>2024-03-26 16:30:50+00:00</published>
     <updated>2025-02-22 15:01:10+00:00</updated>
     <author><name>Yinan</name></author>
-    <content type="html"><![CDATA[&lt;ul&gt;
+    <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://anotherdayu.com&#34;&gt;大宇/Dayu&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最近开始考虑增加友链，先准备从我订阅的 RSS 中发送一些申请。&lt;/p&gt;
 &lt;p&gt;如果你有兴趣，也欢迎发&lt;a href=&#34;mailto:yinan.email@gmail.com&#34;&gt;邮件&lt;/a&gt;。&lt;/p&gt;
-]]></content>
+</content>
   </entry>
   
 
