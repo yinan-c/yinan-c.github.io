@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/downaload-apps-no-longer-available.html" />
     <id>downaload-apps-no-longer-available</id>
     <published>2025-09-11 23:40:16+01:00</published>
-    <updated>2025-09-11 23:55:01+01:00</updated>
+    <updated>2025-09-12 00:03:22+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;tldr, 首先尝试去 App Store -&amp;gt; 头像 -&amp;gt; Apps -&amp;gt; My Apps 从已购买列表重新下载，如果购买列表内也找不到，则需要从保留该应用的旧设备导出 IPA 文件用 iMazing 安装；如果你在意应用可能被下架，最好关闭 &amp;quot;Offload Unused Apps&amp;quot; 功能（设置 -&amp;gt; App Store），防止本地应用被删除导致无法备份。&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;p&gt;但是以防万一，如果对你来说重要的 App 可能甚至已经从 App Store 下架，那么最保险的方式便是进入设置关闭 Offload Unused Apps （Settings -&amp;gt; Apps -&amp;gt; App Store -&amp;gt; Offload Unused Apps），并且尽可能在换机前保留旧手机上的应用、或者使用 iMazing 等应用做个全局备份。这样即使发现恢复后的新手机上应用被双下架时，也可以通过 IPA 安装。&lt;/p&gt;
 &lt;p&gt;如果你比较随缘，并不在意本地应用被删除 Offload，那么打开这个功能也无妨，当换机来临时，被下架的应用自然会被 Offload。&lt;/p&gt;
 &lt;p&gt;最后岔开个话题，在我闲来无事翻看 2012 年在 iPod Touch 上下载的旧应用，发现这些应用即使下架了这么久，&lt;a href=&#34;https://appraven.net&#34;&gt;Appraven&lt;/a&gt; 仍然可以看到当年的 App Store 截图和信息，比如以下这个。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/IMG_0508.png&#34; alt=&#34;IMG_0508.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/IMG_0508.PNG&#34; alt=&#34;a picture of qq show app&#34; /&gt;&lt;/p&gt;
 </content>
   </entry>
   
