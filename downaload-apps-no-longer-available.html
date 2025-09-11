@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" />
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+  <title>如何下载 App Store 已经下架的应用 - 1nan</title>
+  
+  <meta name="description" content="不管是 iPhone 换新机或是去 Apple Store 维修，需要从 iCloud 恢复旧手机数据，又或者是打开了 iOS 17 后推出的 Offload Unused Apps （本意是为了节约手机宝贵的存储空间），你一定会发现在手机某些 App..." />
+  
+  
+  <link rel="canonical" href="https://yinan.me/downaload-apps-no-longer-available.html" />
+  
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  @media (max-width: 600px) {
+  #header-created-at span,
+  #header-home-link {
+    font-size: 0.8rem;
+  }
+  }
+  </style>
+
+    <style>
+      /* 主题切换按钮样式 */
+      .theme-toggle-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--nc-bg-2);
+        border: 1px solid var(--nc-bg-3);
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .theme-toggle-button:hover {
+        transform: scale(1.05);
+      }
+      .theme-icon {
+        color: var(--nc-tx-1);
+      }
+      /* 暗色/亮色模式切换按钮容器 */
+      #theme-toggle-container {
+        position: fixed; 
+        bottom: 20px; 
+        right: 20px; 
+        z-index: 100;
+      }
+      /* 自定义暗色模式 - 将覆盖 prefers-color-scheme */
+      html.dark-theme {
+        --nc-tx-1: #ffffff;
+        --nc-tx-2: #eeeeee;
+        --nc-bg-1: #000000;
+        --nc-bg-2: #111111;
+        --nc-bg-3: #222222;
+        --nc-lk-1: #3291FF;
+        --nc-lk-2: #0070F3;
+        --nc-lk-tx: #FFFFFF;
+        --nc-ac-1: #7928CA;
+        --nc-ac-tx: #FFFFFF;
+      }
+      /* 自定义亮色模式 - 将覆盖 prefers-color-scheme */
+      html.light-theme {
+        --nc-tx-1: #000000;
+        --nc-tx-2: #1A1A1A;
+        --nc-bg-1: #FFFFFF;
+        --nc-bg-2: #F6F8FA;
+        --nc-bg-3: #E5E7EB;
+        --nc-lk-1: #0070F3;
+        --nc-lk-2: #0366D6;
+        --nc-lk-tx: #FFFFFF;
+        --nc-ac-1: #79FFE1;
+        --nc-ac-tx: #0C4047;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 暗色/亮色模式切换按钮 -->
+    <div id="theme-toggle-container">
+      <button id="theme-toggle" class="theme-toggle-button" aria-label="切换深色/浅色模式">
+        <svg id="light-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="dark-icon" class="theme-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+    
+    
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2025-09-11 </span>
+    </div>
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        <a href="#" class="search-trigger">Search &gt;</a>
+        
+    </div>
+</div>
+
+    <main>
+<!-- Include search modal component -->
+<!-- search_modal.html -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div id="search-modal" class="search-modal">
+  <div class="search-modal-content">
+    <!-- macOS-style close button -->
+    <div class="macos-close-button">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#FF6057"></circle>
+        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"></path>
+      </svg>
+    </div>
+    <div id="search"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PagefindUI for the search modal
+    const searchInstance = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      autofocus: true
+    });
+
+    // Function to open the search modal
+    function openSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      setTimeout(() => {
+        const searchInput = document.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }, 100);
+    }
+
+    // Function to close the search modal
+    function closeSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    // Bind click event for all elements that should trigger the search modal
+    document.querySelectorAll('.search-trigger, #search-button, #search-text').forEach(function(trigger) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        openSearchModal();
+      });
+    });
+    // Close modal when clicking the close button
+    const closeButton = document.querySelector('.macos-close-button');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeSearchModal);
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.target === searchModal) {
+        closeSearchModal();
+      }
+    });
+
+    // Close modal when pressing the ESC key
+    document.addEventListener('keydown', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.key === 'Escape' && searchModal && searchModal.style.display === 'flex') {
+        closeSearchModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Pagefind UI CSS Variables */
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--nc-lk-1);
+    --pagefind-ui-text: var(--nc-tx-1);
+    --pagefind-ui-background: var(--nc-bg-1);
+    --pagefind-ui-border: var(--nc-bg-3);
+    --pagefind-ui-tag: var(--nc-bg-2);
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: var(--nc-font-sans);
+  }
+
+  /* Search Modal Styling */
+  .search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  .search-modal-content {
+    position: relative;
+    background-color: var(--nc-bg-1);
+    color: var(--nc-tx-1);
+    padding: 40px 30px 30px;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+  .macos-close-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  body.modal-open {
+    overflow: hidden;
+  }
+</style>
+
+
+
+<h1>如何下载 App Store 已经下架的应用</h1>
+<blockquote>
+<p>tldr, 首先尝试去 App Store -&gt; 头像 -&gt; Apps -&gt; My Apps 从已购买列表重新下载，如果购买列表内也找不到，则需要从保留该应用的旧设备导出 IPA 文件用 iMazing 安装；如果你在意应用可能被下架，最好关闭 &quot;Offload Unused Apps&quot; 功能（设置 -&gt; App Store），防止本地应用被删除导致无法备份。</p>
+</blockquote>
+<p>不管是 iPhone 换新机或是去 Apple Store 维修，需要从 iCloud 恢复旧手机数据，又或者是打开了 iOS 17 后推出的 Offload Unused Apps （本意是为了节约手机宝贵的存储空间），你一定会发现在手机某些 App 上出现了小小的下载图标。</p>
+<p><img src="https://yinan.me/pics/6756df272794e8f871094deed48d21a4.png" alt="offloaded apps" /></p>
+<blockquote>
+<p>(A screenshot of iOS showing offloaded apps, source: r/ios)</p>
+</blockquote>
+<p>iOS 备份并不像时间机器一样全盘备份，而是保存了应用的 iTunes 链接，在恢复备份时重新从 App Store 下载下来。大多数情况，点击 offloaded app 图标后会将其重新下载下来，但是偶尔也会出现以下这种情况，提示你无法下载，应用已经从 App Store 下架。</p>
+<p><img src="https://yinan.me/pics/4050a16d3eb8b78063e08ece24ce1ea1.png" alt="unable download apps" /></p>
+<blockquote>
+<p>（source: https://talk.macpowerusers.com/t/offloaded-app-removed-from-app-store/17436/3）</p>
+</blockquote>
+<p>如果出现这个提示而你仍想要这个应用，那么最简单的方式可以去 App Store -&gt; 右上角头像 -&gt; Apps -&gt; My Apps 找到所有已经购买的 App （包括已经下载的应用），这种情况通常发生在开发主动将应用退出 App Store (<a href="https://forum.popclip.app/t/popclip-is-leaving-the-mac-app-store/2188">Popclip</a>) 或者老版本被全新的应用替代 (Reeder 4)。这些应用仍能够通过已购买列表重新下载。</p>
+<p>当然如果你运气不好，会发现部分 App 在已购买的 App 列表中也无法找到（即使这些 App 是非常合规的、非钓鱼、非低质量），reddit 上有很多这样的案例，我自己也发现了一两个这样的例子 - 个别从 App Store 下架的应用会因为各种原因从购买列表中也完全移除，彻底被苹果封锁从服务器下载的方式。</p>
+<p>此时如果你仍有旧设备或者其他​<strong>同 Apple ID</strong>​ 的设备上仍然保留有这个应用，那么就可以从旧设备中中导出IPA，并以 Imazing 将其安装在新设备上。具体步骤可以见<a href="https://www.reddit.com/r/dropmix/comments/17ozp55/comment/k8327is">这个帖子</a>。如果你没有保存本地应用，那只能和这些应用说拜拜了，虽然大概率这个 App 也会是你不再需要的。</p>
+<p>但是以防万一，如果对你来说重要的 App 可能甚至已经从 App Store 下架，那么最保险的方式便是进入设置关闭 Offload Unused Apps （Settings -&gt; Apps -&gt; App Store -&gt; Offload Unused Apps），并且尽可能在换机前保留旧手机上的应用、或者使用 iMazing 等应用做个全局备份。如果你比较随缘，并不在意本地应用被删除 Offload，那么打开这个功能也无妨，当换机来临时，被下架的应用自然会被 Offload。</p>
+<p>最后岔开个话题，在我闲来无事翻看 2012 年在 iPod Touch 上下载的旧应用，发现这些应用即使下架了这么久，<a href="https://appraven.net">Appraven</a> 仍然可以看到当年的 App Store 截图和信息，比如以下这个。</p>
+<p><img src="attachments/IMG_0508.PNG" alt="IMG_0508.PNG" /></p>
+
+<style>
+/* 创建一个容器来包含两个按钮 */
+.nav-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* 按钮之间的间距 */
+  margin: 15px 0;
+}
+.nav-button {
+  padding: 10px 20px;
+  background-color: var(--nc-bg-2); /* 使用主题变量 */
+  border: 1px solid var(--nc-bg-3); /* 添加带主题变量的边框 */
+  color: var(--nc-tx-1); /* 使用主题变量的文本 */
+  text-decoration: none;
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中内容 */
+  font-size: 14px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  flex: 1; /* 平均分配空间 */
+  box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
+}
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px; /* 在小屏幕上减小字体大小 */
+  }
+}
+.nav-button:hover {
+  background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
+}
+#prev-button {
+  justify-content: flex-start; /* 左对齐文本 */
+  text-align: left;
+}
+#next-button {
+  justify-content: flex-end; /* 右对齐文本 */
+  text-align: right;
+}
+</style>
+<!-- 使用新的容器包裹按钮 -->
+<div class="nav-buttons-container">
+
+  
+    <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+  
+  
+    <a href="on-the-net.html" class="nav-button" id="next-button">互联网上有好的东西，但充斥着垃圾。 &gt;</a>
+  
+
+</div>
+<br>
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update Giscus theme
+    function updateGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({
+            giscus: {
+                setConfig: {
+                    theme: theme
+                }
+            }
+        }, 'https://giscus.app');
+    }
+    // Initial update based on current theme
+    function initialGiscusSetup() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            updateGiscusTheme('dark');
+        } else if (savedTheme === 'light') {
+            updateGiscusTheme('light');
+        }
+    }
+    // Set a timeout to ensure Giscus has loaded
+    setTimeout(initialGiscusSetup, 1000);
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Get the updated theme after toggle
+            setTimeout(() => {
+                const currentTheme = localStorage.getItem('theme');
+                updateGiscusTheme(currentTheme);
+            }, 100);
+        });
+    }
+});
+</script>
+</main>
+    
+<div id="updated-at">
+  <span>Created: 2025-09-11</span>
+  <span>Updated: 2025-09-11</span>
+</div>
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="years.html#ie5a682">&lt; Timeline</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    <a href="#" class="search-trigger">Search &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © <a href = "https://yinan.me/">Yinan</a>
+    · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    · <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · <a href="atom.xml"> RSS </a>
+    
+  </p>
+</div>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 检查用户首选的颜色方案或存储的主题
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        // 应用主题
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-theme');
+          document.getElementById('light-icon').style.display = 'none';
+          document.getElementById('dark-icon').style.display = 'block';
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.getElementById('light-icon').style.display = 'block';
+          document.getElementById('dark-icon').style.display = 'none';
+        } else {
+          // 如果没有保存的主题，根据系统偏好设置图标
+          if (prefersDarkScheme) {
+            document.getElementById('light-icon').style.display = 'none';
+            document.getElementById('dark-icon').style.display = 'block';
+          }
+        }
+        
+        // 主题切换功能
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', function() {
+          // 移除任何现有的主题类
+          document.documentElement.classList.remove('light-theme', 'dark-theme');
+          
+          // 检查当前主题
+          const currentTheme = localStorage.getItem('theme');
+          let newTheme;
+          
+          if (currentTheme === 'dark') {
+            // 切换到亮色主题
+            document.documentElement.classList.add('light-theme');
+            document.getElementById('light-icon').style.display = 'block';
+            document.getElementById('dark-icon').style.display = 'none';
+            newTheme = 'light';
+          } else {
+            // 切换到暗色主题
+            document.documentElement.classList.add('dark-theme');
+            document.getElementById('light-icon').style.display = 'none';
+            document.getElementById('dark-icon').style.display = 'block';
+            newTheme = 'dark';
+          }
+          
+          // 保存主题偏好
+          localStorage.setItem('theme', newTheme);
+        });
+      });
+    </script>
+  </body>
+  
+</html>

@@ -12,6 +12,35 @@
 
   
   <entry>
+    <title>如何下载 App Store 已经下架的应用</title>
+    <link ref="alternate" href="https://yinan.me/downaload-apps-no-longer-available.html" />
+    <id>downaload-apps-no-longer-available</id>
+    <published>2025-09-11 23:40:16+01:00</published>
+    <updated>2025-09-11 23:49:47+01:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;tldr, 首先尝试去 App Store -&amp;gt; 头像 -&amp;gt; Apps -&amp;gt; My Apps 从已购买列表重新下载，如果购买列表内也找不到，则需要从保留该应用的旧设备导出 IPA 文件用 iMazing 安装；如果你在意应用可能被下架，最好关闭 &amp;quot;Offload Unused Apps&amp;quot; 功能（设置 -&amp;gt; App Store），防止本地应用被删除导致无法备份。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不管是 iPhone 换新机或是去 Apple Store 维修，需要从 iCloud 恢复旧手机数据，又或者是打开了 iOS 17 后推出的 Offload Unused Apps （本意是为了节约手机宝贵的存储空间），你一定会发现在手机某些 App 上出现了小小的下载图标。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/6756df272794e8f871094deed48d21a4.png&#34; alt=&#34;offloaded apps&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(A screenshot of iOS showing offloaded apps, source: r/ios)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;iOS 备份并不像时间机器一样全盘备份，而是保存了应用的 iTunes 链接，在恢复备份时重新从 App Store 下载下来。大多数情况，点击 offloaded app 图标后会将其重新下载下来，但是偶尔也会出现以下这种情况，提示你无法下载，应用已经从 App Store 下架。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/4050a16d3eb8b78063e08ece24ce1ea1.png&#34; alt=&#34;unable download apps&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（source: https://talk.macpowerusers.com/t/offloaded-app-removed-from-app-store/17436/3）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果出现这个提示而你仍想要这个应用，那么最简单的方式可以去 App Store -&amp;gt; 右上角头像 -&amp;gt; Apps -&amp;gt; My Apps 找到所有已经购买的 App （包括已经下载的应用），这种情况通常发生在开发主动将应用退出 App Store (&lt;a href=&#34;https://forum.popclip.app/t/popclip-is-leaving-the-mac-app-store/2188&#34;&gt;Popclip&lt;/a&gt;) 或者老版本被全新的应用替代 (Reeder 4)。这些应用仍能够通过已购买列表重新下载。&lt;/p&gt;
+&lt;p&gt;当然如果你运气不好，会发现部分 App 在已购买的 App 列表中也无法找到（即使这些 App 是非常合规的、非钓鱼、非低质量），reddit 上有很多这样的案例，我自己也发现了一两个这样的例子 - 个别从 App Store 下架的应用会因为各种原因从购买列表中也完全移除，彻底被苹果封锁从服务器下载的方式。&lt;/p&gt;
+&lt;p&gt;此时如果你仍有旧设备或者其他​&lt;strong&gt;同 Apple ID&lt;/strong&gt;​ 的设备上仍然保留有这个应用，那么就可以从旧设备中中导出IPA，并以 Imazing 将其安装在新设备上。具体步骤可以见&lt;a href=&#34;https://www.reddit.com/r/dropmix/comments/17ozp55/comment/k8327is&#34;&gt;这个帖子&lt;/a&gt;。如果你没有保存本地应用，那只能和这些应用说拜拜了，虽然大概率这个 App 也会是你不再需要的。&lt;/p&gt;
+&lt;p&gt;但是以防万一，如果对你来说重要的 App 可能甚至已经从 App Store 下架，那么最保险的方式便是进入设置关闭 Offload Unused Apps （Settings -&amp;gt; Apps -&amp;gt; App Store -&amp;gt; Offload Unused Apps），并且尽可能在换机前保留旧手机上的应用、或者使用 iMazing 等应用做个全局备份。如果你比较随缘，并不在意本地应用被删除 Offload，那么打开这个功能也无妨，当换机来临时，被下架的应用自然会被 Offload。&lt;/p&gt;
+&lt;p&gt;最后岔开个话题，在我闲来无事翻看 2012 年在 iPod Touch 上下载的旧应用，发现这些应用即使下架了这么久，&lt;a href=&#34;https://appraven.net&#34;&gt;Appraven&lt;/a&gt; 仍然可以看到当年的 App Store 截图和信息，比如以下这个。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;attachments/IMG_0508.PNG&#34; alt=&#34;IMG_0508.PNG&#34; /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
     <title>互联网上有好的东西，但充斥着垃圾。</title>
     <link ref="alternate" href="https://yinan.me/on-the-net.html" />
     <id>on-the-net</id>
@@ -329,53 +358,6 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;p&gt;[1]&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E4%B8%89%E8%AF%8D%E5%9C%B0%E5%9D%80&#34;&gt;三词地址 - Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[2]&lt;a href=&#34;https://sspai.com/post/85505&#34;&gt;不用世界迷雾，还有这些工具来处理足迹&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[3]&lt;a href=&#34;https://sspai.com/post/85355&#34;&gt;App+1 | Rond 与世界迷雾：现实世界的塞尔达传说地图册&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>苹果端 Todo App 简单比较</title>
-    <link ref="alternate" href="https://yinan.me/todo-app.html" />
-    <id>todo-app</id>
-    <published>2024-05-22 00:32:57+01:00</published>
-    <updated>2025-02-24 17:36:32+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;继半年多前从 Things 转移到 OmniFocus 之后，今天又在探索苹果端几大 Todo App，主要比较了 Things, OmniFocus 以及 TickTick（唯一跨平台，已经赢了🤭）。&lt;/p&gt;
-&lt;h2&gt;Things&lt;/h2&gt;
-&lt;p&gt;先说说老朋友 Things，Logbook 显示我从2022年的7月开始用到了2023年的11月15日，等了一年半的 Things 4，始终没有等到。&lt;/p&gt;
-&lt;p&gt;不过 Things 3 还是一如既往美观简洁好用，可惜相比较 OmniFocus 缺了以下我觉得很有用的功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Filter/Smart List: Shortcuts 目前半残，如果我不能在组会前，看到在 PhD Area 完成了哪些项目我怎么给老板交差？&lt;/li&gt;
-&lt;li&gt;Review Perspective: OmniFocus 可以帮你 keep track review 列表，Things 只能手动 Review。&lt;/li&gt;
-&lt;li&gt;Automation: 在 OmniFocus 里可以写脚本把符合某些条件的 Todo 自动归类，或者 Tag。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;OmniFocus&lt;/h2&gt;
-&lt;p&gt;我是从 OmniFocus 4 更新（2023年底）之后才开始重度使用的，上面其实已经把我这半年多用 OmniFocus 的感受列的差不多了，唯独有一点我还希望能够加上的，就是 Kanban View。&lt;/p&gt;
-&lt;p&gt;我的任务通常会卡在某个节点比如说，计算中，或者等待回复，而不是简简单单的 0-1 两个状态，而 kanban 以及 Things 的 Heading 就很好地处理了这个问题。OmniFocus 虽然有 Nested Task，但是使用下来更像是子/母任务的从属关系，描述任务的状态我更多用的是标签，但是仍不如 Kanban 拖拽来的直观。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;EDIT: 用 Tagging 作为 Kanban 的坏处在于它不是 exclusive 的，把任务从一个标签拖拽到另一个会让它同时打上两个标签，作为 Kanban 显然不理想。好在&lt;a href=&#34;https://discourse.omnigroup.com/t/sub-tag-exclusivity/41773/5&#34;&gt;论坛&lt;/a&gt;里有人提到用 Command + 拖拽就可以实现转移标签。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;另外，如果需要一个 Kanban board based on Tagging，可以看一下&lt;a href=&#34;https://omni-automation.com/omnifocus/plug-in-kanban-board.html&#34;&gt;这个插件&lt;/a&gt;，试用了一下还不错，从脚本上实现 exclusive tagging，把不同 board 的按钮放在工具栏也能实现在不同标签(Board)之间转移任务。比如说我现在的工具栏和 kanban 长这样：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/kanban.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;题外话，Things vs OmniFocus 的比较于我有点像 Anybox 和 DEVONthink 的比较，一个简洁漂亮，功能单一，能完成他该完成的，一个功能强大，有点 buggy，不够美观，上手难度偏高。&lt;/p&gt;
-&lt;h2&gt;TickTick&lt;/h2&gt;
-&lt;p&gt;一度觉得很理想，有 Kanban，四象限，过滤器，还有经典的日历视图。
-除了没有 Area 的概念，Project 多了可能会很乱。&lt;/p&gt;
-&lt;p&gt;但是为什么不让我在 iOS 端用国内滴答的账号？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;EDIT: 感谢读者提醒，把 App 语言修改成中文后，登录界面底下可以切换成国内滴答。我再体验几天，后续可能会更新详细体验和比较。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Update on 2025-02-24:&lt;/p&gt;
-&lt;p&gt;用了滴答几个月了，我的感觉是一个不错的有潜力的 todo app，虽然操作逻辑上不如 things 顺畅（比如说清单不能多选删除），但是胜在做好了功能和美观易用易上手的平衡点，且价格亲民。缺点是用户生态不如前两个软件，导致 &lt;a href=&#34;https://developer.dida365.com/docs#/openapi&#34;&gt;API&lt;/a&gt; 开发和其他软件的插件支持不多，且我最想要的按照创建时间排序根本没有，只能自己写了个脚本通过 API 手动获取。&lt;/p&gt;
-&lt;p&gt;还有一个很大的槽点就是官方备份导出是一份 csv，恢复备份的时候不能像 Things 和 OmniFocus 一样整个覆盖数据库，回到某一个时刻的状态，而是在你原有数据上增量恢复，除非你在恢复前手动清空你的账号（注意清单不能批量删除，只能一条一条右键-删除）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.1991997.xyz/i/0/2025/02/24/spmyc2-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h2&gt;其他玩家&lt;/h2&gt;
-&lt;p&gt;我没有测试 Todoist，因为订阅费用实在太高，但是据说自然语言输入很好用。还有一些后来者：比如 GoodTask (in SetApp) 可以作为 Reminder 的强化版本。我没有考虑长期使用，所以这里不详细介绍了。&lt;/p&gt;
-&lt;p&gt;最后，Todo 只是帮助 prioritize 和 focus 的工具，为了 Get Things Done，一张纸也可以做到这样。所以没有最好的 Todo App, 只有最适合你的。&lt;/p&gt;
-&lt;p&gt;切忌陷入&lt;a href=&#34;https://utgd.net/article/20657&#34;&gt;效率陷阱&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;切忌花在拖拽, Tag Todo 比实际完成 Todo 花的时间还要多。&lt;/p&gt;
-&lt;p&gt;切忌频繁更换工具，能用就不要动。&lt;/p&gt;
 </content>
   </entry>
   
