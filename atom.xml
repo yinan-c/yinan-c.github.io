@@ -16,7 +16,7 @@
     <link ref="alternate" href="https://yinan.me/your-own-data.html" />
     <id>your-own-data</id>
     <published>2025-09-23 23:17:51+01:00</published>
-    <updated>2025-09-23 23:21:39+01:00</updated>
+    <updated>2025-09-23 23:30:41+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Note: this article focuses on reading/logging workflow and will be constantly updated.&lt;/p&gt;
@@ -25,19 +25,44 @@
 &lt;p&gt;I would always choose apps/service that fall within the following categories:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Self hosted apps.&lt;/li&gt;
-&lt;li&gt;Apps with local database,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For self-hosted apps, data is stored locally on the machine where you deployed the service, all you need to care is to have a regular backup and have the ability to read your database.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Apps with local database.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For apps with a local database (e.g. Things 3, Day One), the best practice is also backing up the local machine and maybe writing a script to read the local database to plain text, just in case.
+If the app data is cloud based, (e.g. Notion, Ticktick that I once used), I will be cautious before digging down too much into the rabbit hole. For those apps, at least I should be able to read and export &lt;strong&gt;ALL&lt;/strong&gt; the data on the server, whether via API or built in export functionality.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Apps with easy import/export to csv, json or md.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If an app is cloud only and does not have a export functionality, I will not use it - The data is tightly bound to the specific app/service and is never mine.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Apps with RSS intergration and/or full functioning API.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This could be beneficial if I want to sync the data elsewhere, I can simply subscribe the RSS in karakeep or using API.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Apps works with local plain-text files.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Obsidian is one of the best in this category, a similar app is Logseq. For todo app, there is also &lt;a href=&#34;https://www.taskpaper.com/&#34;&gt;taskpaper&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;Apps with comprehensive filtering, full text search.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;For self-hosted apps, data is stored locally on the machine where you deployed the service, all you need to care is to have a regular backup and have the ability to read your database.&lt;/p&gt;
-&lt;p&gt;For apps with a local database (e.g. Things 3, Day One), the best practice is also backing up the local machine and maybe writing a script to read the local database to plain text, just in case.&lt;/p&gt;
-&lt;p&gt;If the app data is cloud based, (e.g. Notion, Ticktick that I once used), I will be cautious before digging down too much into the rabbit hole. For those apps, at least I should be able to read and export &lt;strong&gt;ALL&lt;/strong&gt; the data on the server, whether via API or built in export functionality.&lt;/p&gt;
-&lt;p&gt;If an app is cloud only and does not have a export functionality, I will not use it - The data is tightly bound to the specific app/service and is never mine.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is mainly for quick retriving your data when you need it.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;My apps/services for the reading/logging workflow&lt;/h2&gt;
 &lt;p&gt;I use &lt;a href=&#34;https://freshrss.org&#34;&gt;freshrss&lt;/a&gt; to consume content online, &lt;a href=&#34;https://wallabag.it&#34;&gt;wallabag&lt;/a&gt; for read-it-later, &lt;a href=&#34;https://karakeep.app&#34;&gt;Karakeep&lt;/a&gt; for bookmarks,, Things for todo, Day One for journaling and worklogs, &lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt; for md notes.&lt;/p&gt;
-&lt;p&gt;All of my data will be synced/exported locally and periodically via scripts or RSS. For example if I star an article in freshrss or added one to wallabag, post a Mastodon toot or upvoted a Reddit post, they will be synced to Karakeep via RSS. If I added a task in Things or added a worklog entry in Day One, they will be synced to Obsidian via &lt;a href=&#34;https://github.com/liamcain/obsidian-things-logbook&#34;&gt;plugin&lt;/a&gt; or exported to markdown by some periodically running scripts that read the local database file. All local plain-text files will be in a private .git repo that tracks the changes over time.&lt;/p&gt;
+&lt;p&gt;All of my data will be synced/exported locally and periodically via scripts or RSS. For example, if I star an article in freshrss or added one to wallabag, post a Mastodon toot or upvoted a Reddit post, they will be synced to Karakeep via RSS. If I added a task in Things or a worklog entry in Day One, they will be synced to Obsidian via &lt;a href=&#34;https://github.com/liamcain/obsidian-things-logbook&#34;&gt;plugin&lt;/a&gt; or exported to markdown by scripts that periodically read the local database file. All local plain-text files will be in a private .git repo that keep track the changes over time.&lt;/p&gt;
 &lt;h2&gt;Other apps I&#39;ve tried and worth mentioning&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Anybox - bookmark app, local data synced via icloud (platform lock), but no full text search.&lt;/p&gt;

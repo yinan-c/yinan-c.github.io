@@ -275,19 +275,44 @@ When I try some new apps or services, the first thing I check the ability to hav
 <p>I would always choose apps/service that fall within the following categories:</p>
 <ol>
 <li>Self hosted apps.</li>
-<li>Apps with local database,</li>
+</ol>
+<blockquote>
+<p>For self-hosted apps, data is stored locally on the machine where you deployed the service, all you need to care is to have a regular backup and have the ability to read your database.</p>
+</blockquote>
+<ol start="2">
+<li>Apps with local database.</li>
+</ol>
+<blockquote>
+<p>For apps with a local database (e.g. Things 3, Day One), the best practice is also backing up the local machine and maybe writing a script to read the local database to plain text, just in case.
+If the app data is cloud based, (e.g. Notion, Ticktick that I once used), I will be cautious before digging down too much into the rabbit hole. For those apps, at least I should be able to read and export <strong>ALL</strong> the data on the server, whether via API or built in export functionality.</p>
+</blockquote>
+<ol start="3">
 <li>Apps with easy import/export to csv, json or md.</li>
+</ol>
+<blockquote>
+<p>If an app is cloud only and does not have a export functionality, I will not use it - The data is tightly bound to the specific app/service and is never mine.</p>
+</blockquote>
+<ol start="4">
 <li>Apps with RSS intergration and/or full functioning API.</li>
+</ol>
+<blockquote>
+<p>This could be beneficial if I want to sync the data elsewhere, I can simply subscribe the RSS in karakeep or using API.</p>
+</blockquote>
+<ol start="5">
 <li>Apps works with local plain-text files.</li>
+</ol>
+<blockquote>
+<p>Obsidian is one of the best in this category, a similar app is Logseq. For todo app, there is also <a href="https://www.taskpaper.com/">taskpaper</a>.</p>
+</blockquote>
+<ol start="6">
 <li>Apps with comprehensive filtering, full text search.</li>
 </ol>
-<p>For self-hosted apps, data is stored locally on the machine where you deployed the service, all you need to care is to have a regular backup and have the ability to read your database.</p>
-<p>For apps with a local database (e.g. Things 3, Day One), the best practice is also backing up the local machine and maybe writing a script to read the local database to plain text, just in case.</p>
-<p>If the app data is cloud based, (e.g. Notion, Ticktick that I once used), I will be cautious before digging down too much into the rabbit hole. For those apps, at least I should be able to read and export <strong>ALL</strong> the data on the server, whether via API or built in export functionality.</p>
-<p>If an app is cloud only and does not have a export functionality, I will not use it - The data is tightly bound to the specific app/service and is never mine.</p>
+<blockquote>
+<p>This is mainly for quick retriving your data when you need it.</p>
+</blockquote>
 <h2>My apps/services for the reading/logging workflow</h2>
 <p>I use <a href="https://freshrss.org">freshrss</a> to consume content online, <a href="https://wallabag.it">wallabag</a> for read-it-later, <a href="https://karakeep.app">Karakeep</a> for bookmarks,, Things for todo, Day One for journaling and worklogs, <a href="https://obsidian.md">Obsidian</a> for md notes.</p>
-<p>All of my data will be synced/exported locally and periodically via scripts or RSS. For example if I star an article in freshrss or added one to wallabag, post a Mastodon toot or upvoted a Reddit post, they will be synced to Karakeep via RSS. If I added a task in Things or added a worklog entry in Day One, they will be synced to Obsidian via <a href="https://github.com/liamcain/obsidian-things-logbook">plugin</a> or exported to markdown by some periodically running scripts that read the local database file. All local plain-text files will be in a private .git repo that tracks the changes over time.</p>
+<p>All of my data will be synced/exported locally and periodically via scripts or RSS. For example, if I star an article in freshrss or added one to wallabag, post a Mastodon toot or upvoted a Reddit post, they will be synced to Karakeep via RSS. If I added a task in Things or a worklog entry in Day One, they will be synced to Obsidian via <a href="https://github.com/liamcain/obsidian-things-logbook">plugin</a> or exported to markdown by scripts that periodically read the local database file. All local plain-text files will be in a private .git repo that keep track the changes over time.</p>
 <h2>Other apps I've tried and worth mentioning</h2>
 <ul>
 <li><p>Anybox - bookmark app, local data synced via icloud (platform lock), but no full text search.</p>
