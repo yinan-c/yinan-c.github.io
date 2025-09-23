@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" />
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+  <title>Keeping your own data LOCAL - 1nan</title>
+  
+  <meta name="description" content="Note: this article focuses on reading/logging workflow and will be a constantly updated.
+
+When I try some new apps or services, the first thing I check the ability to have the data locally, espeically for memos, bookmarks, read it later, tasks, journals/w..." />
+  
+  
+  <link rel="canonical" href="https://yinan.me/your-own-data.html" />
+  
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  @media (max-width: 600px) {
+  #header-created-at span,
+  #header-home-link {
+    font-size: 0.8rem;
+  }
+  }
+  </style>
+
+    <style>
+      /* 主题切换按钮样式 */
+      .theme-toggle-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--nc-bg-2);
+        border: 1px solid var(--nc-bg-3);
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .theme-toggle-button:hover {
+        transform: scale(1.05);
+      }
+      .theme-icon {
+        color: var(--nc-tx-1);
+      }
+      /* 暗色/亮色模式切换按钮容器 */
+      #theme-toggle-container {
+        position: fixed; 
+        bottom: 20px; 
+        right: 20px; 
+        z-index: 100;
+      }
+      /* 自定义暗色模式 - 将覆盖 prefers-color-scheme */
+      html.dark-theme {
+        --nc-tx-1: #ffffff;
+        --nc-tx-2: #eeeeee;
+        --nc-bg-1: #000000;
+        --nc-bg-2: #111111;
+        --nc-bg-3: #222222;
+        --nc-lk-1: #3291FF;
+        --nc-lk-2: #0070F3;
+        --nc-lk-tx: #FFFFFF;
+        --nc-ac-1: #7928CA;
+        --nc-ac-tx: #FFFFFF;
+      }
+      /* 自定义亮色模式 - 将覆盖 prefers-color-scheme */
+      html.light-theme {
+        --nc-tx-1: #000000;
+        --nc-tx-2: #1A1A1A;
+        --nc-bg-1: #FFFFFF;
+        --nc-bg-2: #F6F8FA;
+        --nc-bg-3: #E5E7EB;
+        --nc-lk-1: #0070F3;
+        --nc-lk-2: #0366D6;
+        --nc-lk-tx: #FFFFFF;
+        --nc-ac-1: #79FFE1;
+        --nc-ac-tx: #0C4047;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 暗色/亮色模式切换按钮 -->
+    <div id="theme-toggle-container">
+      <button id="theme-toggle" class="theme-toggle-button" aria-label="切换深色/浅色模式">
+        <svg id="light-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="dark-icon" class="theme-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+    
+    
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2025-09-23 </span>
+    </div>
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        <a href="#" class="search-trigger">Search &gt;</a>
+        
+    </div>
+</div>
+
+    <main>
+<!-- Include search modal component -->
+<!-- search_modal.html -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div id="search-modal" class="search-modal">
+  <div class="search-modal-content">
+    <!-- macOS-style close button -->
+    <div class="macos-close-button">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#FF6057"></circle>
+        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"></path>
+      </svg>
+    </div>
+    <div id="search"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PagefindUI for the search modal
+    const searchInstance = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      autofocus: true
+    });
+
+    // Function to open the search modal
+    function openSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      setTimeout(() => {
+        const searchInput = document.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }, 100);
+    }
+
+    // Function to close the search modal
+    function closeSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    // Bind click event for all elements that should trigger the search modal
+    document.querySelectorAll('.search-trigger, #search-button, #search-text').forEach(function(trigger) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        openSearchModal();
+      });
+    });
+    // Close modal when clicking the close button
+    const closeButton = document.querySelector('.macos-close-button');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeSearchModal);
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.target === searchModal) {
+        closeSearchModal();
+      }
+    });
+
+    // Close modal when pressing the ESC key
+    document.addEventListener('keydown', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.key === 'Escape' && searchModal && searchModal.style.display === 'flex') {
+        closeSearchModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Pagefind UI CSS Variables */
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--nc-lk-1);
+    --pagefind-ui-text: var(--nc-tx-1);
+    --pagefind-ui-background: var(--nc-bg-1);
+    --pagefind-ui-border: var(--nc-bg-3);
+    --pagefind-ui-tag: var(--nc-bg-2);
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: var(--nc-font-sans);
+  }
+
+  /* Search Modal Styling */
+  .search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  .search-modal-content {
+    position: relative;
+    background-color: var(--nc-bg-1);
+    color: var(--nc-tx-1);
+    padding: 40px 30px 30px;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+  .macos-close-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  body.modal-open {
+    overflow: hidden;
+  }
+</style>
+
+
+
+<h1>Keeping your own data LOCAL</h1>
+<blockquote>
+<p>Note: this article focuses on reading/logging workflow and will be a constantly updated.</p>
+</blockquote>
+<p>When I try some new apps or services, the first thing I check the ability to have the data locally, espeically for memos, bookmarks, read it later, tasks, journals/worklogs/notes.</p>
+<p>I would always choose apps/service that fall within the following categories:</p>
+<ol>
+<li>Self hosted apps.</li>
+<li>Apps with local database,</li>
+<li>Apps with easy import/export to csv, json or md.</li>
+<li>Apps with RSS intergration and/or full functioning API.</li>
+<li>Apps works with local plain-text files.</li>
+<li>Apps with comprehensive filtering, full text search.</li>
+</ol>
+<p>For self-hosted apps, data is stored locally on the machine where you deployed the service, all you need to care is to have a regular backup and have the ability to read your database.</p>
+<p>For apps with a local database (e.g. Things 3, Day One), the best practice is also backing up the local machine and maybe writing a script to read the local database to plain text, just in case.</p>
+<p>If the app data is cloud based, (e.g. Notion, Ticktick that I once used), I will be cautious before digging down too much into the rabbit hole. For those apps, at least I should be able to read and export <strong>ALL</strong> the data on the server, whether via API or built in export functionality.</p>
+<p>If an app is cloud only and does not have a export functionality, I will not use it - The data is tightly bound to the specific app/service and is never mine.</p>
+<h2>My apps/services for the reading/logging workflow</h2>
+<p>I use <a href="https://freshrss.org">freshrss</a> to consume content online, <a href="https://wallabag.it">wallabag</a> for read-it-later, <a href="https://karakeep.app">Karakeep</a> for bookmarks,, Things for todo, Day One for journaling and worklogs, <a href="https://obsidian.md">Obsidian</a> for md notes.</p>
+<p>All of my data will be synced/exported locally and periodically via scripts or RSS. For example if I star an article in freshrss or added one to wallabag, post a Mastodon toot or upvoted a Reddit post, they will be synced to Karakeep via RSS. If I added a task in Things or added a worklog entry in Day One, they will be synced to Obsidian via <a href="https://github.com/liamcain/obsidian-things-logbook">plugin</a> or exported to markdown by some periodically running scripts that read the local database file. All local plain-text files will be in a private .git repo that tracks the changes over time.</p>
+<h2>Other apps I've tried and worth mentioning</h2>
+<ul>
+<li><p>Anybox - bookmark app, local data synced via icloud (platform lock), but no full text search.</p>
+</li>
+<li><p>Raindrop.io - bookmark app, data is on the server, permnent copy under pay wall (but still on their server afaik)</p>
+</li>
+<li><p>DEVONthink - A really powerfull app (RSS, read-it-later, bookmark, file-management with full text search and local file storage), the only downside is the file system (databases) is not integrated very well with the Finder system, which means you can only backup and restore the whole database but not individual files.</p>
+</li>
+<li><p>Readwise reader - A cloud based RSS and read-it-later apps, great for its TTS. But data is only on its server, TTS for Chinese is still buggy.</p>
+</li>
+<li><p>Pocket, Omnivore - End of life.</p>
+</li>
+</ul>
+<p>I tried to fit these apps into my workflow once, but ending up not using them.</p>
+<h1>Related</h1>
+<ul>
+<li><a href="https://stephango.com/file-over-app">File over app</a></li>
+<li><a href="https://news.ycombinator.com/item?id=44473135">Local-first software</a></li>
+<li><a href="https://news.ycombinator.com/item?id=45333021">Why Local-First Apps Haven’t Become Popular?</a></li>
+</ul>
+
+<style>
+/* 创建一个容器来包含两个按钮 */
+.nav-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* 按钮之间的间距 */
+  margin: 15px 0;
+}
+.nav-button {
+  padding: 10px 20px;
+  background-color: var(--nc-bg-2); /* 使用主题变量 */
+  border: 1px solid var(--nc-bg-3); /* 添加带主题变量的边框 */
+  color: var(--nc-tx-1); /* 使用主题变量的文本 */
+  text-decoration: none;
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中内容 */
+  font-size: 14px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  flex: 1; /* 平均分配空间 */
+  box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
+}
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px; /* 在小屏幕上减小字体大小 */
+  }
+}
+.nav-button:hover {
+  background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
+}
+#prev-button {
+  justify-content: flex-start; /* 左对齐文本 */
+  text-align: left;
+}
+#next-button {
+  justify-content: flex-end; /* 右对齐文本 */
+  text-align: right;
+}
+</style>
+<!-- 使用新的容器包裹按钮 -->
+<div class="nav-buttons-container">
+
+  
+    <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+  
+  
+    <a href="downaload-apps-no-longer-available.html" class="nav-button" id="next-button">如何下载 App Store 已经下架的应用 &gt;</a>
+  
+
+</div>
+<br>
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update Giscus theme
+    function updateGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({
+            giscus: {
+                setConfig: {
+                    theme: theme
+                }
+            }
+        }, 'https://giscus.app');
+    }
+    // Initial update based on current theme
+    function initialGiscusSetup() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            updateGiscusTheme('dark');
+        } else if (savedTheme === 'light') {
+            updateGiscusTheme('light');
+        }
+    }
+    // Set a timeout to ensure Giscus has loaded
+    setTimeout(initialGiscusSetup, 1000);
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Get the updated theme after toggle
+            setTimeout(() => {
+                const currentTheme = localStorage.getItem('theme');
+                updateGiscusTheme(currentTheme);
+            }, 100);
+        });
+    }
+});
+</script>
+</main>
+    
+<div id="updated-at">
+  <span>Created: 2025-09-23</span>
+  <span>Updated: 2025-09-23</span>
+</div>
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="years.html#i4b">&lt; Timeline</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    <a href="#" class="search-trigger">Search &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © <a href = "https://yinan.me/">Yinan</a>
+    · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    · <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · <a href="atom.xml"> RSS </a>
+    
+  </p>
+</div>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 检查用户首选的颜色方案或存储的主题
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        // 应用主题
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-theme');
+          document.getElementById('light-icon').style.display = 'none';
+          document.getElementById('dark-icon').style.display = 'block';
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.getElementById('light-icon').style.display = 'block';
+          document.getElementById('dark-icon').style.display = 'none';
+        } else {
+          // 如果没有保存的主题，根据系统偏好设置图标
+          if (prefersDarkScheme) {
+            document.getElementById('light-icon').style.display = 'none';
+            document.getElementById('dark-icon').style.display = 'block';
+          }
+        }
+        
+        // 主题切换功能
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', function() {
+          // 移除任何现有的主题类
+          document.documentElement.classList.remove('light-theme', 'dark-theme');
+          
+          // 检查当前主题
+          const currentTheme = localStorage.getItem('theme');
+          let newTheme;
+          
+          if (currentTheme === 'dark') {
+            // 切换到亮色主题
+            document.documentElement.classList.add('light-theme');
+            document.getElementById('light-icon').style.display = 'block';
+            document.getElementById('dark-icon').style.display = 'none';
+            newTheme = 'light';
+          } else {
+            // 切换到暗色主题
+            document.documentElement.classList.add('dark-theme');
+            document.getElementById('light-icon').style.display = 'none';
+            document.getElementById('dark-icon').style.display = 'block';
+            newTheme = 'dark';
+          }
+          
+          // 保存主题偏好
+          localStorage.setItem('theme', newTheme);
+        });
+      });
+    </script>
+  </body>
+  
+</html>
