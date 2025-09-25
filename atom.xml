@@ -16,12 +16,12 @@
     <link ref="alternate" href="https://yinan.me/your-own-data.html" />
     <id>your-own-data</id>
     <published>2025-09-23 23:17:51+01:00</published>
-    <updated>2025-09-23 23:30:41+01:00</updated>
+    <updated>2025-09-25 12:18:40+01:00</updated>
     <author><name>Yinan</name></author>
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Note: this article focuses on reading/logging workflow and will be constantly updated.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;When I try some new apps or services, the first thing I check the ability to have the data locally, espeically for memos, bookmarks, read it later, tasks, journals/worklogs/notes.&lt;/p&gt;
+&lt;p&gt;When I try some new apps or services, the first thing I check is the ability to have the data locally, espeically for memos, bookmarks, read it later, tasks, journals/worklogs/notes.&lt;/p&gt;
 &lt;p&gt;I would always choose apps/service that fall within the following categories:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Self hosted apps.&lt;/li&gt;
@@ -61,7 +61,7 @@ If the app data is cloud based, (e.g. Notion, Ticktick that I once used), I will
 &lt;p&gt;This is mainly for quick retriving your data when you need it.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;My apps/services for the reading/logging workflow&lt;/h2&gt;
-&lt;p&gt;I use &lt;a href=&#34;https://freshrss.org&#34;&gt;freshrss&lt;/a&gt; to consume content online, &lt;a href=&#34;https://wallabag.it&#34;&gt;wallabag&lt;/a&gt; for read-it-later, &lt;a href=&#34;https://karakeep.app&#34;&gt;Karakeep&lt;/a&gt; for bookmarks,, Things for todo, Day One for journaling and worklogs, &lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt; for md notes.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&#34;https://freshrss.org&#34;&gt;freshrss&lt;/a&gt; to consume content online, &lt;a href=&#34;https://wallabag.it&#34;&gt;wallabag&lt;/a&gt; for read-it-later, &lt;a href=&#34;https://karakeep.app&#34;&gt;Karakeep&lt;/a&gt; for bookmarks, Things for todo, Day One for journaling and worklogs, &lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt; for md notes.&lt;/p&gt;
 &lt;p&gt;All of my data will be synced/exported locally and periodically via scripts or RSS. For example, if I star an article in freshrss or added one to wallabag, post a Mastodon toot or upvoted a Reddit post, they will be synced to Karakeep via RSS. If I added a task in Things or a worklog entry in Day One, they will be synced to Obsidian via &lt;a href=&#34;https://github.com/liamcain/obsidian-things-logbook&#34;&gt;plugin&lt;/a&gt; or exported to markdown by scripts that periodically read the local database file. All local plain-text files will be in a private .git repo that keep track the changes over time.&lt;/p&gt;
 &lt;h2&gt;Other apps I&#39;ve tried and worth mentioning&lt;/h2&gt;
 &lt;ul&gt;
