@@ -12,6 +12,35 @@
 
   
   <entry>
+    <title>今年黑五我买了啥</title>
+    <link ref="alternate" href="https://yinan.me/bf2026.html" />
+    <id>bf2026</id>
+    <published>2026-11-26 10:17:18+00:00</published>
+    <updated>2026-11-26 10:17:18+00:00</updated>
+    <author><name>Yinan</name></author>
+    <content type="html">&lt;p&gt;每年黑五和赛博周一都会有大批软件软件打折。但由于 AI 辅助编程的出现，制作一个软件的成本很低。一方面对于普通用户而言，用编码实现自己想要的功能的门槛变低了；另一方面大量 AI slop 充斥了互联网，他们千篇一律的主页和软件设计，大段机器人味儿的销售话术，都在透露这个开发者是否用心，以及让人怀疑他是否有能力或者有意愿继续维护这个软件的开发。并不是说 AI 辅助编程或者 vibe coded 软件没有质量好的，只不过消费者要更加擦亮双眼，握紧钱包了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yinan.me/pics/pricing-and-viability-of-indie-apps-post-ai.webp&#34; alt=&#34;pricing-and-viability-of-indie-apps-post-ai&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这里推荐几个我在黑五推荐购买的一些软件。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/notebooks-write-and-organize/id1449826029?mt=12&amp;amp;uo=4&amp;amp;platform=mac&#34;&gt;Notebooks&lt;/a&gt;: 黑五 7 折，08 年就在 App Store 的老牌笔记软件，并且大版本更新可以继续用上个版本的 license。之所以吸引我是因为它和 Obsidian 一样的本地优先，文件按照软件内的树结构存在本地，但比 Obsidian 好的点是可以存放和预览甚至编辑各种文件，包括 Keynote, Office Suite，pdf，之前用 Obsidian 的时候总是无法很好的处理 docx 文件。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.apptorium.com/license-store&#34;&gt;LicenseStore&lt;/a&gt;: 黑五半价，Apptorium 开发的软件，用来存放购买的软件 License，比 1Password 好用，可以推荐。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://alfredapp.com&#34;&gt;Alfred&lt;/a&gt;: 应该是不会打折的，2023 年买了 PowerPack 以来平均每天打开 150 次的软件，在我看来使用速度和体验远超过 Raycast 和 Spotlight。最近更新了 Alfred UI toolkit，可以自定义 workflow 的界面。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/things-3/id904280696?mt=12&amp;amp;uo=4&amp;amp;platform=mac&#34;&gt;Things 3&lt;/a&gt;: 黑五 7 折，非常推荐的 Todo app。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unfold.tools/&#34;&gt;Unfold&lt;/a&gt;: 好像是没打折，之前双十一在数码荔枝买的，Quicklook 的软件，可以看 Tex，ePub 等文件。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://workingcopy.app/&#34;&gt;WorkingCopy&lt;/a&gt;: 黑五打折，是一个移动端的 Git 客户端，之前 Obsidian，现在 Notebooks 的 iOS 都用这个通过 GitHub 和电脑同步。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/gb/app/ssh-client-secure-shellfish/id1336634154?uo=4&amp;amp;platform=mac&#34;&gt;Secure ShellFish&lt;/a&gt;: 黑五打折，和 Workingcopy 是同一个开发者，特点是可以 SSH 远程服务器/mac/nas 以及用 SFTP 把文件以网盘的形式挂载到 iOS 的文件系统。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;黑五还未结束，这篇文章在接下来几天可能继续更新，也欢迎分享你推荐的软件。&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/macapps/comments/1tnw0gx/what_are_the_giveaways_of_a_vibecoded_app/&#34;&gt;What are the giveaways of a vibe-coded app? - Reddit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mjtsai.com/blog/2026/11/20/black-friday-2026/&#34;&gt;Michael Tsai - Blog - Black Friday 2026&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://meganesulli.com/blog/sync-obsidian-vault-iphone-ipad/&#34;&gt;Megan Sullivan - Sync your Obsidian Vault on iOS with GitHub, Working Copy, and Apple Shortcuts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
     <title>Is AI making world a better place?</title>
     <link ref="alternate" href="https://yinan.me/ai-world.html" />
     <id>ai-world</id>
@@ -383,19 +412,6 @@ pong from (vps)xxx via 173.xxx.xxx.xxx:xxxxx in 87ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You&#39;re good to go, it works perfectly with GitHub pages (what I&#39;m using currently) or any other website framework such as Hugo. Alternatively, you can use it as a web server to host your static pages (add a --serve flag in the end, maybe it can update the index while new pages were generated).&lt;/p&gt;
 &lt;p&gt;Try it out in my &lt;a href=&#34;https://yinan.me&#34;&gt;blog&lt;/a&gt;!&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>On &#34;You don&#39;t need to work on hard problems&#34;</title>
-    <link ref="alternate" href="https://yinan.me/on-you-dont-need-to-solve-hard-problems.html" />
-    <id>on-you-dont-need-to-solve-hard-problems</id>
-    <published>2025-03-05 15:09:38+00:00</published>
-    <updated>2025-03-05 15:18:43+00:00</updated>
-    <author><name>Yinan</name></author>
-    <content type="html">&lt;p&gt;&lt;a href=&#34;https://www.benkuhn.net/hard/&#34;&gt;You don&#39;t need to work on hard problems - Ben Kuhn&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I just came across this interesting article. I have to agree on how the problems  (and how you are evaluated) in school set deliberately to be linear or 1 dimensional. While in real world, problems tend to be multi-dimensional, which relies on both so-called soft skills and hard skills. However, it is also exactly the same reason that there is no other place than school, that you&#39;ll been evaluated in a fair, straight-forward way.&lt;/p&gt;
-&lt;p&gt;I am not saying that you don&#39;t need to work hard in school. However, what school really taught us was really far beyond solving hard problems.&lt;/p&gt;
 </content>
   </entry>
   

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="avatar.png" />
+    <link rel="icon" href="avatar.png" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+  <title>今年黑五我买了啥 - 1nan</title>
+  
+  <meta name="description" content="每年黑五和赛博周一都会有大批软件软件打折。但由于 AI 辅助编程的出现，制作一个软件的成本很低。一方面对于普通用户而言，用编码实现自己想要的功能的门槛变低了；另一方面大量 AI slop..." />
+  
+  
+  <link rel="canonical" href="https://yinan.me/bf2026.html" />
+  
+
+    
+  <style>
+  img {
+    
+    max-width: 100% !important;
+    
+    height: auto !important;
+  }
+  @media (max-width: 600px) {
+  #header-created-at span,
+  #header-home-link {
+    font-size: 0.8rem;
+  }
+  }
+  </style>
+
+    <style>
+      /* 主题切换按钮样式 */
+      .theme-toggle-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--nc-bg-2);
+        border: 1px solid var(--nc-bg-3);
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .theme-toggle-button:hover {
+        transform: scale(1.05);
+      }
+      .theme-icon {
+        color: var(--nc-tx-1);
+      }
+      /* 暗色/亮色模式切换按钮容器 */
+      #theme-toggle-container {
+        position: fixed; 
+        bottom: 20px; 
+        right: 20px; 
+        z-index: 100;
+      }
+      /* 自定义暗色模式 - 将覆盖 prefers-color-scheme */
+      html.dark-theme {
+        --nc-tx-1: #ffffff;
+        --nc-tx-2: #eeeeee;
+        --nc-bg-1: #000000;
+        --nc-bg-2: #111111;
+        --nc-bg-3: #222222;
+        --nc-lk-1: #3291FF;
+        --nc-lk-2: #0070F3;
+        --nc-lk-tx: #FFFFFF;
+        --nc-ac-1: #7928CA;
+        --nc-ac-tx: #FFFFFF;
+      }
+      /* 自定义亮色模式 - 将覆盖 prefers-color-scheme */
+      html.light-theme {
+        --nc-tx-1: #000000;
+        --nc-tx-2: #1A1A1A;
+        --nc-bg-1: #FFFFFF;
+        --nc-bg-2: #F6F8FA;
+        --nc-bg-3: #E5E7EB;
+        --nc-lk-1: #0070F3;
+        --nc-lk-2: #0366D6;
+        --nc-lk-tx: #FFFFFF;
+        --nc-ac-1: #79FFE1;
+        --nc-ac-tx: #0C4047;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 暗色/亮色模式切换按钮 -->
+    <div id="theme-toggle-container">
+      <button id="theme-toggle" class="theme-toggle-button" aria-label="切换深色/浅色模式">
+        <svg id="light-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="dark-icon" class="theme-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+    
+    
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div id="header-created-at">
+        <span style="font-size: 0.5 em; color: #888;">2026-11-26 </span>
+    </div>
+    <div id="header-home-link" style="font-size: 0.5 em;">
+        <a href="index.html">&lt; Home</a>
+        
+        <a href="years.html">&lt; Timeline</a>
+        |
+        <a href="random.html">Random &gt;</a>
+        <a href="#" class="search-trigger">Search &gt;</a>
+        
+    </div>
+</div>
+
+    <main>
+<!-- Include search modal component -->
+<!-- search_modal.html -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div id="search-modal" class="search-modal">
+  <div class="search-modal-content">
+    <!-- macOS-style close button -->
+    <div class="macos-close-button">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#FF6057"></circle>
+        <path d="M8.5,8.5 L15.5,15.5 M8.5,15.5 L15.5,8.5" stroke="rgba(0,0,0,0.5)" stroke-width="1.5"></path>
+      </svg>
+    </div>
+    <div id="search"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PagefindUI for the search modal
+    const searchInstance = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      autofocus: true
+    });
+
+    // Function to open the search modal
+    function openSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      setTimeout(() => {
+        const searchInput = document.querySelector('.pagefind-ui__search-input');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }, 100);
+    }
+
+    // Function to close the search modal
+    function closeSearchModal() {
+      const searchModal = document.getElementById('search-modal');
+      if (!searchModal) return;
+      searchModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    // Bind click event for all elements that should trigger the search modal
+    document.querySelectorAll('.search-trigger, #search-button, #search-text').forEach(function(trigger) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        openSearchModal();
+      });
+    });
+    // Close modal when clicking the close button
+    const closeButton = document.querySelector('.macos-close-button');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeSearchModal);
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.target === searchModal) {
+        closeSearchModal();
+      }
+    });
+
+    // Close modal when pressing the ESC key
+    document.addEventListener('keydown', function(event) {
+      const searchModal = document.getElementById('search-modal');
+      if (event.key === 'Escape' && searchModal && searchModal.style.display === 'flex') {
+        closeSearchModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Pagefind UI CSS Variables */
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--nc-lk-1);
+    --pagefind-ui-text: var(--nc-tx-1);
+    --pagefind-ui-background: var(--nc-bg-1);
+    --pagefind-ui-border: var(--nc-bg-3);
+    --pagefind-ui-tag: var(--nc-bg-2);
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: var(--nc-font-sans);
+  }
+
+  /* Search Modal Styling */
+  .search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  .search-modal-content {
+    position: relative;
+    background-color: var(--nc-bg-1);
+    color: var(--nc-tx-1);
+    padding: 40px 30px 30px;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+  .macos-close-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  body.modal-open {
+    overflow: hidden;
+  }
+</style>
+
+
+
+<h1>今年黑五我买了啥</h1>
+<p>每年黑五和赛博周一都会有大批软件软件打折。但由于 AI 辅助编程的出现，制作一个软件的成本很低。一方面对于普通用户而言，用编码实现自己想要的功能的门槛变低了；另一方面大量 AI slop 充斥了互联网，他们千篇一律的主页和软件设计，大段机器人味儿的销售话术，都在透露这个开发者是否用心，以及让人怀疑他是否有能力或者有意愿继续维护这个软件的开发。并不是说 AI 辅助编程或者 vibe coded 软件没有质量好的，只不过消费者要更加擦亮双眼，握紧钱包了。</p>
+<p><img src="https://yinan.me/pics/pricing-and-viability-of-indie-apps-post-ai.webp" alt="pricing-and-viability-of-indie-apps-post-ai" /></p>
+<p>这里推荐几个我在黑五推荐购买的一些软件。</p>
+<ol>
+<li><a href="https://apps.apple.com/gb/app/notebooks-write-and-organize/id1449826029?mt=12&amp;uo=4&amp;platform=mac">Notebooks</a>: 黑五 7 折，08 年就在 App Store 的老牌笔记软件，并且大版本更新可以继续用上个版本的 license。之所以吸引我是因为它和 Obsidian 一样的本地优先，文件按照软件内的树结构存在本地，但比 Obsidian 好的点是可以存放和预览甚至编辑各种文件，包括 Keynote, Office Suite，pdf，之前用 Obsidian 的时候总是无法很好的处理 docx 文件。</li>
+<li><a href="https://www.apptorium.com/license-store">LicenseStore</a>: 黑五半价，Apptorium 开发的软件，用来存放购买的软件 License，比 1Password 好用，可以推荐。</li>
+<li><a href="https://alfredapp.com">Alfred</a>: 应该是不会打折的，2023 年买了 PowerPack 以来平均每天打开 150 次的软件，在我看来使用速度和体验远超过 Raycast 和 Spotlight。最近更新了 Alfred UI toolkit，可以自定义 workflow 的界面。</li>
+<li><a href="https://apps.apple.com/gb/app/things-3/id904280696?mt=12&amp;uo=4&amp;platform=mac">Things 3</a>: 黑五 7 折，非常推荐的 Todo app。</li>
+<li><a href="https://unfold.tools/">Unfold</a>: 好像是没打折，之前双十一在数码荔枝买的，Quicklook 的软件，可以看 Tex，ePub 等文件。</li>
+<li><a href="https://workingcopy.app/">WorkingCopy</a>: 黑五打折，是一个移动端的 Git 客户端，之前 Obsidian，现在 Notebooks 的 iOS 都用这个通过 GitHub 和电脑同步。</li>
+<li><a href="https://apps.apple.com/gb/app/ssh-client-secure-shellfish/id1336634154?uo=4&amp;platform=mac">Secure ShellFish</a>: 黑五打折，和 Workingcopy 是同一个开发者，特点是可以 SSH 远程服务器/mac/nas 以及用 SFTP 把文件以网盘的形式挂载到 iOS 的文件系统。</li>
+</ol>
+<p>黑五还未结束，这篇文章在接下来几天可能继续更新，也欢迎分享你推荐的软件。</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/macapps/comments/1tnw0gx/what_are_the_giveaways_of_a_vibecoded_app/">What are the giveaways of a vibe-coded app? - Reddit</a></li>
+<li><a href="https://mjtsai.com/blog/2026/11/20/black-friday-2026/">Michael Tsai - Blog - Black Friday 2026</a></li>
+<li><a href="https://meganesulli.com/blog/sync-obsidian-vault-iphone-ipad/">Megan Sullivan - Sync your Obsidian Vault on iOS with GitHub, Working Copy, and Apple Shortcuts</a></li>
+</ul>
+
+<style>
+/* 创建一个容器来包含两个按钮 */
+.nav-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* 按钮之间的间距 */
+  margin: 15px 0;
+}
+.nav-button {
+  padding: 10px 20px;
+  background-color: var(--nc-bg-2); /* 使用主题变量 */
+  border: 1px solid var(--nc-bg-3); /* 添加带主题变量的边框 */
+  color: var(--nc-tx-1); /* 使用主题变量的文本 */
+  text-decoration: none;
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中内容 */
+  font-size: 14px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  flex: 1; /* 平均分配空间 */
+  box-sizing: border-box; /* 包括内边距和边框在元素的总宽度和高度中 */
+}
+@media (max-width: 600px) {
+  .nav-button {
+    font-size: 12px; /* 在小屏幕上减小字体大小 */
+  }
+}
+.nav-button:hover {
+  background-color: var(--nc-bg-3); /* 使用主题变量悬停 */
+}
+#prev-button {
+  justify-content: flex-start; /* 左对齐文本 */
+  text-align: left;
+}
+#next-button {
+  justify-content: flex-end; /* 右对齐文本 */
+  text-align: right;
+}
+</style>
+<!-- 使用新的容器包裹按钮 -->
+<div class="nav-buttons-container">
+
+  
+    <a href="index.html" class="nav-button" id="prev-button"> I'm the first! Home! </a>
+  
+  
+    <a href="ai-world.html" class="nav-button" id="next-button">Is AI making world a better place? &gt;</a>
+  
+
+</div>
+<br>
+<script src="https://giscus.app/client.js"
+        data-repo="yinan-c/pages-comment"
+        data-repo-id="R_kgDOKTPNKg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKTPNKs4CZSbD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update Giscus theme
+    function updateGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({
+            giscus: {
+                setConfig: {
+                    theme: theme
+                }
+            }
+        }, 'https://giscus.app');
+    }
+    // Initial update based on current theme
+    function initialGiscusSetup() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            updateGiscusTheme('dark');
+        } else if (savedTheme === 'light') {
+            updateGiscusTheme('light');
+        }
+    }
+    // Set a timeout to ensure Giscus has loaded
+    setTimeout(initialGiscusSetup, 1000);
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Get the updated theme after toggle
+            setTimeout(() => {
+                const currentTheme = localStorage.getItem('theme');
+                updateGiscusTheme(currentTheme);
+            }, 100);
+        });
+    }
+});
+</script>
+</main>
+    
+<div id="updated-at">
+  <span>Created: 2026-11-26</span>
+  <span>Updated: 2026-11-26</span>
+</div>
+<div id="footer">
+  <div id="footer-home-link">
+    <a href="index.html">&lt; Home</a>
+    
+    <a href="years.html#ie4bb8a">&lt; Timeline</a>
+    |
+    <a href="random.html">Random &gt;</a>
+    <a href="#" class="search-trigger">Search &gt;</a>
+    
+  </div>
+  <p id="footer-body">
+    
+    © <a href = "https://yinan.me/">Yinan</a>
+    · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    · <a href="https://github.com/yinan-c/pyboke">PyBoke</a>
+    · <a href="atom.xml"> RSS </a>
+    
+  </p>
+</div>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 检查用户首选的颜色方案或存储的主题
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        // 应用主题
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-theme');
+          document.getElementById('light-icon').style.display = 'none';
+          document.getElementById('dark-icon').style.display = 'block';
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.getElementById('light-icon').style.display = 'block';
+          document.getElementById('dark-icon').style.display = 'none';
+        } else {
+          // 如果没有保存的主题，根据系统偏好设置图标
+          if (prefersDarkScheme) {
+            document.getElementById('light-icon').style.display = 'none';
+            document.getElementById('dark-icon').style.display = 'block';
+          }
+        }
+        
+        // 主题切换功能
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', function() {
+          // 移除任何现有的主题类
+          document.documentElement.classList.remove('light-theme', 'dark-theme');
+          
+          // 检查当前主题
+          const currentTheme = localStorage.getItem('theme');
+          let newTheme;
+          
+          if (currentTheme === 'dark') {
+            // 切换到亮色主题
+            document.documentElement.classList.add('light-theme');
+            document.getElementById('light-icon').style.display = 'block';
+            document.getElementById('dark-icon').style.display = 'none';
+            newTheme = 'light';
+          } else {
+            // 切换到暗色主题
+            document.documentElement.classList.add('dark-theme');
+            document.getElementById('light-icon').style.display = 'none';
+            document.getElementById('dark-icon').style.display = 'block';
+            newTheme = 'dark';
+          }
+          
+          // 保存主题偏好
+          localStorage.setItem('theme', newTheme);
+        });
+      });
+    </script>
+  </body>
+  
+</html>
